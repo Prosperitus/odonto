@@ -26,8 +26,8 @@
 
  	public function addUser($user){
 
- 	     $sql = "INSERT INTO users (name, surname, cro,DataAdimissao,matricula, cpf,endereco,banco,NumeroConta,agencia, phone, email, pass, birthdate,permissao)
-    VALUES (:name, :surname, :cro, :DataAdimissao, :matricula, :cpf, :endereco, :banco, :NumeroConta, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
+ 	     $sql = "INSERT INTO users (name, surname, cro,DataAdimissao,Matricula, cpf,endereco,Banco,NumeroConta,agencia, phone, email, pass, birthdate,Permissao)
+    VALUES (:name, :surname, :cro, :DataAdimissao, :Matricula, :cpf, :endereco, :Banco, :NumeroConta, :agencia, :phone, :email, :pass, :birthdate, :Permissao)";
 
     	$stmt = $this->conn->prepare($sql);
 
@@ -35,17 +35,17 @@
     	$stmt->bindParam(':surname', $user->getSurname());
     	$stmt->bindParam(':cro', $user->getCro());
         $stmt->bindParam(':DataAdimissao', $user->getDataAdimissao());
-        $stmt->bindParam(':matricula', $user->getMatricula());
-        $stmt->bindParam(':cpf', $user->getCpf());
-        $stmt->bindParam(':endereco', $user->getEndereco());
-        $stmt->bindParam(':banco', $user->getBanco());
+        $stmt->bindParam(':Matricula', $user->getMatricula());
+        $stmt->bindParam(':cpf', $user->getcpf());
+        $stmt->bindParam(':endereco', $user->getendereco());
+        $stmt->bindParam(':Banco', $user->getBanco());
         $stmt->bindParam(':NumeroConta', $user->getNumeroConta());
-        $stmt->bindParam(':agencia', $user->getAgencia());
+        $stmt->bindParam(':agencia', $user->getagencia());
         $stmt->bindParam(':phone', $user->getPhone());
     	$stmt->bindParam(':email', $user->getEmail());
     	$stmt->bindParam(':pass', $user->getPass());
     	$stmt->bindParam(':birthdate', $user->getBirthdate());
-        $stmt->bindParam(':permissao', $user->getPermissao());
+        $stmt->bindParam(':Permissao', $user->getPermissao());
 
 
     	$stmt->execute();
