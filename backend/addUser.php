@@ -1,6 +1,6 @@
 <?php
 	include "userModel.php"
-	include "dbconnect.php"
+	include "../database/dbconnect.php"
 
 	function addUser(){
 		$user = new user();
