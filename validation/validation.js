@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Validate birthdate
 
 
@@ -16,10 +17,21 @@ function isValidDate(dateString)
     // Check the ranges of month and year
     if(year < 1000 || year > 3000 || month == 0 || month > 12)
         return false;
+=======
+
+//Validate date
+function validateDate(day, month, year) {
+
+    // Check the ranges of month and year
+    if(year < 1000 || year > 3000 || month == 0 || month > 12){
+        return false;
+    }
+>>>>>>> 81a0ba3cb94b75fae129196b203d39774bf76fab
 
     var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
     // Adjust for leap years
+<<<<<<< HEAD
     if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
         monthLength[1] = 29;
 
@@ -63,6 +75,29 @@ function validateSurname() {
 
 function checkForm(form)
 {
+=======
+    if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)){
+        monthLength[1] = 29;
+    }
+    
+    // Check the range of the day
+    return day > 0 && day <= monthLength[month - 1];
+}
+
+//Name validation
+function validateName(name) {
+
+    //Check if name box is empty
+    if(name ==""){
+        return false;
+    //Check if contains special characters
+    return /^[a-zA-Z]*$/.test(name);
+}
+
+//Password Validation
+function checkForm(password){
+
+>>>>>>> 81a0ba3cb94b75fae129196b203d39774bf76fab
 	if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
 	if(form.pwd1.value.length < 6) {
 		alert("Erro: A senha deve conter pelo menos 6 caracteres!");
@@ -101,6 +136,9 @@ function checkForm(form)
 	alert("Cadastro realizado com sucesso!");
 	return true;
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 81a0ba3cb94b75fae129196b203d39774bf76fab

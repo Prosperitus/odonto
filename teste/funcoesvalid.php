@@ -186,44 +186,111 @@ function caract_senha($p){
 function testInvalidCro() {	
 
 $cro_user = "999999";	
-
+ $error = false;
 if(is_numeric($cro_user))
 {
 	return $cro_user + 0;
 }	
 	else
 	{
-		echo " ";		
+		echo "return $error ";		
 	}
 	
 	
 }
  
 if(testInvalidCro())
-	echo "CRO INVALID TEST FAILED";
+	echo "CRO INVALID, TEST FAILED";
 else 
-	echo "CRO INVALID TEST PASSED";
+	echo "CRO INVALID, TEST PASSED";
 
-
+////////////////////////////////////////////////////////////////////////////////////////
 function testInvalidPhone() {
 
 	$phone_user = "99999--";
-
+		$error = false;
 	if(is_numeric($phone_user))
 	{
 	        return $phone_user + 0;
 	}
 	        else
 	        {
-	                echo " ";
+	                echo "return $error ";
 	        }
 
 
 }
 
 if(testInvalidPhone())
-	echo "PHONE INVALID TEST FAILED";
+	echo "PHONE INVALID, TEST FAILED";
 else
-	echo "PHONE INVALID TEST PASSED";
+	echo "PHONE INVALID, TEST PASSED";
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+function testInvalidCpf() {	
+
+$cpf_user = "02065528150";	
+$error = false;
+if(is_numeric($cpf_user))
+{
+	return $cpf_user + 0;
+}	
+	else
+	{
+		echo "return $error ";		
+	}
+	
+	
+}
+ 
+if(testInvalidCpf())
+	echo "CPF INVALID, TEST FAILED";
+else 
+	echo "CPF INVALID, TEST PASSED";
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+function testInvalidCc() {
+
+	$cc_user = "123456789";
+		$error = false;
+	if(is_numeric($cc_user))
+	{
+	        return $cc_user + 0;
+	}
+	        else
+	        {
+	                echo "return $error ";
+	        }
+
+
+}
+
+if(testInvalidCc())
+	echo "CONTA INVALID, TEST FAILED";
+else
+	echo "CONTA INVALID, TEST PASSED";
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function testInvalidAg() {
+
+	$ag_user = "12345";
+		$error = false;
+	if(is_numeric($ag_user))
+	{
+	        return $ag_user + 0;
+	}
+	        else
+	        {
+	                echo "return $error ";
+	        }
+
+
+}
+
+if(testInvalidAg())
+	echo "AGENCIA INVALID, TEST FAILED";
+else
+	echo "AGENCIA INVALID, TEST PASSED";
 
 ?>	
