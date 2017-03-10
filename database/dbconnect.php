@@ -31,21 +31,21 @@
 
     	$stmt = $this->conn->prepare($sql);
 
-    	$stmt->bindParam(':name', $user->getName());
-    	$stmt->bindParam(':surname', $user->getSurname());
-    	$stmt->bindParam(':cro', $user->getCro());
-        $stmt->bindParam(':DataAdimissao', $user->getDataAdimissao());
-        $stmt->bindParam(':matricula', $user->getMatricula());
-        $stmt->bindParam(':cpf', $user->getCpf());
-        $stmt->bindParam(':endereco', $user->getEndereco());
-        $stmt->bindParam(':banco', $user->getBanco());
-        $stmt->bindParam(':NumeroConta', $user->getNumeroConta());
-        $stmt->bindParam(':agencia', $user->getAgencia());
-        $stmt->bindParam(':phone', $user->getPhone());
-    	$stmt->bindParam(':email', $user->getEmail());
-    	$stmt->bindParam(':pass', $user->getPass());
-    	$stmt->bindParam(':birthdate', $user->getBirthdate());
-        $stmt->bindParam(':permissao', $user->getPermissao());
+    	$stmt->bindParam(':name', $user->getName(), PDO::PARAM_STR, 255);
+    	$stmt->bindParam(':surname', $user->getSurname(), PDO::PARAM_STR, 255);
+    	$stmt->bindParam(':cro', $user->getCro(), PDO::PARAM_INT, 10);
+        $stmt->bindParam(':DataAdimissao', $user->getDataAdimissao(),PDO::PARAM_DATE);
+        $stmt->bindParam(':matricula', $user->getMatricula(), PDO::PARAM_INT, 11);
+        $stmt->bindParam(':cpf', $user->getCpf(), PDO::PARAM_STR, 50);
+        $stmt->bindParam(':endereco', $user->getEndereco(), PDO::PARAM_STR,255);
+        $stmt->bindParam(':banco', $user->getBanco(), PDO::PARAM_STR, 255);
+        $stmt->bindParam(':NumeroConta', $user->getNumeroConta(), PDO::PARAM_STR, 7);
+        $stmt->bindParam(':agencia', $user->getAgencia(), PDO::PARAM_INT, 11);
+        $stmt->bindParam(':phone', $user->getPhone(), PDO::PARAM_INT, 11);
+    	$stmt->bindParam(':email', $user->getEmail(), PDO::PARAM_STR, 255);
+    	$stmt->bindParam(':pass', $user->getPass(), PDO::PARAM_STR, 255);
+    	$stmt->bindParam(':birthdate', $user->getBirthdate(), PDO::PARAM_DATE);
+        $stmt->bindParam(':permissao', $user->getPermissao(), PDO::PARAM_STR, 255);
 
 
     	$stmt->execute();
