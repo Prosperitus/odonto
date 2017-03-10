@@ -13,6 +13,7 @@
     try {
             
     $this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
+    $this->conn->setAtrribute(PDO::ATTR_ERROMODE, PDO::ATTR_ERROMODE_SILENT);
   
         }catch (PDOException $e) {
             echo "Erro de Conexão " . $e->getMessage() . "\n";
@@ -48,10 +49,12 @@
         $stmt->bindParam(':permissao', $user->getPermissao(), PDO::PARAM_STR, 255);
 
 
-    	$stmt->execute();
-
-
-
+                   	try{ 
+                        $stmt->execute();                    
+                    }catch(PDOException $e)
+                    {
+                        return $e;
+                    }
 
  }
 
