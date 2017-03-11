@@ -35,7 +35,7 @@
         <div class="input-field col s10">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Full Name</label>
+          <label for="icon_prefix">Nome Completo</label>
         </div>
 
         <!--SOBRENOME
@@ -56,7 +56,7 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">description</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Enrolment</label>
+          <label for="icon_prefix">Matrícula</label>
         </div>
 
         <!--EMAIL-->      
@@ -70,7 +70,7 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Telephone</label>
+          <label for="icon_prefix">Telefone</label>
         </div> 
 
         <!--DATA DE NASCIMENTO-->   
@@ -83,7 +83,7 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Bank Account</label>
+          <label for="icon_prefix">Conta Bancaria</label>
         </div>
 
         <!--CEP-->
@@ -97,7 +97,7 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Address</label>
+          <label for="icon_prefix">Endereço</label>
         </div>
 
         <!--DATA DE ADMISSÃO-->   
@@ -110,14 +110,14 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">vpn_key</i>
           <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+          <label for="password">Senha</label>
         </div>
 
           <!--CONFIRMAÇÃO DA SENHA-->
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="confirm_password" type="password" class="validate">
-            <label for="confirm_password">Confirm Password</label>
+            <label for="confirm_password">Confirmação de Senha</label>
           </div>
 
         <!--CRO-->
