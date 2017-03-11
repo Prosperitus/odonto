@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.maskedinput.js"></script>
+    <script>
+	jQuery(function($){
+	$("#inputdata").mask("99/99/9999");
+	});
+    </script>
   </head>
 
   <body>
@@ -41,7 +47,7 @@
         <!--SOBRENOME
         <div class="input-field col s5">
           <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
+          <label for="last_name"$("#campoDa>Last Name</label>
         </div>
         -->
         
@@ -76,7 +82,7 @@
         <!--DATA DE NASCIMENTO-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">today</i>
-          <input type="date" class="datepicker">
+          <input id="inputdata" type="date" class="datepicker">
         </div> 
 
         <!--CONTA DO BANCO-->
