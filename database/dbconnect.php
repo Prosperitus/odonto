@@ -4,10 +4,10 @@
 class DBconnector {
 
     // try {
-    private $Servidor = "172.22.51.144";
+    private $Servidor = "localhost";
     private $BancoDados = "odt_soft";
-    private $Usuario = "ceub";
-    private $Senha = "bruno";
+    private $Usuario = "root";
+    private $Senha = "";
     private $conn;
     
     public function __construct() 
@@ -15,7 +15,7 @@ class DBconnector {
     try {
             
     $this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
-    $this->conn->setAtrribute(PDO::ATTR_ERROMODE, PDO::ATTR_ERROMODE_SILENT);
+    $this->conn->setAtribute(PDO::ATTR_ERROMODE, PDO::ATTR_ERROMODE_SILENT);
   
         }catch (PDOException $e) {
             echo "Erro de Conexão " . $e->getMessage() . "\n";
@@ -70,7 +70,7 @@ class DBconnector {
  		$stmt->bindParam(':city', $patient->getCity(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':state', $patient->getState(), PDO::PARAM_STR, 23);
  		$stmt->bindParam(':cep', $patient->getCep(), PDO::PARAM_INT, 11);
- 		$stmt->bindParam(':hospital', $patient->getHospital(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':hospital', $patient->getHospital(), PDO::PARAM_STR, 255);,
  		$stmt->bindParam(':heathPlan', $patient->getHealthPlan(), PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $patient->getResponsibleName(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $patient->getResponsiblePhone(), PDO::PARAM_STR, 100);
