@@ -1,5 +1,5 @@
 <?php
-	include "userModel.php"
+	include "employeeModel.php"
 	include "../database/dbconnect.php"
 
 	function addEmployee(){
@@ -16,7 +16,7 @@
 		$Employee->setPermission($_POST["permissiontype"]);
 		$Employee->setPass($_POST["pass"]);
 		$conn = new DBconnect();
-		$conn->addUser($Employee);
+		$conn->addEmployee($Employee);
 	}
 
 addUser();

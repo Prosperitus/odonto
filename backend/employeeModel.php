@@ -98,7 +98,7 @@
 		}
 
 		public function getPermission(){
-			return $this->birthdate;
+			return $this->permissiontype;
 		}
 		
 		public function setPermission($permissiontype){

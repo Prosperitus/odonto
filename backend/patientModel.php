@@ -1,5 +1,5 @@
 <?php
-	class Patience{
+	class Patient{
 
 	private $name;
 	private $age;
