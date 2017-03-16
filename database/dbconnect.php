@@ -24,7 +24,8 @@ class DBconnector {
  
         
  	public function addEmployee($employee){
- 	     $sql = "INSERT INTO users (name, surname, cro, admissionDate , matricula, cpf, adress, bank, accountNumber, agencia, phone, email, pass, birthdate,permission)
+ 	     try{
+         $sql = "INSERT INTO users (name, surname, cro, admissionDate , matricula, cpf, adress, bank, accountNumber, agencia, phone, email, pass, birthdate,permission)
     VALUES (:name, :surname, :cro, :admdate, :nregistration, :cpf, :adress, :bank, :accountNumber, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
     	$stmt = $this->conn->prepare($sql);
     	$stmt->bindParam(':name', $employee->getName(), PDO::PARAM_STR, 255);
@@ -42,18 +43,22 @@ class DBconnector {
     	$stmt->bindParam(':pass', $employee->getPass(), PDO::PARAM_STR, 255);
     	$stmt->bindParam(':birthdate', $employee->getBirthdate(), PDO::PARAM_DATE);
         $stmt->bindParam(':permissiontype', $employee->getPermission(), PDO::PARAM_STR, 255);
-                   	try{ 
-                        $stmt->execute();                    
+                   	 
+                        $stmt->execute();  
+                        return "User added successfully!";
+                  
                     }catch(PDOException $e)
                     {
                         return $e;
                     }
-                    return "User added successfully!";
- }
+                     }
 
  public function addPatient($patient){
- 	$sql = "INSERT INTO paciente (name, age, birthdate, gender, adress, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
+ 	try{
+    $sql = "INSERT INTO paciente (name, age, birthdate, gender, adress, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
  	VALUES (:name, :age, :birthdate, : gender, :adress, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
+
+        $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $patient->getName(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':age', $patient->getAge(), PDO:: PARAM_INT, 4 );
  		$stmt->bindParam(':birthdade', $patient->getBirthdate(), PDO:: PARAM_DATE);
@@ -69,18 +74,47 @@ class DBconnector {
  		$stmt->bindParam(':responsiblePhone', $patient->getResponsiblePhone(), PDO::PARAM_STR, 100);
  		$stmt->bindParam(':medicalRecords', $patient->getMedicalRecords()PDO::PARAM_STR);
  		$stmt->bindParam(':clinic', $patient->getClinic(), PARAM_STR, 100);
- 					try{
+ 					
  						$stmt->execute();
+                        return "Patient added successfully!";
  					}
  					catch(PDOExeption $e)
  					{
  						return $e;
  					}
-                    return "Patient added successfully!";
+                    
 
 
 
  }
+
+ public function getUserMaxId(){
+    try{
+        $sql = "SELECT MAX(id) from users";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::OBJ);
+        $numMax = $result->id;
+        return $numMax;
+    }
+    catch(PDOExeption $e){
+        return $e;
+    }
+ }
+public function getPatientMaxId(){
+    try{
+        $sql = "SELECT MAX(id) from paciente";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::OBJ);
+        $numMax = $result->id;
+        return $numMax;
+    }
+    catch(PDOExeption $e){
+        return $e;
+
+    }
+}
 
 
 }
