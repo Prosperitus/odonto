@@ -32,7 +32,7 @@
 		return $this->age;
 	}
 
-	public function setName($age){
+	public function setAge($age){
 		$this->age = $age;
 	}
 	
