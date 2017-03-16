@@ -1,6 +1,6 @@
 <?php
-	include "patientModel.php"
-	include "../database/dbconnect.php"
+	include "patientModel.php";
+	include "../database/dbconnect.php";
 
 	function addPatient(){
 		$patient = new Patient();
@@ -22,4 +22,4 @@
      
 	}
 
-addUser();
+addPatient();

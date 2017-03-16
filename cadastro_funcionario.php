@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cadastro Médico</title>
+    <title>Cadastro Funcionário</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
     <script type="text/javascript" href="js/jquery.js"></script>  
@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
   </head>
 
   <body>
@@ -26,7 +27,7 @@
 
     <!--CLASS/FORM-->
     <div class="row">
-      <form class="col s11" action="backend/#.php" method="post"> 
+      <form class="col s11" action="backend/addEmployee.php" method="post"> 
     
           <!--TITULO-->
             <h3>Cadastro Médico</h3>
@@ -213,5 +214,6 @@
       });
 
     </script>
+    <script src="js/mask.js"></script>
   </body>
 </html>
