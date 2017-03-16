@@ -7,3 +7,8 @@ $("#funcionario_cep").mask("99999-999");
 $("#funcionario_cro").mask("99.999");
 $("#funcionario_admissao").mask("99/99/9999");
 
+
+(("#date_paciente").mask("99/99/9999");
+$("#cep_paciente").mask("99999-999");
+$("#telefone_responsavel").mask("(99) 99999-9999");
+$
