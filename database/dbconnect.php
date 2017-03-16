@@ -1,5 +1,5 @@
-<?php
- class DBconnector {
+<?php 
+class DBconnector {
      
     // try {
     private $Servidor = "172.22.51.144";
@@ -23,15 +23,10 @@
 }
  
         
-
-
  	public function addUser($user){
-
  	     $sql = "INSERT INTO users (name, surname, cro,DataAdimissao,matricula, cpf,endereco,banco,NumeroConta,agencia, phone, email, pass, birthdate,permissao)
     VALUES (:name, :surname, :cro, :DataAdimissao, :matricula, :cpf, :endereco, :banco, :NumeroConta, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
-
     	$stmt = $this->conn->prepare($sql);
-
     	$stmt->bindParam(':name', $user->getName(), PDO::PARAM_STR, 255);
     	$stmt->bindParam(':surname', $user->getSurname(), PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $user->getCro(), PDO::PARAM_INT, 10);
@@ -47,15 +42,47 @@
     	$stmt->bindParam(':pass', $user->getPass(), PDO::PARAM_STR, 255);
     	$stmt->bindParam(':birthdate', $user->getBirthdate(), PDO::PARAM_DATE);
         $stmt->bindParam(':permissao', $user->getPermissao(), PDO::PARAM_STR, 255);
-
-
                    	try{ 
                         $stmt->execute();                    
                     }catch(PDOException $e)
                     {
                         return $e;
                     }
+ }
+
+ public function addPatient($patient){
+ 	$sql = "INSERT INTO paciente (name, age, birthdate, gender, adress, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, prontuario, clinc)
+ 	VALUES (:name, :age, :birthdate, : gender, :adress, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :prontuario, :clinic)";
+ 		$stmt->bindParam(':name', $patient->getName());
+ 		$stmt->bindParam(':age', $patient->getAge());
+ 		$stmt->bindParam(':birthdade', $patient->getBirthdate());
+ 		$stmt->bindParam(':gender', $patient->getGender());
+ 		$stmt->bindParam(':adress', $patient->getAdress());
+ 		$stmt->bindParam(':neighborhood', $patient->getNeighborhood());
+ 		$stmt->bindParam(':city', $patient->getCity());
+ 		$stmt->bindParam(':state', $patient->getState());
+ 		$stmt->bindParam(':cep', $patient->getCep());
+ 		$stmt->bindParam(':hospital', $patient->getHospital());
+ 		$stmt->bindParam(':heathPlan', $patient->getHealthPlan();
+ 		$stmt->bindParam(':responsibleName', $patient->getResponsibleName());
+ 		$stmt->bindParam(':responsiblePhone', $patient->getResponsiblePhone());
+ 		$stmt->bindParam(':prontuario', $patient->getProntuario());
+ 		$stmt->bindParam(':clinic', $patient->getClinic());
+ 					try{
+ 						$stmt->execute();
+ 					}
+ 					catch(PDOExeption $e)
+ 					{
+ 						return $e;
+ 					}
+
+
 
  }
 
+
+
+
 }
+
+ ?>
