@@ -1,7 +1,8 @@
 <?php
 
-	class user{
+	class Employee{
 		
+
 		private $name;
 		private $surname;
 		private $cro;
@@ -98,7 +99,7 @@
 		}
 
 		public function getPermission(){
-			return $this->birthdate;
+			return $this->permissiontype;
 		}
 		
 		public function setPermission($permissiontype){
