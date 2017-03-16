@@ -1,7 +1,8 @@
 <?php 
-class DBconnector {
     include_once "../backend/employeeModel.php";
     include_once "../backend/patientModel.php";
+class DBconnector {
+
     // try {
     private $Servidor = "172.22.51.144";
     private $BancoDados = "odt_soft";
@@ -63,7 +64,7 @@ class DBconnector {
  		$stmt->bindParam(':name', $patient->getName(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':age', $patient->getAge(), PDO::PARAM_INT, 4 );
  		$stmt->bindParam(':birthdade', $patient->getBirthdate(), PDO::PARAM_DATE);
- 		$stmt->bindParam(':gender', $patient->getGender(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':gender', $patient->getSex(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':adress', $patient->getAdress(),  PDO::PARAM_STR,  255);
         $stmt->bindParam(':neighborhood', $patient->getNeighborhood(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':city', $patient->getCity(), PDO::PARAM_STR, 255);
