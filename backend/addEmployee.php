@@ -1,6 +1,6 @@
 <?php
-	include "employeeModel.php"
-	include "../database/dbconnect.php"
+	include "employeeModel.php";
+	include "../database/dbconnect.php";
 
 	function addEmployee(){
 		$Employee = new Employee();
