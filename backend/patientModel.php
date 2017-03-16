@@ -28,6 +28,14 @@
 		$this->name = $name;
 	}
 
+	public function getCity(){
+		return $this->city;
+	}
+
+	public function setCity($city){
+		$this->city = $city;
+	}
+
 	public function getAge(){
 		return $this->age;
 	}
