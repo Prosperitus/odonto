@@ -22,4 +22,4 @@
      
 	}
 
-addUser();
+addPatient();

@@ -19,4 +19,4 @@
 		$conn->addEmployee($Employee);
 	}
 
-addUser();
+addEmployee();
