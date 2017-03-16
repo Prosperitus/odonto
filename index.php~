@@ -30,8 +30,8 @@
     <!--OPCOES-->
     <div class="row">
       <form class="col s11">
-        </br><a href="cadastro_paciente.php" class="waves-effect waves-light btn light-blue"><i class="material-icons left">note_add</i>Cadastrar Paciente</a>
-        <a href="cadastro_funcionario.php" class="waves-effect waves-light btn light-blue "><i class="material-icons left">note_add</i>Cadastrar Médico</a>
+        </br><a href="paciente.php" class="waves-effect waves-light btn light-blue"><i class="material-icons left">note_add</i>Cadastrar Paciente</a>
+        <a href="cadastro_medico.php" class="waves-effect waves-light btn light-blue "><i class="material-icons left">note_add</i>Cadastrar Médico</a>
       </form>
     </div>
   </body>

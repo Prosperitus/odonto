@@ -1,6 +1,6 @@
 <?php 
 class DBconnector {
-     
+    include_once ""
     // try {
     private $Servidor = "172.22.51.144";
     private $BancoDados = "odt_soft";
@@ -60,20 +60,20 @@ class DBconnector {
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $patient->getName(), PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':age', $patient->getAge(), PDO:: PARAM_INT, 4 );
- 		$stmt->bindParam(':birthdade', $patient->getBirthdate(), PDO:: PARAM_DATE);
- 		$stmt->bindParam(':gender', $patient->getGender(), PDO:: PARAM_STR, 255);
- 		$stmt->bindParam(':adress', $patient->getAdress(),  PDO:: PARAM_STR,  255);
- 		$stmt->bindParam(':neighborhood', $patient->getNeighborhood(), PDO:: PARAM_STR, 255);
- 		$stmt->bindParam(':city', $patient->getCity(), PDO:: PARAM_STR, 255);
- 		$stmt->bindParam(':state', $patient->getState(), PDO:: PARAM_STR, 23);
- 		$stmt->bindParam(':cep', $patient->getCep(), PDO:: PARAM_INT, 11);
- 		$stmt->bindParam(':hospital', $patient->getHospital() PDO:: PARAM_STR, 255);
- 		$stmt->bindParam(':heathPlan', $patient->getHealthPlan(), PDO:: PARAM_STR, 100);
+ 		$stmt->bindParam(':age', $patient->getAge(), PDO::PARAM_INT, 4 );
+ 		$stmt->bindParam(':birthdade', $patient->getBirthdate(), PDO::PARAM_DATE);
+ 		$stmt->bindParam(':gender', $patient->getGender(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':adress', $patient->getAdress(),  PDO::PARAM_STR,  255);
+        $stmt->bindParam(':neighborhood', $patient->getNeighborhood(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':city', $patient->getCity(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':state', $patient->getState(), PDO::PARAM_STR, 23);
+ 		$stmt->bindParam(':cep', $patient->getCep(), PDO::PARAM_INT, 11);
+ 		$stmt->bindParam(':hospital', $patient->getHospital(), PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':heathPlan', $patient->getHealthPlan(), PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $patient->getResponsibleName(), PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $patient->getResponsiblePhone(), PDO::PARAM_STR, 100);
- 		$stmt->bindParam(':medicalRecords', $patient->getMedicalRecords()PDO::PARAM_STR);
- 		$stmt->bindParam(':clinic', $patient->getClinic(), PARAM_STR, 100);
+ 		$stmt->bindParam(':medicalRecords', $patient->getMedicalRecords(), PDO::PARAM_STR);
+ 		$stmt->bindParam(':clinic', $patient->getClinic(),PDO::PARAM_STR, 100);
  					
  						$stmt->execute();
                         return "Patient added successfully!";
@@ -111,7 +111,7 @@ public function getPatientMaxId(){
         return $numMax;
     }
     catch(PDOExeption $e){
-        return $e;
+            return $e;
 
     }
 }
