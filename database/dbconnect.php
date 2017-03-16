@@ -1,6 +1,7 @@
 <?php 
 class DBconnector {
-    include_once ""
+    include_once "../backend/employeeModel.php";
+    include_once "../backend/patientModel.php";
     // try {
     private $Servidor = "172.22.51.144";
     private $BancoDados = "odt_soft";
