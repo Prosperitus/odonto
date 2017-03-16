@@ -146,7 +146,7 @@
 
         <!--GENERO-->
         <div class="input-field col s5" name="genero_paciente" id="genero_paciente">
-          <select class="browser-default">
+          <select class="icons">
             <option value="" disabled selected>Genero do Paciente</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>
