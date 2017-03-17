@@ -73,23 +73,24 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, age, birthdate, gender, address, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
- 	VALUES (:name, :age, :birthdate, : gender, :address, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
+    $sql = "INSERT INTO paciente (name, birthdate, sex, address, neighborhood, city, state, Cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc /*cpf*/)
+ 	VALUES (:name, :birthdate, : sex, :address, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic /*:cpf*/)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
- 		$gpAge = $patient->getAge();
  		$gpBirthdate = $patient->getBirthdate();
- 		$gpGender = $patient->getSex();
+ 		$gpSex = $patient->getSex();
+       // $gpCpf = $patient->getCpf();
  		$gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
  		$gpState = $patient->getState();
  		$gpCep = $patient->getCep();
- 		$gpHospital = $patient->getHospital();
  		$gpHealthPlan = $patient->getHealthPlan();
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
+        //$gpResponsibleName = $patient->getResponsibleName();
+        //$gpResponsiblePhone = $patient->getResponsiblePhone();
  		$gpMedicalRecords = $patient->getMedicalRecords();
  		$gpClinic = $patient->getClinic();
 
@@ -97,18 +98,19 @@ class DBconnector {
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':age', $gpAge, PDO::PARAM_INT, 4 );
  		$stmt->bindParam(':birthdade', $gpBirthdate, PDO::PARAM_DATE);
- 		$stmt->bindParam(':gender', $gpGender, PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':sex', $gpSex, PDO::PARAM_STR, 255);
+        //$stmt->bindParam(':cpf', $gpCpf, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
         $stmt->bindParam(':neighborhood', $gpNeighborhood, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':city', $gpCity, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':state', $gpState, PDO::PARAM_STR, 23);
  		$stmt->bindParam(':cep', $gpCep, PDO::PARAM_INT, 11);
- 		$stmt->bindParam(':hospital', $gpHospital, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':heathPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $gpResponsibleName, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
+        //$stmt->bindParam(':responsibleName2', $gpResponsibleName, PDO::PARAM_STR, 255);
+        //$stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':medicalRecords', $gpMedicalRecords, PDO::PARAM_STR);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_STR, 100);
  					
