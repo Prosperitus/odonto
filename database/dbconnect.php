@@ -73,7 +73,7 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, birthdate, sex, address, neighborhood, city, state, cep, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
+    $sql = "INSERT INTO paciente (name, birthdate, gender, address, bairro, city, UF, CEP, plano_de_saude, responsible1, telephone_r1, prontuario, clinca)
  	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
         
         //gp significa get pacient
