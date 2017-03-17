@@ -110,9 +110,9 @@
         </div>
 
          <!--UF-->
-        <div class="input-field col s5" name="paciente_uf" id="paciente_uf">
+        <div class="input-field col s5" >
             <i class="material-icons prefix">location_on</i>
-            <select class="icons">
+            <select class="icons" name="paciente_uf" id="paciente_uf">
               <option value="" disabled selected>UF</option>
               <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
               <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
@@ -145,8 +145,8 @@
           </div>
 
         <!--GENERO-->
-        <div class="input-field col s5" name="genero_paciente" id="genero_paciente">
-          <select class="icons">
+        <div class="input-field col s5">
+          <select class="icons" id="genero_paciente" name="genero_paciente">
             <option value="" disabled selected>Genero do Paciente</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>
