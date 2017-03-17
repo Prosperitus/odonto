@@ -171,7 +171,7 @@
 -->
         <!--CHECK-->
           <div class="input-field col s9">
-            <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
+            <button class="btn waves-effect waves-light light-blue" type="submit" id="checkbox"name="checkbox">Confirmar Cadastro
               <i class="material-icons right">send</i>
             </button>
           </div>
