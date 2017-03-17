@@ -28,7 +28,7 @@
 
     <!--CLASS/FORM-->
     <div class="row">
-      <form class="col s11" action="backend/#.php" method="post"> 
+      <form class="col s11" action="backend/addPatient.php" method="post"> 
     
       <!--TITULO-->
         <h3>Cadastro Paciente</h3>
@@ -81,13 +81,13 @@
           <label for="cep_paciente">CEP</label>
         </div>
 
-         <!--HOSPITAL-->
+         <!--HOSPITAL
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
           <input name="hospital_paciente" id="hospital_paciente" type="text" class="validate">
           <label for="hospital_paciente">Hospital</label>
         </div>
-
+-->
          <!--PLANO DE SAÚDE-->
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
@@ -162,13 +162,13 @@
         </div>
 
          
-        <!--PRONTUÁRIO-->
+        <!--PRONTUÁRIO
         <div class="input-field col s10">
           <i class="material-icons prefix">mode_edit</i>
           <textarea name="prontuario" id="prontuario" class="materialize-textarea"></textarea>
           <label for="prontuario">Prontuário</label>
         </div>
-
+-->
         <!--CHECK-->
           <div class="input-field col s9">
             <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
