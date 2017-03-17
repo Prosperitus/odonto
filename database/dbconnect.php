@@ -73,8 +73,8 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, birthdate, sex, address, neighborhood, city, state, Cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc /*cpf*/)
- 	VALUES (:name, :birthdate, : sex, :address, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic /*:cpf*/)";
+    $sql = "INSERT INTO paciente (name, birthdate, sex, address, neighborhood, city, state, cep , heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
+ 	VALUES (:name, :birthdate, : sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic )";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
@@ -98,7 +98,7 @@ class DBconnector {
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':birthdade', $gpBirthdate, PDO::PARAM_STR);
+ 		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR);
  		$stmt->bindParam(':sex', $gpSex, PDO::PARAM_STR, 255);
         //$stmt->bindParam(':cpf', $gpCpf, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
