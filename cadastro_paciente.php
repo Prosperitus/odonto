@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/jquery.mask_paciente.js"></script>
+    <script src="js/mask_paciente.js"></script>
   </head>
 
   <body>
@@ -172,7 +172,7 @@
 -->
         <!--CHECK-->
           <div class="input-field col s9">
-            <button class="btn waves-effect waves-light light-blue" type="submit" id="checkbox"name="checkbox">Confirmar Cadastro
+            <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
               <i class="material-icons right">send</i>
             </button>
           </div>
