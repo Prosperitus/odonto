@@ -22,7 +22,7 @@
 	}
 	
 	public function getBirthdate(){
-		return $birthdate->birthdate;
+		return $this->birthdate;
 	}
 
 	public function setBirthdate($birthdate){
