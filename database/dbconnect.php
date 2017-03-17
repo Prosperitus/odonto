@@ -14,7 +14,7 @@ class DBconnector {
     try {
             
     	$this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
-    	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
+    	//$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
   
     }catch (PDOException $e) {
             echo "Erro de Conexão " . $e->getMessage() . "\n";
@@ -73,8 +73,8 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, birthdate, gender, address, bairro, city, UF, CEP, plano_de_saude, responsible1, telephone_r1, prontuario, clinca)
- 	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
+    $sql = "INSERT INTO paciente (name, birthdate, gender, address, bairro, city, UF, CEP, plano_de_saude, responsable, telephone_r, clinica)
+ 	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :clinic)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
@@ -111,8 +111,11 @@ class DBconnector {
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
         //$stmt->bindParam(':responsibleName2', $gpResponsibleName, PDO::PARAM_STR, 255);
         //$stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone, PDO::PARAM_STR, 100);
- 		$stmt->bindParam(':medicalRecords', $gpMedicalRecords, PDO::PARAM_STR);
+ 		//$stmt->bindParam(':medicalRecords', $gpMedicalRecords, PDO::PARAM_STR);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_STR, 100);
+		//var_dump($patient);
+		//var_dump($stmt);
+		//die();
  					
  						$stmt->execute();
                         return "Patient added successfully!";
