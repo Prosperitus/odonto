@@ -2,7 +2,6 @@
 	class Patient{
 
 	private $name;
-	private $age;
 	private $sex;
 	private $address;
 	private $neighborhood;
@@ -10,7 +9,6 @@
 	private $state;
 	private $birthdate;
 	private $cep;
-	private $hospital;
 	private $healthPlan;
 	private $responsibleName;
 	private $responsiblePhone;
@@ -43,14 +41,6 @@
 
 	public function setCity($city){
 		$this->city = $city;
-	}
-
-	public function getAge(){
-		return $this->age;
-	}
-
-	public function setAge($age){
-		$this->age = $age;
 	}
 	
 	public function getSex(){
@@ -91,14 +81,6 @@
 
 	public function setCep($cep){
 		$this->cep = $cep;
-	}
-	
-	public function getHospital(){
-		return $this->hospital;
-	}
-
-	public function setHospital($hospital){
-		$this->hospital = $hospital;
 	}
 
 	public function getHealthPlan(){
