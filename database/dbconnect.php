@@ -14,7 +14,7 @@ class DBconnector {
     try {
             
     	$this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
-    	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
+    	//$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
   
     }catch (PDOException $e) {
             echo "Erro de Conexão " . $e->getMessage() . "\n";
@@ -73,14 +73,13 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, birthdate, gender, address, bairro, city, UF, CEP, plano_de_saude, responsible1, telephone_r1, prontuario, clinca)
- 	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
+    $sql = "INSERT INTO patient (name, birthdate, gender, address, neighborhood, city, state, zip_code, helth_insurance, responsible1, telephone_r1, clinic)
+ 	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :clinic)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
  		$gpBirthdate = $patient->getBirthdate();
  		$gpSex = $patient->getSex();
-       // $gpCpf = $patient->getCpf();
  		$gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
@@ -91,7 +90,6 @@ class DBconnector {
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
         //$gpResponsibleName = $patient->getResponsibleName();
         //$gpResponsiblePhone = $patient->getResponsiblePhone();
- 		$gpMedicalRecords = $patient->getMedicalRecords();
  		$gpClinic = $patient->getClinic();
 
 
@@ -111,7 +109,6 @@ class DBconnector {
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
         //$stmt->bindParam(':responsibleName2', $gpResponsibleName, PDO::PARAM_STR, 255);
         //$stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone, PDO::PARAM_STR, 100);
- 		$stmt->bindParam(':medicalRecords', $gpMedicalRecords, PDO::PARAM_STR);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_STR, 100);
  					
  						$stmt->execute();
@@ -119,7 +116,7 @@ class DBconnector {
  					}
  					catch(PDOExeption $e)
  					{
- 						return $e;
+ 						var_dump($e);
  					}
                     
  }
