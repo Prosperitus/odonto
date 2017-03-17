@@ -50,11 +50,12 @@ CREATE TABLE `paciente`(
 	`CEP` varchar(255) NOT NULL,
 	`hospital` varchar(255) NOT NULL,
 	`plano_de_saude` varchar(255) NOT NULL,
-	`responsable` varchar(255),
-	`telephone_r` varchar(255),
+	`responsable1` varchar(255),
+	`telephone_r1` varchar(255),
 	`prontuario` varchar(255) NOT NULL ,
 	`clinica` varchar(255) NOT NULL ,            
-	
+	`responsable2` varchar(255) NOT NULL,
+	`telephone_r2` varchar(255) NOT NULL,	
 	PRIMARY KEY (`id`)
 	) 
 	ENGINE=InnoDB AUTO_INCREMENT=1;
