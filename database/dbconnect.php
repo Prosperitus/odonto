@@ -14,7 +14,7 @@ class DBconnector {
     try {
             
     	$this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
-    	$this->conn->setAttribute(PDO::ATTR_ERROMODE);
+    	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
   
     }catch (PDOException $e) {
             echo "Erro de Conexão " . $e->getMessage() . "\n";
