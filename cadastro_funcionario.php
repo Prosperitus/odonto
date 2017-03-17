@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/mask_funcionario.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
 	
   </head>
 
@@ -215,6 +215,6 @@
       });
 
     </script>
-    <script src="js/mask.js"></script>
+    <script src="js/mask_funcionario.js"></script>
   </body>
 </html>
