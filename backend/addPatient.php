@@ -4,19 +4,19 @@
 
 	function addPatient(){
 		$patient = new Patient();
-		$patient->setName($_POST['name']);
+		$patient->setName($_POST['nome_paciente']);
 		$patient->setAge($_POST['age']);
-		$patient->setSex($_POST['sex']);
-		$patient->setAddress($_POST['address']);
-		$patient->setNeighborhood($_POST['neighborhood']);
-		$patient->setCity($_POST['city']);
-		$patient->setState($_POST['state']);
-		$patient->setCep($_POST['cep']);
+		$patient->setSex($_POST['genero_paciente']);
+		$patient->setAddress($_POST['endereco_paciente']);
+		$patient->setNeighborhood($_POST['bairro_paciente']);
+		$patient->setCity($_POST['cidade_paciente']);
+		$patient->setState($_POST['paciente_uf']);
+		$patient->setCep($_POST['cep_paciente']);
 		$patient->setHospital($_POST['hospital']);
-		$patient->setHealthPlan($_POST['healthPlan']);
-		$patient->setResponsibleName($_POST['responsibleName']);
-		$patient->setResponsiblePhone($_POST['responsiblePhone']);
-		$patient->setClinic($_POST['clinic']);
+		$patient->setHealthPlan($_POST['plano_de_saude']);
+		$patient->setResponsibleName($_POST['nome_responsavel']);
+		$patient->setResponsiblePhone($_POST['telefone_responsavel']);
+		$patient->setClinic($_POST['clinica']);
 		$conn = new DBconnect();
 		$conn->addPatient($patient);
      
