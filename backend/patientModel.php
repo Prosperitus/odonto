@@ -8,6 +8,7 @@
 	private $neighborhood;
 	private $city;
 	private $state;
+	private $birthdate;
 	private $cep;
 	private $hospital;
 	private $healthPlan;
@@ -18,6 +19,14 @@
 
 	public function __construct(){
 
+	}
+	
+	public function getBirthdate(){
+		return $birthdate->birthdate;
+	}
+
+	public function setBirthdate($birthdate){
+		$this->birthdate = $birthdate;
 	}
 
 	public function getName(){

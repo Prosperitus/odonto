@@ -9,6 +9,7 @@
 		$patient->setAddress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
+		$patient->setBirthdate($_POST['date_paciente']);
 		$patient->setState($_POST['paciente_uf']);
 		$patient->setCep($_POST['cep_paciente']);
 		$patient->setHealthPlan($_POST['plano_de_saude']);
