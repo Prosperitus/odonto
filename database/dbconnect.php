@@ -50,7 +50,7 @@ class DBconnector {
     	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
-        $stmt->bindParam(':admissionDate', $geAdmissionDate,PDO::PARAM_DATE);
+        $stmt->bindParam(':admissionDate', $geAdmissionDate,PDO::PARAM_STR);
         $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
         $stmt->bindParam(':cpf', $geCpf, PDO::PARAM_STR, 50);
         $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
@@ -98,7 +98,7 @@ class DBconnector {
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':birthdade', $gpBirthdate, PDO::PARAM_DATE);
+ 		$stmt->bindParam(':birthdade', $gpBirthdate, PDO::PARAM_STR);
  		$stmt->bindParam(':sex', $gpSex, PDO::PARAM_STR, 255);
         //$stmt->bindParam(':cpf', $gpCpf, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
