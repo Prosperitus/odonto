@@ -5,7 +5,6 @@
 	function addPatient(){
 		$patient = new Patient();
 		$patient->setName($_POST['nome_paciente']);
-		$patient->setAge($_POST['age']);
 		$patient->setSex($_POST['genero_paciente']);
 		$patient->setAddress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
