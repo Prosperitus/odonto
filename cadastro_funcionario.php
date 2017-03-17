@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/jquery.mask_funcionario.js"></script>
   </head>
 
   <body>
@@ -30,7 +30,7 @@
       <form class="col s11" action="backend/addEmployee.php" method="post"> 
     
           <!--TITULO-->
-            <h3>Cadastro Médico</h3>
+            <h3>Cadastro Funcionário</h3>
 
           <!--NOME-->   
           <div class="input-field col s5">
@@ -137,9 +137,9 @@
           
           <!--CRO UF-->
 
-          <div class="input-field col s5" name="funcionario_crouf" id="funcionario_crouf">
+          <div class="input-field col s5" >
             <i class="material-icons prefix">location_on</i>
-            <select class="icons">
+            <select class="icons" name="funcionario_crouf" id="funcionario_crouf">
               <option value="" disabled selected>CRO UF</option>
               <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
               <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>

@@ -31,7 +31,7 @@
     <div class="row">
       <form class="col s11">
         </br><a href="cadastro_paciente.php" class="waves-effect waves-light btn light-blue"><i class="material-icons left">note_add</i>Cadastrar Paciente</a>
-        <a href="cadastro_funcionario.php" class="waves-effect waves-light btn light-blue "><i class="material-icons left">note_add</i>Cadastrar Médico</a>
+        <a href="cadastro_funcionario.php" class="waves-effect waves-light btn light-blue "><i class="material-icons left">note_add</i>Cadastrar Funcionário</a>
       </form>
     </div>
   </body>

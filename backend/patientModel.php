@@ -8,6 +8,7 @@
 	private $neighborhood;
 	private $city;
 	private $state;
+	private $birthdate;
 	private $cep;
 	private $hospital;
 	private $healthPlan;
@@ -19,6 +20,14 @@
 	public function __construct(){
 
 	}
+	
+	public function getBirthdate(){
+		return $birthdate->birthdate;
+	}
+
+	public function setBirthdate($birthdate){
+		$this->birthdate = $birthdate;
+	}
 
 	public function getName(){
 		return $this->name;
@@ -26,6 +35,14 @@
 
 	public function setName($name){
 		$this->name = $name;
+	}
+
+	public function getCity(){
+		return $this->city;
+	}
+
+	public function setCity($city){
+		$this->city = $city;
 	}
 
 	public function getAge(){
