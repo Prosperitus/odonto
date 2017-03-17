@@ -26,8 +26,8 @@ class DBconnector {
         
  	public function addEmployee($employee){
  	     try{
-         $sql = "INSERT INTO users (name, surname, cro, admissionDate , matricula, cpf, adress, bank, accountNumber, agencia, phone, email, pass, birthdate,permission)
-    VALUES (:name, :surname, :cro, :admdate, :nregistration, :cpf, :adress, :bank, :accountNumber, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
+         $sql = "INSERT INTO users (name, surname, cro, admissionDate , matricula, cpf, address, bank, accountNumber, agencia, phone, email, pass, birthdate,permission)
+    VALUES (:name, :surname, :cro, :admdate, :nregistration, :cpf, :address, :bank, :accountNumber, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
     	
         // ge significa get employee
     	$geName = $employee->getName();
@@ -36,7 +36,7 @@ class DBconnector {
     	$geAdmissionDate = $employee->getDate();
     	$geNregistration = $employee->getNmat();
     	$geCpf = $employee->getCpf();
-    	$geAdress = $employee->getAdress();
+    	$geAddress = $employee->getAddress();
     	$geBank = $employee->getBank();
     	$geAccNumber = $employee->getAccNumber();
     	$geAgencia = $employee->getAgencia();
@@ -53,7 +53,7 @@ class DBconnector {
         $stmt->bindParam(':admissionDate', $geAdmissionDate,PDO::PARAM_DATE);
         $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
         $stmt->bindParam(':cpf', $geCpf, PDO::PARAM_STR, 50);
-        $stmt->bindParam(':adress', $geAdress, PDO::PARAM_STR,255);
+        $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
         $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
         $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 7);
         $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_INT, 11);
@@ -73,15 +73,15 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO paciente (name, age, birthdate, gender, adress, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
- 	VALUES (:name, :age, :birthdate, : gender, :adress, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
+    $sql = "INSERT INTO paciente (name, age, birthdate, gender, address, neighborhood, city, state, cep, hospital, heathPlan, responsibleName, responsiblePhone, medicalRecords, clinc)
+ 	VALUES (:name, :age, :birthdate, : gender, :address, :neighborhood, :city, :state, :cep, :hospital, :heathPlan, :responsibleName, :responsiblePhone, :medicalRecords, :clinic)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
  		$gpAge = $patient->getAge();
  		$gpBirthdate = $patient->getBirthdate();
  		$gpGender = $patient->getSex();
- 		$gpAdress = $patient->getAdress();
+ 		$gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
  		$gpState = $patient->getState();
@@ -100,7 +100,7 @@ class DBconnector {
  		$stmt->bindParam(':age', $gpAge, PDO::PARAM_INT, 4 );
  		$stmt->bindParam(':birthdade', $gpBirthdate, PDO::PARAM_DATE);
  		$stmt->bindParam(':gender', $gpGender, PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':adress', $gpAdress,  PDO::PARAM_STR,  255);
+ 		$stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
         $stmt->bindParam(':neighborhood', $gpNeighborhood, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':city', $gpCity, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':state', $gpState, PDO::PARAM_STR, 23);
