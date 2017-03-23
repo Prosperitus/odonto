@@ -19,9 +19,10 @@
       <div class="nav-wrapper light-blue">
         <!--a href="#" class="brand-logo right">HOME</a-->
           <ul id="nav-mobile" class="left">
-          <li><a href="index.php">Home</a></li>
-          <!--li><a href="cadastro_medico.php">Cadastro Médico</a></li>
-          <li><a href="paciente.php">Cadastro Paciente</a></li-->       
+          <li><a href="board.php">Home</a></li>
+          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+          <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+          <li><a href="index.php">LogOut</a></li>       
         </ul>
       </div>
     </nav>
@@ -49,7 +50,7 @@
 		<!--CPF-->
         <div class="input-field col s5">  
          <i class="material-icons prefix">web</i>
-          <input name="CPF" id="CPF" type="text" class="validate">
+          <input name="CPF" id="cpf" type="text" class="validate">
           <label for="CPF">CPF</label>
         </div>
 
@@ -154,6 +155,7 @@
         <!--GENERO-->
         <div class="input-field col s5" name="genero_paciente" id="genero_paciente">
           <select class="icons">
+            <i class="material-icons prefix">face</i>
             <option value="" disabled selected>Genero do Paciente</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>

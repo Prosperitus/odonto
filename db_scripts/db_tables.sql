@@ -71,8 +71,8 @@ CREATE TABLE hospital(
 	`name` varchar(255) NOT NULL,
 	`number_itu` int(5) NOT NULL,
 	`number_bed` int(5) NOT NULL,
-	`name_chef_itu` varchar(255) NOT NULL,
-	`telephone_chef_itu` varchar(255) NOT NULL,
+	`name_admin_itu` varchar(255) NOT NULL,
+	`telephone_admin_itu` varchar(255) NOT NULL,
 	`telephone_hospital`varchar(255) NOT NULL,
 	`files` varchar(255) NOT NULL
 )

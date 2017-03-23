@@ -37,9 +37,18 @@
     <!--CABEÇALHO-->
     <nav>
       <div class="nav-wrapper light-blue">
+<<<<<<< HEAD
         <ul id="nav-mobile" class="left">
             <li><a href="index.php">Home</a></li>
     
+=======
+          <ul id="nav-mobile" class="left">
+          <li><a href="board.php">Home</a></li>
+          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+          <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+          <li><a href="index.php">LogOut</a></li>
+ 
+>>>>>>> f6faf894abd3aa40b19fe3d0191dc80849743bc3
         </ul>
       </div>
     </nav>
