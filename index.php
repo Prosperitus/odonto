@@ -43,12 +43,15 @@
     </nav-->
           
     <!--MAIN-->
+<<<<<<< HEAD
   <div class="section"></div>
   <div class="section"></div>
   <div class="section"></div>
   <div class="section"></div>
   <div class="section"></div>
 
+=======
+>>>>>>> 53e7b3155cdc1f0cde9595519ae79a2fc04b7f57
     <div id="login-page" class="row main">
       <div class="col s12 z-depth-3 card-panel">
         <form class="login-form">     

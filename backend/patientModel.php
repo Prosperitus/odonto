@@ -2,6 +2,7 @@
 	class Patient{
 
 	private $name;
+	private $surname;
 	private $sex;
 	private $address;
 	private $neighborhood;
@@ -123,5 +124,12 @@
 		$this->clinic = $clinic;
 	}
 
+	public function getSurname(){
+		return $this->$surname;
+	}
+
+	public function setSurname($clinic){
+		$this->surname = $surname;
+	}
 
 	}
