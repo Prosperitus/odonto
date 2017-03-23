@@ -68,11 +68,11 @@ DROP TABLE IF EXISTS hospital;
 CREATE TABLE hospital(
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar(255) NOT NULL,
-	`number_itu` int(11) NOT NULL,
-	`number_bed` int(11) NOT NULL,
+	`number_itu` int(5) NOT NULL,
+	`number_bed` int(5) NOT NULL,
 	`name_chef_itu` varchar(255) NOT NULL,
-	`telephone_chef_itu` int(11) NOT NULL,
-	`telephone_hospital`int(11) NOT NULL,
+	`telephone_chef_itu` varchar(255) NOT NULL,
+	`telephone_hospital`varchar(255) NOT NULL,
 	`fields` varchar(255) NOT NULL
 )
 	ENGINE=InnoDB AUTO_INCREMENT=1;
