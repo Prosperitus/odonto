@@ -136,6 +136,51 @@ function checkForm(password){
 	alert("Cadastro realizado com sucesso!");
 	return true;
 }
+
+//Phone validation
+   function validateForm() {
+   return checkPhone();
+     }
+   function checkPhone() {
+        var phone = document.forms["myForm"]["phone"].value;
+	var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if(phone.value.match(phoneNum)) {
+	return true;
+	}
+  else {
+	document.getElementById("phone").className = document.getElementById("phone").className + " error";
+	return false;
+	}
+	}
+// CPF validation
+	function mascara_cpf(cpf)
+{
+    var mycpf = '';
+    mycpf = mycpf + cpf;
+    if (mycpf.length == 3) {
+        mycpf = mycpf + '.';
+        document.forms[0].cpf.value = mycpf;
+    }
+    if (mycpf.length == 7) {
+        mycpf = mycpf + '.';
+        document.forms[0].cpf.value = mycpf;
+    }
+    if (mycpf.length == 11) {
+        mycpf = mycpf + '-';
+        document.forms[0].cpf.value = mycpf;
+    }
+    if (mycpf.length == 14) {
+    }
+}
+
+
+
+
+
+
+
+
+
 <<<<<<< HEAD
 
 
