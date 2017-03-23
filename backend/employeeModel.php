@@ -2,18 +2,22 @@
 
 	class Employee{
 		
-
+		
 		private $name;
 		private $surname;
 		private $cro;
-		private $date;
-		private $nregistration;
+		private $email;
+		private $registration;
 		private $cpf;
 		private $phone;
-		private $adress;
-		private $pass;
+		private $address;
+		private $admissionDate;
+		private $password;
 		private $bank;
-		private $permissiontype;
+		private $numberOfAccount;
+		private $agency;
+		private $permission;
+		
 		
 		function __construct(){
 
@@ -33,7 +37,7 @@
 		}
 		
 		public function setSurname($surname){
-			$this->name = $surname;
+			$this->surname = $surname;
 		}
 	
 		public function getCro(){
@@ -41,53 +45,54 @@
 		}
 		
 		public function setCro($cro){
-			$this->name = $cro;
+			$this->cro = $cro;
 		}
 
-		public function getDate(){
-			return $this->date;
+		public function getEmail(){
+			return $this->email;
 		}
 		
-		public function setDate($date){
-			$this->name = $date;
+		public function setEmail($email){
+			$this->email = $email;
 		}
 
-		public function getNmat(){
-			return $this->nregistration;
+		public function getAdmissionDate(){
+			return $this->admissionDate;
 		}
 		
-		public function setNmat($nregistration){
-			$this->name = $nregistration;
+		public function setAdmissionDate($admissionDate){
+			$this->admissionDate = $admissionDate;
 		}
 
-		public function getCpf(){
-			return $this->cpf;
+		public function getRegistration(){
+			return $this->registration;
 		}
 		
-		public function setCpf($cpf){
-			$this->name = $cpf;
+		public function setRegistration($registration){
+			$this->registration = $registration;
 		}
 
+		
 		public function getPhone(){
 			return $this->phone;
 		}
 		
 		public function setPhone($phone){
-			$this->name = $phone;
+			$this->phone = $phone;
 		}
-		public function getAdress(){
-			return $this->adress;
-		}
-		
-		public function setAdress($adress){
-			$this->name = $adress;
-		}
-		public function getPass(){
-			return $this->pass;
+		public function getAddress(){
+			return $this->address;
 		}
 		
-		public function setPass($pass){
-			$this->name = $pass;
+		public function setAddress($address){
+			$this->address = $address;
+		}
+		public function getPassword(){
+			return $this->password;
+		}
+		
+		public function setPassword($password){
+			$this->password = $password;
 		}
 
 		public function getBank(){
@@ -95,15 +100,31 @@
 		}
 		
 		public function setBank($bank){
-			$this->name = $bank;
+			$this->bank = $bank;
+		}
+
+		public function getNumberOfAccount(){
+			return $this->numberOfAccount;
+		}
+		
+		public function setNumberOfAccount($numberOfAccount){
+			$this->numberOfAccount = $numberOfAccount;
 		}
 
 		public function getPermission(){
-			return $this->permissiontype;
+			return $this->permission;
 		}
 		
-		public function setPermission($permissiontype){
-			$this->name = $permissiontype;
+		public function setPermission($permission){
+			$this->permission = $permission;
+		}
+		
+		public function getAgency(){
+			return $this->agency;
+		}
+		
+		public function setAgency($agency){
+			$this->agency = $agency;
 		}
 	}
 
