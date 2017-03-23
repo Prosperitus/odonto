@@ -26,42 +26,42 @@ class DBconnector {
         
  	public function addEmployee($employee){
  	     try{
-         $sql = "INSERT INTO users (name, surname, cro, admissionDate , matricula, cpf, address, bank, accountNumber, agencia, phone, email, pass, birthdate,permission)
-    VALUES (:name, :surname, :cro, :admdate, :nregistration, :cpf, :address, :bank, :accountNumber, :agencia, :phone, :email, :pass, :birthdate, :permissao)";
+         $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, email, password, permition)
+    VALUES (:name, :surname, :cro, :admdate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :email, :password, :permition)";
     	
         // ge significa get employee
     	$geName = $employee->getName();
     	$geSurname = $employee->getSurname();
     	$geCro = $employee->getCro();
-    	$geAdmissionDate = $employee->getDate();
-    	$geNregistration = $employee->getNmat();
+    	$geAdmissionDate = $employee->getAdmissionDate();
+    	$geNregistration = $employee->getRegistration();
     	$geCpf = $employee->getCpf();
     	$geAddress = $employee->getAddress();
     	$geBank = $employee->getBank();
-    	$geAccNumber = $employee->getAccNumber();
-    	$geAgencia = $employee->getAgencia();
+    	$geAccNumber = $employee->getNumberOfAccount();
+    	$geAgencia = $employee->getAgency();
     	$gePhone = $employee->getPhone();
     	$geEmail = $employee->getEmail();
-    	$gePass = $employee->getPass();
-    	$geBirthdate = $employee->getBirthdate();
+    	$gePass = $employee->getPassword();
+    	//$geBirthdate = $employee->getBirthdate();
     	$gePermission = $employee->getPermission();
 
     	$stmt = $this->conn->prepare($sql);
     	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
-        $stmt->bindParam(':admissionDate', $geAdmissionDate,PDO::PARAM_STR);
+        $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR);
         $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
-        $stmt->bindParam(':cpf', $geCpf, PDO::PARAM_STR, 50);
+        $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
         $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
         $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
-        $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 7);
-        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_INT, 11);
+        $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
+        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_INT, 15);
         $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
     	$stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
-    	$stmt->bindParam(':pass', $gePass, PDO::PARAM_STR, 255);
-    	$stmt->bindParam(':birthdate', $geBirthdate, PDO::PARAM_DATE);
-        $stmt->bindParam(':permissiontype', $gePermission, PDO::PARAM_STR, 255);
+    	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
+    	//$stmt->bindParam(':birthdate', $geBirthdate, PDO::PARAM_DATE);
+        $stmt->bindParam(':permition', $gePermission, PDO::PARAM_STR, 255);
                    	 
                         $stmt->execute();  
                         return "User added successfully!";
@@ -73,14 +73,16 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO patient (name, birthdate, gender, address, neighborhood, city, state, zip_code, helth_insurance, responsible1, telephone_r1, clinic)
- 	VALUES (:name, :birthdate, :sex, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :clinic)";
+    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, helth_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
+ 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblephone2)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
+        $gpSurname = $patient->getSurname();
  		$gpBirthdate = $patient->getBirthdate();
- 		$gpSex = $patient->getSex();
- 		$gpAddress = $patient->getAddress();
+ 		$gpGender = $patient->getGender();
+ 		$gpSocial_security = $patient->getSocial_security();
+        $gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
  		$gpState = $patient->getState();
@@ -88,17 +90,18 @@ class DBconnector {
  		$gpHealthPlan = $patient->getHealthPlan();
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
-        //$gpResponsibleName = $patient->getResponsibleName();
-        //$gpResponsiblePhone = $patient->getResponsiblePhone();
+        $gpResponsibleName2 = $patient->getResponsibleName2();
+        $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
 
 
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
- 		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR);
- 		$stmt->bindParam(':sex', $gpSex, PDO::PARAM_STR, 255);
-        //$stmt->bindParam(':cpf', $gpCpf, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':gender', $gpGender, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':socialSecurity', $gpSocial_security, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
         $stmt->bindParam(':neighborhood', $gpNeighborhood, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':city', $gpCity, PDO::PARAM_STR, 255);
@@ -107,8 +110,8 @@ class DBconnector {
  		$stmt->bindParam(':heathPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $gpResponsibleName, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
-        //$stmt->bindParam(':responsibleName2', $gpResponsibleName, PDO::PARAM_STR, 255);
-        //$stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_STR, 100);
  					
  						$stmt->execute();
@@ -122,26 +125,26 @@ class DBconnector {
 public function addHospital($hospital) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital (name, numOfUTIs, numOfBeds, UTIAdmin, adminPhone, hospitalPhone, archives)  
-        VALUES (:name, :numOfUTIs, :numOfBeds, :UTIAdmin, :adminPhone, :hospitalPhone, :archives)";
+        $sql = "INSERT INTO hospital (name, number_itu, number_beds, name_chef_itu, telephone_chef_itu, telephone_hospital)  
+        VALUES (:name, :numOfUTIs, :numOfBeds, :UTIAdmin, :adminPhone, :hospitalPhone)";
 
         //gh significa get hospital
-        $ghName = $hospital->getName();
-        $ghNumOfUTIs = $hospital->getNumOfUTIs();
-        $ghnumOfBeds = $hospital->getNumOfBeds();
-        $ghUTIAdmin = $hospital->getUTIAdmin();
-        $ghAdminPhone = $hospital->getAdminPhone();
-        $ghPhone = $hospital->getHospitalPhone();
-        $ghArchives = $hospital->getArchives();
+        $ghName = $hospital->getNameHost();
+        $ghNumOfUTIs = $hospital->getUTI();
+        $ghnumOfBeds = $hospital->getBed();
+        $ghUTIAdmin = $hospital->getChefUti();
+        $ghAdminPhone = $hospital->getPhoneChef();
+        $ghPhone = $hospital->getPhoneHosp();
+        //$ghArchives = $hospital->getArchives();
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':name', $ghName);
         $stmt->bindParam(':numOfUTIs', $ghNumOfUTIs);
-        $stmt->bindParam(':numOfBeds', $ghNumOfBeds);
+        //$stmt->bindParam(':numOfBeds', $ghNumOfBeds);
         $stmt->bindParam(':UTIAdmin', $ghUTIAdmin);
         $stmt->bindParam(':adminPhone', $ghAdminPhone);
         $stmt->bindParam(':hospitalPhone', $ghPhone);
-        $stmt->bindParam(':archives', $ghArchives);
+        //$stmt->bindParam(':archives', $ghArchives);
 
         $stmt->execute();
         return "Hospital added successfully!";
