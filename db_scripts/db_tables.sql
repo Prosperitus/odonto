@@ -22,12 +22,10 @@ CREATE TABLE users (
   `bank` varchar (255) NOT NULL,
   `number_of_account` varchar (7) NOT NULL,
   `agency` int (11) NOT NULL,
-  `permition` varchar (255) NOT NULL,
+  `permition` int (11) NOT NULL,
   `birthdate` date NOT NULL	
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
-ALTER TABLE users ADD CONSTRAINT "fk_permition" FOREIGN KEY (`permition`) REFERENCES permition (`type`);
 
 DROP TABLE IF EXISTS permition;
 
@@ -61,6 +59,12 @@ CREATE TABLE patient(
 
 	) 
 	ENGINE=InnoDB AUTO_INCREMENT=1;
+
+ALTER TABLE users; 
+DROP FOREIGN KEY IF EXISTS fk_permition;  
+
+ALTER TABLE users 
+ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition (id);
 
 
 
