@@ -136,7 +136,7 @@ public function addHospital($hospital) {
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':name', $ghName);
-        $stmt->bindParam(':numOfUTIsf', $ghNumOfUTIs);
+        $stmt->bindParam(':numOfUTIs', $ghNumOfUTIs);
         $stmt->bindParam(':numOfBeds', $ghNumOfBeds);
         $stmt->bindParam(':UTIAdmin', $ghUTIAdmin);
         $stmt->bindParam(':adminPhone', $ghAdminPhone);
