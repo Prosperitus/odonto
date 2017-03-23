@@ -73,7 +73,7 @@ CREATE TABLE hospital(
 	`name_chef_itu` varchar(255) NOT NULL,
 	`telephone_chef_itu` varchar(255) NOT NULL,
 	`telephone_hospital`varchar(255) NOT NULL,
-	`fields` varchar(255) NOT NULL
+	`files` varchar(255) NOT NULL
 )
 	ENGINE=InnoDB AUTO_INCREMENT=1;
 
