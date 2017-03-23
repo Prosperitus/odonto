@@ -11,23 +11,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
-    
-    <style>
-    body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    }
-
-    .main {
-    flex: 1 0 auto;
-    }
-      
-    </style>
   </head>
 
-  <body class= "light-blue lighten-5">
+  <body>
     <!--CABEÇALHO-->
     <nav>
       <div class="nav-wrapper light-blue">
@@ -60,6 +46,13 @@
           <label for="sobrenome_paciente">Sobrenome</label>
         </div>
        
+		<!--CPF-->
+        <div class="input-field col s5">  
+         <i class="material-icons prefix">web</i>
+          <input name="CPF" id="CPF" type="text" class="validate">
+          <label for="CPF">CPF</label>
+        </div>
+
         <!--DATA DE NASCIMENTO-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">today</i>
@@ -124,43 +117,43 @@
         </div>
 
          <!--UF-->
-        <div class="input-field col s5" >
+        <div class="input-field col s5" name="paciente_uf" id="paciente_uf">
             <i class="material-icons prefix">location_on</i>
-            <select class="icons" name="paciente_uf" id="paciente_uf">
+            <select class="icons">
               <option value="" disabled selected>UF</option>
-              <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
-              <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
-              <option value="AM" data-icon="images/amazonas.jpg" class="left circle">Amazonas - AM</option>
-              <option value="PA" data-icon="images/para.jpg" class="left circle">Pará - PA</option>
-              <option value="TO" data-icon="images/rondonia.jpg" class="left circle">Rondônia - RO</option>
-              <option value="RR" data-icon="images/roraima.jpg" class="left circle">Roraima - RR</option>
-              <option value="TO" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
-              <option value="AL" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
-              <option value="BA" data-icon="images/bahia.jpg" class="left circle">Bahia - BA</option>
-              <option value="CE" data-icon="images/ceara.jpg" class="left circle">Ceará - CE</option>
-              <option value="MA" data-icon="images/maranhao.jpg" class="left circle">Maranhão - MA</option>
-              <option value="PB" data-icon="images/paraiba.jpg" class="left circle">Paraíba - PB</option>
-              <option value="PE" data-icon="images/pernambuco.jpg" class="left circle">Pernambuco - PE</option>
-              <option value="PI" data-icon="images/piaui.jpg" class="left circle">Piauí - PI</option>
-              <option value="RN" data-icon="images/riograndedonorte.jpg" class="left circle">Rio Grande do Norte - RN</option>
-              <option value="SE" data-icon="images/sergipe.jpg" class="left circle">Sergipe - SE</option>
-              <option value="GO" data-icon="images/goias.jpg" class="left circle">Goiás - GO</option>
-              <option value="MT" data-icon="images/matogrosso.jpg" class="left circle">Mato Grosso - MT</option>
-              <option value="MS" data-icon="images/matogrossodosul.jpg" class="left circle">Mato Grosso Sul - MS</option>
-              <option value="DF" data-icon="images/distritofederal.jpg" class="left circle">Distrito Federal - DF</option>
-              <option value="ES" data-icon="images/espiritosanto.jpg" class="left circle">Espírito Santo - ES</option>
-              <option value="MG" data-icon="images/minasgerais.jpg" class="left circle">Minas Gerais - MG</option>
-              <option value="RJ" data-icon="images/riodejaneiro.jpg" class="left circle">Rio Janeiro - RJ</option>
-              <option value="SP" data-icon="images/saopaulo.jpg" class="left circle">São Paulo - SP</option>
-              <option value="PR" data-icon="images/parana.jpg" class="left circle">Paraná - PR</option>
-              <option value="SC" data-icon="images/santacatarina.jpg" class="left circle">Santa Catarina - SC</option>
-              <option value="RS" data-icon="images/riograndedosul.jpg" class="left circle">Rio Grande do Sul - RS</option>
+              <option value="1" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
+              <option value="2" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
+              <option value="3" data-icon="images/amazonas.jpg" class="left circle">Amazonas - AM</option>
+              <option value="4" data-icon="images/para.jpg" class="left circle">Pará - PA</option>
+              <option value="5" data-icon="images/rondonia.jpg" class="left circle">Rondônia - RO</option>
+              <option value="6" data-icon="images/roraima.jpg" class="left circle">Roraima - RR</option>
+              <option value="7" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
+              <option value="8" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
+              <option value="9" data-icon="images/bahia.jpg" class="left circle">Bahia - BA</option>
+              <option value="10" data-icon="images/ceara.jpg" class="left circle">Ceará - CE</option>
+              <option value="11" data-icon="images/maranhao.jpg" class="left circle">Maranhão - MA</option>
+              <option value="12" data-icon="images/paraiba.jpg" class="left circle">Paraíba - PB</option>
+              <option value="13" data-icon="images/pernambuco.jpg" class="left circle">Pernambuco - PE</option>
+              <option value="14" data-icon="images/piaui.jpg" class="left circle">Piauí - PI</option>
+              <option value="15" data-icon="images/riograndedonorte.jpg" class="left circle">Rio Grande do Norte - RN</option>
+              <option value="16" data-icon="images/sergipe.jpg" class="left circle">Sergipe - SE</option>
+              <option value="17" data-icon="images/goias.jpg" class="left circle">Goiás - GO</option>
+              <option value="18" data-icon="images/matogrosso.jpg" class="left circle">Mato Grosso - MT</option>
+              <option value="19" data-icon="images/matogrossodosul.jpg" class="left circle">Mato Grosso Sul - MS</option>
+              <option value="20" data-icon="images/distritofederal.jpg" class="left circle">Distrito Federal - DF</option>
+              <option value="21" data-icon="images/espiritosanto.jpg" class="left circle">Espírito Santo - ES</option>
+              <option value="22" data-icon="images/minasgerais.jpg" class="left circle">Minas Gerais - MG</option>
+              <option value="23" data-icon="images/riodejaneiro.jpg" class="left circle">Rio Janeiro - RJ</option>
+              <option value="24" data-icon="images/saopaulo.jpg" class="left circle">São Paulo - SP</option>
+              <option value="25" data-icon="images/parana.jpg" class="left circle">Paraná - PR</option>
+              <option value="26" data-icon="images/santacatarina.jpg" class="left circle">Santa Catarina - SC</option>
+              <option value="27" data-icon="images/riograndedosul.jpg" class="left circle">Rio Grande do Sul - RS</option>
             </select>
           </div>
 
         <!--GENERO-->
-        <div class="input-field col s5">
-          <select class="icons" id="genero_paciente" name="genero_paciente">
+        <div class="input-field col s5" name="genero_paciente" id="genero_paciente">
+          <select class="icons">
             <option value="" disabled selected>Genero do Paciente</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>
@@ -176,16 +169,15 @@
         </div>
 
          
-        <!--PRONTUÁRIO-->
+        <!--PRONTUÁRIO
         <div class="input-field col s10">
           <i class="material-icons prefix">mode_edit</i>
           <textarea name="prontuario" id="prontuario" class="materialize-textarea"></textarea>
           <label for="prontuario">Prontuário</label>
         </div>
-
-
+-->
         <!--CHECK-->
-          <div class="input-field col s9 main">
+          <div class="input-field col s9">
             <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
               <i class="material-icons right">send</i>
             </button>
@@ -204,33 +196,5 @@
       });
 
     </script>
-    <script src="js/mask_paciente.js"></script>
-    
-	<!--FOOTER-->
-        <footer class="page-footer light-blue">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>  
-</body>
- </html>
+  </body>
+</html>
