@@ -34,7 +34,11 @@
         <!--a href="#" class="brand-logo right">HOME</a-->
           <ul id="nav-mobile" class="left">
           <li><a href="board.php">Home</a></li>
+<<<<<<< HEAD
+          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+=======
           <li><a href="cadastro_medico.php">Cadastro Médico</a></li>
+>>>>>>> 53e7b3155cdc1f0cde9595519ae79a2fc04b7f57
           <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
           <li><a href="index.php">LogOut</a></li>
         
@@ -42,6 +46,13 @@
       </div>
     </nav>
 
+<<<<<<< HEAD
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
+
+=======
+>>>>>>> 53e7b3155cdc1f0cde9595519ae79a2fc04b7f57
 
     <!--OPCOES-->
     <div class="row main">
@@ -50,6 +61,28 @@
         <a href="cadastro_funcionario.php" class="waves-effect waves-light btn light-blue "><i class="material-icons left">note_add</i>Cadastrar Funcionário</a>
       </form>
     </div>
+<<<<<<< HEAD
+
+
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/medico.jpg">
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+
+=======
+>>>>>>> 53e7b3155cdc1f0cde9595519ae79a2fc04b7f57
  <!--FOOTER-->
         <footer class="page-footer light-blue">
           <div class="container">

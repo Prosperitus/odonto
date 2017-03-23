@@ -35,7 +35,10 @@
     <nav>
       <div class="nav-wrapper light-blue">
           <ul id="nav-mobile" class="left">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="board.php">Home</a></li>
+          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+          <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+          <li><a href="index.php">LogOut</a></li>
  
         </ul>
       </div>
