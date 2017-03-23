@@ -118,6 +118,37 @@ class DBconnector {
  					{
  						var_dump($e);
  					}
+
+public function addHospital($hospital) {
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "INSERT INTO hospital (name, numOfUTIs, numOfBeds, UTIAdmin, adminPhone, hospitalPhone, archives)  
+        VALUES (:name, :numOfUTIs, :numOfBeds, :UTIAdmin, :adminPhone, :hospitalPhone, :archives)";
+
+        //gh significa get hospital
+        $ghName = $hospital->getName();
+        $ghNumOfUTIs = $hospital->getNumOfUTIs();
+        $ghnumOfBeds = $hospital->getNumOfBeds();
+        $ghUTIAdmin = $hospital->getUTIAdmin();
+        $ghAdminPhone = $hospital->getAdminPhone();
+        $ghPhone = $hospital->getHospitalPhone();
+        $ghArchives = $hospital->getArchives();
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':name', $ghName);
+        $stmt->bindParam(':numOfUTIs', $ghNumOfUTIs);
+        $stmt->bindParam(':numOfBeds', $ghNumOfBeds);
+        $stmt->bindParam(':UTIAdmin', $ghUTIAdmin);
+        $stmt->bindParam(':adminPhone', $ghAdminPhone);
+        $stmt->bindParam(':hospitalPhone', $ghPhone);
+        $stmt->bindParam(':archives', $ghArchives);
+
+        $stmt->execute();
+        return "Hospital added successfully!";
+    }
+    catch(PDOExeption $e){
+        var_dump($e);
+    }
                     
  }
  public function getUserMaxId(){
