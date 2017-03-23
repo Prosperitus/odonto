@@ -1,4 +1,11 @@
+function masterValidation ()
+{
+    validateName($.("#funcionario_nome").value);
 
+
+
+
+}
 //Validate birthdate
 
 
@@ -9,7 +16,22 @@ function isValidDate(dateString)
         return false;
 
     // Parse the date parts to integers
-    var parts = dateString.split("/");
+    var parts = dateString.split<script type="text/javascript">  
+
+    function validateEmail(email)
+  {
+        
+    if(email == "" {
+      alert("Utilize um email valido");
+      this.email.focus();
+      return false;
+  }
+    var re = ([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4});
+    if(!re.test(this.email.value)) {
+    return false;
+  }
+
+    </script>("/");
     var day = parseInt(parts[0], 10);
     var month = parseInt(parts[1], 10);
     var year = parseInt(parts[2], 10);
@@ -45,7 +67,7 @@ function validateDate(day, month, year) {
 function validateName($name) {
     
     if($name ==""){
-        alert("EspaÃ§o precisa ser preenchido");
+        alert("EspaÃ§o precisa ser preenchido"); 
         return false;
     } else if (!/^[a-zA-Z]*$/.test($name)) {
             alert("O nome contem caracteres invalidos");
@@ -74,7 +96,22 @@ function validateSurname() {
 
 function checkForm(form)
 {
+<script type="text/javascript">  
 
+    function validateEmail(email)
+  {
+        
+    if(email == "" {
+      alert("Utilize um email valido");
+      this.email.focus();
+      return false;
+  }
+    var re = ([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4});
+    if(!re.test(this.email.value)) {
+    return false;
+  }
+
+    </script>
     if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)){
         monthLength[1] = 29;
     }
@@ -108,7 +145,22 @@ function checkForm(password){
 		return false;
       	}
       	var re = /[0-9]/;
-      	if(!re.test(form.pwd1.value)) {
+      	if(!re.test(form.pwd1.value)) {<script type="text/javascript">  
+
+    function validateEmail(email)
+  {
+        
+    if(email == "" {
+      alert("Utilize um email valido");
+      this.email.focus();
+      return false;
+  }
+    var re = ([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4});
+    if(!re.test(this.email.value)) {
+    return false;
+  }
+
+    </script>
 		alert("Erro: A senha deve conter pelo menos um numero (0-9)!");
 		form.pwd1.focus();
 		return false;
@@ -165,7 +217,22 @@ function checkForm(password){
     }
     if (mycpf.length == 11) {
         mycpf = mycpf + '-';
-        document.forms[0].cpf.value = mycpf;
+        document.forms[0].cpf.value = mycpf;<script type="text/javascript">  
+
+    function validateEmail(email)
+  {
+        
+    if(email == "" {
+      alert("Utilize um email valido");
+      this.email.focus();
+      return false;
+  }
+    var re = ([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4});
+    if(!re.test(this.email.value)) {
+    return false;
+  }
+
+    </script>
     }
     if (mycpf.length == 14) {
     }
@@ -198,5 +265,22 @@ alert(TestaCPF(strCPF));
 jQuery.validator.addMethod("cep", function(value, element) {
   return this.optional(element) || /^[0-9]{5}-[0-9]{3}$/.test(value);
 }, "Por favor, digite um CEP válido");
+
+// Validate e-mail
+
+    function validateEmail(email)
+  {
+        
+    if(email == "" {
+      alert("Utilize um email valido");
+      this.email.focus();
+      return false;
+  }
+    var re = ([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4});
+    if(!re.test(this.email.value)) {
+    return false;
+  }
+
+
 
 

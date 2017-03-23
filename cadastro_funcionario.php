@@ -2,41 +2,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cadastro Funcionário</title>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" href="js/jquery.js"></script>  
-    <script type="text/javascript" src="js/materialize.min.js"></script>
     <meta charset="utf-8"/>
+    <title>Cadastro Funcionário</title>
+    
+    <!-- Bibliotecas externas -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" href="js/jquery.js"></script>  
+    <script src="js/jquery.maskedinput.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
-<!--footer-->
-    <style>
-    body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    }
-
-    .main {
-    flex: 1 0 auto;
-    }
-
-    </style>
     
+    <!-- Validacao -->
+    <script src="validation/validation.js"></script>
+    
+    <!-- footer -->
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
 
-	
+        .main {
+            flex: 1 0 auto;
+        }
+    </style>
+    	
   </head>
 
-  <body class = "light-blue lighten-5">
+    <body class = "light-blue lighten-5">
     <!--CABEÇALHO-->
     <nav>
       <div class="nav-wrapper light-blue">
-          <ul id="nav-mobile" class="left">
-          <li><a href="index.php">Home</a></li>
- 
+        <ul id="nav-mobile" class="left">
+            <li><a href="index.php">Home</a></li>
+    
         </ul>
       </div>
     </nav>
