@@ -125,15 +125,15 @@ class DBconnector {
 public function addHospital($hospital) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital (name, number_itu, number_beds, name_chef_itu, telephone_chef_itu, telephone_hospital)  
+        $sql = "INSERT INTO hospital (name, number_itu, number_beds, name_admin_itu, telephone_admin_itu, telephone_hospital)  
         VALUES (:name, :numOfUTIs, :numOfBeds, :UTIAdmin, :adminPhone, :hospitalPhone)";
 
         //gh significa get hospital
         $ghName = $hospital->getNameHost();
         $ghNumOfUTIs = $hospital->getUTI();
         $ghnumOfBeds = $hospital->getBed();
-        $ghUTIAdmin = $hospital->getChefUti();
-        $ghAdminPhone = $hospital->getPhoneChef();
+        $ghUTIAdmin = $hospital->getAdminUti();
+        $ghAdminPhone = $hospital->getPhoneAdmin();
         $ghPhone = $hospital->getPhoneHosp();
         //$ghArchives = $hospital->getArchives();
 
