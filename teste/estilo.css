@@ -1,19 +1,17 @@
-body{
-	background-image: url("img.jpg");
-	padding: 200px 550px;
+.divForm{
+	width: 50%;
+	left:25%;
+	position:relative;
 }
-.estilo_geral {
-	font-size: 18px;
-	color :#ffffff;
-	display: block;
-	background: #000000;
-	width: all;
+
+.btn-pers{
+	width: 20%;
 }
-label.estilo_gerl {
-	font-size: 20px;
-	color:red;
+.divPage{
+	position: relative;
+	left: 37%;
 }
-.alerta_erro {
-	color :red;
+.btn-red{
+	width: 75%;
 }
 

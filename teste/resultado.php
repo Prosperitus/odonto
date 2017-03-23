@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>Resultado da entrada</title>
-	<meta charset="">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body> 
-	<div class="estilo_geral">
+	<div class="divForm">
 		<h1>Resultado</h1>
-		<h3><?php
+		<?php
 		$admdata = isset($_GET["lb_admdata"])?$_GET["lb_admdata"]:0;
 		$nome = isset($_GET["lb_nome"])?$_GET["lb_nome"]:0; 
 		$data = isset($_GET["lb_data"])?$_GET["lb_data"]:0;
@@ -19,21 +20,29 @@
 		$ag = isset($_GET["lb_ag"])?$_GET["lb_ag"]:0;
 		$cc = isset($_GET["lb_cc"])?$_GET["lb_cc"]:0;
 		$cro = isset($_GET["lb_cro"])?$_GET["lb_cro"]:0;
-		echo "<label>nome :$nome</br></label>";
-		echo "data : $data</br>";
-		echo "email : $email</br>";
-		echo "senha : $senha</br>";
-		echo "cpf : $cpf</br>";
-		echo "tel : $tel</br>";
-		echo "ag : $ag</br>";
-		echo "cc : $cc</br>";
-		echo "cro : $cro</br>";
+		echo "<strong>Nome:</strong> $nome</br>";
+		echo "<strong>Data:</strong> $data</br>";
+		echo "<strong>Email:</strong> $email</br>";
+		echo "<strong>Senha:</strong> $senha</br>";
+		echo "<strong>CPF:</strong> $cpf</br>";
+		echo "<strong>Telefone:</strong> $tel</br>";
+		echo "<strong>Ag:</strong> $ag</br>";
+		echo "<strong>Cc:</strong> $cc</br>";
+		echo "<strong>CRO:</strong> $cro</br>";
+		echo "<strong>Data de Admissão:</strong> $admdata</br>";
 		echo "------------------</br>";
 		// aqui comeca a verificar as funcoes
-		include "funcoes.php";
+		include "VerifyMed.php";
+		$error = array();
 		$error = TestInvalid($admdata, $ag , $cc, $cpf , $cro , $data , $email , $nome  , $senha  , $tel);
-		echo "TestInvalid : <font color = red>$error</font></br>";
-		?></h3>
+		if($error == "Todos os campos estão válidos"){
+			echo "<strong>TestInvalid:</strong> <font color = red>".$error."</font></br>";
+		}else{
+			foreach($error as $error){
+				echo "<strong>TestInvalid:</strong> <font color = red>".$error."</font></br>";
+			}
+		}
+		?>
 		<a href="javascript:history.go(-1)">Voltar</a>
 	</div>
 </body>
