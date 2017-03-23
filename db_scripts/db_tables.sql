@@ -56,7 +56,11 @@ CREATE TABLE patient(
 	`clinic` varchar(255) NOT NULL,            
 	`responsible2` varchar(255),
 	`telephone_r2` varchar(255)	
-
+	`clinic` boolean,
+	`physician_assistant` boolean,
+	`name_phy_assistant` varchar(255),
+	`telephone_phy_assistant` varchar(255),
+	`speciality_phy_assistant` varchar(255)
 	) 
 	ENGINE=InnoDB AUTO_INCREMENT=1;
 DROP TABLE IF EXISTS hospital;
