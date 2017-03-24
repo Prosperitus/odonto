@@ -29,13 +29,17 @@ class DBconnector {
          $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
     VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
     	
+	$employee->setRegistration("21562");
+	$employee->setPermission((int) $employee->getPermission());
+	//var_dump($employee);
+	//die();
         // ge significa get employee
     	$geName = $employee->getName();
     	$geSurname = $employee->getSurname();
     	$geCro = $employee->getCro();
     	$geAdmissionDate = $employee->getAdmissionDate();
     	$geNregistration = $employee->getRegistration();
-    	$geCpf = $employee->getCpf();
+    	$geSocialSecurity = $employee->getCpf();
     	$geAddress = $employee->getAddress();
     	$geBank = $employee->getBank();
     	$geAccNumber = $employee->getNumberOfAccount();
@@ -44,7 +48,9 @@ class DBconnector {
     	$gePhone2 = $employee->getPhone2();
         $geEmail = $employee->getEmail();
     	$gePass = $employee->getPassword();
-    	$gePermission = $employee->getPermission();
+    	$gePermission = $employee->getPermission();	
+
+		
 
         if($geNregistration == null){
             $geNregistration = 1;
@@ -64,15 +70,20 @@ class DBconnector {
     	$stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
         $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
-        $stmt->bindParam(':permition', $gePermission, PDO::PARAM_STR, 255);
-                        // var_dump($employee);
-                        //die();
-                        $stmt->execute();  
-                        return true;
+        $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
+                       //var_dump($employee);
+                       //die();
+                       
+
+		 $result = $stmt->execute(); 
+			
+		
+                        return $result;
                   
                     }catch(PDOException $e)
                     {
-                        return false;
+			var_dump($e);
+                        return $result;
                     }
                      }
  public function addPatient($patient){
@@ -124,7 +135,7 @@ class DBconnector {
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
 
  		$result = $stmt->execute();
-            return $result;
+            		return $result;
  		}
  		catch(PDOException $e)
  		{
@@ -155,17 +166,17 @@ public function addHospital($hospital) {
         $stmt->bindParam(':hospitalPhone', $ghPhone);
         //$stmt->bindParam(':archives', $ghArchives);
 
-        $stmt->execute();
-        return true;
+       $result = $stmt->execute();
+        return $result;
     }
     catch(PDOExeption $e){
-        return false;
+        return $result;
     }
                     
  }
  public function getUserMaxId(){
     try{
-        $sql = "SELECT MAX(id) from users";
+        $sql = "SELECT MAX(id) as id from users";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
@@ -178,7 +189,7 @@ public function addHospital($hospital) {
  }
 public function getPatientMaxId(){
     try{
-        $sql = "SELECT MAX(id) from paciente";
+        $sql = "SELECT MAX(id) as id from paciente";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
