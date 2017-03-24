@@ -1,24 +1,19 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
     <title>Cadastro Funcionário</title>
-    
-    <!-- Bibliotecas externas -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" href="js/jquery.js"></script>  
-    <script src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    
-    <!-- Validacao -->
-    <script src="validation/validation.js"></script>
-    
-    <!-- footer -->
+    <script type="text/javascript" src="css/animate.css"></script>
+    <script src="js/jquery.maskedinput.js"></script> 
+
     <style>
         body {
             display: flex;
@@ -30,37 +25,32 @@
             flex: 1 0 auto;
         }
     </style>
-    	
+
   </head>
 
     <body class = "light-blue lighten-5">
     <!--CABEÇALHO-->
+    <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper light-blue">
-<<<<<<< HEAD
-        <ul id="nav-mobile" class="left">
-            <li><a href="index.php">Home</a></li>
-    
-=======
           <ul id="nav-mobile" class="left">
           <li><a href="board.php">Home</a></li>
           <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
           <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
           <li><a href="index.php">LogOut</a></li>
- 
->>>>>>> f6faf894abd3aa40b19fe3d0191dc80849743bc3
         </ul>
       </div>
     </nav>
+  </div>
 
     <!--CLASS/FORM-->
-    <div class="row">
-      <form class="col s11" action="backend/addEmployee.php" method="post"> 
-    
+    <div class="row main">
+      <form class="col s11 m12" action="backend/addEmployee.php" method="post">
+
           <!--TITULO-->
             <h3>Cadastro Funcionário</h3>
 
-          <!--NOME-->   
+          <!--NOME-->
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
             <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome">
@@ -72,7 +62,7 @@
             <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome">
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>
-        
+
           <!--CPF-->
           <div class="input-field col s5">
             <i class="material-icons prefix">perm_identity</i>
@@ -80,7 +70,7 @@
             <label for="funcionario_cpf">CPF</label>
           </div>
 
-          <!--EMAIL-->      
+          <!--EMAIL-->
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
             <input id="funcionario_email" type="email" class="validate" name="funcionario_email">
@@ -92,20 +82,20 @@
             <i class="material-icons prefix">phone</i>
             <input id="funcionario_telefone" type="text" class="validate" name="funcionario_telefone">
             <label for="funcionario_telefone">Telefone Residencial</label>
-          </div> 
+          </div>
 
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
             <input id="funcionario_celular" type="text" class="validate" name="funcionario_celular">
             <label for="funcionario_celular">Telefone Celular</label>
-          </div> 
+          </div>
 
-          <!--DATA DE NASCIMENTO-->   
-          <div class="input-field col s5"> 
-            <i class="material-icons prefix">today</i>     
+          <!--DATA DE NASCIMENTO-->
+          <div class="input-field col s5">
+            <i class="material-icons prefix">today</i>
             <input id="funcionario_nascimento" type="text" class="datepicker" name="funcionario_nascimento">
-            <label for="funcionario_nascimento">Data de Nascimento</label>    
-          </div> 
+            <label for="funcionario_nascimento">Data de Nascimento</label>
+          </div>
 
           <!--CONTA DO BANCO-->
           <div class="input-field col s5">
@@ -141,7 +131,7 @@
           </div>
 
 
-          <!--SENHA-->     
+          <!--SENHA-->
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha">
@@ -161,8 +151,8 @@
             <input id="funcionario_cro" type="text" class="validate" name="funcionario_cro">
             <label for="funcionario_cro">Nº   CRO</label>
           </div>
-      
-          
+
+
           <!--CRO UF-->
 
           <div class="input-field col s5" >
@@ -201,13 +191,13 @@
 
 
 
-          <!--DATA DE ADMISSÃO NA EMPRESA--> 
-          
-          <div class="input-field col s5"> 
-            <i class="material-icons prefix">today</i>     
+          <!--DATA DE ADMISSÃO NA EMPRESA-->
+
+          <div class="input-field col s5">
+            <i class="material-icons prefix">today</i>
             <input id="funcionario_admissao" type="text" class="datepicker" name="funcionario_admissao">
-            <label for="funcionario_admissao">Data de Admissão na Empresa</label>    
-          </div> 
+            <label for="funcionario_admissao">Data de Admissão na Empresa</label>
+          </div>
 
           <!--TIPO DE PERMISSÃO-->
 
@@ -238,7 +228,7 @@
       selectYears:100
       });
       $(document).ready(function() {
-      $('select').material_select();           
+      $('select').material_select();
       });
 
     </script>
@@ -269,6 +259,6 @@
             </div>
           </div>
         </footer>
-	
+
  </body>
 </html>
