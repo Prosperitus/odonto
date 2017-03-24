@@ -32,6 +32,7 @@
           <ul id="nav-mobile" class="left">
             <li><a href="board.php">Home</a></li>
             <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+            <li><a href="cadastro_hospital.php">Cadastro Hospital</a></li>
           </ul>
           <ul id="nav-mobile" class="right">
             <li><a href="index.php">Logout</a></li>
