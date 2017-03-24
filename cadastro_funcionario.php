@@ -32,6 +32,7 @@
           <ul id="nav-mobile" class="left">
             <li><a href="board.php">Home</a></li>
             <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+            <li><a href="cadastro_hospital.php">Cadastro Hospital</a></li>
           </ul>
           <ul id="nav-mobile" class="right">
             <li><a href="index.php">Logout</a></li>
@@ -155,35 +156,33 @@
           <div class="input-field col s5" >
             <i class="material-icons prefix">location_on</i>
             <select class="icons" name="funcionario_crouf" id="funcionario_crouf">
-              <option value="" disabled selected>CRO UF</option>
               <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
+              <option value="AL" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
               <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
               <option value="AM" data-icon="images/amazonas.jpg" class="left circle">Amazonas - AM</option>
-              <option value="PA" data-icon="images/para.jpg" class="left circle">Pará - PA</option>
-              <option value="RO" data-icon="images/rondonia.jpg" class="left circle">Rondônia - RO</option>
-              <option value="RR" data-icon="images/roraima.jpg" class="left circle">Roraima - RR</option>
-              <option value="TO" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
-              <option value="AL" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
               <option value="BA" data-icon="images/bahia.jpg" class="left circle">Bahia - BA</option>
               <option value="CE" data-icon="images/ceara.jpg" class="left circle">Ceará - CE</option>
+              <option value="DF" data-icon="images/distritofederal.jpg" class="left circle">Distrito Federal - DF</option>
+              <option value="ES" data-icon="images/espiritosanto.jpg" class="left circle">Espírito Santo - ES</option>
+              <option value="GO" data-icon="images/goias.jpg" class="left circle">Goiás - GO</option>
               <option value="MA" data-icon="images/maranhao.jpg" class="left circle">Maranhão - MA</option>
+              <option value="MT" data-icon="images/matogrosso.jpg" class="left circle">Mato Grosso - MT</option>
+              <option value="MS" data-icon="images/matogrossodosul.jpg" class="left circle">Mato Grosso Sul - MS</option>
+              <option value="MG" data-icon="images/minasgerais.jpg" class="left circle">Minas Gerais - MG</option>
+              <option value="PA" data-icon="images/para.jpg" class="left circle">Pará - PA</option>
               <option value="PB" data-icon="images/paraiba.jpg" class="left circle">Paraíba - PB</option>
+              <option value="PR" data-icon="images/parana.jpg" class="left circle">Paraná - PR</option>
               <option value="PE" data-icon="images/pernambuco.jpg" class="left circle">Pernambuco - PE</option>
               <option value="PI" data-icon="images/piaui.jpg" class="left circle">Piauí - PI</option>
               <option value="RN" data-icon="images/riograndedonorte.jpg" class="left circle">Rio Grande do Norte - RN</option>
-              <option value="SE" data-icon="images/sergipe.jpg" class="left circle">Sergipe - SE</option>
-              <option value="GO" data-icon="images/goias.jpg" class="left circle">Goiás - GO</option>
-              <option value="MT" data-icon="images/matogrosso.jpg" class="left circle">Mato Grosso - MT</option>
-              <option value="MS" data-icon="images/matogrossodosul.jpg" class="left circle">Mato Grosso Sul - MS</option>
-              <option value="DF" data-icon="images/distritofederal.jpg" class="left circle">Distrito Federal - DF</option>
-              <option value="ES" data-icon="images/espiritosanto.jpg" class="left circle">Espírito Santo - ES</option>
-              <option value="MG" data-icon="images/minasgerais.jpg" class="left circle">Minas Gerais - MG</option>
-              <option value="RJ" data-icon="images/riodejaneiro.jpg" class="left circle">Rio Janeiro - RJ</option>
-              <option value="SP" data-icon="images/saopaulo.jpg" class="left circle">São Paulo - SP</option>
-              <option value="PR" data-icon="images/parana.jpg" class="left circle">Paraná - PR</option>
-              <option value="SC" data-icon="images/santacatarina.jpg" class="left circle">Santa Catarina - SC</option>
               <option value="RS" data-icon="images/riograndedosul.jpg" class="left circle">Rio Grande do Sul - RS</option>
-            </select>
+              <option value="RJ" data-icon="images/riodejaneiro.jpg" class="left circle">Rio Janeiro - RJ</option>
+              <option value="RO" data-icon="images/rondonia.jpg" class="left circle">Rondônia - RO</option>
+              <option value="RR" data-icon="images/roraima.jpg" class="left circle">Roraima - RR</option>
+              <option value="SC" data-icon="images/santacatarina.jpg" class="left circle">Santa Catarina - SC</option>
+              <option value="SP" data-icon="images/saopaulo.jpg" class="left circle">São Paulo - SP</option>
+              <option value="SE" data-icon="images/sergipe.jpg" class="left circle">Sergipe - SE</option>
+              <option value="TO" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
           </div>
 
 
@@ -198,7 +197,7 @@
 
           <!--TIPO DE PERMISSÃO-->
 
-          <div class="input-field col s5" name="funcionario_permissao">
+          <div class="input-field col s5">
             <i class="material-icons prefix">supervisor_account</i>
             <select multiple name="permissao" id="permissao">
               <option value="" disabled selected>Tipo de Permissão</option>
@@ -219,18 +218,7 @@
       </form>
     </div>
 
-<!--SCRIPSTs-->
-    <script>
-      $('.datepicker').pickadate({
-      selectYears:100
-      });
-      $(document).ready(function() {
-      $('select').material_select();
-      });
-
-    </script>
-    <script src="js/mask_funcionario.js"></script>
-            <!--FOOTER-->
+        <!--FOOTER-->
         <footer class="page-footer light-blue">
           <div class="container">
             <div class="row">
@@ -256,6 +244,19 @@
             </div>
           </div>
         </footer>
+
+<!--SCRIPSTs-->
+    <script>
+      $('.datepicker').pickadate({
+      selectYears:100
+      });
+      $(document).ready(function() {
+      $('select').material_select();
+      });
+
+    </script>
+    <script src="js/mask_funcionario.js"></script>
+
 
  </body>
 </html>
