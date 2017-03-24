@@ -41,7 +41,7 @@
 
       <!--NOME DO HOSPITAL-->   
         <div class="input-field col s5">
-          <i class="material-icons prefix">account_circle</i>
+          <i class="material-icons prefix">business</i>
           <input name="nome_hospital" id="nome_hospital" type="text" class="validate">
           <label for="nome_hospital">Nome do Hospital</label>
         </div>
@@ -54,7 +54,8 @@
         </div>
 
         <!--NOME DO CHEFE DA UTI-->
-        <div class="input-field col s5">  
+        <div class="input-field col s5">
+          <i class="material-icons prefix">account_circle</i>  
           <input name="sobrenome_paciente" id="sobrenome_paciente" type="text" class="validate">
           <label for="sobrenome_paciente">Nome do Chefe da UTI</label>
         </div>
@@ -67,7 +68,8 @@
         </div>
 
         <!--NÚMERO DE UTIs-->
-        <div class="input-field col s5">  
+        <div class="input-field col s5">
+        <i class="material-icons prefix">view_headline</i>  
           <input name="numeroutis_hospital" id="numeroutis_hospital" type="text" class="validate">
           <label for="numeroutis_hospital">Nº de UTIs</label>
         </div>
@@ -101,9 +103,9 @@
         </div>
 
          <!--ESTADO-->
-        <div class="input-field col s5" name="estado_hospital" id="estado_hospital">
+        <div class="input-field col s5">
             <i class="material-icons prefix">location_on</i>
-            <select class="icons" name="funcionario_crouf" id="funcionario_crouf">
+            <select class="icons" name="estado_hospital" id="estado_hospital">
               <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
               <option value="AL" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
               <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
@@ -137,7 +139,7 @@
          <!--ARQUIVOS-->
 
                   <div class="file-field input-field col s5">
-                    <div class="btn input-field col s5">
+                    <div class="btn input-field col s5 light-blue">
                       <span>Arquivos</span>
                       <input type="file" multiple>
                     </div>
@@ -193,5 +195,6 @@
       });
 
     </script>
+    <script src="js/mask_funcionario.js"></script>
   </body>
 </html>
