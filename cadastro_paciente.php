@@ -65,8 +65,8 @@
 		<!--CPF-->
         <div class="input-field col s5">
          <i class="material-icons prefix">web</i>
-          <input name="CPF" id="cpf" type="text" class="validate">
-          <label for="CPF">CPF</label>
+          <input name="cpf" id="cpf" type="text" class="validate">
+          <label for="cpf">CPF</label>
         </div>
 
         <!--DATA DE NASCIMENTO-->

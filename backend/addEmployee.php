@@ -12,6 +12,7 @@
 
 		$Employee->setCpf($_POST["funcionario_cpf"]);
 		$Employee->setPhone($_POST["funcionario_telefone"]);
+		$Employee->setPhone2($_POST["funcionario_telefone2"]);
 		$Employee->setAddress($_POST["funcionario_endereco"]);
 		$Employee->setBank($_POST["funcionario_banco"]);
 		$Employee->setPermission($_POST["funcionario_permissao"]);

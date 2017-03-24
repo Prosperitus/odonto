@@ -10,6 +10,7 @@
 		private $registration;
 		private $cpf;
 		private $phone;
+		private $phone2;
 		private $address;
 		private $admissionDate;
 		private $password;
@@ -87,6 +88,17 @@
 		public function setPhone($phone){
 			$this->phone = $phone;
 		}
+
+
+		public function getPhone2(){
+			return $this->phone2;
+		}
+		
+		public function setPhone2($phone2){
+			$this->phone2 = $phone2;
+		}
+
+
 		public function getAddress(){
 			return $this->address;
 		}
