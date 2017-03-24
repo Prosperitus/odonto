@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS odt_soft;
 
-CREATE DATABASE odt_soft;	
+CREATE DATABASE odt_soft	
+
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
 
 USE odt_soft;	
 
@@ -8,24 +11,24 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
 
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` varchar(255) NOT NULL,
-  `surname` varchar(255) NOT NULL,
-  `cro` varchar(10) NOT NULL,
-  `email`varchar(255) NOT NULL,
-  `registration` int (11) NOT NULL,  
-  `phone` varchar (255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `admission_date` date NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `social_security` varchar (50) NOT NULL,
-  `bank` varchar (255) NOT NULL,
-  `number_of_account` varchar (7) NOT NULL,
-  `agency` int (11) NOT NULL,
-  `permition` int (11) NOT NULL,
-  `birthdate` date NOT NULL	
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  	`name` varchar(255) NOT NULL,
+	`surname` varchar(255) NOT NULL,
+	`cro` varchar(10) NOT NULL,
+	`email`varchar(255) NOT NULL,
+	`registration` int (11) NOT NULL,  
+	`phone` varchar (255) NOT NULL,
+	`phone2` varchar(255) NOT NULL, 
+	`address` varchar(255) NOT NULL,
+	`admission_date` date NOT NULL,
+	`password` varchar(100) NOT NULL,
+	`social_security` varchar (50) NOT NULL,
+	`bank` varchar (255) NOT NULL,
+	`number_of_account` varchar (7) NOT NULL,
+	`agency` int (11) NOT NULL,
+	`permition` int (11) NOT NULL
 
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS permition;
 
@@ -66,6 +69,7 @@ CREATE TABLE patient(
 DROP TABLE IF EXISTS hospital;
 
 CREATE TABLE hospital(
+
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar(255) NOT NULL,
 	`number_itu` int(5) NOT NULL,
@@ -76,26 +80,36 @@ CREATE TABLE hospital(
 	`files` varchar(255) NOT NULL
 )
 	ENGINE=InnoDB AUTO_INCREMENT=1;
+
 DROP TABLE IF EXISTS attendance;
 
 CREATE TABLE attendance(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`patient`  int  NOT NULL,
+	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
 	`itu` varchar (255) NOT NULL,
 	`bed` varchar (255) NOT NULL,
-	`admission_date_itu ` date NOT NULL,
+	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` varchar (255) NOT NULL,
 	`admission_cause` int NOT NULL
 )
 	ENGINE=InnoDB AUTO_INCREMENT=1; 
 
-
+CREATE TABLE admission_cause(
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`type` varchar (255) NOT NULL
+)
  
+	ENGINE=InnoDB AUTO_INCREMENT=1; 
+
+
+/* FOREIGN KEY */
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition (id);
 
+/*INSERTS*/
 
-
+INSERT INTO permition (type)
+VALUES ('auxiliar') , ('dentista') , ('administrador') , ('auxiliar_financeiro');
