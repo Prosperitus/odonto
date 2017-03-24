@@ -124,11 +124,11 @@ class DBconnector {
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
 
  		$result = $stmt->execute();
-            return true;
+            return $result;
  		}
  		catch(PDOException $e)
  		{
- 			return false;
+ 			return $result;
  		}
  }
 public function addHospital($hospital) {
