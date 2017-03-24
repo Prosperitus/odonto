@@ -21,8 +21,13 @@
 		$patient->setResponsiblePhone($_POST['telefone_responsavel']);
 		$patient->setClinic($_POST['clinica']);
 		$conn = new DBconnector();
-		$conn->addPatient($patient);
+		$result = $conn->addPatient($patient);
+		return $result;
      
 	}
 
-addPatient();
+if(addPatient()){
+	header("location: ../success_register.php");
+}else{
+	header("location: ../fail_register.php");
+}
