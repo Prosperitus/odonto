@@ -14,7 +14,7 @@ CREATE TABLE users (
   `cro` varchar(10) NOT NULL,
   `email`varchar(255) NOT NULL,
   `registration` int (11) NOT NULL,  
-  `phone` int (11) NOT NULL,
+  `phone` varchar (255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `admission_date` date NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -76,7 +76,20 @@ CREATE TABLE hospital(
 	`files` varchar(255) NOT NULL
 )
 	ENGINE=InnoDB AUTO_INCREMENT=1;
+DROP TABLE IF EXISTS attendance;
 
+CREATE TABLE attendance(
+
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`patient`  int  NOT NULL,
+	`hospital` int NOT NULL,
+	`itu` varchar (255) NOT NULL,
+	`bed` varchar (255) NOT NULL,
+	`admission_date_itu ` date NOT NULL,
+	`doctor_responsible` varchar (255) NOT NULL,
+	`admission_cause` int NOT NULL
+)
+	ENGINE=InnoDB AUTO_INCREMENT=1; 
 
 
  
