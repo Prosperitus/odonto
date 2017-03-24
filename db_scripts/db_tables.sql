@@ -53,10 +53,9 @@ CREATE TABLE patient(
 	`zip_code` varchar(255) NOT NULL,
 	`health_insurance` varchar(255) NOT NULL,
 	`responsible1` varchar(255),
-	`telephone_r1` varchar(255),
-	`clinic` varchar(255) NOT NULL,            
+	`telephone_r1` varchar(255),            
 	`responsible2` varchar(255),
-	`telephone_r2` varchar(255)	
+	`telephone_r2` varchar(255),	
 	`clinic` boolean,
 	`physician_assistant` boolean,
 	`name_phy_assistant` varchar(255),
