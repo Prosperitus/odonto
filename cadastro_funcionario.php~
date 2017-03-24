@@ -183,7 +183,6 @@
               <option value="SP" data-icon="images/saopaulo.jpg" class="left circle">São Paulo - SP</option>
               <option value="SE" data-icon="images/sergipe.jpg" class="left circle">Sergipe - SE</option>
               <option value="TO" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
-	      </select>
           </div>
 
 
