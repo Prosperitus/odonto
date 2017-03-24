@@ -3,7 +3,7 @@
 
 	private $name;
 	private $surname;
-	private $sex;
+	private $gender;
 	private $address;
 	private $neighborhood;
 	private $city;
@@ -13,13 +13,23 @@
 	private $healthPlan;
 	private $responsibleName;
 	private $responsiblePhone;
-	private $medicalRecords;
+	private $responsibleName2 = "Não Informado";
+	private $responsiblePhone2 = "Não Informado";
 	private $clinic;
+	private $socialSecurity = "Não Informado";
 
 	public function __construct(){
 
 	}
 	
+	public function getSocialSecurity(){
+		return $this->socialSecurity;
+	}
+
+	public function setSocialSecurity($socialSecurity){
+		$this->socialSecurity = $socialSecurity;
+	}
+
 	public function getBirthdate(){
 		return $this->birthdate;
 	}
@@ -44,12 +54,12 @@
 		$this->city = $city;
 	}
 	
-	public function getSex(){
-		return $this->sex;
+	public function getGender(){
+		return $this->gender;
 	}
 
-	public function setSex($sex){
-		$this->sex = $sex;
+	public function setGender($gender){
+		$this->gender = $gender;
 	}
 
 	public function getAddress(){
@@ -99,6 +109,14 @@
 	public function setResponsibleName($responsibleName){
 		$this->responsibleName = $responsibleName;
 	}
+	
+	public function getResponsibleName2(){
+		return $this->responsibleName2;
+	}
+
+	public function setResponsibleName2($responsibleName){
+		$this->responsibleName2 = $responsibleName;
+	}
 
 	public function getResponsiblePhone(){
 		return $this->responsiblePhone;
@@ -108,14 +126,14 @@
 		$this->responsiblePhone = $responsiblePhone;
 	}
 	
-	public function getMedicalRecords(){
-		return $this->medicalRecords;
+	public function getResponsiblePhone2(){
+		return $this->responsiblePhone2;
 	}
 
-	public function setMedicalRecords($medicalRecords){
-		$this->medicalRecords = $medicalRecords;
+	public function setResponsiblePhone2($responsiblePhone){
+		$this->responsiblePhone2 = $responsiblePhone;
 	}
-
+	
 	public function getClinic(){
 		return $this->clinic;
 	}
@@ -125,10 +143,10 @@
 	}
 
 	public function getSurname(){
-		return $this->$surname;
+		return $this->surname;
 	}
 
-	public function setSurname($clinic){
+	public function setSurname($surname){
 		$this->surname = $surname;
 	}
 

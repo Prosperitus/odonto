@@ -6,8 +6,12 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
     <script type="text/javascript" href="js/jquery.js"></script>  
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="css/animate.css"></script>
     <script src="js/jquery.maskedinput.js"></script> 
 
     <style>
@@ -24,21 +28,20 @@
 
   </head>
 
-  <body class = "light-blue lighten-5">
+    <body class = "light-blue lighten-5">
     <!--CABEÇALHO-->
     <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper light-blue">
+    <nav>
+      <div class="nav-wrapper light-blue">
           <ul id="nav-mobile" class="left">
-            <li><a href="board.php">Home</a></li>
-            <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
-          </ul>
-          <ul id="nav-mobile" class="right">
-            <li><a href="index.php">Logout</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+          <li><a href="board.php">Home</a></li>
+          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+          <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+          <li><a href="index.php">LogOut</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
     <!--CLASS/FORM-->
     <div class="row main">
@@ -71,7 +74,7 @@
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
             <input id="funcionario_email" type="email" class="validate" name="funcionario_email">
-            <label for="funcionario_email" data-error="Email invalido!">Email</label>
+            <label for="funcionario_email" data-error="wrong" data-success="right">Email</label>
           </div>
 
           <!--TELEFONE-->
@@ -198,9 +201,9 @@
 
           <!--TIPO DE PERMISSÃO-->
 
-          <div class="input-field col s5" name="funcionario_permissao">
+          <div class="input-field col s5" >
             <i class="material-icons prefix">supervisor_account</i>
-            <select multiple>
+            <select multiple name="funcionario_permissao">
               <option value="" disabled selected>Tipo de Permissão</option>
               <option value="1">Dentista</option>
               <option value="2">Auxiliar</option>
