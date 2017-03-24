@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
     <title>Home</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
     <script type="text/javascript" href="js/jquery.js"></script>  
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <meta charset="utf-8"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -27,50 +27,48 @@
 
   </head>
 
-  <body class = "light-blue lighten-5">
-    <!--CABEÇALHO-->
+  <body class = "light-blue lighten-3">
+    <!--NAVBAR-->
     <nav>
       <div class="nav-wrapper light-blue">
-        <!--a href="#" class="brand-logo right">HOME</a-->
-          <ul id="nav-mobile" class="left">
-          <li><a href="board.php">Board</a></li>
-          <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
-          <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
-          <li><a href="index.php">LogOut</a></li>
-        
+        <ul id="nav-mobile" class="right">
+          <li><a href="index.php">Logout</a></li>     
         </ul>
       </div>
     </nav>
 
-<!--CARD PACIENTE-->
-<div class="row main">
-  <div class="col s6 m7">
-    <div class="card">
-      <div class="card-image">
-        <img src="images/paciente.jpg">
-      </div>
-      <div class="card-content">
-        <a href="cadastro_paciente.php" class="waves-effect waves-light btn light-blue">Cadastrar Paciente</a>     
+    <!--CARD PACIENTE-->
+  <div class="row main">
+    <form class="col s6 m12">
+      
+      <div class="">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/paciente.jpg">
+            <span class="card-title">Paciente</span>
+          </div>
+          <div class="card-content ">
+            <a href="cadastro_paciente.php" class="waves-effect waves-light btn-flat">Cadastrar</a>     
+            </div>
+          </div>
         </div>
-      </div>
+      
+        <!--CARD MEDICO-->
+        <div class="">
+          <div class="card">
+            <div class="card-image">      
+              <img src="images/medico.jpg">
+              <span class="card-title">Funcionário</span> 
+            </div>
+            <div class="card-content ">
+              <a href="cadastro_funcionario.php" class="waves-effect waves-light btn-flat">Cadastrar</a>
+            </div>
+          </div>
+        </div>
+      <form>
     </div>
-  
-    <!--CARD MEDICO-->
-    <div class="col s6 m5">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/medico.jpg">
-        </div>
-        <div class="card-content">
-          <a href="cadastro_funcionario.php" class="waves-effect waves-light btn light-blue ">Cadastrar Funcionário</a>
-        </div>
-      </div>
-    </div>
-  </div>
             
- 
-
- <!--FOOTER-->
+      <!--FOOTER-->
         <footer class="page-footer light-blue">
           <div class="container">
             <div class="row">
