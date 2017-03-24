@@ -4,11 +4,15 @@
   <head>
     <meta charset="utf-8"/>
     <title>Cadastro Paciente</title>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
     <script type="text/javascript" href="js/jquery.js"></script>  
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="css/animate.css"></script>
     <script src="js/jquery.maskedinput.js"></script> 
     <style>
       body {
@@ -24,17 +28,19 @@
     </style>
   </head>
 
-  <body class = "light-blue lighten-5">
+
+
+  <body>
     <!--CABEÇALHO-->
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper light-blue">
-          <ul id="nav-mobile" class="left">
+          <!--a href="#" class="brand-logo right">HOME</a-->
+            <ul id="nav-mobile" class="left">
             <li><a href="board.php">Home</a></li>
-            <li><a href="cadastro_funcionario.php">Cadastro Funcionário</a></li>
-          </ul>
-          <ul id="nav-mobile" class="right">
-            <li><a href="index.php">Logout</a></li>
+            <li><a href="cadastro_funcionario.php">Cadastro Médico</a></li>
+            <li><a href="cadastro_paciente.php">Cadastro Paciente</a></li>
+            <li><a href="index.php">LogOut</a></li>
           </ul>
         </div>
       </nav>
@@ -42,7 +48,7 @@
 
     <!--CLASS/FORM-->
     <div class="row">
-      <form class="col s11 m12" action="backend/addPatient.php" method="post">
+      <form class="col s11" action="backend/addPatient.php" method="post">
 
       <!--TITULO-->
         <h3>Cadastro Paciente</h3>
@@ -102,6 +108,13 @@
           <label for="cep_paciente">CEP</label>
         </div>
 
+         <!--HOSPITAL
+        <div class="input-field col s5">
+          <i class="material-icons prefix">business</i>
+          <input name="hospital_paciente" id="hospital_paciente" type="text" class="validate">
+          <label for="hospital_paciente">Hospital</label>
+        </div>
+-->
          <!--PLANO DE SAÚDE-->
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
@@ -111,7 +124,7 @@
 
          <!--NOME DO RESPONSÁVEL-->
         <div class="input-field col s5">
-          <i class="material-icons prefix">supervisor_account</i>
+          <i class="material-icons prefix">perm_identity</i>
           <input name="nome_responsavel" id="nome_responsavel" type="text" class="validate">
           <label for="nome_responsavel">Nome do Responsável</label>
         </div>
@@ -126,7 +139,7 @@
          <!--UF-->
         <div class="input-field col s5" name="paciente_uf" id="paciente_uf">
             <i class="material-icons prefix">location_on</i>
-            <select class="icons">
+            <select class="icons" name="paciente_uf">
               <option value="" disabled selected>UF</option>
               <option value="1" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
               <option value="2" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
@@ -159,8 +172,8 @@
           </div>
 
         <!--GENERO-->
-        <div class="input-field col s5" name="genero_paciente" id="genero_paciente">
-          <select class="icons">
+        <div class="input-field col s5"  id="genero_paciente">
+          <select class="icons" name="genero_paciente">
             <i class="material-icons prefix">face</i>
             <option value="" disabled selected>Genero do Paciente</option>
             <option value="1">Masculino</option>
@@ -176,6 +189,14 @@
           </p>
         </div>
 
+
+        <!--PRONTUÁRIO
+        <div class="input-field col s10">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea name="prontuario" id="prontuario" class="materialize-textarea"></textarea>
+          <label for="prontuario">Prontuário</label>
+        </div>
+-->
         <!--CHECK-->
           <div class="input-field col s9">
             <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
@@ -186,7 +207,7 @@
       </form>
     </div>
 
-      <!--FOOTER-->
+                <!--FOOTER-->
         <footer class="page-footer light-blue">
           <div class="container">
             <div class="row">
@@ -221,6 +242,7 @@
       $(document).ready(function() {
       $('select').material_select();
       });
+
     </script>
   </body>
 </html>

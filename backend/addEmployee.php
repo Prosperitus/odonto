@@ -9,11 +9,10 @@
 		$Employee->setCro($_POST["funcionario_cro"]);
 
 		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
-		$Employee->setRegistration($_POST["nregistration"]);
 
 		$Employee->setCpf($_POST["funcionario_cpf"]);
 		$Employee->setPhone($_POST["funcionario_telefone"]);
-		$Employee->setAdress($_POST["funcionario_endereco"]);
+		$Employee->setAddress($_POST["funcionario_endereco"]);
 		$Employee->setBank($_POST["funcionario_banco"]);
 		$Employee->setPermission($_POST["funcionario_permissao"]);
 		$Employee->setPassword($_POST["funcionario_senha"]);
@@ -27,7 +26,7 @@
 
 		
 
-		$conn = new DBconnect();
+		$conn = new DBconnector();
 		$conn->addEmployee($Employee);
 	}
 

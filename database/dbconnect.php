@@ -73,15 +73,15 @@ class DBconnector {
                      }
  public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, helth_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
- 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :heathPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblephone2)";
+    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
+ 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblephone2)";
         
         //gp significa get pacient
  		$gpName = $patient->getName();
         $gpSurname = $patient->getSurname();
  		$gpBirthdate = $patient->getBirthdate();
  		$gpGender = $patient->getGender();
- 		$gpSocial_security = $patient->getSocial_security();
+ 		$gpSocial_security = $patient->getSocialSecurity();
         $gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
@@ -94,7 +94,12 @@ class DBconnector {
         $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
 
-
+		
+		if($gpClinic == "on"){
+			$gpClinic = (bool) true;
+		}else{
+			$gpClinic = (bool) false;
+		}
 
         $stmt = $this->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
@@ -106,22 +111,22 @@ class DBconnector {
         $stmt->bindParam(':neighborhood', $gpNeighborhood, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':city', $gpCity, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':state', $gpState, PDO::PARAM_STR, 23);
- 		$stmt->bindParam(':cep', $gpCep, PDO::PARAM_INT, 11);
- 		$stmt->bindParam(':heathPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
+ 		$stmt->bindParam(':cep', $gpCep, PDO::PARAM_STR, 255);
+ 		$stmt->bindParam(':healthPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $gpResponsibleName, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
         $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
         $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
- 		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_STR, 100);
- 					
- 						$stmt->execute();
-                        return "Patient added successfully!";
- 					}
- 					catch(PDOExeption $e)
- 					{
- 						var_dump($e);
- 					}
+ 		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
 
+ 		$result = $stmt->execute();
+            return "Patient added successfully!";
+ 		}
+ 		catch(PDOException $e)
+ 		{
+ 			var_dump($e);
+ 		}
+ }
 public function addHospital($hospital) {
     try {
         //checar com o SGBD os nomes das colunas
