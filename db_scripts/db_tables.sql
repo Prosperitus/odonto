@@ -64,8 +64,7 @@ CREATE TABLE patient(
 	`name_phy_assistant` varchar(255),
 	`telephone_phy_assistant` varchar(255),
 	`speciality_phy_assistant` varchar(255)
-	) 
-	ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
 DROP TABLE IF EXISTS hospital;
 
 CREATE TABLE hospital(
@@ -78,8 +77,7 @@ CREATE TABLE hospital(
 	`telephone_admin_itu` varchar(255) NOT NULL,
 	`telephone_hospital`varchar(255) NOT NULL,
 	`files` varchar(255) NOT NULL
-)
-	ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS attendance;
 
@@ -93,23 +91,34 @@ CREATE TABLE attendance(
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` varchar (255) NOT NULL,
 	`admission_cause` int NOT NULL
-)
-	ENGINE=InnoDB AUTO_INCREMENT=1; 
+) ENGINE=InnoDB AUTO_INCREMENT=1; 
 
 CREATE TABLE admission_cause(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`type` varchar (255) NOT NULL
-)
- 
-	ENGINE=InnoDB AUTO_INCREMENT=1; 
+) ENGINE=InnoDB AUTO_INCREMENT=1; 
 
 
 /* FOREIGN KEY */
 
 ALTER TABLE users 
-ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition (id);
+ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
+
+ALTER TABLE attendance 
+ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
 
 /*INSERTS*/
 
 INSERT INTO permition (type)
-VALUES ('auxiliar') , ('dentista') , ('administrador') , ('auxiliar_financeiro');
+VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro');
+
+INSERT INTO admission_cause (type)
+VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
+
+
