@@ -1,5 +1,6 @@
 <?php
 	include "employeeModel.php";
+	include "generateRegistry.php";
 	include "../database/dbemployee.php";
 
 	function addEmployee(){
@@ -7,6 +8,7 @@
 		$Employee->setName($_POST["funcionario_nome"]);
 		$Employee->setSurname($_POST["funcionario_sobrenome"]);
 		$Employee->setCro($_POST["funcionario_cro"]);
+		$Employee->setRegistration(generateRegistry(6));
 		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
 		$Employee->setCpf($_POST["funcionario_cpf"]);
 		$Employee->setPhone($_POST["funcionario_telefone"]);
