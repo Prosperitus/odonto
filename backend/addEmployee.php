@@ -1,6 +1,6 @@
 <?php
 	include "employeeModel.php";
-	include "../database/dbconnect.php";
+	include "../database/dbemployee.php";
 
 	function addEmployee(){
 		$Employee = new Employee();
@@ -18,7 +18,7 @@
 		$Employee->setEmail($_POST["funcionario_email"]);
 		$Employee->setNumberOfAccount($_POST["funcionario_conta_banco"]);
 		$Employee->setAgency($_POST["funcionario_agencia_banco"]);
-		$conn = new DBconnector();
+		$conn = new DbEmployee();
 		$result = $conn->addEmployee($Employee);
 		return $result;
 	}
