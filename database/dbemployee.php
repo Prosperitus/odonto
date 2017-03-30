@@ -9,8 +9,7 @@ public function addEmployee($employee){
  	     try{
          $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
     VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
-    	
-	$employee->setRegistration("21562");
+
 	$employee->setPermission((int) $employee->getPermission());
 	//var_dump($employee);
 	//die();

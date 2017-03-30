@@ -2,12 +2,12 @@
 
 	require_once "../database/dbconnect.php";
 
-	function generateRegistry(){
+	function generateRegistry(int caract){
 		$conn = new DBconnector();
 		$maxID = $conn->getUserMaxId();
 		$maxID = $maxID+1;
 		$maxID = (string) $maxID;
-		while(strlen($maxID) <10){
+		while(strlen($maxID) <caract){
 			$maxID = (string) "0".$maxID;
 		}
 		return (int) $maxID;
