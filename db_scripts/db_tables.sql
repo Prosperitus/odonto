@@ -76,7 +76,8 @@ CREATE TABLE hospital(
 	`number_bed` int(5) NOT NULL,
 	`name_admin_itu` varchar(255) NOT NULL,
 	`telephone_admin_itu` varchar(255) NOT NULL,
-	`telephone_hospital`varchar(255) NOT NULL
+	`telephone_hospital`varchar(255) NOT NULL,
+	`file` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS attendance;
@@ -124,7 +125,7 @@ ALTER TABLE attendance
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
 
 ALTER TABLE files_hospital
-ADD CONSTRAINT fk_files_hospital FOREIGN KEY (file) REFERENCES hospital(id);
+ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 /*INSERTS*/
 
@@ -133,5 +134,7 @@ VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro')
 
 INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
+
+
 
 
