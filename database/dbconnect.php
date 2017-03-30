@@ -1,6 +1,8 @@
 <?php 
 include_once "../backend/employeeModel.php";
 include_once "../backend/patientModel.php";
+include_once "../database/dbpatient.php";
+
 class DBconnector {
     // try {
     private $Servidor = "localhost";
@@ -200,6 +202,6 @@ public function getPatientMaxId(){
             return $e;
     }
 }
-}
+
 
  ?>
