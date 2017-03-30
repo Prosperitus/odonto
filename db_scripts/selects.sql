@@ -1,10 +1,10 @@
 /*SELECT*/
 
-SELECT * FROM users;
+SELECT name FROM users
+WHERE name LIKE ` `   or; /*      */
 
-SELECT name FROM users;
 
-SELECT (id) FROM users;
+
 
 
 
