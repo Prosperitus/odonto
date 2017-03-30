@@ -60,12 +60,12 @@ class DBconnector {
     	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
         $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR, 255);
-        $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
         $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
         $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
         $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
         $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
-        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_INT, 11);
         $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
     	$stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
         $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
@@ -90,7 +90,7 @@ class DBconnector {
  	try{
     $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
  	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblePhone2)";
-        
+
         //gp significa get pacient
  		$gpName = $patient->getName();
         $gpSurname = $patient->getSurname();
