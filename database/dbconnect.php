@@ -1,6 +1,6 @@
 <?php 
-include_once "../backend/employeeModel.php";
-include_once "../backend/patientModel.php";
+
+
 class DbConnector {
     // try {
     private $Servidor = "localhost";

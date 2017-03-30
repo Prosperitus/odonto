@@ -1,7 +1,7 @@
 <?php 
 
 include_once "dbconnect.php";
-
+include_once "../backend/Hospitalmodel.php";
 public class DbHospital{
 
 	public function addHospital($hospital) {
@@ -38,7 +38,7 @@ public class DbHospital{
 	}
 
 
-	
+
 
 
 

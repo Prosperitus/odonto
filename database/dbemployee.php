@@ -1,6 +1,7 @@
 <?php 
 
 include_once "dbconnect.php";
+include_once "../backend/employeeModel.php";
 
 public class DbEmployee {
 
@@ -71,7 +72,7 @@ public function addEmployee($employee){
 public function getUserMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from users";
-        $stmt = $this->conn->prepare($sql);
+        $stmt = new DbConnector()->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
         $numMax = $result->id;
