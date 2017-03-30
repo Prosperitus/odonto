@@ -1,6 +1,6 @@
 <?php
 	include "patientModel.php";
-	include "../database/dbconnect.php";
+	include "../database/dbpatient.php";
 
 	function addPatient(){
 		$patient = new Patient();
@@ -20,7 +20,7 @@
 		$patient->setResponsibleName($_POST['nome_responsavel']);
 		$patient->setResponsiblePhone($_POST['telefone_responsavel']);
 		$patient->setClinic($_POST['clinica']);
-		$conn = new DBconnector();
+		$conn = new DbPatient();
 		$result = $conn->addPatient($patient);
 		return $result;
      

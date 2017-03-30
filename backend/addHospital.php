@@ -1,6 +1,6 @@
 <?php
 	include "employeeModel.php";
-	include "../database/dbconnect.php";
+	include "../database/dbhospital.php";
 
 	function addHospital(){
 		$Employee = new Hospital();
@@ -10,7 +10,7 @@
 		$Employee->setChefUti($_POST["chefuti"]);
 		$Employee->setPhoneChef($_POST["phonechef"]);
 		$Employee->setPhoneHosp($_POST["phonehosp"]);
-		$conn = new DBconnect();
+		$conn = new DbHospital();
 		$conn->addHospital($Hospital);
 	}
 
