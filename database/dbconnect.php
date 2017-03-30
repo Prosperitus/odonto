@@ -67,7 +67,7 @@ class DBconnector {
         $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
         $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
         $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
-        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_INT, 11);
+        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_STR, 11);
         $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
     	$stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
         $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
