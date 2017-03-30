@@ -1,5 +1,10 @@
 <?php
 
+include_once "dbconnect.php";
+include_once "../backend/patientModel.php";
+
+public class DbPatient {
+
 public function addPatient($patient){
  	try{
     $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
@@ -30,7 +35,7 @@ public function addPatient($patient){
 			$gpClinic = (bool) false;
 		}
 
-        $stmt = $this->conn->prepare($sql);
+        $stmt = new DbConnector()->conn->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
         $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);
@@ -60,7 +65,7 @@ public function addPatient($patient){
  public function getPatientMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from paciente";
-        $stmt = $this->conn->prepare($sql);
+        $stmt = new DbConnector()->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
         $numMax = $result->id;
@@ -71,5 +76,5 @@ public function addPatient($patient){
     }
 }
 
-
+}
  ?>

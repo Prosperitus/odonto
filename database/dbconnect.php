@@ -1,9 +1,7 @@
 <?php 
-include_once "../backend/employeeModel.php";
-include_once "../backend/patientModel.php";
-include_once "../database/dbpatient.php";
 
-class DBconnector {
+
+class DbConnector {
     // try {
     private $Servidor = "localhost";
     private $BancoDados = "odt_soft";
@@ -202,6 +200,6 @@ public function getPatientMaxId(){
             return $e;
     }
 }
-
+}
 
  ?>
