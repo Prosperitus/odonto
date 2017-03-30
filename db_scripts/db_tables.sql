@@ -76,7 +76,6 @@ CREATE TABLE hospital(
 	`name_admin_itu` varchar(255) NOT NULL,
 	`telephone_admin_itu` varchar(255) NOT NULL,
 	`telephone_hospital`varchar(255) NOT NULL,
-	`files` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS attendance;

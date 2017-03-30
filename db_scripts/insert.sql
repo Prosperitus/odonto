@@ -1,7 +1,14 @@
 INSERT INTO permition (permition)
 VALUES ('auxilar') , ('dentista') , ('administrador') , ('auxiliar_financeiro');
 
-/*SELECT permition FROM permition;*/
+/*SELECT*/
 
+SELECT * FROM users;
+
+SELECT name FROM users;
+
+SELECT * FROM users;
+
+SELECT * FROM users;
 
 
