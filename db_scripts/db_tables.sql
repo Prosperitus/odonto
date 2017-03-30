@@ -24,8 +24,8 @@ CREATE TABLE users (
 	`password` varchar(100) NOT NULL,
 	`social_security` varchar (50) NOT NULL,
 	`bank` varchar (255) NOT NULL,
-	`number_of_account` varchar (7) NOT NULL,
-	`agency` int (11) NOT NULL,
+	`number_of_account` varchar (255) NOT NULL,
+	`agency` varchar(255) NOT NULL,
 	`permition` int (11) NOT NULL
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
@@ -89,7 +89,7 @@ CREATE TABLE attendance(
 	`itu` varchar (255) NOT NULL,
 	`bed` varchar (255) NOT NULL,
 	`admission_date_itu` date NOT NULL,
-	`doctor_responsible` varchar (255) NOT NULL,
+	`doctor_responsible` int  NOT NULL,
 	`admission_cause` int NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1; 
 
@@ -100,6 +100,9 @@ CREATE TABLE admission_cause(
 
 
 /* FOREIGN KEY */
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES users(id);
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
