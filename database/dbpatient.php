@@ -35,7 +35,7 @@ public function addPatient($patient){
 			$gpClinic = (bool) false;
 		}
 
-        $stmt = new DbConnector()->conn->prepare($sql);
+        $stmt = new DbConnector()->getConn()->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
         $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);
@@ -65,7 +65,7 @@ public function addPatient($patient){
  public function getPatientMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from paciente";
-        $stmt = new DbConnector()->conn->prepare($sql);
+        $stmt = new DbConnector()->getConn()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
         $numMax = $result->id;
@@ -76,5 +76,34 @@ public function addPatient($patient){
     }
 }
 
+ public function search_id($search){
+
+    $sql = "SELECT * FROM patient WHERE id = :id_patient";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':id_patient', $search);
+    return $result = $stmt -> fetch(PDO::OBJ);
+
+
+
+ }
+ 
+
+ public function search_patient($search_patient){
+
+    $sql = "SELECT * FROM patient WHERE  name = :search_patient OR surname = :search_patient OR cpf = :search_patient OR health_insurance = :search_patient OR responsible1 = :search_patient OR responsible2 = :search_patient OR email = :search_patient";
+    $conn= new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':patient_search', $search_patient);
+    return $result = $stmt -> fetch(PDO::OBJ);
+
+
+
+ }
+
+
+
 }
+
+
  ?>
