@@ -9,8 +9,8 @@ public function addEmployee($employee){
  	     try{
          $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
     VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
-
-	$employee->setPermission((int) $employee->getPermission());
+    	
+	
 	//var_dump($employee);
 	//die();
         // ge significa get employee
@@ -62,7 +62,7 @@ public function addEmployee($employee){
                   
                     }catch(PDOException $e)
                     {
-			var_dump($e);
+			//var_dump($e);
                         return $result;
                     }
                      }
@@ -81,7 +81,23 @@ public function getUserMaxId(){
         return $e;
     }
 }
+
+public function login($user, $password) {
+
+	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
+
+	$stmt = new DbConnector()->conn->prepare($sql);
+	$stmt->bindParam(':user', $user);
+	$stmt->bindParam(':pass', $password);
+	return $result = $stmt->fetchAll(PDO::OBJ);
+
+
+
 }
 
+
+
+
+}
 
  ?>
