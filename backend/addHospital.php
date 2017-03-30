@@ -11,7 +11,12 @@
 		$Employee->setPhoneChef($_POST["phonechef"]);
 		$Employee->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DBconnect();
-		$conn->addHopspital($Hospital);
+		$conn->addHospital($Hospital);
 	}
 
-addHospital();
+
+if(addHospital()){
+	header("location: ../success_register.php");
+}else{
+	header("location: ../fail_register.php");
+}
