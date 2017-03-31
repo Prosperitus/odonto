@@ -261,6 +261,7 @@
       });
 
     </script>
+    <script src="js/mask.js"></script>
     <script src="js/mask_funcionario.js"></script>
 
 
