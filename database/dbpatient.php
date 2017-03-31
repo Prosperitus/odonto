@@ -3,7 +3,7 @@
 include_once "dbconnect.php";
 include_once "../backend/patientModel.php";
 
-public class DbPatient {
+ class DbPatient {
 
 public function addPatient($patient){
  	try{
