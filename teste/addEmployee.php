@@ -1,89 +1,89 @@
 <?php
-	include "employeeModel.php";
-	//include "../database/dbconnect.php";
-	include_once "../teste/funcoes.php";
+	require_once "employeeModel.php";
 	require_once "generateRegistry.php";
+	require_once "../database/dbemployee.php";
+	include_once "funcoes.php";
 
 	function addEmployee(){
 		$Employee = new Employee();
-		$erro = false;
+		$error = false;
 
 		$name = isset($_POST["funcionario_nome"]) ? $_POST["funcionario_nome"] : 0;
+		$surname =  isset($_POST["funcionario_sobrenome"]) ? $_POST["funcionario_sobrenome"] : 0;
+		$bank = isset($_POST["funcionario_banco"]) ? $_POST["funcionario_banco"] : 0;
+		$cro = isset($_POST["funcionario_conta_banco"]) ? $_POST["funcionario_conta_banco"] : 0;
+		$ag = isset($_POST["funcionario_agencia_banco"]) ? $_POST["funcionario_agencia_banco"] : 0;
+		$password = isset($_POST["funcionario_senha"]) ? $_POST["funcionario_senha"] : 0;
+		$cc = isset($_POST["funcionario_conta_banco"]) ? $_POST["funcionario_conta_banco"] : 0;
+
+		echo "Nome: $name </br> Sobrenome: $surname </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password </br>";
+		echo "</br>Teste Inválidos: </br>";
+
 		if(InvalidName($name)){
-			echo "Nome Inválido</br>";
-			$erro = true;
+			$error = true;
+			echo "Nome</br>";
 		}else{
 			$Employee->setName($_POST["funcionario_nome"]);
 		}
-
-		$surname=isset($_POST["funcionario_sobrenome"]) ? $_POST["funcionario_sobrenome"] : 0;
+		
 		if(InvalidSurname($surname)){
-			echo "Sobrenome Inválido</br>";
-			$erro = true;
+			$error =  true;
+			echo "Sobrenome</br>";
 		}else{
 			$Employee->setSurname($_POST["funcionario_sobrenome"]);
 		}
 
-		
-		$Employee->setCro($_POST["funcionario_cro"]);
-		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
-		$Employee->setRegistration(generateRegistry(6));
-		$Employee->setCpf($_POST["funcionario_cpf"]);	
-		$Employee->setPhone2($_POST["funcionario_celular"]);
-		$Employee->setPhone($_POST["funcionario_telefone"]);
-		$Employee->setAddress($_POST["funcionario_endereco"]);
-		
-		$banco = isset($_POST["bank"]) ? $_POST["bank"] : 0;
-		if(InvalidName($banco)){
-			echo "Banco Inválido</br>";
-			$erro = true;
+		if(InvalidName($bank)){
+			$error =  true;
+			echo "Nome do Banco</br>";
 		}else{
-			$Employee->setBank($_POST["bank"]);
-		}
-		if(isset($_POST["permissao"])){
-			$Employee->setPermission($_POST["permissao"]);
-		}	
-		$senha=isset($_POST["funcionario_senha"]) ?$_POST["funcionario_senha"] :  0;
-		if(InvalidPassword($senha)){
-			echo "Senha Inválida</br>";
-			$erro = true;
-		}else{
-			$Employee->setPass(hash("sha256",($_POST["funcionario_senha"])));
+			$Employee->setBank($_POST["funcionario_banco"]);
 		}
 
-		$email = isset($_POST["funcionario_email"]) ? $_POST["funcionario_email"] :  0;
-		if(InvalidEmail($email)){
-			echo "Email Inválido</br>";
-			$erro = true;
-		}
-		else{
-			$Employee->setEmail($_POST["funcionario_email"]);	
-		}
-		
-		$cc = isset($_POST["funcionario_conta_banco"]) ? $_POST["funcionario_conta_banco"] : 0;
 		if(!letra_na_str($cc) || !carac_na_str($cc)){
-			echo "Cc Inválida</br>";
-			$erro = true;
+			$error = true;
+			echo "Conta do Banco</br>";
 		}else{
 			$Employee->setNumberOfAccount($_POST["funcionario_conta_banco"]);
 		}
 
-		$ag = isset($_POST["funcionario_agencia_banco"]) ? $_POST["funcionario_agencia_banco"] :  0;
 		if(!letra_na_str($ag) || !carac_na_str($ag)){
-			echo "Ag Inválida</br>";
-			$erro = true;
+			$error = true;
+			echo "Agencia</br>";
 		}else{
 			$Employee->setAgency($_POST["funcionario_agencia_banco"]);
 		}
 
-
-
-
-
-		if(!$erro){
-		$conn = new DBconnect();
-		$conn->addEmployee($Employee);
+		if(InvalidPassword($password)){
+			$error = true;
+			echo "Senha</br>";
+		}else{
+			$Employee->setPassword(hash("sha256",($_POST["funcionario_senha"])));
 		}
+
+
+
+		$Employee->setCro($_POST["funcionario_cro"]);
+		$Employee->setRegistration(generateRegistry(6));
+		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
+		$Employee->setCpf($_POST["funcionario_cpf"]);
+		$Employee->setPhone($_POST["funcionario_telefone"]);
+		$Employee->setPhone2($_POST["funcionario_celular"]);
+		$Employee->setAddress($_POST["funcionario_endereco"]);
+		$Employee->setPermission($_POST["permissao"]);
+		$Employee->setEmail($_POST["funcionario_email"]);
+		
+		if(!$error){
+		$conn = new DbEmployee();
+		$result = $conn->addEmployee($Employee);
+		return $result;
+		}
+
 	}
 
-addEmployee();
+
+if(addEmployee()){
+	header("location: ../success_register.php");
+}else{
+	header("location: ../fail_register.php");
+}
