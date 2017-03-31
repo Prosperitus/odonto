@@ -103,7 +103,9 @@ public function addPatient($patient){
     $stmt->bindParam(':patient_responsible1', $search_patient);
     $stmt->bindParam(':patient_responsible2', $search_patient);
     $stmt->bindParam(':patient_email', $search_patient);
-    return $result = $stmt -> fetch(PDO::OBJ);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
 
 
 

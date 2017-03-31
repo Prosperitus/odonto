@@ -3,96 +3,136 @@
 require_once "dbconnect.php";
 require_once "../backend/employeeModel.php";
 
- class DbEmployee {
+class DbEmployee {
 
-public function addEmployee($employee){
- 	     try{
-         $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
-    VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
+    public function addEmployee($employee){
+     	     try{
+             $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
+        VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
 
-	$employee->setPermission((int) $employee->getPermission());
-	//var_dump($employee);
-	//die();
-        // ge significa get employee
-    	$geName = $employee->getName();
-    	$geSurname = $employee->getSurname();
-    	$geCro = $employee->getCro();
-    	$geAdmissionDate = $employee->getAdmissionDate();
-    	$geNregistration = $employee->getRegistration();
-    	$geSocialSecurity = $employee->getCpf();
-    	$geAddress = $employee->getAddress();
-    	$geBank = $employee->getBank();
-    	$geAccNumber = $employee->getNumberOfAccount();
-    	$geAgencia = $employee->getAgency();
-    	$gePhone = $employee->getPhone();
-    	$gePhone2 = $employee->getPhone2();
-        $geEmail = $employee->getEmail();
-    	$gePass = $employee->getPassword();
-    	$gePermission = $employee->getPermission();	
+    	$employee->setPermission((int) $employee->getPermission());
+    	//var_dump($employee);
+    	//die();
+            // ge significa get employee
 
-		
+        	$geName = $employee->getName();
+        	$geSurname = $employee->getSurname();
+        	$geCro = $employee->getCro();
+        	$geAdmissionDate = $employee->getAdmissionDate();
+        	$geNregistration = $employee->getRegistration();
+        	$geSocialSecurity = $employee->getCpf();
+        	$geAddress = $employee->getAddress();
+        	$geBank = $employee->getBank();
+        	$geAccNumber = $employee->getNumberOfAccount();
+        	$geAgencia = $employee->getAgency();
+        	$gePhone = $employee->getPhone();
+        	$gePhone2 = $employee->getPhone2();
+            $geEmail = $employee->getEmail();
+        	$gePass = $employee->getPassword();
+        	$gePermission = $employee->getPermission();	
 
-        if($geNregistration == null){
-            $geNregistration = 1;
+    		
+
+            if($geNregistration == null){
+                $geNregistration = 1;
+            }
+        	$conn = new DbConnector();
+    	   $stmt = $conn->getConn()->prepare($sql);
+        	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
+        	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
+        	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
+            $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR, 255);
+            $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
+            $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
+            $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
+            $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
+            $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_STR, 11);
+            $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
+        	$stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
+        	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
+                           //var_dump($employee);
+                           //die();
+                           
+
+    		 $result = $stmt->execute(); 
+    			
+    		
+                            return $result;
+                      
+                        }catch(PDOException $e)
+                        {
+    			var_dump($e);
+                            return $result;
+                        }
+                         
+    }
+
+    public function getUserMaxId(){
+        try{
+            $sql = "SELECT MAX(id) as id from users";
+            $conn = new DbConnector();
+    		$stmt =	$conn->getConn()->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_OBJ);
+            $numMax = $result->id;
+            return $numMax;
         }
-    	$conn = new DbConnector();
-	   $stmt = $conn->getConn()->prepare($sql);
-    	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
-    	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
-    	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
-        $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR, 255);
-        $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
-        $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
-        $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
-        $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
-        $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
-        $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_STR, 11);
-        $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
-    	$stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
-        $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
-    	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
-        $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
-                       //var_dump($employee);
-                       //die();
-                       
+        catch(PDOExeption $e){
+            return $e;
+        }
+    }
 
-		 $result = $stmt->execute(); 
-			
-		
-                        return $result;
-                  
-                    }catch(PDOException $e)
-                    {
-			var_dump($e);
-                        return $result;
-                    }
-                     
-}
+    public function loginDatabase($user, $password) {
+    	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
+    	$conn =  new DbConnector();
+    	$stmt =	$conn->getConn()->prepare($sql);
+    	$stmt->bindParam(':user', $user);
+    	$stmt->bindParam(':pass', $password);
+    	$stmt->execute();
+    	$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
 
-public function getUserMaxId(){
-    try{
-        $sql = "SELECT MAX(id) as id from users";
-        $conn = new DbConnector();
-		$stmt =	$conn->getConn()->prepare($sql);
+    public function searchEmployee($filter) {
+
+        $sql = "SELECT `users`.`id`,
+        `users`.`name`,
+        `users`.`surname`,
+        `users`.`cro`,
+        `users`.`email`,
+        `users`.`registration`,
+        `users`.`phone`,
+        `users`.`phone2`,
+        `users`.`address`,
+        `users`.`admission_date`,
+        `users`.`social_security`,
+        `users`.`bank`,
+        `users`.`number_of_account`,
+        `users`.`agency`,
+        `users`.`permition`
+        FROM `odt_soft`.`users`
+        WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro";
+        $filter2 = "%".$filter."%";
+        $conn =  new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt = bindParam(':name', $filter2);
+        $stmt = bindParam(':surname', $filter2);
+        $stmt = bindParam(':cpf', $filter);
+        $stmt = bindParam(':permition', $filter);
+        $stmt = bindParam(':registration', $filter);
+        $stmt = bindParam(':email', $filter2);
+        $stmt = bindParam(':cro', $filter);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_OBJ);
-        $numMax = $result->id;
-        return $numMax;
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $result;
     }
-    catch(PDOExeption $e){
-        return $e;
-    }
-}
 
-public function loginDatabase($user, $password) {
-	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
-	$conn=  new DbConnector();
-	$stmt =	$conn->getConn()->prepare($sql);
-	$stmt->bindParam(':user', $user);
-	$stmt->bindParam(':pass', $password);
-	$stmt->execute();
-	return $result = $stmt->fetch(PDO::FETCH_OBJ);
-}
+
+
+
 }
 
 
