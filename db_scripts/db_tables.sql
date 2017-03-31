@@ -47,6 +47,7 @@ CREATE TABLE patient(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 	`name` varchar (255) NOT NULL,
 	`surname` varchar(255),
+	`email` varchar (255),
 	`social_security` varchar (255),
 	`birthdate` varchar (255),
 	`gender` varchar (10) NOT NULL,
