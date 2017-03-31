@@ -86,9 +86,10 @@ public function getUserMaxId(){
 
 public function login($user, $password) {
 	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
-	$stmt = new DbConnector()->conn->prepare($sql);
+	$conn=  new DbConnector();
 	$stmt->bindParam(':user', $user);
 	$stmt->bindParam(':pass', $password);
+	$stmt->$conn->getConn()->prepare($sql);
 	return $result = $stmt->fetchAll(PDO::OBJ);
 }
 }
