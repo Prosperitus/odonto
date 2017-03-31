@@ -1,4 +1,8 @@
-
+<?php
+	require_once "backend/verifyLog.php";
+	
+	verifyLogRedirect();
+?>
 <!DOCTYPE html>
 <html>
   <head>
