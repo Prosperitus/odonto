@@ -103,7 +103,8 @@ CREATE TABLE admission_cause(
 CREATE  TABLE files_hospital(
 	
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`file` varchar (255) NOT NULL
+	`file` varchar (255) NOT NULL,
+	`hospital` int NOT NULL
 )ENGINE=InnoDB AUTO_INCREMENT=1;
 
 
