@@ -35,8 +35,8 @@ public function addPatient($patient){
 			$gpClinic = (bool) false;
 		}
 
-        $conn = new DbConnector();
-		$stmt = $conn->getConn()->prepare($sql);
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
         $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);

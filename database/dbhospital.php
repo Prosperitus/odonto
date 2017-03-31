@@ -19,7 +19,8 @@ public class DbHospital{
         $ghPhone = $hospital->getPhoneHosp();
         //$ghArchives = $hospital->getArchives();
 
-        $stmt = new DbConnector()->getConn()->prepare($sql);
+        $conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':name', $ghName);
         $stmt->bindParam(':numOfUTIs', $ghNumOfUTIs);
         //$stmt->bindParam(':numOfBeds', $ghNumOfBeds);
@@ -41,7 +42,8 @@ public class DbHospital{
 	public function searchHospital($filter){
 
 		$sql = "SELECT * FROM hospital WHERE name = :nomeHopital OR name_admin_itu = :utiAdmin OR number_beds = :numOfBeds";
-		$stmt = new DbConnector()->getConn()->prepare($sql);
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
 
 		$stmt->bindParam(':nomeHopital', $filter);
 		$stmt->bindParam(':name_admin_itu' $filter);

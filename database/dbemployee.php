@@ -36,7 +36,7 @@ public function addEmployee($employee){
             $geNregistration = 1;
         }
     	$conn = new DbConnector();
-	$stmt = $conn->getConn()->prepare($sql);
+	   $stmt = $conn->getConn()->prepare($sql);
     	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
