@@ -1,7 +1,7 @@
 <?php
-	include "employeeModel.php";
-	include "generateRegistry.php";
-	include "../database/dbemployee.php";
+	require_once "employeeModel.php";
+	require_once "generateRegistry.php";
+	require_once "../database/dbemployee.php";
 
 	function addEmployee(){
 		$Employee = new Employee();
