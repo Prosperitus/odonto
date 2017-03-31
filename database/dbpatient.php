@@ -93,10 +93,16 @@ public function addPatient($patient){
 
  public function search_patient($search_patient){
 
-    $sql = "SELECT * FROM patient WHERE  name = :search_patient OR surname = :search_patient OR cpf = :search_patient OR health_insurance = :search_patient OR responsible1 = :search_patient OR responsible2 = :search_patient OR email = :search_patient";
+    $sql = "SELECT * FROM patient WHERE  name = :patient_name OR surname = :patient_surname OR cpf = :patient_cpf OR health_insurance = :patient_hi OR responsible1 = :patient_responsible1 OR responsible2 = :patient_responsible2 OR email = :patient_email";
     $conn= new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
-    $stmt->bindParam(':patient_search', $search_patient);
+    $stmt->bindParam(':patient_name', $search_patient);
+    $stmt->bindParam(':patient_surname', $search_patient);
+    $stmt->bindParam(':patient_cpf', $search_patient);
+    $stmt->bindParam(':patient_hi', $search_patient);
+    $stmt->bindParam(':patient_responsible1', $search_patient);
+    $stmt->bindParam(':patient_responsible2', $search_patient);
+    $stmt->bindParam(':patient_email', $search_patient);
     return $result = $stmt -> fetch(PDO::OBJ);
 
 
