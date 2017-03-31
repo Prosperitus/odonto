@@ -47,6 +47,7 @@ CREATE TABLE patient(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 	`name` varchar (255) NOT NULL,
 	`surname` varchar(255),
+	`email` varchar (255),
 	`social_security` varchar (255),
 	`birthdate` varchar (255),
 	`gender` varchar (10) NOT NULL,
@@ -91,7 +92,12 @@ CREATE TABLE attendance(
 	`bed` varchar (255) NOT NULL,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL
+	`admission_cause` int NOT NULL,
+	`mouthguard` boolean,
+	`medical_record` varchar (255) NOT NULL,
+	`photos` varchar (255) NOT NULL,
+	`state_of_attendance` varchar (255) NOT NULL
+
 ) ENGINE=InnoDB AUTO_INCREMENT=1; 
 
 CREATE TABLE admission_cause(
@@ -136,6 +142,38 @@ VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro')
 INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
 
-
-
+INSERT INTO `odt_soft`.`users`
+(
+`name`,
+`surname`,
+`cro`,
+`email`,
+`registration`,
+`phone`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+(
+'odonto',
+'teste',
+'12345',
+'teste@gmail.com',
+123,
+'123',
+'123',
+'SCS',
+'2017/03/03',
+'123456',
+'456789',
+'BANCO',
+'99',
+'987',
+3);
 

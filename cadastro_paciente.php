@@ -227,6 +227,7 @@
       $('select').material_select();
       });
     </script>
+    <script src="js/mask.js"></script>
     <script src="js/mask_paciente.js"></script>
   </body>
 </html>
