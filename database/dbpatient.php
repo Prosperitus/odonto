@@ -35,7 +35,8 @@ public function addPatient($patient){
 			$gpClinic = (bool) false;
 		}
 
-        $stmt = new DbConnector()->getConn()->prepare($sql);
+        $conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
  		$stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
         $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);
@@ -65,7 +66,8 @@ public function addPatient($patient){
  public function getPatientMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from paciente";
-        $stmt = new DbConnector()->getConn()->prepare($sql);
+        $stmt = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::OBJ);
         $numMax = $result->id;
