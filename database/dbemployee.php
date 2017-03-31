@@ -73,7 +73,7 @@ public function getUserMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from users";
         $conn = new DbConnector();
-	$stmt =	$conn->getConn()->prepare($sql);
+		$stmt =	$conn->getConn()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         $numMax = $result->id;
@@ -84,13 +84,14 @@ public function getUserMaxId(){
     }
 }
 
-public function login($user, $password) {
+public function loginDatabase($user, $password) {
 	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
 	$conn=  new DbConnector();
+	$stmt =	$conn->getConn()->prepare($sql);
 	$stmt->bindParam(':user', $user);
 	$stmt->bindParam(':pass', $password);
-	$stmt->$conn->getConn()->prepare($sql);
-	return $result = $stmt->fetchAll(PDO::OBJ);
+	$stmt->execute();
+	return $result = $stmt->fetch(PDO::FETCH_OBJ);
 }
 }
 

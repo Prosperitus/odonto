@@ -36,12 +36,12 @@
     <!--MAIN-->
     <div id="login-page" class="row main">
       <div class="col s12 z-depth-3 card-panel">
-        <form class="login-form">     
+        <form class="login-form" action="backend/login.php" method="post">     
           <div class="row margin">
             
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>
-              <input id="username" type="text">
+              <input id="username" type="text" name="username">
               <label for="username">Usuário</label>
             </div>
           </div>
@@ -49,7 +49,7 @@
           <div class="row margin">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock</i>
-              <input id="password" type="password">
+              <input id="password" type="password" name="password">
               <label for="password">Senha</label>
             </div>
           </div>
@@ -63,7 +63,7 @@
           
           <div class="row">
             <div class="input-field col s12">
-              <a href="board.php" class="btn waves-effect waves-light col s12 light-blue bounceOutLeft">Login</a>
+              <button class="btn waves-effect waves-light col s12 light-blue bounceOutLeft">Login</button>
             </div>
           </div>
           

@@ -36,7 +36,7 @@
 
           </ul>
           <ul id="nav-mobile" class="right">
-            <li><a href="index.php">Logout</a></li>
+            <li><a href="backend/logout.php">Logout</a></li>
           </ul>
         </div>
       </nav>

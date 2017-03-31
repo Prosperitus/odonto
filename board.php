@@ -1,4 +1,8 @@
-
+<?php
+	require_once "backend/verifyLog.php";
+	
+	verifyLogRedirect();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,7 +36,7 @@
     <nav>
       <div class="nav-wrapper light-blue">
         <ul id="nav-mobile" class="right">
-          <li><a href="index.php">Logout</a></li>     
+          <li><a href="backend/logout.php">Logout</a></li>     
         </ul>
       </div>
     </nav>
