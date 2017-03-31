@@ -2,6 +2,7 @@
 	include "employeeModel.php";
 	include "../database/dbhospital.php";
 
+
 	function addHospital(){
 		$Employee = new Hospital();
 		$Employee->setNameHosp($_POST["namehops"]);
