@@ -1,16 +1,16 @@
 <?php 
 
-include_once "dbconnect.php";
-include_once "../backend/employeeModel.php";
+require_once "dbconnect.php";
+require_once "../backend/employeeModel.php";
 
-public class DbEmployee {
+ class DbEmployee {
 
 public function addEmployee($employee){
  	     try{
          $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
     VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
-    	
-	
+
+	$employee->setPermission((int) $employee->getPermission());
 	//var_dump($employee);
 	//die();
         // ge significa get employee
@@ -35,7 +35,8 @@ public function addEmployee($employee){
         if($geNregistration == null){
             $geNregistration = 1;
         }
-    	$stmt = new DbConnector()->conn->prepare($sql);
+    	$conn = new DbConnector();
+	$stmt = $conn->getConn()->prepare($sql);
     	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
     	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
@@ -62,18 +63,19 @@ public function addEmployee($employee){
                   
                     }catch(PDOException $e)
                     {
-			//var_dump($e);
+			var_dump($e);
                         return $result;
                     }
-                     }
-
+                     
+}
 
 public function getUserMaxId(){
     try{
         $sql = "SELECT MAX(id) as id from users";
-        $stmt = new DbConnector()->conn->prepare($sql);
+        $conn = new DbConnector();
+	$stmt =	$conn->getConn()->prepare($sql);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::OBJ);
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
         $numMax = $result->id;
         return $numMax;
     }
@@ -83,21 +85,14 @@ public function getUserMaxId(){
 }
 
 public function login($user, $password) {
-
 	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
-
 	$stmt = new DbConnector()->conn->prepare($sql);
 	$stmt->bindParam(':user', $user);
 	$stmt->bindParam(':pass', $password);
 	return $result = $stmt->fetchAll(PDO::OBJ);
-
-
-
+}
 }
 
 
-
-
-}
 
  ?>

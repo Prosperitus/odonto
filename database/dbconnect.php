@@ -20,7 +20,12 @@ class DbConnector {
     exit;
  
     }
+
 }
+
+	public function getConn(){
+		return $this->conn;
+	}
 }
  
         
