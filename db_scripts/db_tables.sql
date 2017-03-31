@@ -91,7 +91,12 @@ CREATE TABLE attendance(
 	`bed` varchar (255) NOT NULL,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL
+	`admission_cause` int NOT NULL,
+	`mouthguard` boolean,
+	`medical_record` varchar (255) NOT NULL,
+	`photos` varchar (255) NOT NULL,
+	`state_of_attendance` varchar (255) NOT NULL
+
 ) ENGINE=InnoDB AUTO_INCREMENT=1; 
 
 CREATE TABLE admission_cause(
