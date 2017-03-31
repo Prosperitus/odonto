@@ -1,8 +1,8 @@
 <?php
 	include "employeeModel.php";
 	//include "../database/dbconnect.php";
-	include_once "funcoes.php";
-
+	include_once "../teste/funcoes.php";
+	require_once "generateRegistry.php";
 
 	function addEmployee(){
 		$Employee = new Employee();
@@ -26,12 +26,12 @@
 
 		
 		$Employee->setCro($_POST["funcionario_cro"]);
-		$Employee->setDate($_POST["funcionario_admissao"]);
+		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
 		$Employee->setRegistration(generateRegistry(6));
 		$Employee->setCpf($_POST["funcionario_cpf"]);	
 		$Employee->setPhone2($_POST["funcionario_celular"]);
 		$Employee->setPhone($_POST["funcionario_telefone"]);
-		$Employee->setAdress($_POST["adress"]);
+		$Employee->setAddress($_POST["funcionario_endereco"]);
 		
 		$banco = isset($_POST["bank"]) ? $_POST["bank"] : 0;
 		if(InvalidName($banco)){
@@ -40,9 +40,9 @@
 		}else{
 			$Employee->setBank($_POST["bank"]);
 		}
-		
-		$Employee->setPermission($_POST["permissiontype"]);
-
+		if(isset($_POST["permissao"])){
+			$Employee->setPermission($_POST["permissao"]);
+		}	
 		$senha=isset($_POST["funcionario_senha"]) ?$_POST["funcionario_senha"] :  0;
 		if(InvalidPassword($senha)){
 			echo "Senha Inválida</br>";
