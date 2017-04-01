@@ -4,13 +4,13 @@
 
 
 	function addHospital(){
-		$Employee = new Hospital();
-		$Employee->setNameHosp($_POST["namehops"]);
-		$Employee->setUTI($_POST["uti"]);
-		$Employee->setBed($_POST["bed"]);
-		$Employee->setChefUti($_POST["chefuti"]);
-		$Employee->setPhoneChef($_POST["phonechef"]);
-		$Employee->setPhoneHosp($_POST["phonehosp"]);
+		$Hospital = new Hospital();
+		$Hospital->setNameHosp($_POST["namehops"]);
+		$Hospital->setUTI($_POST["uti"]);
+		$Hospital->setBed($_POST["bed"]);
+		$Hospital->setChefUti($_POST["chefuti"]);
+		$Hospital->setPhoneChef($_POST["phonechef"]);
+		$Hospital->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DbHospital();
 		$conn->addHospital($Hospital);
 	}
