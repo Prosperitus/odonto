@@ -136,6 +136,38 @@ VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro')
 INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
 
-
-
+INSERT INTO `odt_soft`.`users`
+(
+`name`,
+`surname`,
+`cro`,
+`email`,
+`registration`,
+`phone`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+(
+'odonto',
+'teste',
+'12345',
+'teste@gmail.com',
+123,
+'123',
+'123',
+'SCS',
+'2017/03/03',
+'123456',
+'456789',
+'BANCO',
+'99',
+'987',
+3);
 
