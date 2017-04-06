@@ -1,41 +1,24 @@
 <?php
-	class Patient{
+	class Patience{
 
 	private $name;
-	private $surname;
-	private $gender;
+	private $age;
+	private $sex;
 	private $address;
 	private $neighborhood;
 	private $city;
 	private $state;
-	private $birthdate;
 	private $cep;
+	private $hospital;
 	private $healthPlan;
 	private $responsibleName;
 	private $responsiblePhone;
-	private $responsibleName2 = "Não Informado";
-	private $responsiblePhone2 = "Não Informado";
-	private $clinic;
-	private $socialSecurity = "Não Informado";
+	private $medicalRecords;
+        private $clinic;
+        private $medicalassistant;
 
 	public function __construct(){
 
-	}
-	
-	public function getSocialSecurity(){
-		return $this->socialSecurity;
-	}
-
-	public function setSocialSecurity($socialSecurity){
-		$this->socialSecurity = $socialSecurity;
-	}
-
-	public function getBirthdate(){
-		return $this->birthdate;
-	}
-
-	public function setBirthdate($birthdate){
-		$this->birthdate = $birthdate;
 	}
 
 	public function getName(){
@@ -46,20 +29,20 @@
 		$this->name = $name;
 	}
 
-	public function getCity(){
-		return $this->city;
+	public function getAge(){
+		return $this->age;
 	}
 
-	public function setCity($city){
-		$this->city = $city;
+	public function setName($age){
+		$this->age = $age;
 	}
 	
-	public function getGender(){
-		return $this->gender;
+	public function getSex(){
+		return $this->sex;
 	}
 
-	public function setGender($gender){
-		$this->gender = $gender;
+	public function setSex($sex){
+		$this->sex = $sex;
 	}
 
 	public function getAddress(){
@@ -93,11 +76,19 @@
 	public function setCep($cep){
 		$this->cep = $cep;
 	}
+	
+	public function getHospital(){
+		return $this->hospital;
+	}
+
+	public function setHospital($hospital){
+		$this->hospital = $hospital;
+	}
 
 	public function getHealthPlan(){
 		return $this->healthPlan;
 	}
-
+medical records
 	public function setHealthPlan($healthPlan){
 		$this->healthPlan = $healthPlan;
 	}
@@ -109,14 +100,6 @@
 	public function setResponsibleName($responsibleName){
 		$this->responsibleName = $responsibleName;
 	}
-	
-	public function getResponsibleName2(){
-		return $this->responsibleName2;
-	}
-
-	public function setResponsibleName2($responsibleName){
-		$this->responsibleName2 = $responsibleName;
-	}
 
 	public function getResponsiblePhone(){
 		return $this->responsiblePhone;
@@ -126,14 +109,14 @@
 		$this->responsiblePhone = $responsiblePhone;
 	}
 	
-	public function getResponsiblePhone2(){
-		return $this->responsiblePhone2;
+	public function getMedicalRecords(){
+		return $this->medicalRecords;
 	}
 
-	public function setResponsiblePhone2($responsiblePhone){
-		$this->responsiblePhone2 = $responsiblePhone;
+	public function setMedicalRecords($medicalRecords){
+		$this->medicalRecords = $medicalRecords;
 	}
-	
+
 	public function getClinic(){
 		return $this->clinic;
 	}
@@ -141,13 +124,11 @@
 	public function setClinic($clinic){
 		$this->clinic = $clinic;
 	}
-
-	public function getSurname(){
-		return $this->surname;
+         public function getmedicalassistant(){
+                  return $this ->medicalassistant;
 	}
-
-	public function setSurname($surname){
-		$this->surname = $surname;
-	}
-
-	}
+         public function setmedicalassistant($medicalassistant){
+                    $this->medicalassistant =$medicalassistant;        
+        }
+           
+ 
