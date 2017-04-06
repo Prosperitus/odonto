@@ -91,18 +91,23 @@ public function addPatient($patient){
  }
  
 
- public function search_patient($search_patient){
+ public function search_patient($filter){
 
-    $sql = "SELECT * FROM patient WHERE  name = :patient_name OR surname = :patient_surname OR cpf = :patient_cpf OR health_insurance = :patient_hi OR responsible1 = :patient_responsible1 OR responsible2 = :patient_responsible2 OR email = :patient_email";
+    $sql = "SELECT id,name,social_security,health_insurance,responsible1,responsible2,FROM `odt_soft`.`patient`
+			WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :email
+			ORDER by patient.name;";
+
+
+    $filter2 ="%".$filter."%";
     $conn= new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
-    $stmt->bindParam(':patient_name', $search_patient);
-    $stmt->bindParam(':patient_surname', $search_patient);
-    $stmt->bindParam(':patient_cpf', $search_patient);
-    $stmt->bindParam(':patient_hi', $search_patient);
-    $stmt->bindParam(':patient_responsible1', $search_patient);
-    $stmt->bindParam(':patient_responsible2', $search_patient);
-    $stmt->bindParam(':patient_email', $search_patient);
+    $stmt->bindParam(':name', $filter2);
+    $stmt->bindParam(':surname',$filter2);
+    $stmt->bindParam(':cpf', $filter);
+    $stmt->bindParam(':health_insurance', $filter);
+    $stmt->bindParam(':responsible_Name1', $filter);
+    $stmt->bindParam(':responsible_Name2', $filter);
+    $stmt->bindParam(':patient_email', $filter2);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
