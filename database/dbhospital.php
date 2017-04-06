@@ -14,7 +14,7 @@ public class DbHospital{
         $ghName = $hospital->getNameHost();
         $ghUTIAdmin = $hospital->getAdminUti();
         $ghAdminPhone = $hospital->getPhoneAdmin();
-        $ghUtiPhone = $hospital->getPhoneUti();
+        $ghPhoneUti = $hospital->getPhoneUti();
         //$ghNumOfUTIs = $hospital->getUTI();
         //$ghnumOfBeds = $hospital->getBed();
         //$ghArchives = $hospital->getArchives();
