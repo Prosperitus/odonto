@@ -4,8 +4,6 @@
 		
 
 		private $namehosp;
-		private $uti;
-		private $bed;
 		private $chefuti;
 		private $phonechef;
 		private $phonehosp;
@@ -23,21 +21,6 @@
 			$this->name = $namehosp;
 		}
 
-		public function getUTI(){
-			return $this->uti;
-		}
-		
-		public function setUTI($uti){
-			$this->name = $uti;
-		}
-	
-		public function getBed(){
-			return $this->bed;
-		}
-		
-		public function setBed($bed){
-			$this->name = $bed;
-		}
 
 		public function getChefUti(){
 			return $this->chefuti;
@@ -55,12 +38,12 @@
 			$this->name = $phonechef;
 		}
 
-		public function getPhoneHosp(){
-			return $this->phonehosp;
+		public function getPhoneUti(){
+			return $this->phoneuti;
 		}
 		
-		public function setPhoneHosp($phonehosp){
-			$this->name = $phonehosp;
+		public function setPhoneUti($phoneuti){
+			$this->name = $phoneuti;
 		}
 
 	}
