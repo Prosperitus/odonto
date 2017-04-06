@@ -1,4 +1,5 @@
-ELECT `patient`.`id`,
+/*susbtituir ? pela variavel */
+SELECT `patient`.`id`,
     `patient`.`name`,
     `patient`.`surname`,
     `patient`.`social_security`,
@@ -21,5 +22,5 @@ ELECT `patient`.`id`,
     `patient`.`speciality_phy_assistant`
 FROM `odt_soft`.`patient`
 WHERE patient.
-name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR health_insurance = '%?%' OR responsible1 = ? OR email like '%?%'
-order by patient.name;
+name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR health_insurance = '%?%' OR responsible1 = ? OR email LIKE '%?%'
+ORDER by patient.name;
