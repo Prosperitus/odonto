@@ -22,5 +22,5 @@ SELECT `patient`.`id`,
     `patient`.`speciality_phy_assistant`
 FROM `odt_soft`.`patient`
 WHERE patient.
-name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR health_insurance = '%?%' OR responsible1 = ? OR email LIKE '%?%'
+name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR health_insurance = '?' OR responsible1 = '?' OR email LIKE '%?%'
 ORDER by patient.name;
