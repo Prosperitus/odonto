@@ -89,6 +89,15 @@
 			$erro = true;
 			echo "O sexo nao foi escolhido</br>";
 		}
+		if ($cep_paciente != ""){
+			if(!letra_na_str($cep_paciente)){
+				$patient->setCep($_POST['cep_paciente']);
+			}
+			else{
+				$erro = true;
+				echo "cep invalido</br>";
+			}
+		}
 		echo "</div>";
 		echo "<h3>";
 		$patient->setAddress($_POST['endereco_paciente']);
@@ -97,7 +106,7 @@
 		$patient->setState($_POST['paciente_uf']);
 		$patient->setHealthPlan($_POST['plano_de_saude']);
 		$patient->setBirthdate($_POST['date_paciente']);
-		$patient->setCep($_POST['cep_paciente']);
+		
 		$patient->setResponsiblePhone($_POST['telefone_responsavel']);
 		$patient->setSocialSecurity($_POST['cpf']);
 		//$patient->setClinic($_POST['clinica']);

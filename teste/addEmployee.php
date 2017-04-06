@@ -8,13 +8,15 @@
 		$Employee = new Employee();
 		$error = false;
 
-		$name = isset($_POST["funcionario_nome"]) ? $_POST["funcionario_nome"] : 0;
-		$surname =  isset($_POST["funcionario_sobrenome"]) ? $_POST["funcionario_sobrenome"] : 0;
-		$bank = isset($_POST["funcionario_banco"]) ? $_POST["funcionario_banco"] : 0;
-		$cro = isset($_POST["funcionario_conta_banco"]) ? $_POST["funcionario_conta_banco"] : 0;
-		$ag = isset($_POST["funcionario_agencia_banco"]) ? $_POST["funcionario_agencia_banco"] : 0;
-		$password = isset($_POST["funcionario_senha"]) ? $_POST["funcionario_senha"] : 0;
-		$cc = isset($_POST["funcionario_conta_banco"]) ? $_POST["funcionario_conta_banco"] : 0;
+		$name = $_POST["funcionario_nome"] ? $_POST["funcionario_nome"] : 0;
+		$surname =  $_POST["funcionario_sobrenome"] ? $_POST["funcionario_sobrenome"] : 0;
+		$bank = $_POST["funcionario_banco"] ? $_POST["funcionario_banco"] : 0;
+		$cro = $_POST["funcionario_conta_banco"] ? $_POST["funcionario_conta_banco"] : 0;
+		$ag = $_POST["funcionario_agencia_banco"] ? $_POST["funcionario_agencia_banco"] : 0;
+		$password = $_POST["funcionario_senha"] ? $_POST["funcionario_senha"] : 0;
+		$cc = $_POST["funcionario_conta_banco"] ? $_POST["funcionario_conta_banco"] : 0;
+		$cro = $_POST["funcionario_cro"] ? $_POST["funcionario_cro"] : 0;
+		$cpf = $_POST["funcionario_cpf"] ? $_POST["funcionario_cpf"] : 0;
 
 		echo "Nome: $name </br> Sobrenome: $surname </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password </br>";
 		echo "</br>Teste Inválidos: </br>";
