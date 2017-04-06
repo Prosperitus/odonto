@@ -123,8 +123,11 @@
       <div class="col s10">
        <ul class="right">
         <form>
-          <div class="input-field">
-            <input id="search" type="search" />
+          <div class="input-field col s6">
+            <input id="search" type="search" />  
+            	<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    				<i class="material-icons right">send</i>
+  				</button>
             <label for="search"><i class="material-icons">search</i></label>
             </ul>
           </div>
