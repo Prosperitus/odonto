@@ -1,27 +1,37 @@
+
 <?php
-	include "userModel.php"
-	include "../database/dbconnect.php"
-
-	function addPatience(){
-		$patience = new user();
-		$patience->setName($_POST['name']);
-		$patience->setAge($_POST['age']);
-		$patience->setSex($_POST['sex']);
-		$patience->setAddress($_POST['address']);
-		$patience->setNeighborhood($_POST['neighborhood']);
-		$patience->setCity($_POST['city']);
-		$patience->setState($_POST['state']);
-		$patience->setCep($_POST['cep']);
-		$patience->setHospital($_POST['hospital']);
-		$patience->setHealthPlan($_POST['healthPlan']);
-		$patience->setResponsibleName($_POST['responsibleName']);
-		$patience->setResponsiblePhone($_POST['responsiblePhone']);
-		$patience->setClinic($_POST['clinic']);
-                $patience->setmedicalassistant($_POST['medicalassistant']);
-                $conn = new DBconnect();
-                $conn->addUser($patience);
-     
-
-	}
-
-addUser();
+-
+-        // 30/03/2017
+-	include "patientModel.php";
+-	include "../database/dbpatient.php";
+-
+-	function addPatient(){
+-		$patient = new Patient();
+-		$patient->setName($_POST['nome_paciente']);
+-		$patient->setSurname($_POST["sobrenome_paciente"]);
+-		$patient->setGender($_POST['genero_paciente']);
+-		$patient->setAddress($_POST['endereco_paciente']);
+-		$patient->setNeighborhood($_POST['bairro_paciente']);
+-		$patient->setCity($_POST['cidade_paciente']);
+-		$patient->setBirthdate($_POST['date_paciente']);
+-		$patient->setState($_POST['paciente_uf']);
+-		$patient->setCep($_POST['cep_paciente']);
+-		if(isset($_POST['social_security'])){
+-			$patient->setSocialSecurity($_POST['social_security']);
+-		}
+-		$patient->setHealthPlan($_POST['plano_de_saude']);
+-		$patient->setResponsibleName($_POST['nome_responsavel']);
+-		$patience->setmedicalassistant($_POST['medicalassistant']);
+                $patient->setResponsiblePhone($_POST['telefone_responsavel']);
+-		$patient->setClinic($_POST['clinica']);
+-		$conn = new DbPatient();
+-		$result = $conn->addPatient($patient);
+-		return $result;
+-     
+-	}
+-
+-if(addPatient()){
+-	header("location: ../success_register.php");
+-}else{
+-	header("location: ../fail_register.php");
+-}
