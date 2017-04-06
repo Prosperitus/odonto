@@ -98,40 +98,26 @@ class DbEmployee {
 
     public function searchEmployee($filter) {
 
-        $sql = "SELECT `users`.`id`,
-        `users`.`name`,
-        `users`.`surname`,
-        `users`.`cro`,
-        `users`.`email`,
-        `users`.`registration`,
-        `users`.`phone`,
-        `users`.`phone2`,
-        `users`.`address`,
-        `users`.`admission_date`,
-        `users`.`social_security`,
-        `users`.`bank`,
-        `users`.`number_of_account`,
-        `users`.`agency`,
-        `users`.`permition`
+        $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
         FROM `odt_soft`.`users`
         WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro";
         $filter2 = "%".$filter."%";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
-        $stmt = bindParam(':name', $filter2);
-        $stmt = bindParam(':surname', $filter2);
-        $stmt = bindParam(':cpf', $filter);
-        $stmt = bindParam(':permition', $filter);
-        $stmt = bindParam(':registration', $filter);
-        $stmt = bindParam(':email', $filter2);
-        $stmt = bindParam(':cro', $filter);
+        $stmt->bindParam(':name', $filter2);
+        $stmt->bindParam(':surname', $filter2);
+        $stmt->bindParam(':cpf', $filter);
+        $stmt->bindParam(':permition', $filter);
+        $stmt->bindParam(':registration', $filter);
+        $stmt->bindParam(':email', $filter2);
+        $stmt->bindParam(':cro', $filter);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        //var_dump($result);
+        //die();
+
         return $result;
     }
-
-
-
 
 }
 

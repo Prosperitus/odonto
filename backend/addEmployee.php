@@ -2,7 +2,7 @@
 	require_once "employeeModel.php";
 	require_once "generateRegistry.php";
 	require_once "../database/dbemployee.php";
-
+	
 	function addEmployee(){
 		$Employee = new Employee();
 		$Employee->setName($_POST["funcionario_nome"]);
