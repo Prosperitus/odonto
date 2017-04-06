@@ -92,7 +92,7 @@ class DbEmployee {
     	$stmt->bindParam(':user', $user);
     	$stmt->bindParam(':pass', $password);
     	$stmt->execute();
-    	$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    	$result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result;
     }
 
