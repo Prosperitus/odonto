@@ -1,8 +1,4 @@
-<?php
-	require_once "backend/verifyLog.php";
-	
-	verifyLogRedirect();
-?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,11 +38,15 @@
         $('.parallax').parallax();
 
     }); // end of document ready
-})(jQuery); // end of jQuery name space</script>
+})(jQuery); // end of jQuery name space
+</script>
 
 
    <!--CABEÇALHO-->
-   <nav>
+<?php 
+session_start();
+if(isset($_SESSION['emailEmployee'])){ echo 
+   '<nav>
   <div class="nav-wrapper light-blue">
   <div class="col s2">
         <ul class="left">
@@ -68,7 +68,7 @@
   </div>
 </nav>
 
- <!--Sidenav-->
+<!--Sidenav-->
 
 <div class="userView position:relative">
   <ul id="slide-out" class="side-nav ">
@@ -84,6 +84,8 @@
     <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
     <li><a href="#!"><i class="material-icons">perm_identity</i>Pacientes</a></li>
     <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
+      <li><a href="backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
+
     
     <li><div class="divider"></div></li>
     <li><a class="subheader">Mais opçoes</a></li>
@@ -93,7 +95,30 @@
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
+  </div>';
+}else{
+  echo '
+<div class="nav-wrapper light-blue">
+  <div class="col s2">
+      </div>
+    <div class="row">
+      <div class="col s10">
+       <ul class="right">
+        <form>
+          <div class="input-field">
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+</nav>
+
+
+  ';
+ } ?>
+
+
+
 
 
     <!--CLASS/FORM-->
