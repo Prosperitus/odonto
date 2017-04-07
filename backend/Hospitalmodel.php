@@ -46,5 +46,12 @@
 			$this->name = $phoneuti;
 		}
 
-	}
+		public function getPhoneHost(){
+			return $this->phoneuti;
+		}
+		
+		public function setPhoneHost($phonehost){
+			$this->name = $phonehost;
+		}
 
+	}

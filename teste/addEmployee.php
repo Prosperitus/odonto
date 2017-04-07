@@ -17,8 +17,10 @@
 		$cc = $_POST["funcionario_conta_banco"] ? $_POST["funcionario_conta_banco"] : 0;
 		$cro = $_POST["funcionario_cro"] ? $_POST["funcionario_cro"] : 0;
 		$cpf = $_POST["funcionario_cpf"] ? $_POST["funcionario_cpf"] : 0;
+		$tel = $_POST["funcionario_telefone"] ? $_POST["funcionario_telefone"] : 0;
+		$cel = $_POST["funcionario_celular"] ? $_POST["funcionario_celular"] : 0;
 
-		echo "Nome: $name </br> Sobrenome: $surname </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password </br>";
+		echo "Nome: $name </br> Sobrenome: $surname </br> CPF: $cpf </br> Tel: $tel </br> Cel: $cel </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password </br> CEP: $cep </br> CRO: $cro </br>";
 		echo "</br>Teste Inválidos: </br>";
 
 		if(InvalidName($name)){
@@ -63,14 +65,47 @@
 			$Employee->setPassword(hash("sha256",($_POST["funcionario_senha"])));
 		}
 
+		if(FuncionarioCep($cep)){
+			$error = true;
+			echo "CEP </br>";
+		}else{
+
+		}
+
+		if(FuncionarioCpf($cpf)){
+			$error = true;
+			echo "CPF</br>";
+		}else{
+			$Employee->setCpf($_POST["funcionario_cpf"]);
+		}
+
+		if(FuncionarioCro($cro)){
+			$error = true;
+			echo "CRO</br>";
+		}else{
+			$Employee->setCro($_POST["funcionario_cro"]);
+		}
+
+		if(FuncionarioCel($cel)){
+			$error = true;
+			echo "Celular</br";
+		}else{
+			$Employee->setPhone2($_POST["funcionario_celular"]);
+		}
+
+		if(FuncionarioTel($tel)){
+			$error  = true;
+			echo "Telefone </br>";
+		}else{
+			$Employee->setPhone($_POST["funcionario_telefone"]);
+		}
 
 
-		$Employee->setCro($_POST["funcionario_cro"]);
+
+
+
 		$Employee->setRegistration(generateRegistry(6));
 		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
-		$Employee->setCpf($_POST["funcionario_cpf"]);
-		$Employee->setPhone($_POST["funcionario_telefone"]);
-		$Employee->setPhone2($_POST["funcionario_celular"]);
 		$Employee->setAddress($_POST["funcionario_endereco"]);
 		$Employee->setPermission($_POST["permissao"]);
 		$Employee->setEmail($_POST["funcionario_email"]);
@@ -84,8 +119,4 @@
 	}
 
 
-if(addEmployee()){
-	header("location: ../success_register.php");
-}else{
-	header("location: ../fail_register.php");
-}
+	addEmployee();

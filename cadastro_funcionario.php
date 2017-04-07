@@ -131,80 +131,80 @@ if(isset($_SESSION['emailEmployee'])){ echo
           <!--NOME-->
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
-            <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome">
+            <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome" required>
             <label for="funcionario_nome">Nome</label>
           </div>
 
           <!--SOBRENOME-->
           <div class="input-field col s5">
-            <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome">
+            <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome" required>
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>
 
           <!--CPF-->
           <div class="input-field col s5">
             <i class="material-icons prefix">perm_identity</i>
-            <input id="funcionario_cpf" type="text" class="validate" name="funcionario_cpf">
+            <input id="funcionario_cpf" type="text" class="validate" name="funcionario_cpf" required>
             <label for="funcionario_cpf">CPF</label>
           </div>
 
           <!--EMAIL-->
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
-            <input id="funcionario_email" type="email" class="validate" name="funcionario_email">
+            <input id="funcionario_email" type="email" class="validate" name="funcionario_email" required>
             <label for="funcionario_email" data-error="Email invalido!">Email</label>
           </div>
 
           <!--TELEFONE-->
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
-            <input id="funcionario_telefone" type="text" class="validate" name="funcionario_telefone">
+            <input id="funcionario_telefone" type="text" class="validate" name="funcionario_telefone" required>
             <label for="funcionario_telefone">Telefone Residencial</label>
           </div>
 
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
-            <input id="funcionario_celular" type="text" class="validate" name="funcionario_celular">
+            <input id="funcionario_celular" type="text" class="validate" name="funcionario_celular" required>
             <label for="funcionario_celular">Telefone Celular</label>
           </div>
 
           <!--DATA DE NASCIMENTO-->
           <div class="input-field col s5">
             <i class="material-icons prefix">today</i>
-            <input id="funcionario_nascimento" type="text" class="datepicker" name="funcionario_nascimento">
+            <input id="funcionario_nascimento" type="text" class="datepicker" name="funcionario_nascimento" required>
             <label for="funcionario_nascimento">Data de Nascimento</label>
           </div>
 
           <!--CONTA DO BANCO-->
           <div class="input-field col s5">
             <i class="material-icons prefix">payment</i>
-            <input id="funcionario_banco" type="text" class="validate" name="funcionario_banco">
+            <input id="funcionario_banco" type="text" class="validate" name="funcionario_banco" required>
             <label for="funcionario_banco">Banco</label>
           </div>
 
           <div class="input-field col s5">
             <i class="material-icons prefix">payment</i>
-            <input id="funcionario_conta_banco" type="text" class="validate" name="funcionario_conta_banco">
+            <input id="funcionario_conta_banco" type="text" class="validate" name="funcionario_conta_banco" required>
             <label for="funcionario_conta_banco">Conta Bancaria</label>
           </div>
 
           <div class="input-field col s5">
             <i class="material-icons prefix">payment</i>
-            <input id="funcionario_agencia_banco" type="text" class="validate" name="funcionario_agencia_banco">
+            <input id="funcionario_agencia_banco" type="text" class="validate" name="funcionario_agencia_banco" required>
             <label for="funcionario_agencia_banco">Agência Bancaria</label>
           </div>
 
           <!--CEP-->
           <div class="input-field col s5">
             <i class="material-icons prefix">my_location</i>
-            <input id="funcionario_cep" type="text" class="validate" name="funcionario_cep">
+            <input id="funcionario_cep" type="text" class="validate" name="funcionario_cep" required>
             <label for="funcionario_cep">CEP</label>
           </div>
 
           <!--ENDEREÇO-->
           <div class="input-field col s5">
             <i class="material-icons prefix">store</i>
-            <input id="funcionario_endereco" type="text" class="validate" name="funcionario_endereco">
+            <input id="funcionario_endereco" type="text" class="validate" name="funcionario_endereco" required>
             <label for="funcionario_endereco">Endereço</label>
           </div>
 
@@ -212,21 +212,21 @@ if(isset($_SESSION['emailEmployee'])){ echo
           <!--SENHA-->
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha">
+            <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha" required>
             <label for="funcionario_senha">Senha</label>
           </div>
 
           <!--CONFIRMAÇÃO DA SENHA-->
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="funcionario_confirma_senha" type="password" class="validate" name="funcionario_confirma_senha">
+            <input id="funcionario_confirma_senha" type="password" class="validate" name="funcionario_confirma_senha" required>
             <label for="funcionario_confirma_senha">Confirmação de Senha</label>
           </div>
 
           <!--CRO-->
           <div class="input-field col s5">
             <i class="material-icons prefix">class</i>
-            <input id="funcionario_cro" type="text" class="validate" name="funcionario_cro">
+            <input id="funcionario_cro" type="text" class="validate" name="funcionario_cro" required>
             <label for="funcionario_cro">Nº   CRO</label>
           </div>
 
@@ -235,7 +235,7 @@ if(isset($_SESSION['emailEmployee'])){ echo
 
           <div class="input-field col s5" >
             <i class="material-icons prefix">location_on</i>
-            <select class="icons" name="funcionario_crouf" id="funcionario_crouf">
+            <select class="icons" name="funcionario_crouf" id="funcionario_crouf" required>
               <option value="AC" data-icon="images/acre.jpg" class="left circle">Acre - AC</option>
               <option value="AL" data-icon="images/alagoas.jpg" class="left circle">Alagoas - AL</option>
               <option value="AP" data-icon="images/amapa.jpg" class="left circle">Amapá - AP</option>
@@ -272,7 +272,7 @@ if(isset($_SESSION['emailEmployee'])){ echo
 
           <div class="input-field col s5">
             <i class="material-icons prefix">today</i>
-            <input id="funcionario_admissao" type="text" class="datepicker" name="funcionario_admissao">
+            <input id="funcionario_admissao" type="text" class="datepicker" name="funcionario_admissao" required>
             <label for="funcionario_admissao">Data de Admissão na Empresa</label>
           </div>
 
@@ -280,7 +280,7 @@ if(isset($_SESSION['emailEmployee'])){ echo
 
           <div class="input-field col s5">
             <i class="material-icons prefix">supervisor_account</i>
-            <select multiple name="permissao" id="permissao">
+            <select multiple name="permissao" id="permissao" required>
               <option value="" disabled selected>Tipo de Permissão</option>
               <option value="1">Dentista</option>
               <option value="2">Auxiliar</option>

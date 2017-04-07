@@ -9,6 +9,7 @@
 		$Hospital->setChefUti($_POST["chefuti"]);
 		$Hospital->setPhoneChef($_POST["phonechef"]);
 		$Hospital->setPhoneUti($_POST["phoneuti"]);
+		$Hospital->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DbHospital();
 		$conn->addHospital($Hospital);
 	}
