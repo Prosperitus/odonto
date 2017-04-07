@@ -73,14 +73,23 @@ CREATE TABLE hospital(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar(255) NOT NULL,
-	`number_itu` int(5) NOT NULL,
-	`number_bed` int(5) NOT NULL,
-	`name_admin_itu` varchar(255) NOT NULL,
-	`telephone_admin_itu` varchar(255) NOT NULL,
 	`telephone_hospital`varchar(255) NOT NULL,
 	`file` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
+DROP TABLE IF EXISTS hospital_itu;
+
+CREATE TABLE hospital_itu(
+
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name_itu` varchar(255),
+	`name_bed` varchar(255),
+	`number_itu` int(5) NOT NULL,
+        `number_bed` int(5) NOT NULL,
+        `name_admin_itu` varchar(255) NOT NULL,
+        `telephone_admin_itu` varchar(255) NOT NULL
+)ENGINE=InnoDB AUTO_INCREMENT=1;
+	
 DROP TABLE IF EXISTS attendance;
 
 CREATE TABLE attendance(
@@ -133,6 +142,9 @@ ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
 
 ALTER TABLE files_hospital
 ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
+
+ALTER TABLE hospital_itu
+ADD CONSTRAINT fk_hospital_itu FOREIGN KEY (id) REFERENCES hospital(id);
 
 /*INSERTS*/
 
