@@ -94,7 +94,7 @@ public function addPatient($patient){
     }
 }
 
- public function search_id($search){
+ public function searchId($search){
 
     $sql = "SELECT * FROM patient WHERE id = :id_patient";
     $conn = new DbConnector();
@@ -107,7 +107,7 @@ public function addPatient($patient){
  }
  
 
- public function search_patient($filter){
+ public function searchPatient($filter){
 
     $sql = "SELECT id,name,social_security,health_insurance,responsible1,responsible2,FROM `odt_soft`.`patient`
 			WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :email
