@@ -114,8 +114,7 @@ class DbEmployee {
         $stmt->bindParam(':cro', $filter);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        var_dump($result);
-        die();
+        
 
         return $result;
     }
@@ -123,15 +122,13 @@ class DbEmployee {
     public function searchEmployeeById($filter) {
         $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
         FROM `odt_soft`.`users`
-        WHERE id = :id
-        ORDER BY name";
+        WHERE id = :id";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':id', $filter);
         $stmt->execute();
         $result = $stmt-> fetch(PDO::FETCH_OBJ);
-        var_dump($result);
-        die();
+
 
         return $result;
     }
