@@ -9,7 +9,7 @@
 		$patient = new Patient();
 		$patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST["sobrenome_paciente"]);
-		su$patient->setGender($_POST['genero_paciente']);		
+		$patient->setGender($_POST['genero_paciente']);		
                 $patient->setAddress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
