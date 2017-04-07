@@ -7,8 +7,8 @@ include_once "../backend/patientModel.php";
 
 public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2)
- 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblePhone2)";
+    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2, physician_assistant, name_phy_assistant, telephone_phy_assistant, speciality_phy_assistant)
+ 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblePhone2, :physician_assistant, :name_phy_assistant, :telephone_phy_assistant, :speciality_phy_assistant)";
 
         //gp significa get pacient
  		$gpName = $patient->getName();
@@ -27,6 +27,10 @@ public function addPatient($patient){
         $gpResponsibleName2 = $patient->getResponsibleName2();
         $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
+ 		$gpphysician_assistant = $patient-> getmedicalassistant();
+ 		$gpname_phy_assistant = $patient->getname_phy_assistant();
+ 		$gptelephone_phy_assistant = $patient->gettelephone_phy_assistant();
+ 		$gpspeciality_phy_assistant = $patient->getspeciality_phy_assistant();
 
 		
 		if($gpClinic == "on"){
@@ -34,6 +38,14 @@ public function addPatient($patient){
 		}else{
 			$gpClinic = (bool) false;
 		}
+
+
+		if($gpphysician_assistant== "on"){
+			$gpphysician_assistant = (bool) true;
+		}else{
+			$gpphysician_assistant = (bool) false;
+		}
+
 
 		$conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
@@ -53,6 +65,10 @@ public function addPatient($patient){
         $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
         $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
+ 		$stmt->bindParam(':physician_assistant', $gpphysician_assistant,PDO::PARAM_BOOL);
+ 		$stmt->bindParam(':name_phy_assistant', $gpname_phy_assistant,PDO::PARAM_STR,100);
+ 		$stmt->bindParam(':telephone_phy_assistant', $gptelephone_phy_assistant,PDO::PARAM_STR, 100);
+ 		$stmt->bindParam(':speciality_phy_assistant', $gpspeciality_phy_assistant,PDO::PARAM_STR,100);
 
  		$result = $stmt->execute();
             		return $result;
