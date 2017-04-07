@@ -123,7 +123,8 @@ class DbEmployee {
     public function searchEmployeeById($filter) {
         $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
         FROM `odt_soft`.`users`
-        WHERE id = :id"
+        WHERE id = :id
+        ORDER BY name";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':id', $filter);
