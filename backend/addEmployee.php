@@ -3,6 +3,9 @@
 	require_once "generateRegistry.php";
 	require_once "../database/dbemployee.php";
 	
+	$teste = new DbEmployees;
+	$teste->searchEmployee("odonto");
+
 	function addEmployee(){
 		$Employee = new Employee();
 		$Employee->setName($_POST["funcionario_nome"]);

@@ -100,7 +100,8 @@ class DbEmployee {
 
         $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
         FROM `odt_soft`.`users`
-        WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro";
+        WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro
+        ORDER BY name";
         $filter2 = "%".$filter."%";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
@@ -113,8 +114,23 @@ class DbEmployee {
         $stmt->bindParam(':cro', $filter);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        //var_dump($result);
-        //die();
+        var_dump($result);
+        die();
+
+        return $result;
+    }
+
+    public function searchEmployeeById($filter) {
+        $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
+        FROM `odt_soft`.`users`
+        WHERE id = :id"
+        $conn =  new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':id', $filter);
+        $stmt->execute();
+        $result = $stmt-> fetch(PDO::FETCH_OBJ);
+        var_dump($result);
+        die();
 
         return $result;
     }
