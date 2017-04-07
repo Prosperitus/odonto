@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if(isset($_SESSION['msg'])){
+		$msg = $_SESSION['msg'];
+	}else{
+		$msg = "";
+	}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +21,7 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="css/animate.css"></script>
     <script src="js/jquery.maskedinput.js"></script>   
-    
+
     <style>
       body {
         display: flex;
@@ -66,7 +75,10 @@
               <button class="btn waves-effect waves-light col s12 light-blue bounceOutLeft">Login</button>
             </div>
           </div>
-          
+		  
+		 
+          <label id="msg" style="position:relative;left: 50px"><?=$msg?></label>    
+          <?php if(isset($_SESSION['msg'])){unset($_SESSION['msg']);}?>
           <div class="row">
             <div class="input-field col s6">
               <p class="margin left medium-small"><a href="cadastro_funcionario.php">Cadastrar</a></p>

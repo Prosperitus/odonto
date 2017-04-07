@@ -15,6 +15,8 @@
 		header("location: ../board.php");
 		die();
 	}else{
+		session_start();
+		$_SESSION['msg'] = "Login ou senha incorretos";
 		header("location: ../index.php");
 		die();
 	}
