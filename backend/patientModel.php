@@ -1,9 +1,11 @@
 <?php
-	class Patience{
+	// 07/04/2017 *BUGS A SEREM CORRIGIDOS*
+	class Patient{
 
 	private $name;
+	private $surname;
 	private $age;
-	private $sex;
+	private $gender;
 	private $address;
 	private $neighborhood;
 	private $city;
@@ -29,20 +31,28 @@
 		$this->name = $name;
 	}
 
+	public function getSurname(){
+		return $this->surname;
+	}
+
+	public function setSurname($surname){
+		$this->name = $surname;
+	}
+
 	public function getAge(){
 		return $this->age;
 	}
 
-	public function setName($age){
+	public function setAge($age){
 		$this->age = $age;
 	}
 	
-	public function getSex(){
-		return $this->sex;
+	public function getGender(){
+		return $this->gender;
 	}
 
-	public function setSex($sex){
-		$this->sex = $sex;
+	public function setGender($gender){
+		$this->gender = $gender;
 	}
 
 	public function getAddress(){
@@ -69,6 +79,15 @@
 		$this->state = $state;
 	}
 
+	public function getCity(){
+		return $this->city;
+	}
+
+	public function setCity($city){
+		$this->city = $city;
+	}
+
+
 	public function getCep(){
 		return $this->cep;
 	}
@@ -88,7 +107,7 @@
 	public function getHealthPlan(){
 		return $this->healthPlan;
 	}
-medical records
+
 	public function setHealthPlan($healthPlan){
 		$this->healthPlan = $healthPlan;
 	}
@@ -130,5 +149,4 @@ medical records
          public function setmedicalassistant($medicalassistant){
                     $this->medicalassistant =$medicalassistant;        
         }
-           
- 
+}
