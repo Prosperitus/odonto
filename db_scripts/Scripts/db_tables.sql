@@ -143,6 +143,9 @@ ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
 ALTER TABLE files_hospital
 ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
+ALTER TABLE hospital_itu
+ADD CONSTRAINT fk_hospital_itu FOREIGN KEY (id) REFERENCES hospital(id);
+
 /*INSERTS*/
 
 INSERT INTO permition (type)
