@@ -8,10 +8,7 @@
 	$result = $db->loginDatabase($user,hash("sha256",$password));
 	if($result != null){
 		session_start();
-		$_SESSION['nameEmployee'] = $result->name;
-		$_SESSION['emailEmployee'] = $result->email;
-		$_SESSION['croEmployee'] = $result->cro;
-		$_SESSION['permissionEmployee'] = $result->permition;
+		$_SESSION['Employee'] = $result;
 		header("location: ../board.php");
 		die();
 	}else{

@@ -1,11 +1,6 @@
-<?php 
-	require_once "cabecalho.php";
-?>
-	<div class="main">
-	<p>Cadastro efetuado com sucesso!</p>
-	</div>
-	<footer class="page-footer light-blue">
-          <div class="container">
+  <!--FOOTER-->
+        <footer class="page-footer light-blue">
+          <div class="container ; position:absolute">
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Footer Content</h5>
@@ -29,8 +24,7 @@
             </div>
           </div>
         </footer>
-
-    <!--SCRIPSTs-->
+<!--SCRIPSTs-->
     <script>
       $('.datepicker').pickadate({
       selectYears:100
@@ -38,7 +32,10 @@
       $(document).ready(function() {
       $('select').material_select();
       });
+
     </script>
-    <script src="js/mask_paciente.js"></script>
+    <script src="js/mask.js"></script>
+    <script src="js/mask_funcionario.js"></script>
+
   </body>
 </html>

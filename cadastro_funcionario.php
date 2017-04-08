@@ -1,4 +1,5 @@
-
+<?php 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,7 +46,9 @@
    <!--CABEÇALHO-->
 <?php 
 session_start();
-if(isset($_SESSION['emailEmployee'])){ echo 
+require_once "backend/userInform.php";
+$user = userInform();
+if(isset($_SESSION['Employee'])){ echo 
    '<nav>
   <div class="nav-wrapper light-blue">
   <div class="col s2">
@@ -77,14 +80,14 @@ if(isset($_SESSION['emailEmployee'])){ echo
 
       </div>
       <a href="#!user"><img class="circle" src="images/medico.jpg"></a>
-      <a href="#!name"><span class="white-text name">Bem Vindo "John Doe"</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#!name"><span class="white-text name">Bem Vindo '.$user->name.'</span></a>
+      <a href="#!email"><span class="white-text email">'.$user->email.'</span></a>
     </div></li>
     <li><a href="#!"><i class="material-icons">note_add</i>Cadastrar</a></li>
     <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
     <li><a href="#!"><i class="material-icons">perm_identity</i>Pacientes</a></li>
     <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
-      <li><a href="backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
+    <li><a href="backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
 
     
     <li><div class="divider"></div></li>
@@ -299,46 +302,4 @@ if(isset($_SESSION['emailEmployee'])){ echo
       </form>
     </div>
 
-        <!--FOOTER-->
-        <footer class="page-footer light-blue">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
-
-<!--SCRIPSTs-->
-    <script>
-      $('.datepicker').pickadate({
-      selectYears:100
-      });
-      $(document).ready(function() {
-      $('select').material_select();
-      });
-
-    </script>
-    <script src="js/mask.js"></script>
-    <script src="js/mask_funcionario.js"></script>
-
-
- </body>
-</html>
+<?php require_once "rodape.php";
