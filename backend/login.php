@@ -9,7 +9,7 @@
 	if($result != null){
 		session_start();
 		$_SESSION['Employee'] = $result;
-		header("location: ../board.php");
+		header("location: ../public/board.php");
 		die();
 	}else{
 		session_start();

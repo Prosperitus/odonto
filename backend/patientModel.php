@@ -1,10 +1,10 @@
 <?php
 	// 07/04/2017 *BUGS A SEREM CORRIGIDOS*
-	class Patient{
+class Patient{
 
 	private $name;
 	private $surname;
-	private $age;
+	private $birthdate;
 	private $gender;
 	private $address;
 	private $neighborhood;
@@ -16,8 +16,9 @@
 	private $responsibleName;
 	private $responsiblePhone;
 	private $medicalRecords;
-        private $clinic;
-        private $medicalassistant;
+    private $clinic;
+    private $medicalassistant;
+	private $cpf;
 
 	public function __construct(){
 
@@ -39,12 +40,12 @@
 		$this->name = $surname;
 	}
 
-	public function getAge(){
-		return $this->age;
+	public function getBirthdate(){
+		return $this->birthdate;
 	}
 
-	public function setAge($age){
-		$this->age = $age;
+	public function setBirthdate($birthdate){
+		$this->birthdate = $birthdate;
 	}
 	
 	public function getGender(){
@@ -143,10 +144,20 @@
 	public function setClinic($clinic){
 		$this->clinic = $clinic;
 	}
-         public function getmedicalassistant(){
-                  return $this ->medicalassistant;
+	
+	public function getCpf(){
+		return $this->cpf;
 	}
-         public function setmedicalassistant($medicalassistant){
-                    $this->medicalassistant =$medicalassistant;        
-        }
+
+	public function setCpf($cpf){
+		$this->cpf = $cpf;
+	}
+	
+    public function getmedicalassistant(){
+        return $this ->medicalassistant;
+	}
+	
+    public function setmedicalassistant($medicalassistant){
+        $this->medicalassistant =$medicalassistant;        
+    }
 }

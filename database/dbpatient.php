@@ -1,9 +1,9 @@
 <?php
 
-include_once "dbconnect.php";
-include_once "../backend/patientModel.php";
+require_once "dbconnect.php";
+require_once "../backend/patientModel.php";
 
- class DbPatient {
+class DbPatient{
 
 public function addPatient($patient){
  	try{
@@ -15,7 +15,7 @@ public function addPatient($patient){
         $gpSurname = $patient->getSurname();
  		$gpBirthdate = $patient->getBirthdate();
  		$gpGender = $patient->getGender();
- 		$gpSocial_security = $patient->getSocialSecurity();
+ 		$gpSocial_security = $patient->getCpf();
         $gpAddress = $patient->getAddress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
@@ -24,13 +24,13 @@ public function addPatient($patient){
  		$gpHealthPlan = $patient->getHealthPlan();
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
-        $gpResponsibleName2 = $patient->getResponsibleName2();
-        $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
+        //$gpResponsibleName2 = $patient->getResponsibleName2();
+        //$gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
- 		$gpphysician_assistant = $patient-> getmedicalassistant();
- 		$gpname_phy_assistant = $patient->getname_phy_assistant();
- 		$gptelephone_phy_assistant = $patient->gettelephone_phy_assistant();
- 		$gpspeciality_phy_assistant = $patient->getspeciality_phy_assistant();
+ 		//$gpphysician_assistant = $patient-> getmedicalassistant();
+ 		//$gpname_phy_assistant = $patient->getname_phy_assistant();
+ 		//$gptelephone_phy_assistant = $patient->gettelephone_phy_assistant();
+ 		//$gpspeciality_phy_assistant = $patient->getspeciality_phy_assistant();
 
 		
 		if($gpClinic == "on"){
@@ -106,6 +106,15 @@ public function addPatient($patient){
 
  }
  
+
+ public function searchPatientAll(){
+		$sql = "SELECT * FROM patient";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $result;
+}
 
  public function searchPatient($filter){
 
