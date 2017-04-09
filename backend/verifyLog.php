@@ -6,7 +6,7 @@
 	
 	function verifyLogRedirect(){
 		if(!verifyLogUser()){
-			header("location: ../odonto/index.php");
+			header("location: ../index.php");
 			die();
 		}
 	}
