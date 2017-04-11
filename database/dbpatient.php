@@ -95,15 +95,13 @@ public function addPatient($patient){
 }
 
  public function searchId($search){
-
     $sql = "SELECT * FROM patient WHERE id = :id_patient";
     $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
     $stmt->bindParam(':id_patient', $search);
-    return $result = $stmt -> fetch(PDO::OBJ);
-
-
-
+	$stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_OBJ);
+	return $result;
  }
  
 

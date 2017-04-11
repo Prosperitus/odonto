@@ -18,11 +18,10 @@ $user = userInform();
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
 	
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script type="text/javascript" src="../DataTables/media/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css">
-
-    <link rel="stylesheet" type="text/css" href="../DataTables/media/css/datatables.min.css"/>
-    <script type="text/javascript" src="../DataTables/media/js/datatables.min.js"></script>
     
     <style>
       body {

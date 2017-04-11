@@ -5,7 +5,7 @@
 
     <!--CLASS/FORM-->
     <div class="row">
-      <form class="col s11" action="backend/addPatient.php" method="post"> 
+      <form class="col s11" action="../backend/addHospital.php" method="post"> 
     
       <!--TITULO-->
         <h3>Cadastro Hospital</h3>

@@ -120,7 +120,7 @@ class DbEmployee {
     }
 
     public function searchEmployeeById($filter) {
-        $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
+        $sql = "SELECT *
         FROM `odt_soft`.`users`
         WHERE id = :id";
         $conn =  new DbConnector();
@@ -128,8 +128,6 @@ class DbEmployee {
         $stmt->bindParam(':id', $filter);
         $stmt->execute();
         $result = $stmt-> fetch(PDO::FETCH_OBJ);
-
-
         return $result;
     }
 
