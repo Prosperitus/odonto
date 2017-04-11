@@ -49,6 +49,7 @@ function visualizar(id) {
 </div>
 
 <input type="checkbox" value="clinica" checked />
+<div class="margin_small">
   <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -81,4 +82,5 @@ function visualizar(id) {
 			<?php } ?>
         </tbody>
     </table>
+</div>
  <?php require_once "rodape.php";
