@@ -14,11 +14,11 @@
 $(document).ready(function() {
     $('#example').DataTable({select: true});
 	$(function() {
-     $( "#dialogEmployee" ).dialog({
+     $( "#dialogPatient" ).dialog({
 		autoOpen: false,modal: true,
 		buttons: {
 			Fechar: function() {
-				$( "#dialogEmployee" ).dialog('close');
+				$( "#dialogPatient" ).dialog('close');
 			}
 		}
 	});
@@ -32,66 +32,53 @@ function visualizar(id) {
 	$.ajax({ 
 	type: 'get',
 	dataType: 'html',
-	url: "../backend/searchPacient.php?id=" + id 
+	url: "../backend/viewPacient.php?id=" + id 
 	, beforeSend: function () { 
 	}, 
 	success: function (data) { 
-	$("#dialogEmployee").html(data); 
-     $( "#dialogEmployee" ).dialog('open');
+	$("#dialogPatient").html(data); 
+     $( "#dialogPatient" ).dialog('open');
 	} 
 		}) 
 	};
 
 
 </script>
-<div id="dialogEmployee" title="Dados do Paciente">
+<div id="dialogPatient" title="Dados do Paciente">
 	
 </div>
 
+<input type="checkbox" value="clinica" checked />
   <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Data de Nascimento</th>
-                <th>Endereço</th>
-                <th>Cidade</th>
-				<th>Estado</th>
-				<th>Plano de Saúde </th>
+				<th>Plano de Saúde</th>
+                <th>Nome do Responsavel</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Data de Nascimento</th>
-                <th>Endereço</th>
-                <th>Cidade</th>
-				<th>Estado</th>
 				<th>Plano de Saúde</th>
+                <th>Nome do Responsavel</th>
             </tr>
         </tfoot>
         <tbody>
 			<?php foreach($patients as $patient){ ?>
-				<tr class="listPatient" onclick="visualizar(<?= $patient->id?>)">
+				<tr class="listPatient" onclick="visualizar(<?=$patient->id?>)">
 					<td><?=$patient->name.' '.$patient->surname?></td>
 					<td><?=$patient->social_security?></td>
-					<td><?=$patient->birthdate?></td>
-					<td><?=$patient->address?></td>
-					<td><?=$patient->city?></td>
-					<td><?=$patient->state?></td>
 					<td><?=$patient->health_insurance?></td>
+					<?php if($patient->responsible2 != null && $patient->responsible2 != ""){?>
+					<td><?=$patient->responsible1.', '.$patient->responsible2?></td>
+					<?php }else{ ?>
+					<td><?=$patient->responsible1?></td>
+					<?php } ?>
 				</tr>
-			<?php }?>
-			<tr class="listPatient" onclick="<?php $pat = searchPacientId(1);?>">
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-					<td>dfgfdgdfgdf</td>
-				</tr>
+			<?php } ?>
         </tbody>
     </table>
  <?php require_once "rodape.php";
