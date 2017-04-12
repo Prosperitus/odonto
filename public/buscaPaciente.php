@@ -50,7 +50,7 @@ function visualizar(id) {
 
 <input type="checkbox" value="clinica" checked />
 <div class="margin_small">
-  <table id="example" class="display" cellspacing="0" width="100%">
+  <table id="example" class="hover row-border" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Nome</th>
