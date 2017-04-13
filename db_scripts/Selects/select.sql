@@ -14,10 +14,6 @@ SELECT `hospital`.`id`,
     `hospital_itu`.`hospital`
 FROM odt_soft.hospital, odt_soft.hospital_itu WHERE `hospital`.`id` = `hospital_itu`.`hospital` 
 AND  `hospital`.`name` LIKE '%?%' 
-OR `hospital_itu`.`name_admin_itu` LIKE '%?%' OR `hospital_itu`.`number_itu` = ?;
-
-
-	
-
-
+OR `hospital_itu`.`name_admin_itu` LIKE '%?%' OR `hospital_itu`.`number_itu` = ?
+ORDER BY `hospital`.`name`, `hospital_itu`.`name_itu`;
 
