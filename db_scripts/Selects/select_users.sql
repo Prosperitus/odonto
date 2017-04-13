@@ -17,5 +17,6 @@ SELECT `users`.`id`,
     `users`.`permition`
 
 FROM `odt_soft`.`users`
-WHERE users.name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR permition = ? OR registration = ? OR email like '%?%' OR cro = ?;
+WHERE users.name LIKE '%?%' OR surname LIKE '%?%' OR social_security = ? OR permition = ? OR registration = ? OR email like '%?%' OR cro = ?
+ORDER BY `users`.`name`, `users`.`surname`;
 
