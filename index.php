@@ -50,23 +50,40 @@
             
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>
-              <input id="username" type="text" name="username">
+			  <?php if(isset($_COOKIE['user'])){ ?>
+              <input id="username" type="text" name="username" value="<?=$_COOKIE['user']?>">
               <label for="username">Usuário</label>
+			  <?php }else{ ?>
+			  <input id="username" type="text" name="username">
+              <label for="username">Usuário</label>
+			  <?php } ?>
             </div>
           </div>
           
           <div class="row margin">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock</i>
-              <input id="password" type="password" name="password">
+			  
+			  <?php if(isset($_COOKIE['pass'])){ ?>
+              <input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
               <label for="password">Senha</label>
+			  <?php }else{ ?>
+			  <input id="password" type="password" name="password">
+              <label for="password">Senha</label>
+			  <?php } ?>
+              
             </div>
           </div>
           
           <div class="row">          
             <div class="input-field col s12">
-                <input type="checkbox" id="remember-me"/>
+			<?php if(isset($_COOKIE['pass']) && isset($_COOKIE['user'])){ ?>
+                <input name="remember" type="checkbox" id="remember-me" checked />
                 <label for="remember-me">Lembrar Usuário</label>
+			<?php }else{ ?>
+				<input name="remember" type="checkbox" id="remember-me"/>
+                <label for="remember-me">Lembrar Usuário</label>
+			<?php } ?>
             </div>
           </div>
           
