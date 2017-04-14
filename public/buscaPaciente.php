@@ -43,7 +43,13 @@ function visualizar(id) {
 	};
 
 
+
 </script>
+
+	<div class="main margin_small">
+	<br>
+	<p class="bold">Click na linha do paciente para ver suas informações:</p>
+	</div>
 <div id="dialogPatient" title="Dados do Paciente">
 	
 </div>
