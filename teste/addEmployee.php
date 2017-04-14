@@ -20,7 +20,7 @@
 		$tel = $_POST["funcionario_telefone"] ? $_POST["funcionario_telefone"] : 0;
 		$cel = $_POST["funcionario_celular"] ? $_POST["funcionario_celular"] : 0;
 
-		echo "Nome: $name </br> Sobrenome: $surname </br> CPF: $cpf </br> Tel: $tel </br> Cel: $cel </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password </br> CEP: $cep </br> CRO: $cro </br>";
+		echo "Nome: $name </br> Sobrenome: $surname </br> CPF: $cpf </br> Tel: $tel </br> Cel: $cel </br> Banco: $bank </br> Cc: $cc </br> Ag: $ag </br> Senha: $password  </br> CRO: $cro </br>";
 		echo "</br>Teste Inválidos: </br>";
 
 		if(InvalidName($name)){
@@ -65,35 +65,29 @@
 			$Employee->setPassword(hash("sha256",($_POST["funcionario_senha"])));
 		}
 
-		if(FuncionarioCep($cep)){
-			$error = true;
-			echo "CEP </br>";
-		}else{
 
-		}
-
-		if(FuncionarioCpf($cpf)){
+		if(!letra_na_str($cpf) || $cpf = ""){
 			$error = true;
 			echo "CPF</br>";
 		}else{
 			$Employee->setCpf($_POST["funcionario_cpf"]);
 		}
 
-		if(FuncionarioCro($cro)){
+		if(!letra_na_str($cro) || !carac_na_str($cro) || $cro = ""){
 			$error = true;
 			echo "CRO</br>";
 		}else{
 			$Employee->setCro($_POST["funcionario_cro"]);
 		}
 
-		if(FuncionarioCel($cel)){
+		if(!letra_na_str($cel) || !carac_na_str($cel) || $cel = ""){
 			$error = true;
 			echo "Celular</br";
 		}else{
 			$Employee->setPhone2($_POST["funcionario_celular"]);
 		}
 
-		if(FuncionarioTel($tel)){
+		if(!letra_na_str($tel) || !carac_na_str($tel) || $tel = ""){
 			$error  = true;
 			echo "Telefone </br>";
 		}else{
