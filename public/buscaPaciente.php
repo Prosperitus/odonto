@@ -12,7 +12,29 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#example').DataTable({select: true});
+    $('#example').DataTable({"oLanguage":{
+    "sEmptyTable": "Nenhum registro encontrado",
+    "sInfo": "Mostrando de _START_ até _END_, Total de _TOTAL_ Pacientes",
+    "sInfoEmpty": "Mostrando 0 até 0, Total de 0 Pacientes",
+    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sInfoThousands": ".",
+    "sLengthMenu": "_MENU_ resultados por página",
+    "sLoadingRecords": "Carregando...",
+    "sProcessing": "Processando...",
+    "sZeroRecords": "Nenhum paciente encontrado",
+    "sSearch": "Pesquisar",
+    "oPaginate": {
+        "sNext": "Próximo",
+        "sPrevious": "Anterior",
+        "sFirst": "Primeiro",
+        "sLast": "Último"
+    },
+    "oAria": {
+        "sSortAscending": ": Ordenar colunas de forma ascendente",
+        "sSortDescending": ": Ordenar colunas de forma descendente"
+    }
+	}});
 	$(function() {
      $( "#dialogPatient" ).dialog({
 		autoOpen: false,modal: true,
@@ -41,8 +63,6 @@ function visualizar(id) {
 	} 
 		}) 
 	};
-
-
 
 </script>
 
