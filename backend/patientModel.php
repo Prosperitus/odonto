@@ -37,7 +37,7 @@ class Patient{
 	}
 
 	public function setSurname($surname){
-		$this->name = $surname;
+		$this->surname = $surname;
 	}
 
 	public function getBirthdate(){
