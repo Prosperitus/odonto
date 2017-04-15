@@ -10,6 +10,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script src="../js/jquery.maskedinput.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="..validation/funcionario_script.js"></script>
 
     <style>
         body {
@@ -20,6 +22,11 @@
 
         .main {
             flex: 1 0 auto;
+        }
+	.error_form {
+        font-size: 15px;
+        font-family: Arial;
+        color: #FF0052;
         }
     </style>
 
@@ -134,12 +141,14 @@ if(isset($_SESSION['Employee'])){ echo
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
             <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome" required>
+	    <span class="error_form" id="name_error_message" ></span>
             <label for="funcionario_nome">Nome</label>
           </div>
 
           <!--SOBRENOME-->
           <div class="input-field col s5">
             <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome" required>
+	    <span class="error_form" id="surname_error_message" ></span>
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>
 
@@ -154,6 +163,7 @@ if(isset($_SESSION['Employee'])){ echo
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
             <input id="funcionario_email" type="email" class="validate" name="funcionario_email" required>
+	    <span class="error_form" id="email_error_message" ></span>
             <label for="funcionario_email" data-error="Email invalido!">Email</label>
           </div>
 
@@ -215,6 +225,7 @@ if(isset($_SESSION['Employee'])){ echo
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha" required>
+	    <span class="error_form" id="password_error_message" ></span>
             <label for="funcionario_senha">Senha</label>
           </div>
 
@@ -222,6 +233,7 @@ if(isset($_SESSION['Employee'])){ echo
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="funcionario_confirma_senha" type="password" class="validate" name="funcionario_confirma_senha" required>
+	    <span class="error_form" id="retype_password_error_message" ></span>
             <label for="funcionario_confirma_senha">Confirmação de Senha</label>
           </div>
 
