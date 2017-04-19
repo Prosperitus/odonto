@@ -1,14 +1,15 @@
+
 <?php
+
+        // 07/04/2017 *BUGS A SEREM CORRIGIDOS*
 	include "patientModel.php";
-	include "../database/dbconnect.php";
+	include "../database/dbpatient.php";
 	include "../teste/funcoes.php";
-
-
 
 	function addPatient(){
 		$patient = new Patient();
 		$erro = false;
-		$cpf = $_POST['cpf'] ;
+		$cpf = $_POST['cpf'];
 		$telefone_responsavel = $_POST['telefone_responsavel'] ;
 		$nome_responsavel = $_POST['nome_responsavel'] ;
 		$cep_paciente = $_POST['cep_paciente'] ;
@@ -22,7 +23,7 @@
 		$paciente_uf =$_POST['paciente_uf'];
 		$genero_paciente = isset($_POST['genero_paciente']) ? $_POST['genero_paciente'] : 0;
 		$clinica = isset($_POST['clinica']) ? $_POST['clinica'] : 0;
-		/**********************************************************************/
+		/****************************************************************************************************/
 		echo"<style>
 				body{
 					background-color: lightgreen;
@@ -56,16 +57,15 @@
 		echo "------------------------------------------------------------------</br>";
 		echo "Erros : </br></br>";
 		echo "<div>";
-		/***********************************************************************/
-
+		/****************************************************************************************************/
+		$patient = new Patient();
 		if(!InvalidName($nome_paciente)){
-			$patient->setName($_POST['nome_paciente']);
+				$patient->setName($_POST['nome_paciente']);
 		}
-		else{
-			$erro = true;
+		else {
+			$error = true;
 			echo "Nome do paciente invalido</br>";
 		}
-		
 		if(!InvalidName($sobrenome_paciente)){
 			$patient->setSurname($_POST["sobrenome_paciente"]);
 		}
@@ -73,49 +73,68 @@
 			$erro = true;
 			echo "Sobrenome do paciente invalido</br>";
 		}
-		
-		if(!InvalidName($nome_responsavel)){
-			$patient->setResponsibleName($_POST['nome_responsavel']);
+		if (!InvalidCep($cep_paciente)){
+			$patient->setCep($_POST['cep_paciente']);
 		}
 		else{
 			$erro = true;
-			echo "O nome do responsavel esta invalido</br>";
-		}	
-		if(isset($_POST['genero_paciente'])){
+			echo "cep invalido</br>";
+		}
+		if(!InvalidCpf($cpf)){
+			$patient->setCpf($_POST['cpf']);
+		}
+		else {
+			$erro = true;
+			echo "CPF invalido</br>";
+		}
+		if(!InvalidTel($telefone_responsavel)){
+			$patient->setResponsiblePhone($_POST['telefone_responsavel']);
+		}
+		else {
+			$erro = true;
+			echo "Telefone do responsavel invalido</br>";
+		}
+		if(!InvalidName($nome_responsavel)){
+				$patient->setResponsibleName($_POST['nome_responsavel']);;
+		}
+		else {
+			$error = true;
+			echo "Nome do responsavel invalido</br>";
+		}
+		if(!InvalidUf($paciente_uf)){
+			$patient->setState($_POST['paciente_uf']);
+		}
+		else {
+			$erro = true;
+			echo "UF invalido";
+		}
+		if($genero_paciente == 1 || $genero_paciente == 2){	
 			$patient->setGender($_POST['genero_paciente']);
 		}
-		else
-		{
+		else {
 			$erro = true;
-			echo "O sexo nao foi escolhido</br>";
-		}
-		if ($cep_paciente != ""){
-			if(!letra_na_str($cep_paciente)){
-				$patient->setCep($_POST['cep_paciente']);
-			}
-			else{
-				$erro = true;
-				echo "cep invalido</br>";
-			}
+			echo "Genero do paciente invalido</br>";
 		}
 		echo "</div>";
-		echo "<h3>";
-		$patient->setAddress($_POST['endereco_paciente']);
+		/****************************************************************************************************/
+		$patient->setBirthdate($_POST['date_paciente']);
+        $patient->setAddress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
-		$patient->setState($_POST['paciente_uf']);
 		$patient->setHealthPlan($_POST['plano_de_saude']);
-		$patient->setBirthdate($_POST['date_paciente']);
-		
-		$patient->setResponsiblePhone($_POST['telefone_responsavel']);
-		$patient->setSocialSecurity($_POST['cpf']);
-		//$patient->setClinic($_POST['clinica']);
+		//$patient->setmedicalassistant($_POST['medicalassistant']);
+		//$patient->setmedicalRecords($_POST['medicalRecords']);
+		$patient->setClinic($clinica);
 		if(!$erro){
-		$conn = new DBconnector();
-		$result = $conn->addPatient($patient);
-		echo "</h3>";
-		return $result;
+			$conn = new DbPatient();
+			$result = $conn->addPatient($patient);
+			return $result;
      	}
 	}
-
 	addPatient();
+ /*if(addPatient()){
+	header("location: ../public/success_register.php");
+ }else{
+	header("location: ../public/fail_register.php");
+ }*/
+
