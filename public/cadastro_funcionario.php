@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script src="../js/jquery.maskedinput.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
-    <script src="..validation/funcionario_script.js"></script>
+    <script src="../validation/funcionario_script.js"></script>
 
     <style>
         body {
@@ -28,6 +28,12 @@
         font-family: Arial;
         color: #FF0052;
         }
+		
+	.error_msg{
+		font-size: 15px;
+        font-family: Arial;
+		clear: both;
+	}
     </style>
 
   </head>
@@ -140,8 +146,8 @@ if(isset($_SESSION['Employee'])){ echo
           <!--NOME-->
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
-            <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome" required>
-	    <span class="error_form" id="name_error_message" ></span>
+            <input id="funcionario_nome" type="text" class="" name="funcionario_nome" required>
+			<span class="error_msg" id="name_error_message"></span>
             <label for="funcionario_nome">Nome</label>
           </div>
 

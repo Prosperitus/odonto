@@ -64,17 +64,19 @@ $(function() {
         var name = $("#funcionario_nome").val();
 
         if (name === "") {
-            $("#funcionario_nome").next("funcionario_nome").attr('data-error','The name field is required');
-            $("#funcionario_nome").removeClass("valid");
-            $("#funcionario_nome").addClass("invalid");
             //$("#name_error_message").html("O espaco deve ser preenchido");
             //$("#name_error_message").show();
             error_name = true;
         } else {
             if(/^[a-zA-Z]*$/.test(name)){
-                $("#name_error_message").hide();
+				$("#name_error_message").html("nome correto!");
+				$("#funcionario_nome").css("border-bottom", "2px solid rgb(76, 175, 80)");
+				$("#name_error_message").css("color", "rgb(76, 175, 80)");
+                $("#name_error_message").show();
             }else{
                 $("#name_error_message").html("O nome deve conter apenas letras");
+				$("#funcionario_nome").css("border-bottom", "2px solid rgb(244, 67, 54)");
+				$("#name_error_message").css("color", "rgb(244, 67, 54)");
                 $("#name_error_message").show();
                 error_name = true;
 
