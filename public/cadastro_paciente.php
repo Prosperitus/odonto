@@ -14,14 +14,14 @@
       <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input name="nome_paciente" id="nome_paciente" type="text" class="validate">
-          <label for="nome_paciente">Nome</label>
+          <input name="nome_paciente" id="nome_paciente" type="text" class="validate text required" required="" aria-required="true">
+          <label for="nome_paciente" data-error="wrong" data-success="right">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
-          <input name="sobrenome_paciente" id="sobrenome_paciente" type="text" class="validate">
-          <label for="sobrenome_paciente">Sobrenome</label>
+           <input name="sobrenome_paciente" id="sobrenome_paciente" type="text" class="validate text required" required="" aria-required="true">
+          <label for="sobrenome_paciente" data-error="wrong" data-success="right">Sobrenome</label>
         </div>
 
 		<!--CPF-->
