@@ -7,7 +7,7 @@
 		$Hospital = new Hospital();
 		$Hospital->setNameHosp($_POST["namehops"]);
 		$Hospital->setChefUti($_POST["chefuti"]);
-		$Hospital->setPhoneChef($_POST["phonechef"]);
+		//$Hospital->setPhoneChef($_POST["phonechef"]);
 		$Hospital->setPhoneUti($_POST["phoneuti"]);
 		//$Hospital->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DbHospital();
