@@ -30,17 +30,17 @@
 			$this->name = $chefuti;
 		}
 
-		//public function getPhoneChef(){
-		//	return $this->phonechef;
-		//}
+		public function getPhoneChef(){
+			return $this->phonechef;
+		}
 		
-		//public function setPhoneChef($phonechef){
-		//	$this->name = $phonechef;
-		//}
+		public function setPhoneChef($phonechef){
+			$this->name = $phonechef;
+		}
 
-		//public function getPhoneUti(){
-		//	return $this->phoneuti;
-		//}
+		public function getPhoneUti(){
+			return $this->phoneuti;
+		}
 		
 		public function setPhoneUti($phoneuti){
 			$this->name = $phoneuti;
