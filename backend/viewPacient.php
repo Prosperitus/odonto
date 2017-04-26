@@ -37,11 +37,12 @@
 <label class="bold">Bairro: </label><label class="font_big"><?=$pat->neighborhood?></label><br>
 <label class="bold">Cidade/UF: </label><label class="font_big"><?=$pat->city.'/'.$pat->state?></label><br>
 <label class="bold">Cep: </label><label class="font_big"><?=$pat->zip_code;?></label><br>
-<?php if($pat->clinic = true){ ?>
+
+<?php if($pat->clinic == "1"){ ?>
 <input type="checkbox" id="clinica" name="clinica" checked />
 <label class="bold" for="clinica">Paciente da Clinica</label>
-<?php }else{ ?>
-<input type="checkbox" id="clinica" name="clinica" checked />
+<?php }if($pat->clinic == "0"){ ?>
+<input type="checkbox" id="clinica" name="clinica"/>
 <label class="bold" for="clinica">Paciente da Clinica</label>
 </div>
 <?php } ?>

@@ -51,10 +51,10 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>
 			  <?php if(isset($_COOKIE['user'])){ ?>
-              <input id="username" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,20}$" title="usuário precisa ter pelo menos 4 letras e no máximo 20, não é permitido o uso de caractéres especiais" name="username" value="<?=$_COOKIE['user']?>">
+              <input id="username" type="text" name="username" value="<?=$_COOKIE['user']?>">
               <label for="username">Usuário</label>
 			  <?php }else{ ?>
-			  <input id="username" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="usuário precisa ter pelo menos 4 letras e no máximo 20, não é permitido o uso de caractéres especiais" name="username">
+			  <input id="username" type="text" name="username">
               <label for="username">Usuário</label>
 			  <?php } ?>
             </div>
@@ -65,11 +65,10 @@
               <i class="material-icons prefix">lock</i>
 			  
 			  <?php if(isset($_COOKIE['pass'])){ ?>
-              <input id="password" type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-              title="Senha precisa conter pelo menos uma letra maiúscula, uma minúscula,numeros ou um caractér especial e pelo menos 8 caractéres" name="password" value="<?=$_COOKIE['pass']?>">
+              <input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
               <label for="password">Senha</label>
 			  <?php }else{ ?>
-			  <input id="password" type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Senha precisa conter pelo menos uma letra maiúscula, uma minúscula,numeros ou um caractér especial e pelo menos 8 caractéres" 
+			  <input id="password" type="password"			  
 			  name="password">
               <label for="password">Senha</label>
 			  <?php } ?>
