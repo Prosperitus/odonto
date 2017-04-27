@@ -24,7 +24,7 @@ public function addPatient($patient){
  		$gpHealthPlan = $patient->getHealthPlan();
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
-        $gpEmail = $patient->getemail();
+        $gpEmail = $patient->getpacienteEmail();
         $gpResponsibleName2 = $patient->getResponsibleName2();
         $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
