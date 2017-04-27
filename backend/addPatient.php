@@ -7,12 +7,12 @@
 
 	function addPatient(){
 		$patient = new Patient();
-		$patient ->setemail($_POST['email']);
+		$patient ->setemail($_POST['paciente_Email']);
                 $patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
 		$patient->setBirthdate($_POST['date_paciente']);
-                $patient->setAddress($_POST['endereco_paciente']);
+                $patient->setAddress($_POST['endereço_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
 		$patient->setState($_POST['paciente_uf']);
