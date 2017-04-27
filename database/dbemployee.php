@@ -86,7 +86,7 @@ class DbEmployee {
     }
 
     public function loginDatabase($user, $password) {
-    	$sql = "SELECT * FROM users WHERE (email = :user OR cro = :user) AND password = :passowrd";
+    	$sql = "SELECT * FROM users WHERE (email = :user OR cro = :user) AND password = :password";
     	$conn =  new DbConnector();
     	$stmt =	$conn->getConn()->prepare($sql);
     	$stmt->bindParam(':user', $user);
