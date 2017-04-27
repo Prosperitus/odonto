@@ -34,5 +34,8 @@ public class DbHospital{
 
 
 	}
+}
 
-    searchHospital();
+$dbh = new DbHospital();
+
+$dbh->searchHospital();

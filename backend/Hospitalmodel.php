@@ -44,4 +44,4 @@ class Hospital{
 		public function setPhoneUti($phoneuti){
 			$this->name = $phoneuti;
 		}
-
+}
