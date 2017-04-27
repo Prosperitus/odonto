@@ -1,5 +1,5 @@
 <?php
-	// 07/04/2017 *BUGS A SEREM CORRIGIDOS*
+	
 class Patient{
 
 	private $name;
@@ -16,10 +16,10 @@ class Patient{
 	private $responsibleName;
 	private $responsiblePhone;
 	private $medicalRecords;
-    private $clinic;
-    private $medicalassistant;
+        private $clinic;
+        private $medicalassistant;
 	private $cpf;
-
+        private $email;
 	public function __construct(){
 
 	}
@@ -52,17 +52,46 @@ class Patient{
 		return $this->gender;
 	}
 
-	public function setGender($gender){
-		$this->gender = $gender;
+	public function setGender($Gender){
+		$this->Gender = $Gender;
 	}
 
 	public function getAddress(){
-		return $this->address;
+		return $this->Address = $Adress;
 	}
 
-	public function setAddress($address){
-		$this->address = $address;
+        public function setAdress($Adress){
+		$this->Adress = $Adress;
+         
+        }
+
+	public function getBirthdate(){
+		return $this->birthdate;
 	}
+
+	public function setBirthdate($birthdate){
+		$this->birthdate = $birthdate;
+	}
+	
+	public function getGender(){
+		return $this->Gender;
+	
+       }	
+    	
+       public function setGender($Gender){
+                 $this->Gender =$Gender;
+        }   
+	
+        public function getAdress(){
+	        return this->Adress;
+              
+	}
+
+
+         public function setAddress($Adress){
+		$this->Address = $Adress;
+  
+
 	
 	public function getNeighborhood(){
 		return $this->neighborhood;
@@ -153,11 +182,21 @@ class Patient{
 		$this->cpf = $cpf;
 	}
 	
-    public function getmedicalassistant(){
-        return $this ->medicalassistant;
+        public function getmedicalassistant(){
+               return $this ->medicalassistant;
 	}
 	
-    public function setmedicalassistant($medicalassistant){
-        $this->medicalassistant =$medicalassistant;        
+        public function setmedicalassistant($medicalassistant){
+               $this->medicalassistant =$medicalassistant;        
+        }
+        
+        public function getemail(){
+               return $this->email;  
+        }
+        public function setemail($email){
+	        $this->email =$email;
+   
+  
+       }
     }
-}
+

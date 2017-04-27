@@ -111,17 +111,14 @@ $user = userInform();
       <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
     </div></li>
     <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-    <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
-    <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
-	<li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
     
     <li><div class="divider"></div></li>
-    <li><a class="subheader">Mais opçoes</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="subheader">Buscas</a></li>
+    <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
+    <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
+    <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Funcionarios</a></li>
+    <li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
+
+   
   </ul>
   </div>
