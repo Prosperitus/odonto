@@ -13,35 +13,35 @@
       <!--NOME DO HOSPITAL-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="nome_hospital" id="nome_hospital" type="text" class="validate">
+          <input name="nome_hospital" id="nome_hospital" pattern="[a-zA-ZÀ-ú/s]+$" title="Apenas letras" type="text" class="validate">
           <label for="nome_hospital">Nome do Hospital</label>
         </div>
 
          <!--TELEFONE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_uti" id="telefone_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 000000-0000" type="text" class="validate">
+          <input name="telefone_uti" id="telefone_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_uti">Telefone da UTI</label>
         </div>
 
         <!--NOME DO CHEFE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>  
-          <input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-z\s]+$" title="Só letras" type="text" class="validate">
+          <input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-ú/s]+$" title="Apenas letras" type="text" class="validate">
           <label for="sobrenome_paciente">Nome do Chefe da UTI</label>
         </div>
        
          <!--TELEFONE DO CHEFE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_chefeuti" id="telefone_chefeuti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 000000-0000" type="text" class="validate">
+          <input name="telefone_chefeuti" id="telefone_chefeuti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_chefeuti">Telefone do Chefe da UTI</label>
         </div>
 
         <!--NÚMERO DE UTIs-->
         <div class="input-field col s5">
         <i class="material-icons prefix">view_headline</i>  
-          <input name="numeroutis_hospital" id="numeroutis_hospital" pattern="[0-9]+$" title="Só números" type="text" class="validate">
+          <input name="numeroutis_hospital" id="numeroutis_hospital" pattern="[0-9]+$" title="Apenas números" type="text" class="validate">
           <label for="numeroutis_hospital">Nº de UTIs</label>
         </div>
 

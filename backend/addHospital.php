@@ -1,5 +1,5 @@
 <?php
-	include "hospitalModel.php";
+	include "Hospitalmodel.php";
 	include "../database/dbhospital.php";
 
 
