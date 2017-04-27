@@ -57,7 +57,7 @@ class Patient{
 	}
 
 	public function getAddress(){
-		return $this->Address = $Adress;
+		return $this->Address;
 	}
 
         public function setAdress($Adress){
@@ -82,16 +82,6 @@ class Patient{
                  $this->Gender =$Gender;
         }   
 	
-        public function getAdress(){
-	        return this->Adress;
-              
-	}
-
-
-         public function setAddress($Adress){
-		$this->Address = $Adress;
-  
-
 	
 	public function getNeighborhood(){
 		return $this->neighborhood;
