@@ -37,8 +37,12 @@
       } );
 
     </script>
-    <script src="../js/mask.js"></script>
-    <script src="../js/mask_funcionario.js"></script>
+   
+
+   <script src="../js/mask.js"></script>
+   <script src="../js/mask_funcionario.js"></script>
+   <script src="../js/mask_paciente.js"></script>
+   <script src="../js/mask_hospital.js"></script>
 
   </body>
 </html>

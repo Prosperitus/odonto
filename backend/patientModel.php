@@ -19,7 +19,7 @@ class Patient{
         private $clinic;
         private $medicalassistant;
 	private $cpf;
-        private $pacienteemail;
+        private $pacienteEmail;
 	public function __construct(){
 
 	}
@@ -57,14 +57,14 @@ class Patient{
 	}
 
 	public function getAddress(){
-		return $this->Address = $Adress;
+		return $this->Address;
 	}
 
         public function setAdress($Adress){
 		$this->Adress = $Adress;
          
         }
-   
+
 	
 	public function getNeighborhood(){
 		return $this->neighborhood;

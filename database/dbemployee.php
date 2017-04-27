@@ -86,11 +86,11 @@ class DbEmployee {
     }
 
     public function loginDatabase($user, $password) {
-    	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
+    	$sql = "SELECT * FROM users WHERE (email = :user OR cro = :user) AND password = :password";
     	$conn =  new DbConnector();
     	$stmt =	$conn->getConn()->prepare($sql);
     	$stmt->bindParam(':user', $user);
-    	$stmt->bindParam(':pass', $password);
+    	$stmt->bindParam(':password', $password);
     	$stmt->execute();
     	$result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result;
@@ -129,6 +129,7 @@ class DbEmployee {
         $stmt->execute();
         $result = $stmt-> fetch(PDO::FETCH_OBJ);
         return $result;
+
     }
 
 }
