@@ -2,7 +2,8 @@
 
 include_once "dbconnect.php";
 include_once "../backend/Hospitalmodel.php";
-public class DbHospital{
+
+class DbHospital{
 
 	
 
