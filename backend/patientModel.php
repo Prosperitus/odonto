@@ -83,7 +83,7 @@ class Patient{
         }   
 	
         public function getAdress(){
-	        return this->Adress;
+	        return $this->Adress;
               
 	}
 
