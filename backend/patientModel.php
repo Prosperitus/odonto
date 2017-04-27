@@ -65,23 +65,6 @@ class Patient{
          
         }
 
-	public function getBirthdate(){
-		return $this->birthdate;
-	}
-
-	public function setBirthdate($birthdate){
-		$this->birthdate = $birthdate;
-	}
-	
-	public function getGender(){
-		return $this->Gender;
-	
-       }	
-    	
-       public function setGender($Gender){
-                 $this->Gender =$Gender;
-        }   
-	
 	
 	public function getNeighborhood(){
 		return $this->neighborhood;
