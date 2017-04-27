@@ -6,7 +6,36 @@ public class DbHospital{
 
 	
 
- public function adduti($uti) {
+ 
+
+   public function addhospital($hospital) {
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "INSERT INTO hospital (name, telephone_hospital, file)  
+        VALUES (:name, :tell, :files)";
+
+        //gh significa get hospital
+        $ghName = $hospital->getNameHost();
+        $ghTelephone_hosp = $hospital->getAdminUti();
+        $ghFile = $hospital->getPhoneAdmin();
+      
+        $conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':name', $ghNameHosp);
+        $stmt->bindParam(':tell', $ghTelephonehosp);
+        $stmt->bindParam(':files', $ghFiles);
+       
+
+       $result = $stmt->execute();
+        return $result;
+    }
+    catch(PDOExeption $e){
+        return $result;
+    }
+                    
+	}
+
+   public function adduti($uti) {
     try {
         //checar com o SGBD os nomes das colunas
         $sql = "INSERT INTO hospital_itu (name_itu, name_bed, number_itu, number_bed, name_admin_itu, telephone_admin_itu, hospital)  
@@ -40,35 +69,8 @@ public class DbHospital{
                     
     }
 
-   public function addhospital($hospital) {
-    try {
-        //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital (name, telephone_hospital, file)  
-        VALUES (:name, :tell, :files)";
 
-        //gh significa get hospital
-        $ghName = $hospital->getNameHost();
-        $ghTelephone_hosp = $hospital->getAdminUti();
-        $ghFile = $hospital->getPhoneAdmin();
-      
-        $conn = new DbConnector();
-        $stmt = $conn->getConn()->prepare($sql);
-        $stmt->bindParam(':name', $ghNameHosp);
-        $stmt->bindParam(':tell', $ghTelephonehosp);
-        $stmt->bindParam(':files', $ghFiles);
-       
-
-       $result = $stmt->execute();
-        return $result;
-    }
-    catch(PDOExeption $e){
-        return $result;
-    }
-                    
-	}
-
-
-     public function search_id($search){
+    public function search_id($search){
 
     $sql = "SELECT * FROM hospital WHERE id = :id_hospital";
     $conn = new DbConnector();
@@ -113,5 +115,5 @@ public class DbHospital{
 
 }
 
-
+}
  ?>
