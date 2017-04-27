@@ -65,11 +65,10 @@
               <i class="material-icons prefix">lock</i>
 			  
 			  <?php if(isset($_COOKIE['pass'])){ ?>
-              <input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
+              <input id="password" type="password" pattern="[A-Za-z0-9]{6,16}" title="senha incorreta" name="password" value="<?=$_COOKIE['pass']?>">
               <label for="password">Senha</label>
 			  <?php }else{ ?>
-			  <input id="password" type="password"			  
-			  name="password">
+			  <input id="password" type="password" pattern="[A-Za-z0-9]{6,16}" title="senha incorreta" name="password">
               <label for="password">Senha</label>
 			  <?php } ?>
               
