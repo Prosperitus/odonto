@@ -19,7 +19,7 @@ class Patient{
         private $clinic;
         private $medicalassistant;
 	private $cpf;
-        private $email;
+        private $pacienteEmail;
 	public function __construct(){
 
 	}
@@ -44,7 +44,7 @@ class Patient{
 		return $this->birthdate;
 	}
 
-	public function setBirthdate($birthdate){
+	public function setbirthdate($birthdate){
 		$this->birthdate = $birthdate;
 	}
 	
@@ -163,13 +163,12 @@ class Patient{
                $this->medicalassistant =$medicalassistant;        
         }
         
-        public function getemail(){
-               return $this->email;  
+        public function getpacienteEmail(){
+               return $this->pacienteEmail;  
         }
-        public function setemail($email){
-	        $this->email =$email;
+        public function setpacienteEmail($pacienteEmail){
+	        $this->pacienteEmail =$pacienteEmail;
    
   
-       }
-    }
-
+     }
+}

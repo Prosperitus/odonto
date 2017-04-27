@@ -14,20 +14,20 @@
       <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input name="nome_paciente" id="nome_paciente" type="text" class="validate text required" required="" aria-required="true">
-          <label for="nome_paciente" data-error="wrong" data-success="right">Nome</label>
+          <input name="nome_paciente" id="nome_paciente" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
+          <label for="nome_paciente">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
-           <input name="sobrenome_paciente" id="sobrenome_paciente" type="text" class="validate text required" required="" aria-required="true">
-          <label for="sobrenome_paciente" data-error="wrong" data-success="right">Sobrenome</label>
+       	<input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
+          <label for="sobrenome_paciente">Sobrenome</label>
         </div>
 
 		<!--CPF-->
         <div class="input-field col s5">
          <i class="material-icons prefix">web</i>
-          <input name="cpf" id="cpf" type="text" class="validate">
+          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate">
           <label for="cpf">CPF</label>
         </div>
 
@@ -62,7 +62,7 @@
          <!--CEP-->
         <div class="input-field col s5">
           <i class="material-icons prefix">my_location</i>
-          <input name="cep_paciente" id="cep_paciente" type="text" class="validate">
+          <input name="cep_paciente" id="cep_paciente" title="00000-000" type="text" class="validate">
           <label for="cep_paciente">CEP</label>
         </div>
 
@@ -76,15 +76,16 @@
          <!--NOME DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_responsavel" id="nome_responsavel" type="text" class="validate">
+          <input name="nome_responsavel" id="nome_responsavel" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="nome_responsavel">Nome do Responsável</label>
         </div>
 
          <!--TELEFONE DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_responsavel" id="telefone_responsavel" type="text" class="validate">
+          <input name="telefone_responsavel" id="telefone_responsavel" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_responsavel">Telefone do Responsável</label>
+
         </div>
 
          <!--UF-->
