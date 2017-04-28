@@ -18,12 +18,12 @@ $user = userInform();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-	<script src="../js/jquery.maskedinput.js"></script> 
+	<script type="text/javascript" src="../js/jquery.maskedinput.js"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script type="text/javascript" src="../DataTables/media/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css">
-    
+
     <style>
       body {
       display: flex;
@@ -71,7 +71,8 @@ $user = userInform();
         $('.parallax').parallax();
 
     }); // end of document ready
-})(jQuery); // end of jQuery name space</script>
+})(jQuery); // end of jQuery name space
+</script>
 
 
 
@@ -111,14 +112,17 @@ $user = userInform();
       <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
     </div></li>
     <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-    
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Buscas</a></li>
     <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
     <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
-    <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Funcionarios</a></li>
-    <li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
-
-   
+    <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
+	<li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
+    
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Mais opçoes</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   </div>
