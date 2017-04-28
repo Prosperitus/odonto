@@ -16,9 +16,9 @@ class DbHospital{
         VALUES (:name, :tell, :files)";
 
         //gh significa get hospital
-        $ghName = $hospital->getNameHost();
-        $ghTelephone_hosp = $hospital->getAdminUti();
-        $ghFile = $hospital->getPhoneAdmin();
+        $ghName = $hospital->getNameHosp();
+        $ghTelephone_hosp = $hospital->getChefUti();
+        $ghFile = $hospital->getPhoneChef();
       
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
@@ -78,7 +78,7 @@ class DbHospital{
     $stmt = $conn->getConn()->prepare($sql);
     $stmt->bindParam(':id_hospital', $search);
     return $result = $stmt -> fetch(PDO::OBJ);
-
+}
 
     public function searchHospital($filter){
 
@@ -98,23 +98,16 @@ class DbHospital{
     
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
+    }
 
 		
+    }
 
-
-	}
-
-
-
+	
 
 
 
 
 
 
-
-
-}
-
-}
  ?>

@@ -22,7 +22,7 @@
 		$patient->setResponsibleName($_POST['nome_responsavel']);
 		$patient->setmedicalassistant($_POST['medicalassistant']);
 		$patient->setmedicalRecords($_POST['medicalRecords']);
-                $patient->setResponsiblePhone($_POST['telefone_responsavel']);
+        $patient->setResponsiblePhone($_POST['telefone_responsavel']);
 		$patient->setClinic($_POST['clinica']);
 		$conn = new DbPatient();
 		$result = $conn->addPatient($patient);
