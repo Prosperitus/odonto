@@ -19,7 +19,7 @@
         </div>
 
         <!--SOBRENOME-->
-        <div class="input-field col s5">u
+        <div class="input-field col s5">
        	<input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="sobrenome_paciente">Sobrenome</label>
         </div>
