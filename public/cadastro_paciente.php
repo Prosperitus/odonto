@@ -1,7 +1,7 @@
 <?php 
 	require_once "cabecalho.php";
 ?>
-
+	<script src="../validation/validation.js"></script> 
 
 
     <!--CLASS/FORM-->

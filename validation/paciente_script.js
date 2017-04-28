@@ -4,18 +4,12 @@ $(function() {
 
     $("#name_error_message").hide();
     $("#surname_error_message").hide();
-    $("#password_error_message").hide();
-    $("#retype_password_error_message").hide();
-    $("#email_error_message").hide();
     $("#cpf_error_message").hide();
 
 
     var error_name = false;
     var error_surname = false;
-    var error_password = false;
-    var error_retype_password = false;
-    var error_email = false;
-    //var error_cpf = false;
+    var error_cpf = false;
 
     $("#funcionario_nome").focusout(function() {
 
@@ -29,25 +23,6 @@ $(function() {
 
     });
 
-    $("#funcionario_senha").focusout(function() {
-
-        checkPassword();
-
-
-    });
-
-    $("#funcionario_confirma_senha").focusout(function() {
-
-        checkRetypePassword();
-
-    });
-
-    $("#funcionario_email").focusout(function() {
-
-        checkEmail();
-
-
-    });
     /*$("#button").submit(function(){
      validateForm();
 
@@ -103,55 +78,7 @@ $(function() {
         }
     }
 
-    function checkPassword(){
-
-        var passLength = $("#funcionario_senha").val().length;
-        var password = $("#funcionario_senha").val();
-
-        if(password === ""){
-            $("#password_error_message").html("O espaco deve ser preenchido");
-            $("#password_error_message").show();
-            error_password = true;
-        }else if(passLength < 6){
-            $("#password_error_message").html("A senha deve conter pelo menos 6 caracteres");
-            $("#password_error_message").show();
-            error_password = true;
-        }else{
-            $("#password_error_message").hide();
-        }
-    }
-
-    function checkRetypePassword(){
-
-        var password = $("#funcionario_senha").val();
-        var retypePassword = $("#funcionario_confirma_senha").val();
-
-        if (password !== retypePassword) {
-            $("#retype_password_error_message").html("As senhas são diferentes");
-            $("#retype_password_error_message").show();
-            error_retype_password = true;
-
-
-        }else{
-            $("#retype_password_error_message").hide();
-
-        }
-    }
-
-    function checkEmail(){
-
-        var pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-
-        if (!pattern.test($("#funcionario_email").val())) {
-            $("#email_error_message").html("Email invalido");
-            $("#email_error_message").show();
-            error_email = true;
-        } else {
-            $("#email_error_message").hide();
-        }
-    }
-
-    /*function checkCpf(){
+    function checkCpf(){
 
      var strCPF = $("#funcionario_cpf").val();
      var Soma;
@@ -185,8 +112,5 @@ $(function() {
         }
         alert("Valido!");
         return true;
-    }*/
+    }
 });
-
-
-
