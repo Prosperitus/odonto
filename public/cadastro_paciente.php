@@ -14,13 +14,13 @@
       <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input name="nome_paciente" id="nome_paciente" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
+          <input name="nome_paciente" id="nome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="nome_paciente">Nome</label>
         </div>
 
         <!--SOBRENOME-->
-        <div class="input-field col s5">
-       	<input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
+        <div class="input-field col s5">u
+       	<input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="sobrenome_paciente">Sobrenome</label>
         </div>
 
@@ -76,7 +76,7 @@
          <!--NOME DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_responsavel" id="nome_responsavel" pattern="[a-zA-ZÀ-ú\s]+$" title="Apenas Letras" type="text" class="validate">
+          <input name="nome_responsavel" id="nome_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="nome_responsavel">Nome do Responsável</label>
         </div>
 
