@@ -12,7 +12,7 @@
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
 		$patient->setBirthdate($_POST['date_paciente']);
-        $patient->setAdress($_POST['endereço_paciente']);
+        $patient->setAdress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
 		$patient->setState($_POST['paciente_uf']);

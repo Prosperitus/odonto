@@ -163,10 +163,10 @@ class Patient{
                $this->medicalassistant =$medicalassistant;        
         }
         
-        public function getEmail(){
+        public function getpacienteEmail(){
                return $this->pacienteEmail;  
         }
-        public function setEmail($pacienteEmail){
+        public function setpacienteEmail($pacienteEmail){
 	        $this->pacienteEmail =$pacienteEmail;
    
   
