@@ -95,7 +95,7 @@
           </div>
 		  
 		 
-          <label id="msg" style="position:relative;left: 50px"><?=$msg?></label>    
+          <label id="msg" style="position:relative;left: 50px;color:red;"><?=$msg?></label>    
           <?php if(isset($_SESSION['msg'])){unset($_SESSION['msg']);}?>
           <div class="row">
             <div class="input-field col s6">

@@ -7,7 +7,7 @@
 
 	function addPatient(){
 		$patient = new Patient();
-		$patient ->setpacienteEmail($_POST['paciente_email']);
+		//$patient ->setpacienteEmail($_POST['paciente_email']);
         $patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
@@ -20,8 +20,8 @@
 		$patient->setCpf($_POST['cpf']);
 		$patient->setHealthPlan($_POST['plano_de_saude']);
 		$patient->setResponsibleName($_POST['nome_responsavel']);
-		$patient->setmedicalassistant($_POST['medicalassistant']);
-		$patient->setmedicalRecords($_POST['medicalRecords']);
+		//$patient->setmedicalassistant($_POST['medicalassistant']);
+		//$patient->setmedicalRecords($_POST['medicalRecords']);
         $patient->setResponsiblePhone($_POST['telefone_responsavel']);
 		$patient->setClinic($_POST['clinica']);
 		$conn = new DbPatient();
@@ -33,5 +33,5 @@
  if(addPatient()){
 	header("location: ../public/success_register.php");
  }else{
-	header("location: ../public/fail_register.php");
+	die();
  }

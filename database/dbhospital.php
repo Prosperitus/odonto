@@ -12,19 +12,21 @@ class DbHospital{
    public function addhospital($hospital) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital (name, telephone_hospital, file)  
-        VALUES (:name, :tell, :files)";
+        $sql = "INSERT INTO hospital (name, telephone_uti, telephone_chefe_uti,nome_chefe_uti)  
+        VALUES (:name, :telUti, :telUtiChefe,:nmeUtiChefe)";
 
         //gh significa get hospital
         $ghName = $hospital->getNameHosp();
-        $ghTelephone_hosp = $hospital->getChefUti();
-        $ghFile = $hospital->getPhoneChef();
+        $ghTelephoneUti = $hospital->getPhoneUti();
+        $ghTelephoneUtiChefe = $hospital->getPhoneChef();
+		$ghNomeUtiChefe = $hospital->getChefUti();
       
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
-        $stmt->bindParam(':name', $ghNameHosp);
-        $stmt->bindParam(':tell', $ghTelephonehosp);
-        $stmt->bindParam(':files', $ghFiles);
+        $stmt->bindParam(':name', $ghName);
+        $stmt->bindParam(':telUti', $ghTelephoneUti);
+		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
+        $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
        
 
        $result = $stmt->execute();

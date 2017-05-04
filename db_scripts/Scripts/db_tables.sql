@@ -73,8 +73,9 @@ CREATE TABLE hospital(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar(255) NOT NULL,
-	`telephone_hospital`varchar(255) NOT NULL,
-	`file` varchar(255) NOT NULL
+	`telephone_uti`varchar(255) NOT NULL,
+	`telephone_chefe_uti`varchar(255) NOT NULL,
+	`nome_chefe_uti`varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS hospital_itu;

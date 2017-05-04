@@ -3,8 +3,6 @@
 	require_once "generateRegistry.php";
 	require_once "../database/dbemployee.php";
 	
-	$teste = new DbEmployee;
-	$teste->searchEmployee("odonto");
 
 	function addEmployee(){
 		$Employee = new Employee();

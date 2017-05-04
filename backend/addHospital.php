@@ -5,10 +5,10 @@
 
 	function addHospital(){
 		$Hospital = new Hospital();
-		$Hospital->setNameHosp($_POST["namehops"]);
+		$Hospital->setNameHosp($_POST["nome_hospital"]);
 		$Hospital->setChefUti($_POST["chefuti"]);
-		$Hospital->setPhoneChef($_POST["phonechef"]);
-		$Hospital->setPhoneUti($_POST["phoneuti"]);
+		$Hospital->setPhoneChef($_POST["nome_chefe_uti"]);
+		$Hospital->setPhoneUti($_POST["telefone_chefe_uti"]);
 		//$Hospital->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DbHospital();
 		$conn->addHospital($Hospital);
