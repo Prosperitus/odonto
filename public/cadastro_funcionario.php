@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -68,7 +69,10 @@
 </script>
 
 
-<?php if(isset($_SESSION['Employee'])){?>
+<?php if(isset($_SESSION['Employee'])){
+	$user = $_SESSION['Employee'];
+	?>
+
 <!--CABEÇALHO-->
    <nav>
   <div class="nav-wrapper light-blue">
