@@ -143,14 +143,12 @@
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
             <input id="funcionario_nome" type="text" class="" name="funcionario_nome" required>
-			<span class="error_msg" id="name_error_message"></span>
             <label for="funcionario_nome">Nome</label>
           </div>
 
           <!--SOBRENOME-->
           <div class="input-field col s5">
             <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome" required>
-	    <span class="error_form" id="surname_error_message" ></span>
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>
 
@@ -165,8 +163,7 @@
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
             <input id="funcionario_email" type="email" class="validate" name="funcionario_email" required>
-	    <span class="error_form" id="email_error_message" ></span>
-            <label for="funcionario_email" data-error="Email invalido!">Email</label>
+            <label for="funcionario_email">Email</label>
           </div>
 
           <!--TELEFONE-->
@@ -227,7 +224,6 @@
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha" required>
-	    <span class="error_form" id="password_error_message" ></span>
             <label for="funcionario_senha">Senha</label>
           </div>
 
@@ -235,7 +231,6 @@
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
             <input id="funcionario_confirma_senha" type="password" class="validate" name="funcionario_confirma_senha" required>
-	    <span class="error_form" id="retype_password_error_message" ></span>
             <label for="funcionario_confirma_senha">Confirmação de Senha</label>
           </div>
 

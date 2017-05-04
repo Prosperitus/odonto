@@ -85,7 +85,6 @@
           <i class="material-icons prefix">phone</i>
           <input name="telefone_responsavel" id="telefone_responsavel" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_responsavel">Telefone do Responsável</label>
-
         </div>
 
          <!--UF-->

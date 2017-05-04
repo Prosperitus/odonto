@@ -12,9 +12,10 @@
   <head>
     <meta charset="utf-8"/>
     <title>Login</title>
+	<script type="text/javascript" href="js/jquery.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" href="js/jquery.js"></script>  
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -65,10 +66,10 @@
               <i class="material-icons prefix">lock</i>
 			  
 			  <?php if(isset($_COOKIE['pass'])){ ?>
-              <input id="password" type="password" pattern="[A-Za-z0-9]{6,16}" title="senha incorreta" name="password" value="<?=$_COOKIE['pass']?>">
+              <input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
               <label for="password">Senha</label>
 			  <?php }else{ ?>
-			  <input id="password" type="password" pattern="[A-Za-z0-9]{6,16}" title="senha incorreta" name="password">
+			  <input id="password" type="password" name="password">
               <label for="password">Senha</label>
 			  <?php } ?>
               
@@ -101,7 +102,7 @@
               <p class="margin left medium-small"><a href="public/cadastro_funcionario.php">Cadastrar</a></p>
             </div>
             <div class="input-field col s6">
-                <p class="margin right medium-small"><a href='esqueceu_senha.php'>Esqueceu a senha?</a></p>
+                <p class="margin right medium-small"><a href='public/esqueceu_senha.php'>Esqueceu a senha?</a></p>
             </div>          
           </div>
 
