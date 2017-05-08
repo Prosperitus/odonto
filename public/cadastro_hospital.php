@@ -4,7 +4,7 @@
 
 
     <!--CLASS/FORM-->
-    <div class="row">
+    <div class="row margemCentro">
       <form class="col s11" action="../backend/addHospital.php" method="post"> 
     
       <!--TITULO-->

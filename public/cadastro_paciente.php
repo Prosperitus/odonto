@@ -5,7 +5,7 @@
 
 
     <!--CLASS/FORM-->
-    <div class="row">
+    <div class="row margemCentro">
       <form class="col s11 m12" action="../backend/addPatient.php" method="post">
 
       <!--TITULO-->
@@ -20,6 +20,7 @@
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
+		<i class="material-icons prefix">account_circle</i>
        	<input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="sobrenome_paciente">Sobrenome</label>
         </div>
@@ -29,6 +30,13 @@
          <i class="material-icons prefix">web</i>
           <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" required>
           <label for="cpf">CPF</label>
+        </div>
+		
+		<!--Email-->
+        <div class="input-field col s5">
+         <i class="material-icons prefix">email</i>
+          <input name="email" id="email" type="text" class="validate" required>
+          <label for="email">E-mail</label>
         </div>
 
         <!--DATA DE NASCIMENTO-->
@@ -132,7 +140,7 @@
         </div>
 
         <!--CLINICA-->
-        <div class="input-field col s5">
+        <div class="input-field col s5" style="margin-bottom: 13px;margin-top: -20px;">
           <p>
             <input type="checkbox" id="clinica" name="clinica" />
             <label for="clinica">Paciente da Clinica</label>

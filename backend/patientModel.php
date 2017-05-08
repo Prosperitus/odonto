@@ -16,10 +16,11 @@ class Patient{
 	private $responsibleName;
 	private $responsiblePhone;
 	private $medicalRecords;
-        private $clinic;
-        private $medicalassistant;
+	private $clinic;
+	private $medicalassistant;
 	private $cpf;
-        private $pacienteEmail;
+	private $pacienteEmail;
+	
 	public function __construct(){
 
 	}
@@ -53,7 +54,7 @@ class Patient{
 	}
 
 	public function setGender($Gender){
-		$this->Gender = $Gender;
+		$this->gender = $Gender;
 	}
 
 	public function getAdress(){

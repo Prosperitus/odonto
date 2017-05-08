@@ -8,6 +8,7 @@ $user = userInform();
 <!DOCTYPE html>
 <html>
   <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
     <title>Home</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,6 +49,17 @@ $user = userInform();
       header, main, footer {
         padding-left: 0;
       }
+    }
+	@media only screen and (min-width : 768px) {
+        .margemCentro{
+			margin-left: 14%;
+		}
+    }
+	@media only screen and (max-width : 768px) {
+        .margemCentro{
+			margin-left: 0;
+			margin-right: 0;
+		}
     }
 
 

@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
     <title>Home</title>
+	<script type="text/javascript" href="../js/jquery.js"></script>  
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" href="../js/jquery.js"></script>  
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -42,6 +43,17 @@
       header, main, footer {
         padding-left: 0;
       }
+    }
+	@media only screen and (min-width : 768px) {
+        .margemCentro{
+			margin-left: 14%;
+		}
+    }
+	@media only screen and (max-width : 768px) {
+        .margemCentro{
+			margin-left: 0;
+			margin-right: 0;
+		}
     }
 
 
@@ -137,7 +149,7 @@
     <script src="../validation/funcionario_script.js"></script>
 
     <!--CLASS/FORM-->
-    <div class="row main">
+    <div class="row main margemCentro">
       <form class="col s11 m12" action="../backend/addEmployee.php" method="post">
 
           <!--TITULO-->
@@ -152,6 +164,7 @@
 
           <!--SOBRENOME-->
           <div class="input-field col s5">
+			<i class="material-icons prefix">account_circle</i>
             <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome" required>
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>

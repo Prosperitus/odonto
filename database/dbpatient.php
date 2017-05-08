@@ -74,7 +74,6 @@ public function addPatient($patient){
 
 		
  		$result = $stmt->execute();
-		var_dump($result);
         return $result;
  		}
  		catch(PDOException $e)
