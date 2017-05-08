@@ -6,12 +6,13 @@
 	function addHospital(){
 		$Hospital = new Hospital();
 		$Hospital->setNameHosp($_POST["nome_hospital"]);
-		$Hospital->setChefUti($_POST["chefuti"]);
-		$Hospital->setPhoneChef($_POST["nome_chefe_uti"]);
-		$Hospital->setPhoneUti($_POST["telefone_chefe_uti"]);
+		$Hospital->setChefUti($_POST["nome_chefe_uti"]);
+		$Hospital->setPhoneChef($_POST["telefone_chefe_uti"]);
+		$Hospital->setPhoneUti($_POST["telefone_uti"]);
 		//$Hospital->setPhoneHosp($_POST["phonehosp"]);
 		$conn = new DbHospital();
-		$conn->addHospital($Hospital);
+		$result = $conn->addHospital($Hospital);
+		return $result;
 	}
 
 

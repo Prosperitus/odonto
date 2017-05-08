@@ -28,7 +28,6 @@ class DbHospital{
 		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
         $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
        
-
        $result = $stmt->execute();
         return $result;
     }

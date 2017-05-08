@@ -17,7 +17,7 @@ class Hospital{
 		}
 		
 		public function setNameHosp($namehosp){
-			$this->name = $namehosp;
+			$this->namehosp = $namehosp;
 		}
 
 
@@ -26,7 +26,7 @@ class Hospital{
 		}
 		
 		public function setChefUti($chefuti){
-			$this->name = $chefuti;
+			$this->chefuti = $chefuti;
 		}
 
 		public function getPhoneChef(){
@@ -34,14 +34,14 @@ class Hospital{
 		}
 		
 		public function setPhoneChef($phonechef){
-			$this->name = $phonechef;
+			$this->phonechef = $phonechef;
 		}
 
 		public function getPhoneUti(){
-			return $this->phoneuti;
+			return $this->phoneUti;
 		}
 		
 		public function setPhoneUti($phoneuti){
-			$this->name = $phoneuti;
+			$this->phoneUti = $phoneuti;
 		}
 }
