@@ -17,7 +17,7 @@
         </div>
         <div class="card-action">
           <a href="board.php">Tela Principal</a>
-          <a href='cadastro_funcionario.php'>Cadastrar Novamente</a>
+          <a href='#' onclick="window.history.back()">Cadastrar Novamente</a>
         </div>
       </div>
     </div>

@@ -158,7 +158,7 @@
           <!--NOME-->
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
-            <input id="funcionario_nome" type="text" class="" name="funcionario_nome" required>
+            <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome" required>
             <label for="funcionario_nome">Nome</label>
           </div>
 
