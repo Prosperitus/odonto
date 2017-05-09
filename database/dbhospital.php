@@ -81,7 +81,7 @@ class DbHospital{
     return $result = $stmt -> fetch(PDO::OBJ);
 }
 
-    public function searchHospital($filter){
+    private function searchHospital($filter){
 
 
     $sql = "SELECT id,name, name_admin_itu, number_itu FROM `odt_soft`.`hospital`
