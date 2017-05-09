@@ -5,7 +5,8 @@
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
-      <form class="col s11" action="../backend/addHospital.php" method="post"> 
+		<div id="formHospitalCadastro"></div>
+      <form class="col s11" method="post" action="../backend/addHospital.php" > 
     
       <!--TITULO-->
         <h3>Cadastro Hospital</h3>
@@ -59,7 +60,7 @@
 
         <!--CHECK-->
           <div class="input-field col s9">
-            <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
+            <button class="btn waves-effect waves-light light-blue" type="submit" name="action" id="buttonSubmit">Confirmar Cadastro
               <i class="material-icons right">send</i>
             </button>
           </div>

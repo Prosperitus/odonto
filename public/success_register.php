@@ -4,11 +4,11 @@
 
 
 
-  <div class="container main">
+  <div class="container main" align="center" style="position:relative;left: 5%;">
   <div class="row">
     <div class="col s2">&nbsp;</div>
     <div class="col s6">
-      <div class="card">
+      <div class="card" >
         <div class="card-image">
           <img src="../images/checked.jpg">
           <span class="card-title">Cadastro realizado com sucesso</span>           

@@ -52,17 +52,17 @@ $(document).ready(function() {
 
 function visualizar(id) { 
 	$.ajax({ 
-	type: 'get',
-	dataType: 'html',
-	url: "../backend/viewPacient.php?id=" + id 
-	, beforeSend: function () { 
-	}, 
-	success: function (data) { 
-	$("#dialogPatient").html(data); 
-     $( "#dialogPatient" ).dialog('open');
-	} 
-		}) 
-	};
+		type: 'get',
+		dataType: 'html',
+		url: "../backend/viewPacient.php?id=" + id,
+		beforeSend: function () { 
+		}, 
+		success: function (data) { 
+			$("#dialogPatient").html(data); 
+			$( "#dialogPatient" ).dialog('open');
+		} 
+	}); 
+}
 
 </script>
 
