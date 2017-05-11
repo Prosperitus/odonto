@@ -21,7 +21,7 @@
 if(addHospital()){
 	header("location: ../public/success_register.php");
  }else{
-	header("location: ../public/fail_register.php");
+	 header("location: ../public/fail_register.php");
  }
 
 
