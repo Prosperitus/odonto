@@ -119,10 +119,17 @@ class DbEmployee {
         return $result;
     }
 
+    public function allEmployees() {
+
+        $sql = "SELECT * FROM users";
+        $conn = new DbConnector();
+        $stmt-> $conn->getConn();->prepare($sql);
+        $stmt-> execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+
     public function searchEmployeeById($filter) {
-        $sql = "SELECT *
-        FROM `odt_soft`.`users`
-        WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':id', $filter);
@@ -130,6 +137,15 @@ class DbEmployee {
         $result = $stmt-> fetch(PDO::FETCH_OBJ);
         return $result;
 
+    }
+
+     public function searchEmployeeAll(){
+		$sql = "SELECT * FROM users";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $result;
     }
 
 }
