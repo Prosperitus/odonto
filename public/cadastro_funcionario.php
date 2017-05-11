@@ -158,21 +158,21 @@
           <!--NOME-->
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
-            <input id="funcionario_nome" type="text" class="validate" name="funcionario_nome" required>
+            <input id="funcionario_nome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
             <label for="funcionario_nome">Nome</label>
           </div>
 
           <!--SOBRENOME-->
           <div class="input-field col s5">
 			<i class="material-icons prefix">account_circle</i>
-            <input id="funcionario_sobrenome" type="text" class="validate" name="funcionario_sobrenome" required>
+            <input id="funcionario_sobrenome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
             <label for="funcionario_sobrenome">Sobrenome</label>
           </div>
 
           <!--CPF-->
           <div class="input-field col s5">
             <i class="material-icons prefix">perm_identity</i>
-            <input id="funcionario_cpf" type="text" class="validate" name="funcionario_cpf" required>
+            <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" required>
             <label for="funcionario_cpf">CPF</label>
           </div>
 
@@ -186,13 +186,13 @@
           <!--TELEFONE-->
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
-            <input id="funcionario_telefone" type="text" class="validate" name="funcionario_telefone" required>
+            <input id="funcionario_telefone" type="text" title="(00) 00000-0000" class="validate" name="funcionario_telefone" required>
             <label for="funcionario_telefone">Telefone Residencial</label>
           </div>
 
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
-            <input id="funcionario_celular" type="text" class="validate" name="funcionario_celular" required>
+            <input id="funcionario_celular" type="text" title="(00) 00000-0000" class="validate" name="funcionario_celular" required>
             <label for="funcionario_celular">Telefone Celular</label>
           </div>
 
@@ -225,7 +225,7 @@
           <!--CEP-->
           <div class="input-field col s5">
             <i class="material-icons prefix">my_location</i>
-            <input id="funcionario_cep" type="text" class="validate" name="funcionario_cep" required>
+            <input id="funcionario_cep" type="text" title="00000-00" class="validate" name="funcionario_cep" required>
             <label for="funcionario_cep">CEP</label>
           </div>
 
@@ -254,7 +254,7 @@
           <!--CRO-->
           <div class="input-field col s5">
             <i class="material-icons prefix">class</i>
-            <input id="funcionario_cro" type="text" class="validate" name="funcionario_cro" required>
+            <input id="funcionario_cro" type="text" title="00.000" class="validate" name="funcionario_cro" required>
             <label for="funcionario_cro">Nº   CRO</label>
           </div>
 
