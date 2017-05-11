@@ -15,6 +15,7 @@ class DbHospital{
         $sql = "INSERT INTO hospital (name, telephone_uti, telephone_chefe_uti,nome_chefe_uti)  
         VALUES (:name, :telUti, :telUtiChefe,:nmeUtiChefe)";
 
+
         //gh significa get hospital
         $ghName = $hospital->getNameHosp();
         $ghTelephoneUti = $hospital->getPhoneUti();
@@ -27,11 +28,14 @@ class DbHospital{
         $stmt->bindParam(':telUti', $ghTelephoneUti);
 		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
         $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
+
+        
        
        $result = $stmt->execute();
         return $result;
     }
     catch(PDOExeption $e){
+        
         return $result;
     }
                     

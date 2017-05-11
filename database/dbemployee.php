@@ -120,9 +120,7 @@ class DbEmployee {
     }
 
     public function searchEmployeeById($filter) {
-        $sql = "SELECT *
-        FROM `odt_soft`.`users`
-        WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':id', $filter);

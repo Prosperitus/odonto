@@ -2,7 +2,7 @@
 	require_once "cabecalho.php";
 	require_once "../database/dbhospital.php";
 
-<?php foreach($Hospitals as $hospital){ ?>
+ foreach($Hospitals as $hospital){ ?>
 		<tr class="listHospitals" onclick="visualizar(<?=$hospital->id?>)">
 			<td><?=$Hospital->namehosp?></td>
 			<td><?=$Hospital->chefuti?></td>
