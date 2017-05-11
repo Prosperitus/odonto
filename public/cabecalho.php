@@ -22,8 +22,8 @@ $user = userInform();
 	<script type="text/javascript" src="../js/jquery.maskedinput.js"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<script type="text/javascript" src="../DataTables/media/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="../dataTables/media/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dataTables/media/css/jquery.dataTables.min.css">
 
     <style>
       body {
