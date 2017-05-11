@@ -35,7 +35,7 @@
     <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="paciente_email" type="email" class="validate" name="funcionario_email" required>
+          <input id="paciente_email" type="email" class="validate" name="paciente_email" required>
           <label for="paciente_email">Email</label>
         </div>
 
