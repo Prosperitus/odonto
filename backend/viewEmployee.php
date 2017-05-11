@@ -14,12 +14,12 @@
 		return $emp;
 	}	
 ?>
-<label class="bold">Nome: </label><label class="font_big"><?=$emp->name.' '.$pat->surname;?></label><br>
+<label class="bold">Nome: </label><label class="font_big"><?=$emp->name.' '.$emp->surname;?></label><br>
 <label class="bold">Email: </label><label class="font_big"><?=$emp->email;?></label><br>
 <label class="bold">CPF: </label><label class="font_big"><?=$emp->social_security;?></label><br>
 <label class="bold">CRO: </label><label class="font_big"><?=$emp->cro;?></label><br>
 <label class="bold">Número de Matrícula: </label><label class="font_big"><?=$emp->registration;?></label><br>
-<?php if($pat->phone2 != null && $pat->phone2 != ""){ ?>
+<?php if($emp->phone2 != null && $emp->phone2 != ""){ ?>
 <label class="bold">Telefones: </label><label class="font_big"><?=$emp->phone.', '.$emp->phone2?></label><br>
 <?php }else{ ?>
 <label class="bold">Telefones: </label><label class="font_big"><?=$emp->phone?></label><br>

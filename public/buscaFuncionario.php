@@ -36,11 +36,11 @@ $(document).ready(function() {
     }
 	}});
 	$(function() {
-     $( "#dialogPatient" ).dialog({
+     $( "#dialogEmployee" ).dialog({
 		autoOpen: false,modal: true,
 		buttons: {
 			Fechar: function() {
-				$( "#dialogPatient" ).dialog('close');
+				$( "#dialogEmployee" ).dialog('close');
 			}
 		}
 	});
@@ -49,6 +49,8 @@ $(document).ready(function() {
 
 
 });	
+
+
 
 function visualizar(id) { 
 	$.ajax({ 
@@ -81,8 +83,9 @@ function visualizar(id) {
             <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-				<th>Plano de Saúde</th>
-                <th>Nome do Responsavel</th>
+		<th>E-mail</th>
+                <th>CRO</th>
+		<th>Número de Matrícula</th>
             </tr>
         </thead>
         <tfoot>

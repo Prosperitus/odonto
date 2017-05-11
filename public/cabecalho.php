@@ -11,11 +11,11 @@ $user = userInform();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
     <title>Home</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" href="../js/jquery.js"></script> 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" href="../js/jquery.js"></script>  
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="../js/materialize.min.js"></script>
@@ -124,9 +124,9 @@ $user = userInform();
       <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
     </div></li>
     <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-    <li><a href="buscaHospital.php"><i class="material-icons">add_alert</i>Hospitais</a></li>
+    <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
     <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
-    <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
+    <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
     <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
 	<li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
     

@@ -130,6 +130,15 @@ class DbEmployee {
 
     }
 
+     public function searchEmployeeAll(){
+		$sql = "SELECT * FROM users";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $result;
+    }
+
 }
 
 
