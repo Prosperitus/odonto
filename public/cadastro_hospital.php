@@ -14,28 +14,28 @@
       <!--NOME DO HOSPITAL-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="nome_hospital" id="nome_hospital" type="text" class="validate" required>
+          <input name="nome_hospital" id="nome_hospital" pattern="[0-9a-zA-ZÀ-úẽẼ\s]+$" title="Digite o nome do Hospital" type="text" class="validate" required>
           <label for="nome_hospital">Nome do Hospital</label>
         </div>
 
          <!--TELEFONE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_uti" id="telefone_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 000000-0000" type="text" class="validate" required>
+          <input name="telefone_uti" id="telefone_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
           <label for="telefone_uti">Telefone da UTI</label>
         </div>
 
         <!--NOME DO CHEFE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>  
-          <input name="nome_chefe_uti" id="nome_chefe_uti" type="text" class="validate" required>
+          <input name="nome_chefe_uti" id="nome_chefe_uti" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="nome_chefe_uti">Nome do Chefe da UTI</label>
         </div>
        
          <!--TELEFONE DO CHEFE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_chefe_uti" id="telefone_chefe_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 000000-0000" type="text" class="validate" required>
+          <input name="telefone_chefe_uti" id="telefone_chefe_uti" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
           <label for="telefone_chefe_uti">Telefone do Chefe da UTI</label>
         </div>
 

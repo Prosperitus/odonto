@@ -63,7 +63,7 @@
          <!--CIDADE-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input name="cidade_paciente" id="cidade_paciente" type="text" class="validate" required>
+          <input name="cidade_paciente" id="cidade_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="cidade_paciente">Cidade</label>
         </div>
 
@@ -133,7 +133,7 @@
         <div class="input-field col s5" >
           <select class="icons" name="genero_paciente" id="genero_paciente">
             <i class="material-icons prefix">face</i>
-            <option value="" disabled selected>Genero do Paciente</option>
+            <option value="" disabled selected>Gênero do Paciente</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>
           </select>
@@ -158,3 +158,4 @@
     </div>
 
 <?php require_once "rodape.php";
+
