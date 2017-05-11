@@ -78,6 +78,19 @@ $(function() {
         }
     }
 
+    function checkEmail(){
+
+        var pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+
+        if (!pattern.test($("#paciente_email").val())) {
+            $("#email_error_message").html("Email invalido");
+            $("#email_error_message").show();
+            error_email = true;
+        } else {
+            $("#email_error_message").hide();
+        }
+    }
+
     function checkCpf(){
 
      var strCPF = $("#funcionario_cpf").val();

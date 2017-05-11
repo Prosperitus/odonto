@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 	require_once "cabecalho.php";
 ?>
 	<script src="../validation/validation.js"></script> 
@@ -32,11 +32,11 @@
           <label for="cpf">CPF</label>
         </div>
 		
-		<!--Email-->
+    <!--EMAIL-->
         <div class="input-field col s5">
-         <i class="material-icons prefix">email</i>
-          <input name="email" id="email" type="text" class="validate" required>
-          <label for="email">E-mail</label>
+          <i class="material-icons prefix">email</i>
+          <input id="paciente_email" type="email" class="validate" name="funcionario_email" required>
+          <label for="paciente_email">Email</label>
         </div>
 
         <!--DATA DE NASCIMENTO-->
