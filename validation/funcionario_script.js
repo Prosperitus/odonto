@@ -123,9 +123,11 @@ $(function() {
         var retypePassword = $("#funcionario_confirma_senha").val();
 
         if (password !== retypePassword) {
-            $("#retype_password_error_message").html("As senhas são diferentes");
-            $("#retype_password_error_message").show();
-            error_retype_password = true;
+            $("#funcionario_confirma_senha").attr("title","As senhas devem ser idênticas");
+            $("#funcionario_confirma_senha").addClass("invalid");
+	    //$("#funcionario_confirma_senha").css("border-bottom", "2px solid #F44336");
+	    //$("#retype_password_error_message").show();
+            //error_retype_password = true;
 
 
         }else{

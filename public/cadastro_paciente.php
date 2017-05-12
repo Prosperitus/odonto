@@ -35,7 +35,7 @@
     <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="paciente_email" type="email" class="validate" name="paciente_email" required>
+          <input id="paciente_email" type="email" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="paciente_email" required>
           <label for="paciente_email">Email</label>
         </div>
 

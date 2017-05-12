@@ -179,7 +179,7 @@
           <!--EMAIL-->
           <div class="input-field col s5">
             <i class="material-icons prefix">email</i>
-            <input id="funcionario_email" type="email" class="validate" name="funcionario_email" required>
+            <input id="funcionario_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="validate" name="funcionario_email" required>
             <label for="funcionario_email">Email</label>
           </div>
 
@@ -240,7 +240,7 @@
           <!--SENHA-->
           <div class="input-field col s5">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="funcionario_senha" type="password" class="validate" name="funcionario_senha" required>
+            <input id="funcionario_senha" type="password" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="funcionario_senha" required>
             <label for="funcionario_senha">Senha</label>
           </div>
 
