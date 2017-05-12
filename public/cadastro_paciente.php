@@ -32,7 +32,7 @@
           <label for="cpf">CPF</label>
         </div>
 		
-    <!--EMAIL-->
+        <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
           <input id="paciente_email" type="email" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="paciente_email" required>
@@ -91,7 +91,7 @@
          <!--TELEFONE DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_responsavel" id="telefone_responsavel" title="(00) 00000-0000" type="text" class="validate" required>
+          <input name="telefone_responsavel" id="telefone_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
           <label for="telefone_responsavel">Telefone do Responsável</label>
         </div>
 

@@ -42,7 +42,7 @@
         <!--NÚMERO DE UTIs-->
         <div class="input-field col s5">
         <i class="material-icons prefix">view_headline</i>  
-          <input name="numeroutis_hospital" id="numeroutis_hospital" pattern="[0-9]+$" title="Só números" type="text" class="validate" required>
+          <input name="numeroutis_hospital" id="numeroutis_hospital" pattern="[0-9\s]{1,2}$" title="Só números" type="text" class="validate" required>
           <label for="numeroutis_hospital">Nº de UTIs</label>
         </div>
 		
