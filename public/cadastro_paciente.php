@@ -110,7 +110,7 @@
               <option value="GO" data-icon="../images/goias.jpg" class="left circle">Goiás - GO</option>
               <option value="MA" data-icon="../images/maranhao.jpg" class="left circle">Maranhão - MA</option>
               <option value="MT" data-icon="../images/matogrosso.jpg" class="left circle">Mato Grosso - MT</option>
-              <option value="MS" data-icon="../images/matogrossodosul.jpg" class="left circle">Mato Grosso Sul - MS</option>
+              <option value="MS" data-icon="../images/matogrossodosul.jpg" class="left circle">Mato Grosso do Sul - MS</option>
               <option value="MG" data-icon="../images/minasgerais.jpg" class="left circle">Minas Gerais - MG</option>
               <option value="PA" data-icon="../images/para.jpg" class="left circle">Pará - PA</option>
               <option value="PB" data-icon="../images/paraiba.jpg" class="left circle">Paraíba - PB</option>
@@ -119,7 +119,7 @@
               <option value="PI" data-icon="../images/piaui.jpg" class="left circle">Piauí - PI</option>
               <option value="RN" data-icon="../images/riograndedonorte.jpg" class="left circle">Rio Grande do Norte - RN</option>
               <option value="RS" data-icon="../images/riograndedosul.jpg" class="left circle">Rio Grande do Sul - RS</option>
-              <option value="RJ" data-icon="../images/riodejaneiro.jpg" class="left circle">Rio Janeiro - RJ</option>
+              <option value="RJ" data-icon="../images/riodejaneiro.jpg" class="left circle">Rio de Janeiro - RJ</option>
               <option value="RO" data-icon="../images/rondonia.jpg" class="left circle">Rondônia - RO</option>
               <option value="RR" data-icon="../images/roraima.jpg" class="left circle">Roraima - RR</option>
               <option value="SC" data-icon="../images/santacatarina.jpg" class="left circle">Santa Catarina - SC</option>

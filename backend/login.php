@@ -17,7 +17,7 @@
 	if($result != null){
 		session_start();
 		$_SESSION['Employee'] = $result;
-		header("location: ../public/board.php");
+		header("location: ../public/busca-hospital.php");
 		die();
 	}else{
 		session_start();

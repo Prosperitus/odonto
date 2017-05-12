@@ -16,7 +16,8 @@ CREATE TABLE users (
 	`surname` varchar(255) NOT NULL,
 	`cro` varchar(10),
 	`email`varchar(255) NOT NULL,
-	`registration` int (11) NOT NULL,  
+	`registration` int (11) NOT NULL,
+	`image` text ,  
 	`phone` varchar (255),
 	`phone2` varchar(255) NOT NULL, 
 	`address` varchar(255) NOT NULL,
@@ -73,6 +74,7 @@ CREATE TABLE hospital(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar(255) NOT NULL,
+	`image` text ,
 	`telephone_uti`varchar(255) NOT NULL,
 	`telephone_chefe_uti`varchar(255) NOT NULL,
 	`nome_chefe_uti`varchar(255) NOT NULL
@@ -139,7 +141,10 @@ ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
-ALTER TABLE attendance ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
+
 ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 

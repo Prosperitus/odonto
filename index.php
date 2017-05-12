@@ -35,7 +35,7 @@
     </style>
   </head>
 
-  <body class = "light-blue lighten-3">
+  <body class = "light-blue lighten-3" background="images/turquoise.jpg">
    
   <div class="section"></div>
   <div class="section"></div>

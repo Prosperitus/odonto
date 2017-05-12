@@ -1,4 +1,3 @@
-
 $(function() {
 
 
@@ -36,7 +35,7 @@ $(function() {
 
     function checkName() {
 
-        var name = $("#funcionario_nome").val();
+        var name = $("#nome_paciente").val();
 
         if (name === "") {
             //$("#name_error_message").html("O espaco deve ser preenchido");
@@ -45,12 +44,12 @@ $(function() {
         } else {
             if(/^[a-zA-Z]*$/.test(name)){
 				$("#name_error_message").html("nome correto!");
-				$("#funcionario_nome").css("border-bottom", "2px solid rgb(76, 175, 80)");
+				$("#nome_paciente").css("border-bottom", "2px solid rgb(76, 175, 80)");
 				$("#name_error_message").css("color", "rgb(76, 175, 80)");
                 $("#name_error_message").show();
             }else{
                 $("#name_error_message").html("O nome deve conter apenas letras");
-				$("#funcionario_nome").css("border-bottom", "2px solid rgb(244, 67, 54)");
+				$("#nome_paciente").css("border-bottom", "2px solid rgb(244, 67, 54)");
 				$("#name_error_message").css("color", "rgb(244, 67, 54)");
                 $("#name_error_message").show();
                 error_name = true;
@@ -61,7 +60,7 @@ $(function() {
 
     function checkSurname() {
 
-        var surname = $("#funcionario_sobrenome").val();
+        var surname = $("#sobrenome_paciente").val();
 
         if(surname === ""){
             $("#surname_error_message").html("O espaco deve ser preenchido");
@@ -93,7 +92,7 @@ $(function() {
 
     function checkCpf(){
 
-     var strCPF = $("#funcionario_cpf").val();
+     var strCPF = $("#cpf").val();
      var Soma;
      var Resto;
      Soma = 0;
