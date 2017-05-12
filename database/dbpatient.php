@@ -7,8 +7,8 @@ class DbPatient{
 
 public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, email)
- 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic ,  :email)";
+    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1,responsible2, telephone_r1, telephone_r2, clinic, email)
+ 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic ,  :email, :responsible2, :responsiblePhone2)";
 
         //gp significa get pacient
  		$gpName = $patient->getName();
@@ -25,8 +25,8 @@ public function addPatient($patient){
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
         $gpEmail = $patient->getpacienteEmail();
-        //$gpResponsibleName2 = $patient->getResponsibleName2();
-        //$gpResponsiblePhone2 = $patient->getResponsiblePhone2();
+        $gpResponsibleName2 = $patient->getResponsibleName2();
+        $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
  		//$gpphysician_assistant = $patient-> getmedicalassistant();
  	    //$gpname_phy_assistant = $patient->getname_phy_assistant();
@@ -63,8 +63,8 @@ public function addPatient($patient){
  		$stmt->bindParam(':healthPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':responsibleName', $gpResponsibleName, PDO::PARAM_STR, 255);
  		$stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
-        //$stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
-       //$stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
  		//$stmt->bindParam(':physician_assistant', $gpphysician_assistant,PDO::PARAM_BOOL);
  		//$stmt->bindParam(':name_phy_assistant', $gpname_phy_assistant,PDO::PARAM_STR,100);
