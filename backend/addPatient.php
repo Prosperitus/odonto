@@ -20,9 +20,11 @@
 		$patient->setCpf($_POST['cpf']);
 		$patient->setHealthPlan($_POST['plano_de_saude']);
 		$patient->setResponsibleName($_POST['nome_responsavel']);
+		$patient->setResponsibleName2($_POST['nome_responsavel_2']);
 		//$patient->setmedicalassistant($_POST['medicalassistant']);
 		//$patient->setmedicalRecords($_POST['medicalRecords']);
         $patient->setResponsiblePhone($_POST['telefone_responsavel']);
+	$patient->setResponsiblePhone2($_POST['telefone_responsavel_2']);
 		$patient->setClinic($_POST['clinica']);
 		$conn = new DbPatient();
 		$result = $conn->addPatient($patient);

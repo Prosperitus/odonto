@@ -20,7 +20,10 @@ class Patient{
 	private $medicalassistant;
 	private $cpf;
 	private $pacienteEmail;
+	private $responsibleName2;
+	private $responsiblePhone2;
 	
+
 	public function __construct(){
 
 	}
@@ -172,4 +175,25 @@ class Patient{
    
   
      }
+
+		//NOVOS CAMPOS
+	
+	
+
+
+	public function getResponsiblePhone2(){
+		return $this->responsiblePhone2;
+	}
+
+	public function setResponsiblePhone2($responsiblePhone2){
+		$this->responsiblePhone2 = $responsiblePhone2;
+	}
+
+	public function getResponsibleName2(){
+		return $this->responsibleName2;
+	}
+
+	public function setResponsibleName2($responsibleName2){
+		$this->responsibleName2 = $responsibleName2;
+	}
 }

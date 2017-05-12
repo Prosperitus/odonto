@@ -85,14 +85,30 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
           <input name="nome_responsavel" id="nome_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
-          <label for="nome_responsavel">Nome do Responsável</label>
+          <label for="nome_responsavel">Nome do Responsável 1</label>
         </div>
-
+	
+	
          <!--TELEFONE DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
           <input name="telefone_responsavel" id="telefone_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
-          <label for="telefone_responsavel">Telefone do Responsável</label>
+          <label for="telefone_responsavel">Telefone do Responsável 1</label>
+        </div>
+
+	 <!--NOME DO RESPONSÁVEL 2-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">supervisor_account</i>
+          <input name="nome_responsavel_2" id="nome_responsavel_2" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <label for="nome_responsavel_2">Nome do Responsável 2</label>
+        </div>
+
+
+         <!--TELEFONE DO RESPONSÁVEL 2-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">phone</i>
+          <input name="telefone_responsavel_2" id="telefone_responsavel_2" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
+          <label for="telefone_responsavel_2">Telefone do Responsável 2</label>
         </div>
 
          <!--UF-->
