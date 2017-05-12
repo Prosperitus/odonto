@@ -28,7 +28,7 @@ CREATE TABLE users (
 	`agency` varchar(255) NOT NULL,
 	`permition` int (11) NOT NULL
 
-) ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS permition;
 
@@ -37,7 +37,7 @@ CREATE TABLE permition(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`type` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB;
 
 
 DROP TABLE IF EXISTS patient;
@@ -66,7 +66,7 @@ CREATE TABLE patient(
 	`name_phy_assistant` varchar(255),
 	`telephone_phy_assistant` varchar(255),
 	`speciality_phy_assistant` varchar(255)
-) ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB;
 DROP TABLE IF EXISTS hospital;
 
 CREATE TABLE hospital(
@@ -76,7 +76,7 @@ CREATE TABLE hospital(
 	`telephone_uti`varchar(255) NOT NULL,
 	`telephone_chefe_uti`varchar(255) NOT NULL,
 	`nome_chefe_uti`varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1;
+) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS hospital_itu;
 
@@ -90,8 +90,20 @@ CREATE TABLE hospital_itu(
         `name_admin_itu` varchar(255) NOT NULL,
         `telephone_admin_itu` varchar(255) NOT NULL,
 	`hospital` int(11) NOT NULL
-)ENGINE=InnoDB AUTO_INCREMENT=1;
+)ENGINE=InnoDB;
 	
+DROP TABLE IF EXISTS appointment;
+	
+CREATE TABLE appointment(
+	
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`description` varchar (999) ,
+	`initial_date` date NOT NULL ,
+	`status` int (3) NOT NULL ,	 
+	`attendance`int (11) NOT NULL 
+)ENGINE=InnoDB; 
+
+
 DROP TABLE IF EXISTS attendance;
 
 CREATE TABLE attendance(
@@ -100,29 +112,24 @@ CREATE TABLE attendance(
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
 	`itu` varchar (255) NOT NULL,
-	`bed` varchar (255) NOT NULL,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL,
-	`mouthguard` boolean,
-	`medical_record` varchar (255) NOT NULL,
-	`photos` varchar (255) NOT NULL,
-	`state_of_attendance` varchar (255) NOT NULL
+	`admission_cause` int NOT NULL
 
-) ENGINE=InnoDB AUTO_INCREMENT=1; 
+) ENGINE=InnoDB; 
 
 CREATE TABLE admission_cause(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`type` varchar (255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1; 
+) ENGINE=InnoDB;
 
 CREATE  TABLE files_hospital(
 	
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`file` varchar (255) NOT NULL,
 	`hospital` int NOT NULL
-)ENGINE=InnoDB AUTO_INCREMENT=1;
+)ENGINE=InnoDB; 
 
 
 /* FOREIGN KEY */
@@ -132,10 +139,7 @@ ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
-
-ALTER TABLE attendance
-ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
-
+ALTER TABLE attendance ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
 ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
@@ -148,6 +152,8 @@ ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 ALTER TABLE hospital_itu
 ADD CONSTRAINT fk_hospital_itu FOREIGN KEY (hospital) REFERENCES hospital(id);
 
+ALTER TABLE appointment	
+ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
 /*INSERTS*/
 
 INSERT INTO permition (type)
@@ -190,4 +196,11 @@ VALUES
 '99',
 '987',
 3);
+/*INDEX*/
 
+CREATE INDEX idx_patient ON attendance(patient); 
+CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
+CREATE INDEX idx_hospital ON  attendance(hospital);
+CREATE INDEX idx_itu ON  attendance(itu);
+CREATE INDEX idx_admition_cause ON attendance(admission_cause);
+CREATE INDEX idx_admition_date_itu ON attendance(admission_date_itu);
