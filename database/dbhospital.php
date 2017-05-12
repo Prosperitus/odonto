@@ -105,6 +105,28 @@ class DbHospital{
     return $result;
     }
 
+	public function searchuti($filter){
+
+    $sql = "SELECT id_hospital, name_uti, name_beds, number_itu, number_bed, name_admin_itu, telephone_admin_itu, hospital FROM 'hospital_itu'
+     WHERE name_uti LIKE :name_itu OR name_beds LIKE :name_bed OR number_bed LIKE :number_bed OR name_admin_itu LIKE :name_admin_itu OR telephone_admin_itu LIKE :telephone_admin_itu OR number_itu == :number_itu 
+    ORDER by hospital_itu.name_itu  ;";
+
+    $filter2 ="%".$filter."%";
+    $conn= new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':name_uti', $filter2);
+    $stmt->bindParam(':name_beds', $filter2);
+    $stmt->bindParam(':number_itu', $filter);
+    $stmt->bindParam(':number_bed', $filter);
+    $stmt->bindParam(':name_admin_itu',$filter2);
+    $stmt->bindParam(':telephone_admin_itu', $filter);
+    $stmt->execute();
+    
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+
+
+
 		
     }
 
