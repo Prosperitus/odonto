@@ -7,8 +7,8 @@ class DbEmployee {
 
     public function addEmployee($employee){
      	     try{
-             $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition, image)
-        VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition, :image)";
+             $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
+        VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
 
     	$employee->setPermission((int) $employee->getPermission());
     	//var_dump($employee);
@@ -27,10 +27,10 @@ class DbEmployee {
         	$geAgencia = $employee->getAgency();
         	$gePhone = $employee->getPhone();
         	$gePhone2 = $employee->getPhone2();
-            $geEmail = $employee->getEmail();
+            	$geEmail = $employee->getEmail();
         	$gePass = $employee->getPassword();
         	$gePermission = $employee->getPermission();	
-            $geImage = $employee->getImage();
+            //$geImage = $employee->getImage();
     		
 
             if($geNregistration == null){
@@ -53,7 +53,7 @@ class DbEmployee {
             $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
             $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
-            $stmt->bindParam(':image', $geImage);
+            //$stmt->bindParam(':image', $geImage);
             //var_dump($employee);
             //die();
                            
