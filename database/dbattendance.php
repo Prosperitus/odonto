@@ -9,13 +9,37 @@ require_once "../backend/employeeModel.php";
 
 class Attendance(){
 
-	public function attendance_patient($id){
 
-			$sql = "INSERT INTO attendance (causa, data, id_patient,)  
-        VALUES (:causa, :data, :id_patients)";
+	public function attendance_patient($atendimento){
+        try{
+           $sql = "INSERT INTO attendance (admission_cause, admission_date_itu, patient, hospital, itu, doctor_responsible, data_final)  
+       }
+       VALUES (:causa, :data, :patient_id, :hospital_id, :itu_id, :doctor, )";
+
+       $ghIdHospital = $atendimeto->getIdPatient();
+       $ghIdUTI = $atendimeto->getIdUTI();
+       $ghIdDoctor = $atendimeto->getIdEmployee();
+       $ghIdPatient = $atendimeto->getIdPatient();
+       $ghCausa = $atendimeto->getCausa();
+       $ghDataAdm = $atendimeto->getDataAdm();
 
 
+       $conn = new DbConnector();
+       $stmt = $conn->getConn()->prepare($sql);
+       $stmt->bindParam(':data', $ghDataAdm);
+       $stmt->bindParam(':causa', $ghCausa);
+       $stmt->bindParam(':patient_id', $ghIdPatient);
+       $stmt->bindParam(':doctor', $ghDoctor);
+       $stmt->bindParam(':hospital_id', $ghIdHospital);
+       $stmt->bindParam(':itu_id', $ghIdUTI);
 
+
+       $result = $stmt->execute();
+       return $result;
+   }
+   catch(PDOExeption $e){
+    return $result;
+}
 }
 
 
@@ -24,26 +48,26 @@ public function searchId($search){
     $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
     $stmt->bindParam(':id_patient', $search);
-	$stmt->execute();
+    $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_OBJ);
-	return $result;
- }
- 
-
- public function searchPatientAll(){
-		$sql = "SELECT * FROM patient";
-		$conn = new DbConnector();
-		$stmt = $conn->getConn()->prepare($sql);
-		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
-		return $result;
+    return $result;
 }
 
- public function searchPatient($filter){
+
+public function searchPatientAll(){
+  $sql = "SELECT * FROM patient";
+  $conn = new DbConnector();
+  $stmt = $conn->getConn()->prepare($sql);
+  $stmt->execute();
+  $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+  return $result;
+}
+
+public function searchPatient($filter){
 
     $sql = "SELECT id,name,social_security,health_insurance,responsible1,responsible2,FROM `odt_soft`.`patient`
-			WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :email
-			ORDER by patient.name;";
+    WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :email
+    ORDER by patient.name;";
 
 
     $filter2 ="%".$filter."%";
@@ -62,7 +86,7 @@ public function searchId($search){
 
 
 
- }
+}
 public function search_id($search){
 
     $sql = "SELECT * FROM hospital WHERE id = :id_hospital";
@@ -72,7 +96,7 @@ public function search_id($search){
     return $result = $stmt -> fetch(PDO::OBJ);
 }
 
-    public function searchHospital($filter){
+public function searchHospital($filter){
 
 
     $sql = "SELECT id,name, name_admin_itu, number_itu FROM `odt_soft`.`hospital`
@@ -90,46 +114,46 @@ public function search_id($search){
     
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
-    }
+}
 
-		
-    }
 
-	public function searchEmployee($filter) {
+}
 
-        $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
-        FROM `odt_soft`.`users`
-        WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro
-        ORDER BY name";
-        $filter2 = "%".$filter."%";
-        $conn =  new DbConnector();
-        $stmt = $conn->getConn()->prepare($sql);
-        $stmt->bindParam(':name', $filter2);
-        $stmt->bindParam(':surname', $filter2);
-        $stmt->bindParam(':cpf', $filter);
-        $stmt->bindParam(':permition', $filter);
-        $stmt->bindParam(':registration', $filter);
-        $stmt->bindParam(':email', $filter2);
-        $stmt->bindParam(':cro', $filter);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        
+public function searchEmployee($filter) {
 
-        return $result;
-    }
+    $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
+    FROM `odt_soft`.`users`
+    WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro
+    ORDER BY name";
+    $filter2 = "%".$filter."%";
+    $conn =  new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':name', $filter2);
+    $stmt->bindParam(':surname', $filter2);
+    $stmt->bindParam(':cpf', $filter);
+    $stmt->bindParam(':permition', $filter);
+    $stmt->bindParam(':registration', $filter);
+    $stmt->bindParam(':email', $filter2);
+    $stmt->bindParam(':cro', $filter);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-    public function searchEmployeeById($filter) {
-        $sql = "SELECT *
-        FROM `odt_soft`.`users`
-        WHERE id = :id";
-        $conn =  new DbConnector();
-        $stmt = $conn->getConn()->prepare($sql);
-        $stmt->bindParam(':id', $filter);
-        $stmt->execute();
-        $result = $stmt-> fetch(PDO::FETCH_OBJ);
-        return $result;
 
-    }
+    return $result;
+}
+
+public function searchEmployeeById($filter) {
+    $sql = "SELECT *
+    FROM `odt_soft`.`users`
+    WHERE id = :id";
+    $conn =  new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':id', $filter);
+    $stmt->execute();
+    $result = $stmt-> fetch(PDO::FETCH_OBJ);
+    return $result;
+
+}
 
 
 }
