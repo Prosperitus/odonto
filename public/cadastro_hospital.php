@@ -1,7 +1,23 @@
 <?php 
 	require_once "cabecalho.php";
 ?>
-
+<script>
+$(document).ready(function(){
+	$("#addUTI").click(function(){
+		$(".utis").append('<div class="input-field col s5">'
+          +'<i class="material-icons prefix">business</i>'
+         + '<input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>'
+         + '<label for="nome_uti">Nome da UTI</label>'
+       + '</div>'
+       + '<div class="input-field col s5">'
+        + '<i class="material-icons prefix">business</i>'
+       +  ' <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>'
+        +  '<label for="quantidade_leito_uti">Quantidade de leito da UTI</label>'
+        +'</div>'
+		+'</div>');
+	});
+});
+</script>
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">

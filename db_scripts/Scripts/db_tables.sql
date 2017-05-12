@@ -80,6 +80,15 @@ CREATE TABLE hospital(
 	`nome_chefe_uti`varchar(255) NOT NULL
 ) ENGINE=InnoDB;
 
+
+DROP TABLE IF EXISTS status;
+
+CREATE TABLE  status(
+
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`status` varchar (255) NOT NULL AUTO_INCREMENT PRIMARY KEY
+)ENGINE=InnoDB;
+	
 DROP TABLE IF EXISTS hospital_itu;
 
 CREATE TABLE hospital_itu(
@@ -159,6 +168,7 @@ ADD CONSTRAINT fk_hospital_itu FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE appointment	
 ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
+
 /*INSERTS*/
 
 INSERT INTO permition (type)
@@ -201,6 +211,11 @@ VALUES
 '99',
 '987',
 3);
+
+INSERT INTO status (status) 
+VALUES ('In_evaluation') , ('In_reavaluation') , ('In_approval') , ('Approved_by_responsable_doctor') , ('Approved_by_family') , ('In_budget') , ('Budget_approved_by_family') , ('Anexed'),
+('In_supervison') , ('dismissed') , ('died') , ('discharged') , ('Concluded') 
+
 /*INDEX*/
 
 CREATE INDEX idx_patient ON attendance(patient); 
