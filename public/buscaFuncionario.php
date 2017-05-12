@@ -70,7 +70,7 @@ function visualizar(id) {
 
 	<div class="main margin_small">
 	<br>
-	<p class="bold" style="color: #03a9fa">Click na linha do funcionário para ver suas informações:</p>
+	<p class="bold" style="color: #0399ff">Click na linha do funcionário para ver suas informações:</p>
 	</div>
 <div id="dialogEmployee" title="Dados do Funcionário">
 	
@@ -83,18 +83,18 @@ function visualizar(id) {
             <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-		<th>E-mail</th>
+				<th>E-mail</th>
                 <th>CRO</th>
-		<th>Número de Matrícula</th>
+				<th>Número de Matrícula</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Nome</th>
                 <th>CPF</th>
-		<th>E-mail</th>
+				<th>E-mail</th>
                 <th>CRO</th>
-		<th>Número de Matrícula</th>
+				<th>Número de Matrícula</th>
             </tr>
         </tfoot>
         <tbody>

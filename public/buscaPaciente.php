@@ -68,7 +68,7 @@ function visualizar(id) {
 
 	<div class="main margin_small">
 	<br>
-	<p class="bold" style="color: #03a9fa">Click na linha do paciente para ver suas informações:</p>
+	<p class="bold" style="color: #0399ff">Click na linha do paciente para ver suas informações:</p>
 	</div>
 <div id="dialogPatient" title="Dados do Paciente">
 	
