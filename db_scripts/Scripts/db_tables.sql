@@ -27,7 +27,8 @@ CREATE TABLE users (
 	`bank` varchar (255) NOT NULL,
 	`number_of_account` varchar (255) NOT NULL,
 	`agency` varchar(255) NOT NULL,
-	`permition` int (11) NOT NULL
+	`permition` int (11) NOT NULL,
+	`image` text 
 
 ) ENGINE=InnoDB;
 
@@ -141,15 +142,17 @@ ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
-ALTER TABLE attendance ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
+
 ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
 
-ALTER TABLE files_hos
-pital
+ALTER TABLE files_hospital
 ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE hospital_itu
