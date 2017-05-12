@@ -127,7 +127,7 @@ class DbEmployee {
         $stmt-> execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);
         return $result;
-
+    }
     public function searchEmployeeById($filter) {
         $sql = "SELECT * FROM users WHERE id = :id";
         $conn =  new DbConnector();
