@@ -15,7 +15,7 @@
 		if($result && isset($_FILES['imagemHospital'])){
 			$id = $conn->search_max_id();
 			$imagem = $_FILES['imagemHospital']['name'];
-			$destino = '../imagensHospital/' .$imagem;
+			$destino = '../images/hospital/' .$imagem;
 			$arquivo_tmp = $_FILES['imagemHospital']['tmp_name'];
 			move_uploaded_file( $arquivo_tmp, $destino);
 			
