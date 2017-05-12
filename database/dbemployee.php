@@ -7,8 +7,8 @@ class DbEmployee {
 
     public function addEmployee($employee){
      	     try{
-             $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition)
-        VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition)";
+             $sql = "INSERT INTO users (name, surname, cro, admission_date , registration, social_security, address, bank, number_of_account, agency, phone, phone2, email, password, permition, image)
+        VALUES (:name, :surname, :cro, :admDate, :nregistration, :socialSecurity, :address, :bank, :accountNumber, :agencia, :phone, :phone2, :email, :password, :permition, :image)";
 
     	$employee->setPermission((int) $employee->getPermission());
     	//var_dump($employee);
@@ -30,14 +30,14 @@ class DbEmployee {
             $geEmail = $employee->getEmail();
         	$gePass = $employee->getPassword();
         	$gePermission = $employee->getPermission();	
-
+            $geImage = $employee->getImage();
     		
 
             if($geNregistration == null){
                 $geNregistration = 1;
             }
         	$conn = new DbConnector();
-    	   $stmt = $conn->getConn()->prepare($sql);
+            $stmt = $conn->getConn()->prepare($sql);
         	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
@@ -53,8 +53,9 @@ class DbEmployee {
             $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
             $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
-                           //var_dump($employee);
-                           //die();
+            $stmt->bindParam(':image', $geImage);
+            //var_dump($employee);
+            //die();
                            
 
     		 $result = $stmt->execute(); 
