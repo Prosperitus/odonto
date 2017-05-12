@@ -7,7 +7,7 @@
 
 	function addPatient(){
 		$patient = new Patient();
-		//$patient ->setpacienteEmail($_POST['paciente_email']);
+		$patient ->setpacienteEmail($_POST['paciente_email']);
         $patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
