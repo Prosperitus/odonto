@@ -14,6 +14,10 @@
 		return $pat;
 	}	
 ?>
+
+<script>
+
+</script>
 <label class="bold">Nome: </label><label class="font_big"><?=$pat->name.' '.$pat->surname;?></label><br>
 <label class="bold">Email: </label><label class="font_big"><?=$pat->email;?></label><br>
 <label class="bold">CPF: </label><label class="font_big"><?=$pat->social_security;?></label><br>
@@ -39,10 +43,10 @@
 <label class="bold">Cep: </label><label class="font_big"><?=$pat->zip_code;?></label><br>
 
 <?php if($pat->clinic == "1"){ ?>
-<input type="checkbox" id="clinica" name="clinica" checked />
-<label class="bold" for="clinica">Paciente da Clinica</label>
+<input type="checkbox" id="clinica" name="clinica" checked readonly>
+<label class="bold">Paciente da Clinica</label>
 <?php }if($pat->clinic == "0"){ ?>
-<input type="checkbox" id="clinica" name="clinica"/>
-<label class="bold" for="clinica">Paciente da Clinica</label>
+<input type="checkbox" id="clinica" name="clinica" readonly>
+<label class="bold">Paciente da Clinica</label>
 </div>
 <?php } ?>
