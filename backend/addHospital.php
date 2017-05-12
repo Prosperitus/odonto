@@ -10,9 +10,16 @@
 		$Hospital->setChefUti($_POST["nome_chefe_uti"]);
 		$Hospital->setPhoneChef($_POST["telefone_chefe_uti"]);
 		$Hospital->setPhoneUti($_POST["telefone_uti"]);
-		
 		$conn = new DbHospital();
 		$result = $conn->addHospital($Hospital);
+		if($result && isset($_FILES['fotoHospital'])){
+			$id = $conn->search_max_id();
+			$imagem = $_FILES['fotoHospital']['name'];
+			$destino = '../imagensHospital/' .$imagem;
+			$arquivo_tmp = $_FILES['fotoHospital']['tmp_name'];
+			move_uploaded_file( $arquivo_tmp, $destino);
+			
+		}
 		return $result;
 	}
 
