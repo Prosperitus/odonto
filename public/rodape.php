@@ -2,13 +2,15 @@
         <footer class="page-footer light-blue">
           <div class="footer-copyright">
             <div class="container">
-                <a  class="grey-text text-lighten-4 left" href=""><b>Contato &nbsp;&nbsp;</b></a>
-                <a class="grey-text text-lighten-4 left" href=""><b>Facebook &nbsp;&nbsp;</b></a>
-                <a class="grey-text text-lighten-4" left href=""><b>Instagram &nbsp;&nbsp;</b></a>
-                 <a class="grey-text text-lighten-4 left" href=""><b>Manual &nbsp;&nbsp;</b></a>
-                <a class="grey-text text-lighten-4" left href=""><b>Email &nbsp;&nbsp;</b></a>
+                <img src="../images/viber.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="../images/tablet.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="../images/facebook.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                 <img src="../images/instagram.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                 <img src="../images/close-envelope.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                
+               
               
-            <a class="grey-text text-lighten-4 right" href="#!">© 2017 easyodonto solutions® - Todos os direitos reservados</a>
+            <a class="grey-text text-lighten-4 right" href="#!">© 2017 easyodonto solutions</a>
             </div>
           </div>
         </footer>
