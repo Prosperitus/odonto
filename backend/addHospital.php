@@ -12,11 +12,11 @@
 		$Hospital->setPhoneUti($_POST["telefone_uti"]);
 		$conn = new DbHospital();
 		$result = $conn->addHospital($Hospital);
-		if($result && isset($_FILES['fotoHospital'])){
+		if($result && isset($_FILES['imagemHospital'])){
 			$id = $conn->search_max_id();
-			$imagem = $_FILES['fotoHospital']['name'];
+			$imagem = $_FILES['imagemHospital']['name'];
 			$destino = '../imagensHospital/' .$imagem;
-			$arquivo_tmp = $_FILES['fotoHospital']['tmp_name'];
+			$arquivo_tmp = $_FILES['imagemHospital']['tmp_name'];
 			move_uploaded_file( $arquivo_tmp, $destino);
 			
 		}

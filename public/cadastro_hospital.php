@@ -6,7 +6,7 @@
     <!--CLASS/FORM-->
     <div class="row margemCentro">
 		<div id="formHospitalCadastro"></div>
-      <form class="col s11" method="post" action="../backend/addHospital.php" > 
+      <form class="col s11" method="post" action="../backend/addHospital.php" enctype="multipart/form-data"> 
     
       <!--TITULO-->
         <h3>Cadastro Hospital</h3>
@@ -54,7 +54,19 @@
                       <input type="file" multiple>
                     </div>
                     <div class="file-path-wrapper">
-                      <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                      <input class="file-path validate" type="text" placeholder="Upload de um ou mais arquivos">
+                    </div>
+                  </div>
+				  
+	     <!--Imagem-->
+
+                  <div class="file-field input-field col s5" style="clear:both">
+                    <div class="btn input-field col s5 light-blue">
+                      <span>Imagem</span>
+                      <input type="file" name="imagemHospital" accept="image/*">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" placeholder="Upload de uma imagem">
                     </div>
                   </div>
 
