@@ -124,7 +124,7 @@ class DbHospital{
     
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
-
+	}
 
 
 		
