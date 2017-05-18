@@ -27,6 +27,8 @@
 		$Attendance->setFinalDate($_POST["#"]);
 		$Attendance->setAdmissionCause($_POST["admcause"]);
 		$Attendance->setDoctorResponsible($_POST["#"]);
+		$Attendance->setBonequinha($_POST["bonequinha"]);
+		$Attendance->setImage($_POST["image"]);
 		//$Attendance->setUti($_POST["uti"]);
 		//$Attendance->setStatus($_POST["status"]);
 		$conn = new DbAttendance();
