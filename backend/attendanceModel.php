@@ -93,13 +93,6 @@
 		 $this->dataAdmissaoUti = $dataAdmissaoUti;
 	 }
 	 
-	// public function getDataFinalAtendimento(){
-	//	 return $this->dataFinalAtendimento;
-	// }
-	 
-	// public function setDataFinalAtendimento($dataFinalAtendimento){
-	//	 $this->dataFinalAtendimento = $dataFinalAtendimento;
-	// }
 	 
 	 public function getHospital(){
 		 return $this->hospital;
