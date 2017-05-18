@@ -110,6 +110,7 @@ CREATE TABLE appointment(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`description` varchar (999) ,
 	`initial_date` date NOT NULL ,
+	`final_date` date,
 	`status` int (3) NOT NULL ,	 
 	`attendance`int (11) NOT NULL 
 )ENGINE=InnoDB; 
