@@ -2,6 +2,7 @@
 
 include_once "dbconnect.php";
 include_once "../backend/Hospitalmodel.php";
+include_once "../backend/Utimodel.php";
 
 class DbHospital{
 
