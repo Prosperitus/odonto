@@ -1,7 +1,9 @@
 <?php
 
+	include "Utimodel.php";
+	include "../database/dbhospital.php";
 
-	function addUit(){
+	function addUti(){
 
 		$Uti = new Uti();
 		$Uti->setNameHosp($_POST["nome_hospital"]);
@@ -15,13 +17,7 @@
 
 
 
-
-
-
-
-
-
-}
+	}
 
 
 

@@ -12,7 +12,7 @@ class Uti{
 	}
 	
 	public function setNameBed(name_bed){
-		return this-> name_bed = $name_bed;
+		this-> name_bed = $name_bed;
 
 	}
 
