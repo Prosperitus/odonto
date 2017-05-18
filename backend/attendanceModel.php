@@ -6,20 +6,34 @@
 
  class Attendance{
 	 private $dataAdmissaoUti;
-	 private $dataFinalAtendimento;
+	 private $dataFinalAtendimento; //não obrigatório
 	 private $admissionCause;
 	 private $attendanceStatus;
 	 private $patientPicture;
 	 private $medicalRecord;
-	 private $photos;
+	 private $photos; //não obrigatório
 	 private $uti;	
-	 //--------------------------------
+	 //------------TIPADAS------------
 	 private Hospital $hospital;
 	 private Employee $employee;
 	 private Patient $patient;
 	 //--------------------------------
 
+	 public function getPhotos(){
+		 return $this->photos;
+	 }
+	 
+	 public function setPhotos($photos){
+		 $this->photos = $photos;
+	 }
 
+	 public function getDataFinalAtendimento(){
+		 return $this->dataFinalAtendimento;
+	 }
+	 
+	 public function setDataFinalAtendimento($dataFinalAtendimento){
+		 $this->dataFinalAtendimento = $dataFinalAtendimento;
+	 }
 
 	 function __construct(){
 
@@ -41,13 +55,6 @@
 		 $this->uti = $uti;
 	 }
 
-	 public function getPhotos(){
-		 return $this->photos;
-	 }
-	 
-	 public function setPhotos($photos){
-		 $this->photos = $photos;
-	 }
 
 	 public function getMedicalRecord(){
 		 return $this->medicalRecord;
@@ -82,13 +89,13 @@
 		 $this->dataAdmissaoUti = $dataAdmissaoUti;
 	 }
 	 
-	 public function getDataFinalAtendimento(){
-		 return $this->dataFinalAtendimento;
-	 }
+	// public function getDataFinalAtendimento(){
+	//	 return $this->dataFinalAtendimento;
+	// }
 	 
-	 public function setDataFinalAtendimento($dataFinalAtendimento){
-		 $this->dataFinalAtendimento = $dataFinalAtendimento;
-	 }
+	// public function setDataFinalAtendimento($dataFinalAtendimento){
+	//	 $this->dataFinalAtendimento = $dataFinalAtendimento;
+	// }
 	 
 	 public function getHospital(){
 		 return $this->hospital;
