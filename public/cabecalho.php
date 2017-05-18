@@ -62,7 +62,7 @@ $user = userInform();
 
   <body class = "light-blue lighten-5">
 
-  <!--SCRIPT SIDENAV-->
+    <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
       (function($){
           $(function(){
@@ -73,28 +73,27 @@ $user = userInform();
       })(jQuery);
     </script>
 
-<!--SIDENAV-->
-    <nav>
-      <div class="nav-wrapper light-blue">
-        <div class="col s2">
-          <ul class="left">
-            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+    <!--SIDENAV-->
+    <div class="nav-wrapper light-blue">
+      <div class="col s2">
+        <ul class="left">
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        </ul>
+      </div>   
+      <div class="row">
+        <div class="col s10">
+          <ul class="right">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" />
+                <label for="search"><i class="material-icons">search</i></label>
+              </div>
+            </form>
           </ul>
-        </div>   
-        <div class="row">
-          <div class="col s10">
-            <ul class="right">
-              <form>
-                <div class="input-field">
-                  <input id="search" type="search" />
-                  <label for="search"><i class="material-icons">search</i></label>
-                </div>
-              </form>
-            </ul>
-          </div>
-        </div>    
-      </div>
-    </nav>
+        </div>
+      </div>    
+    </div>
+
 
     <div class="userView position:relative">
       <ul id="slide-out" class="side-nav ">
