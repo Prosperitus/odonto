@@ -24,6 +24,7 @@
 	</head>
 
 	<body dir="ltr" background="/images/turquoise.jpg">	
+
 		<div id="newtab-customize-overlay"></div>
 		<div class="welcome">
 			<p>Bem Vindo,</p>
@@ -118,7 +119,6 @@
 						</div>
 					</div>
 
-					<div class="newtab-cell"></div>
 					<div class="newtab-cell"></div>
 					<div class="newtab-cell"></div>
 					<div class="newtab-cell"></div>

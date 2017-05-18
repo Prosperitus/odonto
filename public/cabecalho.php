@@ -74,7 +74,7 @@ $user = userInform();
     </script>
 
     <!--SIDENAV-->
-    <div class="nav-wrapper light-blue">
+    <nav class="nav-wrapper light-blue">
       <div class="col s2">
         <ul class="left">
           <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
@@ -92,7 +92,7 @@ $user = userInform();
           </ul>
         </div>
       </div>    
-    </div>
+    </nav>
 
 
     <div class="userView position:relative">
