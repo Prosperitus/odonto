@@ -16,14 +16,17 @@ class Attendance(){
        }
        VALUES (:causa, :data,:data_final, :patient, :hospital, :itu, :doctor, )";
 
-       $gaPatient = $atendimeto->getIdPatient();
-       $gaHospital = $atendimeto->getHospital();
-       $gaUti = $atendimeto->getIdUTI();
-       $gaEmployee = $atendimeto->getIdEmployee();
-       $gaAdmissionCause = $atendimeto->getCausa();
-       $gaAdmissionDate = $atendimeto->getDataAdm();
-       $gaFinalDate = $atendimeto->getDataFinal();
-       $gaDoctorResponsible = $atendimeto->getDoctorResponsible();
+       $gaPatient = $atendimento->getPatient();
+       $gaHospital = $atendimento->getHospital();
+       $gaUti = $atendimeto->getUti();
+       $gaEmployee = $atendimento->getIdEmployee();
+       $gaAdmissionCause = $atendimento->getAdmissionCause();
+       $gaAdmissionDate = $atendimento->getDataAdmissaoUti();
+       $gaFinalDate = $atendimento->getDataFinalAtendimento();
+       $gaDoctorResponsible = $atendimento->getDoctorResponsible();
+       $gaBonequinha = $atendimento->getBonequinha();
+       $gaProntuario = $atendimento->getProntuario();
+       $gaFoto = $atendimento->getPatientPicture();
 
 
        $conn = new DbConnector();
