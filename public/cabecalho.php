@@ -48,21 +48,24 @@ $user = userInform();
     	@media only screen and (min-width : 768px) {
         .margemCentro{
     			margin-left: 14%;
+			padding-bottom: 60px;
     		}
       }
     	@media only screen and (max-width : 768px) {
         .margemCentro{
     			margin-left: 0;
     			margin-right: 0;
+			padding-bottom: 60px;
+
     		}
       }
     </style>
 
   </head>
 
-  <body class = "light-blue lighten-5">
+  <body class = "light-blue lighten-5" style="min-height:100%;position:relative;">
 
-    <!--SCRIPT SIDENAV-->
+  <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
       (function($){
           $(function(){
@@ -73,27 +76,28 @@ $user = userInform();
       })(jQuery);
     </script>
 
-    <!--SIDENAV-->
-    <nav class="nav-wrapper light-blue">
-      <div class="col s2">
-        <ul class="left">
-          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-        </ul>
-      </div>   
-      <div class="row">
-        <div class="col s10">
-          <ul class="right">
-            <form>
-              <div class="input-field">
-                <input id="search" type="search" />
-                <label for="search"><i class="material-icons">search</i></label>
-              </div>
-            </form>
+<!--SIDENAV-->
+    <nav>
+      <div class="nav-wrapper light-blue">
+        <div class="col s2">
+          <ul class="left">
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
           </ul>
-        </div>
-      </div>    
+        </div>   
+        <div class="row">
+          <div class="col s10">
+            <ul class="right">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" />
+                  <label for="search"><i class="material-icons">search</i></label>
+                </div>
+              </form>
+            </ul>
+          </div>
+        </div>    
+      </div>
     </nav>
-
 
     <div class="userView position:relative">
       <ul id="slide-out" class="side-nav ">
