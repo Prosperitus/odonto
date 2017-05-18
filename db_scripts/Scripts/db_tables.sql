@@ -83,10 +83,10 @@ CREATE TABLE hospital(
 
 DROP TABLE IF EXISTS status;
 
-CREATE TABLE  status(
+CREATE TABLE  stats(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`status` varchar (255) NOT NULL AUTO_INCREMENT PRIMARY KEY
+	`status` varchar (255) NOT NULL
 )ENGINE=InnoDB;
 	
 DROP TABLE IF EXISTS hospital_itu;
@@ -212,9 +212,9 @@ VALUES
 '987',
 3);
 
-INSERT INTO status (status) 
+INSERT INTO stats (status) 
 VALUES ('In_evaluation') , ('In_reavaluation') , ('In_approval') , ('Approved_by_responsable_doctor') , ('Approved_by_family') , ('In_budget') , ('Budget_approved_by_family') , ('Anexed'),
-('In_supervison') , ('dismissed') , ('died') , ('discharged') , ('Concluded') 
+('In_supervison') , ('dismissed') , ('died') , ('discharged') , ('Concluded') ;
 
 /*INDEX*/
 
