@@ -138,6 +138,8 @@ INSERT INTO `odt_soft`.`permition`
 VALUES
 (<{id: }>,
 <{type: }>);
+
+
 INSERT INTO `odt_soft`.`users`
 (`id`,
 `name`,
@@ -174,11 +176,3 @@ VALUES
 <{number_of_account: }>,
 <{agency: }>,
 <{permition: }>);
-
-
-
-
-
-
-
-
