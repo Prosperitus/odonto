@@ -20,19 +20,21 @@ class DbHospital{
         $ghName = $hospital->getNameHosp();
         $ghTelephoneUti = $hospital->getPhoneUti();
         $ghTelephoneUtiChefe = $hospital->getPhoneChef();
-		$ghNomeUtiChefe = $hospital->getChefUti();
+	$ghNomeUtiChefe = $hospital->getChefUti();
       
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':name', $ghName);
         $stmt->bindParam(':telUti', $ghTelephoneUti);
-		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
+	$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
         $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
 
         
        
        $result = $stmt->execute();
         return $result;
+	
+	
     }
     catch(PDOExeption $e){
         
@@ -41,31 +43,24 @@ class DbHospital{
                     
 	}
 
-   public function adduti($uti) {
+   public function addUti($uti) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital_itu (name_itu, name_bed, number_itu, number_bed, name_admin_itu, telephone_admin_itu, hospital)  
-        VALUES (:name_uti, :name_beds, :num_uti, :num_bed, :name_admin_uti, :telephone_itu, :hospital_name)";
+        $sql = "INSERT INTO hospital_itu (name_itu, name_bed, hospital)  
+        VALUES (:name_uti, :name_beds, :hospital)";
 
         //gh significa get hospital
-        $ghName_uti = $hospital->getName_Itu();
-        $ghName_bed = $hospital->getName_bed();
-        $ghNum_uti = $hospital->getNum_itu();
-        $ghNum_bed = $hospital->getNum_bed();
-        $ghName_admin = $hospital->getName_admin();
-        $ghTelephone = $hospital->getTelephone_admin_itu();
-        $ghHospital = $hospital->getHospital();
+        $ghId = search_max_id();
+        $ghName_uti = $uti->getName_Itu();
+        $ghName_bed = $uti->getName_bed();
+     
 
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':name_uti', $ghName_uti);
         $stmt->bindParam(':name_beds', $ghName_bed);
-        $stmt->bindParam(':num_uti', $ghNum_uti);
-        $stmt->bindParam(':num_bed', $ghNum_bed);
-        $stmt->bindParam(':name_admin_itu', $ghName_admin);
-        $stmt->bindParam(':telephone_itu', $ghTelephone);
-        $stmt->bindParam(':hospital_name', $ghHospital);
-
+        $stmt->bindParam(':hospital', $ghId);
+ 
        $result = $stmt->execute();
         return $result;
     }
@@ -75,15 +70,6 @@ class DbHospital{
                     
     }
 
-    public function searchItuId(){
-
-    $sql = "SELECT * FROM hospital_itu WHERE id = :id";
-    $conn =new DbConector();
-    $stmt = $conn->getConn()->prepare($sql);
-    $stmt->bindParam(':id', $search);
-    return $result = $stmt -> fetch(PDO::OBJ);    
-
-    }
 	
 	public function search_max_id(){
 
