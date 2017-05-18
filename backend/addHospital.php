@@ -30,7 +30,7 @@
 
 
 if(addHospital()){
-	header("location: ../public/success_register.php");
+	header("location: ../public/cadastro_hospital_uti.php");
  }else{
 	 header("location: ../public/fail_register.php");
  }

@@ -20,7 +20,7 @@ $(document).ready(function(){
 });
 </script>
     <!--CLASS/FORM-->
-    <div class="row margemCentro">
+    <div class="row margemCentro" style="width: 91%">
       <form class="col s11" action="../backend/addHospital.php" method="post"> 
     
       <!--TITULO-->
