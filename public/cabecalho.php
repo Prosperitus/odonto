@@ -48,19 +48,22 @@ $user = userInform();
     	@media only screen and (min-width : 768px) {
         .margemCentro{
     			margin-left: 14%;
+			padding-bottom: 60px;
     		}
       }
     	@media only screen and (max-width : 768px) {
         .margemCentro{
     			margin-left: 0;
     			margin-right: 0;
+			padding-bottom: 60px;
+
     		}
       }
     </style>
 
   </head>
 
-  <body class = "light-blue lighten-5">
+  <body class = "light-blue lighten-5" style="min-height:100%;position:relative;">
 
   <!--SCRIPT SIDENAV-->
     <script type="text/javascript">

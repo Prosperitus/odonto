@@ -14,24 +14,27 @@ class Attendance(){
         try{
            $sql = "INSERT INTO attendance (admission_cause, admission_date_itu, patient, hospital, itu, doctor_responsible, data_final)  
        }
-       VALUES (:causa, :data, :patient_id, :hospital_id, :itu_id, :doctor, )";
+       VALUES (:causa, :data,:data_final, :patient, :hospital, :itu, :doctor, )";
 
-       $ghIdHospital = $atendimeto->getIdPatient();
-       $ghIdUTI = $atendimeto->getIdUTI();
-       $ghIdDoctor = $atendimeto->getIdEmployee();
-       $ghIdPatient = $atendimeto->getIdPatient();
-       $ghCausa = $atendimeto->getCausa();
-       $ghDataAdm = $atendimeto->getDataAdm();
+       $gaPatient = $atendimeto->getIdPatient();
+       $gaHospital = $atendimeto->getHospital();
+       $gaUti = $atendimeto->getIdUTI();
+       $gaEmployee = $atendimeto->getIdEmployee();
+       $gaAdmissionCause = $atendimeto->getCausa();
+       $gaAdmissionDate = $atendimeto->getDataAdm();
+       $gaFinalDate = $atendimeto->getDataFinal();
+       $gaDoctorResponsible = $atendimeto->getDoctorResponsible();
 
 
        $conn = new DbConnector();
        $stmt = $conn->getConn()->prepare($sql);
-       $stmt->bindParam(':data', $ghDataAdm);
-       $stmt->bindParam(':causa', $ghCausa);
-       $stmt->bindParam(':patient_id', $ghIdPatient);
-       $stmt->bindParam(':doctor', $ghDoctor);
-       $stmt->bindParam(':hospital_id', $ghIdHospital);
-       $stmt->bindParam(':itu_id', $ghIdUTI);
+       $stmt->bindParam(':data', $gaAdmissionCause;
+       $stmt->bindParam(':data_final', $gaFinalDate;
+       $stmt->bindParam(':causa', $gaAdmissionCause);
+       $stmt->bindParam(':patient', $gaPatient);
+       $stmt->bindParam(':doctor', $gaDoctorResponsible);
+       $stmt->bindParam(':hospital', $gaHospital);
+       $stmt->bindParam(':itu', $gaUTI);
 
 
        $result = $stmt->execute();

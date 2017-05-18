@@ -1,5 +1,6 @@
+
   <!--FOOTER-->
-        <footer class="page-footer light-blue">
+        <footer class="page-footer light-blue" style="bottom: 0%; position: fixed;width:100%;clear:both">
           <div class="footer-copyright">
             <div class="container">
                 <img src="../images/viber.png">&nbsp;&nbsp;&nbsp;&nbsp;

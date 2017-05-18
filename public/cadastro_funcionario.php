@@ -39,16 +39,19 @@
           }
         }
       	@media only screen and (min-width : 768px) {
-          .margemCentro{
-      			margin-left: 14%;
-      		}
-        }
-      	@media only screen and (max-width : 768px) {
-          .margemCentro{
-      			margin-left: 0;
-      			margin-right: 0;
-      		}
-        }
+        .margemCentro{
+    			margin-left: 14%;
+			padding-bottom: 60px;
+    		}
+      }
+    	@media only screen and (max-width : 768px) {
+        .margemCentro{
+    			margin-left: 0;
+    			margin-right: 0;
+			padding-bottom: 60px;
+
+    		}
+      }
       </style>
   </head>
 

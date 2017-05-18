@@ -75,6 +75,15 @@ class DbHospital{
                     
     }
 
+    public function searchItuId(){
+
+    $sql = "SELECT * FROM hospital_itu WHERE id = :id";
+    $conn =new DbConector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':id', $search);
+    return $result = $stmt -> fetch(PDO::OBJ);    
+
+    }
 	
 	public function search_max_id(){
 
