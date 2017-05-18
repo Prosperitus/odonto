@@ -220,19 +220,7 @@
           <label for="funcionario_endereco">Endereço</label>
         </div>
 
-        <!--SENHA-->
-        <div class="input-field col s5">
-          <i class="material-icons prefix">vpn_key</i>
-          <input id="funcionario_senha" type="password" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="funcionario_senha" required>
-          <label for="funcionario_senha">Senha</label>
-        </div>
-
-        <!--CONFIRMAÇÃO DA SENHA-->
-        <div class="input-field col s5">
-          <i class="material-icons prefix">vpn_key</i>
-          <input id="funcionario_confirma_senha" type="password" class="validate" name="funcionario_confirma_senha" required>
-          <label for="funcionario_confirma_senha">Confirmação de Senha</label>
-        </div>
+      
 
         <!--CRO-->
         <div class="input-field col s5">
@@ -292,6 +280,20 @@
             <option value="3">Administrador</option>
             <option value="4">Auxiliar Financeiro</option>
           </select>
+        </div>
+
+  	<!--SENHA-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="funcionario_senha" type="password" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="funcionario_senha" required>
+          <label for="funcionario_senha">Senha</label>
+        </div>
+
+        <!--CONFIRMAÇÃO DA SENHA-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="funcionario_confirma_senha" type="checkbox" class="" name="funcionario_confirma_senha">
+          <label for="funcionario_confirma_senha">Mostrar Senha</label>
         </div>
 
         <!--CHECK-->

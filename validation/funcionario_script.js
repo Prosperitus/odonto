@@ -1,4 +1,3 @@
-
 $(function() {
 
 
@@ -52,12 +51,13 @@ $(function() {
      validateForm();
 
      });
+    */
      $("#funcionario_cpf").focusout(function() {
 
-     checkCpf();
+     check_cpf();
 
 
-     });*/
+     });
 
     function checkName() {
 
@@ -69,7 +69,7 @@ $(function() {
             error_name = true;
         } else {
             if(/^[a-zA-Z]*$/.test(name)){
-				$("#name_error_message").html("nome correto!");
+                $("#name_error_message").html("nome correto!");
                 $("#name_error_message").show();
             }else{
                 $("#name_error_message").html("O nome deve conter apenas letras");
@@ -125,8 +125,8 @@ $(function() {
         if (password !== retypePassword) {
             $("#funcionario_confirma_senha").attr("title","As senhas devem ser idênticas");
             $("#funcionario_confirma_senha").addClass("invalid");
-	    //$("#funcionario_confirma_senha").css("border-bottom", "2px solid #F44336");
-	    //$("#retype_password_error_message").show();
+        //$("#funcionario_confirma_senha").css("border-bottom", "2px solid #F44336");
+        //$("#retype_password_error_message").show();
             //error_retype_password = true;
 
 
@@ -149,31 +149,8 @@ $(function() {
         }
     }
 
-    /*function checkCpf(){
+    /*
 
-     var strCPF = $("#funcionario_cpf").val();
-     var Soma;
-     var Resto;
-     Soma = 0;
-     if (strCPF == "00000000000") return false;
-
-     for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-     Resto = (Soma * 10) % 11;
-
-     if ((Resto == 10) || (Resto == 11))  Resto = 0;
-     if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
-
-     Soma = 0;
-     for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-     Resto = (Soma * 10) % 11;
-
-     if ((Resto == 10) || (Resto == 11))  Resto = 0;
-     if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
-     return true;
-     }
-
-
-     }
 
     function validateForm(){
         if(error_name === false || error_surname === false || error_password ===  false || error_retype_password == false || error_email === false ){
@@ -183,8 +160,82 @@ $(function() {
         }
         alert("Valido!");
         return true;
-    }*/
+    }
+    function check_cpf(){
+        var strCPF = $("#funcionario_cpf").val();
+        var soma;
+        var resto;
+    for (i=1; i<=9; i++){
+    soma = soma + parseInt(strCPF.substring(i -1,i)) * (11-i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10){
+    resto = 0;
+    }if (resto !== parseInt(strCPF(9,10)){
+    alert("CPF invalido");
+    }
+    soma = 0;
+    for (i = 1; i <= 10; i++){
+    soma = soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+    }
+    resto = (soma *10) % 11;
+    if(resto === 10){
+    resto = 0;
+    }if (resto !== parseInt(strCPF.substring(10, 11))){
+    alert("CPF invalido");
+    }
+    alert("CPF valido");
+   
+   
+   */
+function check_cpf() {
+
+var strCpf = $("#funcionario_cpf").val();
+var soma;
+var resto;
+soma = 0;
+if (strCpf == "00000000000") {
+   alert("cpf invalido"); 
+	return false;
+}
+
+for (i = 1; i <= 9; i++) {
+    soma = soma + parseInt(strCpf.substring(i - 1, i)) * (11 - i);
+}
+
+resto = soma % 11;
+
+if (resto == 10 || resto == 11 || resto < 2) {
+    resto = 0;
+} else {
+    resto = 11 - resto;
+}
+
+if (resto != parseInt(strCpf.substring(9, 10))) {
+    return false;
+	alert("cpf invalido"); 
+}
+
+soma = 0;
+
+for (i = 1; i <= 10; i++) {
+    soma = soma + parseInt(strCpf.substring(i - 1, i)) * (12 - i);
+}
+resto = soma % 11;
+
+if (resto == 10 || resto == 11 || resto < 2) {
+    resto = 0;
+} else {
+    resto = 11 - resto;
+}
+
+if (resto != parseInt(strCpf.substring(10, 11))) {
+	alert("cpf invalido");     
+	return false;
+}
+
+return true;
+alert("cpf valido"); 
+}
+   
 });
-
-
-
