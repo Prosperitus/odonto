@@ -4,21 +4,31 @@
 	include "../database/dbconnect.php";
 
 	function addAttendance(){
-		$Employee = new Attendance();
-		$Employee->setPatient($_POST["patient"]);
-		$Employee->setHospital($_POST["hospital"]);
-		$Employee->setAdmissionCause($_POST["admissioncause"]);
-		$Employee->setAttendanceStatus($_POST["attendanceStatus"]);
-        $Employee->setṔhotos($_POST["photos"]);
-        $Employee->setUti($_POST["uti"]);
-        $Employee->setPatientPicture($_POST["patientPicture"]);
-        $Employee->setMedicalrecord($POST["medicalrecord"]);
-        $Employee->setEmployee($POST["Employee"]);
-		$Employee->setdataAdmissaoUti($_POST["dataAdmissaoUti"]); 
-        $Employee->setpatientPicture($_POST["patientPicture"]);
+		$Attendance = new Attendance();
+		$dbpatient = new DbPatient();
+		if (!$dbp->searchId($_POST["patient"])) {
+			echo "false";
+			return;
+		}
+		$Attendance->setPatient($_POST["patient"]);
 
-		$conn = new DBconnect();
+		$dbh = new DbHospital();
+		if (!$dbh->search_id($_POST["hospital"])) {
+			echo "false";
+			return;
+
+		$dbh = new DbUti();
+		if (!$dbh->searchItuId($_POST["uti"])) {
+			echo "false";
+			return;	
+		}
+		$Attendance->setHospital($_POST["hospital"]);
+		$Attendance->setAdmissionDate($_POST["admdate"]);
+		$Attendance->setFinalDate($_POST["#"]);
+		$Attendance->setAdmissionCause($_POST["admcause"]);
+		$Attendance->setDoctorResponsible($_POST["#"]);
+		//$Attendance->setUti($_POST["uti"]);
+		//$Attendance->setStatus($_POST["status"]);
+		$conn = new DbAttendance();
 		$conn->addAttendance($Attendance);
 	}
-
-addAttendance();
