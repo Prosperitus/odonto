@@ -2,12 +2,7 @@
 	require_once "cabecalho.php";
 ?>
 
-
-
-
-    <!--Card Paciente---->
-
- <!--OPCOES 2-->
+ <!--CARD FUNCIONARIO-->
  <div class="row main">
     <div class="col s6 m4">
       <div class="card">
@@ -21,12 +16,8 @@
         </div>
       </div>
     </div>
-  
-
-
       
-        <!--CARD FUNCIONÁRIO-->
-        
+    <!--CARD PACIENTE-->      
     <div class="col s6 m4">
       <div class="card">
         <div class="card-image">
@@ -40,9 +31,7 @@
       </div>
     </div>
   
-
-      <!--CARD HOSPITAL-->
-    
+    <!--CARD HOSPITAL-->
     <div class="col s6 m4">
       <div class="card">
         <div class="card-image">
@@ -55,11 +44,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-
-
-
-          
+  </div>         
         
 <?php require_once "rodape.php";
