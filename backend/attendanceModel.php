@@ -9,22 +9,25 @@
 	 private $dataFinalAtendimento; //não obrigatório
 	 private $admissionCause;
 	 private $attendanceStatus;
-	 private $patientPicture;
+	 private $bonequinha;
 	 private $medicalRecord;
-	 private $photos; //não obrigatório
+	 private $image; //não obrigatório
 	 private $uti;	
+
 	 //------------TIPADAS------------
 	 private Hospital $hospital;
 	 private Employee $employee;
 	 private Patient $patient;
 	 //--------------------------------
 
-	 public function getPhotos(){
-		 return $this->photos;
+
+
+	 public function getImage(){
+		 return $this->image;
 	 }
 	 
-	 public function setPhotos($photos){
-		 $this->photos = $photos;
+	 public function setImage($image){
+		 $this->image = $image;
 	 }
 
 	 public function getDataFinalAtendimento(){
@@ -34,6 +37,7 @@
 	 public function setDataFinalAtendimento($dataFinalAtendimento){
 		 $this->dataFinalAtendimento = $dataFinalAtendimento;
 	 }
+
 
 	 function __construct(){
 
@@ -64,12 +68,12 @@
 		 $this->medicalRecord = $medicalRecord;
 	 }
 
-	 public function getPatientPicture(){
-		 return $this->patientPicture;
+	 public function getBonequinha(){
+		 return $this->bonequinha;
 	 }
 	 
-	 public function setPatientPicture($patientPicture){
-		 $this->patientPicture = $patientPicture;
+	 public function setBonequinha($bonequinha){
+		 $this->bonequinha = $bonequinha;
 	 }
 
 	 public function getAttendanceStatus(){
