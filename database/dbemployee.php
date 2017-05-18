@@ -27,17 +27,17 @@ class DbEmployee {
         	$geAgencia = $employee->getAgency();
         	$gePhone = $employee->getPhone();
         	$gePhone2 = $employee->getPhone2();
-            $geEmail = $employee->getEmail();
+            	$geEmail = $employee->getEmail();
         	$gePass = $employee->getPassword();
         	$gePermission = $employee->getPermission();	
-
+            //$geImage = $employee->getImage();
     		
 
             if($geNregistration == null){
                 $geNregistration = 1;
             }
         	$conn = new DbConnector();
-    	   $stmt = $conn->getConn()->prepare($sql);
+            $stmt = $conn->getConn()->prepare($sql);
         	$stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
@@ -53,8 +53,9 @@ class DbEmployee {
             $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
         	$stmt->bindParam(':password', $gePass, PDO::PARAM_STR, 255);
             $stmt->bindParam(':permition', $gePermission, PDO::PARAM_INT);
-                           //var_dump($employee);
-                           //die();
+            //$stmt->bindParam(':image', $geImage);
+            //var_dump($employee);
+            //die();
                            
 
     		 $result = $stmt->execute(); 
@@ -86,11 +87,11 @@ class DbEmployee {
     }
 
     public function loginDatabase($user, $password) {
-    	$sql = "SELECT * FROM users WHERE email = :user OR cro = :user AND password = :pass";
+    	$sql = "SELECT * FROM users WHERE (email = :user OR cro = :user) AND password = :password";
     	$conn =  new DbConnector();
     	$stmt =	$conn->getConn()->prepare($sql);
     	$stmt->bindParam(':user', $user);
-    	$stmt->bindParam(':pass', $password);
+    	$stmt->bindParam(':password', $password);
     	$stmt->execute();
     	$result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result;
@@ -120,17 +121,23 @@ class DbEmployee {
     }
 
     public function searchEmployeeById($filter) {
-        $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
-        FROM `odt_soft`.`users`
-        WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':id', $filter);
         $stmt->execute();
         $result = $stmt-> fetch(PDO::FETCH_OBJ);
-
-
         return $result;
+
+    }
+
+     public function searchEmployeeAll(){
+		$sql = "SELECT * FROM users";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $result;
     }
 
 }

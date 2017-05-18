@@ -2,8 +2,11 @@
 <?php
 /*************************************************************************************************************/
 //maiuscula_na_str($p),digitos_senha($p),tamanho_str($p ,$i),carac_na_str($p),letra_na_str($p),num_na_str($p) |
-//InvalidEmail($p),InvalidName($p),InvalidCpf($p),InvalidData($p),InvalidPassword($p)   			  |
-//TestInvalid($admdata , $nome , $data , $email , $senha , $cpf , $cro , $tel , $ag , $cc)								  |
+//InvalidEmail($p),InvalidName($p),InvalidData($p),InvalidPassword($p),										  |
+//InBlank($admdata, $ag , $cc, $cpf , $cro , $data , $email , $nome  , $senha  , $tel), 					  |
+//Overflow($admdata, $ag , $cc, $cpf , $cro , $data , $email , $nome  , $senha  , $tel),					  |
+//InvalidAdmData($p), InvalidCep($p) , InvalidCpf($p),InvalidTel($p),InvalidUf($p)							  |
+//TestInvalid($admdata , $nome , $data , $email , $senha , $cpf , $cro , $tel , $ag , $cc)					  |
 /*************************************************************************************************************/
 
 	function maiuscula_na_str($p){
@@ -151,32 +154,18 @@
 		}						
 	return $error;
 	}
-	function InvalidName($p){
-		
-		if(!num_na_str($p) && !carac_na_str($p) ){//nao pode conter numero ou caracteres especias
-				return false;
+
+	function InvalidName ($p){
+		if(strlen($p) < 1){
+			return true;
 		}
-		
-		return true;
+		$matches = null;
+		$pattern = '/[^a-z|^A-Z| |á|é|í|ó|ú|Á|É|Í|Ó|Ú|ã|ẽ|ĩ|õ|ũ|â|ê|î|ô|û|ç|Ç]/';
+		if(preg_match($pattern,$p, $matches)){
+			return true;
+		}
 	}
 
-	function InvalidSurname($p){
-		
-		if(!num_na_str($p) && !carac_na_str($p) ){//nao pode conter numero ou caracteres especias
-				return false;
-		}
-		
-		return true;
-	}
-
-	function InvalidCpf($p){
-		
-		if(tamanho_str($p,11) && !letra_na_str($p) && !carac_na_str($p)){//tem de ter 11 digitos de tamanho , nao pode conter letras ou caracteres especias
-			return false;
-		}
-		
-		return true;
-	}
 	function InvalidData($p){
 		
 		if(tamanho_str($p,8) && !letra_na_str($p) && !carac_na_str($p)){//tem de ter 8 digitos de tamanho , nao pode conter letras ou caracteres especias
@@ -235,12 +224,96 @@
 			return true;//retorna true caso tenha numero de digitos diferente de 8 ou mais q 31 dias(ou menos que 1) por mes ou mais de 12 meses(ou menos que 1)  no ano ou tenha letra/caracter na str
 	}
 	function InvalidCep($p){
-		
-		if(!letra_na_str($p) && !carac_na_str($p)){//tem de ter 11 digitos de tamanho , nao pode conter letras ou caracteres especias
-			return false;
+		if(strlen($p) != 9){
+			return true;
+		}
+		for ($i = 0 ; $i < strlen($p); $i++){
+			if($i == 5){
+				if($p[$i] != '-'){
+					return true;
+				} 
+			}
+			else {
+				if(!ctype_digit($p[$i])){
+					return true;
+				}
+			}
+
 		}
 		
-		return true;
 	}
 
+	function InvalidCpf($p){
+		if(strlen($p) != 14){
+			return true;
+		}
+		for ($i = 0 ; $i < strlen($p); $i++){
+			if($i == 3 || $i == 7){
+				if($p[$i] != '.'){
+					return true;
+				} 
+			}
+			else if($i == 11 ){
+				if($p[$i] != "-"){
+					return true;
+				}
+			}
+			else {
+				if(!ctype_digit($p[$i])){
+					return true;
+				}
+			}
+
+		}
+
+	}
+
+	function InvalidTel($p){
+		if(strlen($p) != 15){
+			return true;
+		}
+		for($i = 0 ; $i<strlen($p); $i++){
+			if($i == 0){
+				if ($p[$i] != '(') {
+					return true;
+				}
+			}
+			else if($i == 3){
+				if ($p[$i] != ')') {
+					return true;
+				}
+			}
+			else if($i == 4) {
+				if ($p[$i] != ' ') {
+					return true;
+				}
+			}
+			else if($i == 10) {
+				if ($p[$i] != '-') {
+					return true;
+				}
+			}
+			else {
+				if(!ctype_digit($p[$i])){
+					return true;
+				}
+			}
+		}
+	}
+
+	function InvalidUf($p){
+		$ufs = array('AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO');
+		$match = false;
+		for ($i = 0 ; $i < count($ufs) ; $i++){
+			if($p == $ufs[$i]){
+				$match = true;
+			}
+		}
+		if($match == false){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 ?>

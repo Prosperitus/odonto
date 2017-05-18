@@ -1,22 +1,22 @@
 <?php
 
-include_once "dbconnect.php";
-include_once "../backend/patientModel.php";
+require_once "dbconnect.php";
+require_once "../backend/patientModel.php";
 
- class DbPatient {
+class DbPatient{
 
 public function addPatient($patient){
  	try{
-    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1, telephone_r1, clinic, responsible2, telephone_r2, physician_assistant, name_phy_assistant, telephone_phy_assistant, speciality_phy_assistant)
- 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic, :responsible2, :responsiblePhone2, :physician_assistant, :name_phy_assistant, :telephone_phy_assistant, :speciality_phy_assistant)";
+    $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1,responsible2, telephone_r1, telephone_r2, clinic, email)
+ 	VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :clinic ,  :email, :responsible2, :responsiblePhone2)";
 
         //gp significa get pacient
  		$gpName = $patient->getName();
         $gpSurname = $patient->getSurname();
  		$gpBirthdate = $patient->getBirthdate();
  		$gpGender = $patient->getGender();
- 		$gpSocial_security = $patient->getSocialSecurity();
-        $gpAddress = $patient->getAddress();
+ 		$gpSocial_security = $patient->getCpf();
+        $gpAddress = $patient->getAdress();
  		$gpNeighborhood = $patient->getNeighborhood();
  		$gpCity = $patient->getCity();
  		$gpState = $patient->getState();
@@ -24,13 +24,14 @@ public function addPatient($patient){
  		$gpHealthPlan = $patient->getHealthPlan();
  		$gpResponsibleName = $patient->getResponsibleName();
  		$gpResponsiblePhone = $patient->getResponsiblePhone();
+        $gpEmail = $patient->getpacienteEmail();
         $gpResponsibleName2 = $patient->getResponsibleName2();
         $gpResponsiblePhone2 = $patient->getResponsiblePhone2();
  		$gpClinic = $patient->getClinic();
- 		$gpphysician_assistant = $patient-> getmedicalassistant();
- 		$gpname_phy_assistant = $patient->getname_phy_assistant();
- 		$gptelephone_phy_assistant = $patient->gettelephone_phy_assistant();
- 		$gpspeciality_phy_assistant = $patient->getspeciality_phy_assistant();
+ 		//$gpphysician_assistant = $patient-> getmedicalassistant();
+ 	    //$gpname_phy_assistant = $patient->getname_phy_assistant();
+ 		//$gptelephone_phy_assistant = $patient->gettelephone_phy_assistant();
+ 		//$gpspeciality_phy_assistant = $patient->getspeciality_phy_assistant();
 
 		
 		if($gpClinic == "on"){
@@ -39,12 +40,12 @@ public function addPatient($patient){
 			$gpClinic = (bool) false;
 		}
 
-
-		if($gpphysician_assistant== "on"){
+		
+		/*if($gpphysician_assistant== "on"){
 			$gpphysician_assistant = (bool) true;
 		}else{
 			$gpphysician_assistant = (bool) false;
-		}
+		}*/
 
 
 		$conn = new DbConnector();
@@ -65,13 +66,15 @@ public function addPatient($patient){
         $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
         $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
  		$stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
- 		$stmt->bindParam(':physician_assistant', $gpphysician_assistant,PDO::PARAM_BOOL);
- 		$stmt->bindParam(':name_phy_assistant', $gpname_phy_assistant,PDO::PARAM_STR,100);
- 		$stmt->bindParam(':telephone_phy_assistant', $gptelephone_phy_assistant,PDO::PARAM_STR, 100);
- 		$stmt->bindParam(':speciality_phy_assistant', $gpspeciality_phy_assistant,PDO::PARAM_STR,100);
+ 		//$stmt->bindParam(':physician_assistant', $gpphysician_assistant,PDO::PARAM_BOOL);
+ 		//$stmt->bindParam(':name_phy_assistant', $gpname_phy_assistant,PDO::PARAM_STR,100);
+ 		//$stmt->bindParam(':telephone_phy_assistant', $gptelephone_phy_assistant,PDO::PARAM_STR, 100);
+ 		//$stmt->bindParam(':speciality_phy_assistant', $gpspeciality_phy_assistant,PDO::PARAM_STR,100);
+        $stmt->bindParam(':email', $gpEmail,PDO::PARAM_STR,100);
 
+		
  		$result = $stmt->execute();
-            		return $result;
+        return $result;
  		}
  		catch(PDOException $e)
  		{
@@ -95,17 +98,24 @@ public function addPatient($patient){
 }
 
  public function searchId($search){
-
     $sql = "SELECT * FROM patient WHERE id = :id_patient";
     $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
     $stmt->bindParam(':id_patient', $search);
-    return $result = $stmt -> fetch(PDO::OBJ);
-
-
-
+	$stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_OBJ);
+	return $result;
  }
  
+
+ public function searchPatientAll(){
+		$sql = "SELECT * FROM patient";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $result;
+}
 
  public function searchPatient($filter){
 

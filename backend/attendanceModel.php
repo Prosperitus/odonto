@@ -1,60 +1,127 @@
 <?php
- // 23/03/2017
-	class Employee{
-		
-
-		private $patient;
-		private $hospital;
-		private $admdate;
-		private $admcause;
-		private $status;
-
-		
-		function __construct(){
-
-		}		
+	require_once "Hospitalmodel.php";
+	require_once "employeeModel.php";
+	require_once "patientModel.php";
 
 
-		public function getPatient(){
-			return $this->patient;
-		}
-		
-		public function setPatient($patient){
-			$this->name = $patient;
+ class Attendance{
+	 private $dataAdmissaoUti;
+	 private $dataFinalAtendimento; //não obrigatório
+	 private $admissionCause;
+	 private $attendanceStatus;
+	 private $patientPicture;
+	 private $medicalRecord;
+	 private $photos; //não obrigatório
+	 private $uti;	
+	 //------------TIPADAS------------
+	 private Hospital $hospital;
+	 private Employee $employee;
+	 private Patient $patient;
+	 //--------------------------------
+
+	 public function getPhotos(){
+		 return $this->photos;
+	 }
+	 
+	 public function setPhotos($photos){
+		 $this->photos = $photos;
+	 }
+
+	 public function getDataFinalAtendimento(){
+		 return $this->dataFinalAtendimento;
+	 }
+	 
+	 public function setDataFinalAtendimento($dataFinalAtendimento){
+		 $this->dataFinalAtendimento = $dataFinalAtendimento;
+	 }
+
+	 function __construct(){
+
 		}
 
-		public function getHospital(){
-			return $this->hospital;
-		}
-		
-		public function setHospital($hospital){
-			$this->name = $hospital;
-		}
-	
-		public function getDate(){
-			return $this->admdate;
-		}
-		
-		public function setDate($admdate){
-			$this->name = $admdate;
-		}
+	 public function getAdmissionCause(){
+		 return $this->admissionCause;
+	 }
+	 
+	 public function setadmissionCause($admissionCause){
+		 $this->admissionCause = $admissionCause;
+	 }
 
-		public function getCause(){
-			return $this->admcause;
-		}
-		
-		public function setCause($admcause){
-			$this->name = $admcause;
-		}
+	 public function getUti(){
+		 return $this->uti;
+	 }
+	 
+	 public function setUti($uti){
+		 $this->uti = $uti;
+	 }
 
-		public function getStatus(){
-			return $this->status;
-		}
-		
-		public function setStatus($status){
-			$this->name = $status;
-		}
 
-		
-	}
+	 public function getMedicalRecord(){
+		 return $this->medicalRecord;
+	 }
+	 
+	 public function setMedicalRecord($medicalRecord){
+		 $this->medicalRecord = $medicalRecord;
+	 }
 
+	 public function getPatientPicture(){
+		 return $this->patientPicture;
+	 }
+	 
+	 public function setPatientPicture($patientPicture){
+		 $this->patientPicture = $patientPicture;
+	 }
+
+	 public function getAttendanceStatus(){
+		 return $this->attendanceStatus;
+	 }
+	 
+	 public function setAttendanceStatus($attendanceStatus){
+		 $this->attendanceStatus = $attendanceStatus;
+	 }
+
+	 
+	 public function getDataAdmissaoUti(){
+		 return $this->dataAdmissaoUti;
+	 }
+	 
+	 public function setDataAdmissaoUti($dataAdmissaoUti){
+		 $this->dataAdmissaoUti = $dataAdmissaoUti;
+	 }
+	 
+	// public function getDataFinalAtendimento(){
+	//	 return $this->dataFinalAtendimento;
+	// }
+	 
+	// public function setDataFinalAtendimento($dataFinalAtendimento){
+	//	 $this->dataFinalAtendimento = $dataFinalAtendimento;
+	// }
+	 
+	 public function getHospital(){
+		 return $this->hospital;
+	 }
+	 
+	 public function setHospital($hospital){
+		 $this->hospital = $hospital;
+	 }
+	 
+	 public function getEmployee(){
+		 return $this->employee;
+	 }
+	 
+	 public function setEmployee($employee){
+		 $this->employee = $employee;
+	 }
+	 
+	 
+	  public function getPatient(){
+		 return $this->patient;
+	 }
+	 
+	 public function setPatient($patient){
+		 $this->patient = $patient;
+	 }
+
+
+	 
+ }

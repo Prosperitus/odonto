@@ -1,56 +1,110 @@
 <?php
-	include "employeeModel.php";
-	//include "../database/dbconnect.php";
+	include "Hospitalmodel.php";
+	include "../database/dbhospital.php";
 	include "funcoes.php";
-
 	function addHospital(){
-		$Employee = new Hospital();
-		
-		$nome = $_POST["namehops"]);
-		if(InvalidName($nome)){
-			return "Nome Inválido";
-		}else{
-			$Employee->setNameHosp($_POST["namehops"]);
+		$Hospital = new Hospital();
+		$erro = false ;
+		$NameHosp = $_POST["nome_hospital"];
+		$TelUTI = $_POST["telefone_uti"];
+		$Nmechef = $_POST["nome_chefe"];
+		$Telchef = $_POST["telefone_chefeuti"];
+		$NumUTI = $_POST["numeroutis_hospital"];
+		$EndHosp = $_POST["endereco_hospital"];
+		$BairroHosp = $_POST["bairro_hospital"];
+		$CidHosp = $_POST["cidade_hospital"];
+		$CepHosp = $_POST["cep_hospital"];
+		$UFHosp = $_POST["estado_hospital"];
+
+		if(InvalidName($NameHosp)){
+			$erro = true ;
+			echo "Nome invalido!";
+		}else
+		{
+		$Hospital->setNameHosp($NameHosp);
 		}
 
-		$uti = $_POST["uti"]);
-		if(letra_na_str($uti) || carac_na_str($uti)){
-			return "Número de UTI Inválido";
-		}else{
-			$Employee->setUTI($_POST["uti"]);
+		if(InvalidName($Nmechef))
+		{
+			$erro = true ;
+			echo "Nome do chefe invalido!";
+		}else
+		{
+			$Hospital->setChefUti($Nmechef);
 		}
 		
-		$bed = $_POST["bed"]);
-		if(letra_na_str($bed) || carac_na_str($bed)){
-			return "Número de leito Inválido";
-		}else{
-			$Employee->setBed($_POST["bed"]);
+		if(letra_na_str($Telchef) || carac_na_str($Telchef) || $Telchef = "")
+		{
+			$erro = true ;
+			echo "Número do chefe invalido!";
+		}else
+		{
+			$Hospital->setPhoneChef($Telchef);
 		}
 		
-		
-		$name = $_POST["chefuti"]);
-		if(InvalidName($name)){
-			return "Nome Inválido";
-		}else{
-			$Employee->setChefUti($_POST["chefuti"]);
+		if(letra_na_str($TelUTI) || carac_na_str($TelUTI) || $TelUTI = "")
+		{
+			$erro = true ;
+			echo "Número da UTI invalido!";
+		}else
+		{
+			$Hospital->setPhoneUti($TelUTI);
 		}
 		
-		$tel = $_POST["phonechef"]);
-		if(InvalidPhone($tel)){
-			return "Telefone Inválido";
-		}else{
-			$Employee->setPhoneChef($_POST["phonechef"]);
+		if(InvalidName($EndHosp)){
+			$erro = true ;
+			echo "Endereço invalido!";
+		}else
+		{
+		$Hospital->setEndHosp($EndHosp);
 		}
 
-		$tel_h = $_POST["phonehosp"]);
-		if(InvalidPhone($tel_h)){
-			return "Telefone Inválido";
-		}else{
-			$Employee->setPhoneHosp($_POST["phonehosp"]);
+		if(carac_na_str($BairroHosp))
+		{
+			$erro = true ;
+			echo "Bairro invalido!";
+		}else
+		{
+			$Hospital->setBairroHosp($BairroHosp);
 		}
+
+		if(carac_na_str($CidHosp))
+		{
+			$erro = true ;
+			echo "Cidade invalida!";
+		}else
+		{
+			$Hospital->setCidHosp($CidHosp);
+		}
+
+
+		if(InvalidCep($CepHosp))
+		{
+			$erro = true ;
+			echo "Cep invalido!";
+		}else
+		{
+			$Hospital->setCepHosp($CepHosp);
+		}
+
 		
-		$conn = new DBconnect();
-		$conn->addHopspital($Hospital);
+		
+		$Hospital->setUFHosp($UFHosp);
+		
+
+		if(letra_na_str($NumUTI) || carac_na_str($NumUTI) || $NumUTI = "")
+		{
+			$erro = true ;
+			echo "Número do Hospital invalido!";
+		}else
+		{
+			$Hospital->setNumUTI($NumUTI);
+		}
+		if(!$erro){
+		echo "concluido";
+		die();
+		$conn = new DbHospital();
+		$conn->addHospital($Hospital);
 	}
-
-addHospital();
+	}
+	addHospital();

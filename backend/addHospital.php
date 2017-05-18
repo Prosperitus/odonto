@@ -1,21 +1,41 @@
 <?php
-	include "HospitalModel.php";
+
+	include "Hospitalmodel.php";
 	include "../database/dbhospital.php";
 
 
 	function addHospital(){
 		$Hospital = new Hospital();
-		$Hospital->setNameHosp($_POST["namehops"]);
-		$Hospital->setChefUti($_POST["chefuti"]);
-		$Hospital->setPhoneChef($_POST["phonechef"]);
-		$Hospital->setPhoneUti($_POST["phoneuti"]);
+		$Hospital->setNameHosp($_POST["nome_hospital"]);
+		$Hospital->setChefUti($_POST["nome_chefe_uti"]);
+		$Hospital->setPhoneChef($_POST["telefone_chefe_uti"]);
+		$Hospital->setPhoneUti($_POST["telefone_uti"]);
 		$conn = new DbHospital();
-		$conn->addHospital($Hospital);
+		$result = $conn->addHospital($Hospital);
+
+		if($result && isset($_FILES['imagemHospital'])){
+			$id = $conn->search_max_id();
+			$extensao = strtolower(strrchr($_FILES['imagemHospital']['name'],'.'));
+			$imagem = $_FILES['imagemHospital']['name'];
+			$imagem = substr(hash("sha256",date("Y-m-d H:i:s")),0,12).$extensao;
+			var_dump($imagem);
+			$destino = '../images/hospital/' .$imagem;
+			$arquivo_tmp = $_FILES['imagemHospital']['tmp_name'];
+			move_uploaded_file( $arquivo_tmp, $destino);
+			
+		}
+		return $result;
 	}
 
 
+
 if(addHospital()){
-	header("location: ../success_register.php");
-}else{
-	header("location: ../fail_register.php");
-}
+	header("location: ../public/success_register.php");
+ }else{
+	 header("location: ../public/fail_register.php");
+ }
+
+
+
+
+

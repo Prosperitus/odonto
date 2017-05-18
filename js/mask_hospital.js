@@ -1,7 +1,7 @@
 setMaskTelefone($("#telefone_uti"));
 
-setMaskCelular($("#telefone_chefeuti"));
+setMaskCelular($("#telefone_chefe_uti"));
 
-setMaskNUti($("#numeroutis_hospital"));
+//setMaskNUti($("#numeroutis_hospital"));
 
 setMaskCep($("#cep_hospital"));

@@ -7,9 +7,16 @@
 		$Employee = new Attendance();
 		$Employee->setPatient($_POST["patient"]);
 		$Employee->setHospital($_POST["hospital"]);
-		$Employee->setDate($_POST["admdate"]);
-		$Employee->setCause($_POST["admcause"]);
-		$Employee->setStatus($_POST["status"]);
+		$Employee->setAdmissionCause($_POST["admissioncause"]);
+		$Employee->setAttendanceStatus($_POST["attendanceStatus"]);
+        $Employee->setṔhotos($_POST["photos"]);
+        $Employee->setUti($_POST["uti"]);
+        $Employee->setPatientPicture($_POST["patientPicture"]);
+        $Employee->setMedicalrecord($POST["medicalrecord"]);
+        $Employee->setEmployee($POST["Employee"]);
+		$Employee->setdataAdmissaoUti($_POST["dataAdmissaoUti"]); 
+        $Employee->setpatientPicture($_POST["patientPicture"]);
+
 		$conn = new DBconnect();
 		$conn->addAttendance($Attendance);
 	}

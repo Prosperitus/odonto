@@ -3,8 +3,6 @@
 	require_once "generateRegistry.php";
 	require_once "../database/dbemployee.php";
 	
-	$teste = new DbEmployee;
-	$teste->searchEmployee("odonto");
 
 	function addEmployee(){
 		$Employee = new Employee();
@@ -30,9 +28,9 @@
 
 
 if(addEmployee()){
-	header("location: ../success_register.php");
+	header("location: ../public/success_register.php");
 }else{
-	header("location: ../fail_register.php");
+	header("location: ../public/fail_register.php");
 }
 
 

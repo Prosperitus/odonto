@@ -6,21 +6,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cadastro Hospital</title>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
-    <script type="text/javascript" href="js/jquery.js"></script>  
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
+    <title>Home</title>
+  <script type="text/javascript" href="js/jquery.js"></script>  
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script> 
+  <script src="js/jquery.maskedinput.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script type="text/javascript" src="DataTables/media/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/media/css/jquery.dataTables.min.css">
+    
+    <style>
+      body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      }
+
+      .main {
+      flex: 1 0 auto;
+      }
+
+      header , footer {
+      padding-left: 0px;
+    }
+
+      main {
+        padding-left: 100px
+      }
+
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+  @media only screen and (min-width : 768px) {
+        .margemCentro{
+      margin-left: 14%;
+    }
+    }
+  @media only screen and (max-width : 768px) {
+        .margemCentro{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    }
+
+
+
+    </style>
+
+
+
   </head>
 
   <body class = "light-blue lighten-5">
 
-   <!--Scrip sidenav-->
+  <!--Scrip sidenav-->
 
 
 <script type="text/javascript">
@@ -35,7 +85,7 @@
 </script>
 
 
-    <!--CABEÇALHO-->
+<!--CABEÇALHO-->
    <nav>
   <div class="nav-wrapper light-blue">
   <div class="col s2">
@@ -58,7 +108,7 @@
   </div>
 </nav>
 
- <!--Sidenav-->
+  <!--Sidenav-->
 
 <div class="userView position:relative">
   <ul id="slide-out" class="side-nav ">
@@ -66,14 +116,15 @@
       <div class="background blue">
 
       </div>
-      <a href="#!user"><img class="circle" src="images/medico.jpg"></a>
-      <a href="#!name"><span class="white-text name">Bem Vindo "John Doe"</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
+      <a href="#!name"><span class="white-text name">Bem Vindo <?=$user->name?></span></a>
+      <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">note_add</i>Cadastrar</a></li>
+    <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
     <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
-    <li><a href="#!"><i class="material-icons">perm_identity</i>Pacientes</a></li>
+    <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
     <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
+  <li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
     
     <li><div class="divider"></div></li>
     <li><a class="subheader">Mais opçoes</a></li>
@@ -85,6 +136,21 @@
   </ul>
   </div>
 
+<script>
+$(document).ready(function(){
+  $("#addfile").click(function(){
+    $(".uploadfiles").append('<div class="file-field input-field col s5" style="clear:both">'
+                       + '<div class="btn input-field col s5 light-blue">'
+                     + '<span>Arquivos</span>'
+                   +  '<input type="file" multiple>'
+                   + '</div>'
+                   + '<div class="file-path-wrapper">'
+                    +  '<input class="file-path validate" type="text" placeholder="Upload one or more files">'
+                  +  '</div>'
+                 + '</div>');
+  });
+});
+</script>
 
     <!--CLASS/FORM-->
     <div class="row">
@@ -189,18 +255,20 @@
               <option value="TO" data-icon="images/tocantins.jpg" class="left circle">Tocantins - TO</option>
             </select>
           </div>
-
+          <div class="uploadfiles">
          <!--ARQUIVOS-->
 
-                  <div class="file-field input-field col s5">
+                  <div class="file-field input-field col s5" style="clear:both">
                     <div class="btn input-field col s5 light-blue">
                       <span>Arquivos</span>
                       <input type="file" multiple>
                     </div>
                     <div class="file-path-wrapper">
                       <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                      <a class="btn-floating waves-effect waves-light light-blue prefix" id="addfile"><i class="material-icons">add</i></a>
                     </div>
                   </div>
+          </div>
 
         <!--CHECK-->
           <div class="input-field col s9">
@@ -212,44 +280,6 @@
       </form>
     </div>
 
-               <!--FOOTER-->
-        <footer class="page-footer light-blue">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
-    
-    <!--SCRIPSTs-->
-    <script>
-      $('.datepicker').pickadate({
-      selectYears:100
-      });
-      $(document).ready(function() {
-      $('select').material_select();           
-      });
+     <?php
 
-    </script>
-    <script src="js/mask.js"></script>
-    <script src="js/mask_hospital.js"></script>
-  </body>
-</html>
+     require_once "public/rodape.php";

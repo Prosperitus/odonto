@@ -1,12 +1,11 @@
 <?php
 
-	class Hospital{
-		
+class Hospital{
 
 		private $namehosp;
 		private $chefuti;
 		private $phonechef;
-		private $phonehosp;
+		private $phoneUti;
 
 		function __construct(){
 
@@ -18,7 +17,7 @@
 		}
 		
 		public function setNameHosp($namehosp){
-			$this->name = $namehosp;
+			$this->namehosp = $namehosp;
 		}
 
 
@@ -27,7 +26,7 @@
 		}
 		
 		public function setChefUti($chefuti){
-			$this->name = $chefuti;
+			$this->chefuti = $chefuti;
 		}
 
 		public function getPhoneChef(){
@@ -35,16 +34,14 @@
 		}
 		
 		public function setPhoneChef($phonechef){
-			$this->name = $phonechef;
+			$this->phonechef = $phonechef;
 		}
 
 		public function getPhoneUti(){
-			return $this->phoneuti;
+			return $this->phoneUti;
 		}
 		
 		public function setPhoneUti($phoneuti){
-			$this->name = $phoneuti;
+			$this->phoneUti = $phoneuti;
 		}
-
-	}
-
+}

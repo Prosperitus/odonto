@@ -22,6 +22,6 @@ function setMaskCro (htmlElement) {
 	htmlElement.mask("99.999");
 }
 
-function setMaskNUti (htmlElement) {
+/*function setMaskNUti (htmlElement) {
 	htmlElement.mask("99");
-}
+}*/
