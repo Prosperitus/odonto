@@ -123,7 +123,7 @@ CREATE TABLE attendance(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
-	`itu` varchar (20) NOT NULL,
+	`itu` int  NOT NULL,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
 	`admission_cause` int NOT NULL
@@ -146,7 +146,7 @@ CREATE  TABLE files_hospital(
 CREATE TABLE itu_bed(
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name_bed` varchar(80) NOT NULL,
-	`itu_fk` int (11) NOT NULL
+	`itu` int (11) NOT NULL
 ) ENGINE=InnoDB;
 
 
@@ -177,7 +177,11 @@ ALTER TABLE appointment
 ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
 
 ALTER TABLE itu_bed
-ADD CONSTRAINT fk_itu_bed FOREING KEY (itu_fk) REFERENCES hospital_itu(id);
+ADD CONSTRAINT fk_itu_bed FOREING KEY (itu) REFERENCES hospital_itu(id);
+
+ALTER TABLE appointment 
+ADD CONSTRAINT fk_status FOREING KEY (status) REFERENCES stats(id);
+
 /*INSERTS*/
 
 INSERT INTO permition (type)
