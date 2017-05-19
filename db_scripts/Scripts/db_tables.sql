@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS permition;
 CREATE TABLE permition(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`type` varchar(10) NOT NULL
+	`type` varchar(11) NOT NULL
 ) ENGINE=InnoDB;
 
 
@@ -129,7 +129,7 @@ CREATE TABLE attendance(
 CREATE TABLE admission_cause(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`type` varchar (10) NOT NULL
+	`type` varchar (80) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE  TABLE files_hospital(
