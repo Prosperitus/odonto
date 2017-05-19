@@ -43,23 +43,48 @@ class DbHospital{
     }
                     
 	}
+	
+	 public function addUtiBed($itu,$number) {
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "INSERT INTO itu_bed (number_itu, itu)  
+        VALUES (:number_itu, :itu)";
+
+        //gh significa get hospital
+        $ghId = $itu;
+        $ghNumber_uti = $number;
+     
+
+        $conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':number_itu', $ghNumber_uti);
+        $stmt->bindParam(':itu', $ghId);
+ 
+       $result = $stmt->execute();
+        return $result;
+    }
+    catch(PDOExeption $e){
+        return $result;
+    }
+                    
+    }
 
    public function addUti($uti) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital_itu (name_itu, name_bed, hospital)  
-        VALUES (:name_uti, :name_beds, :hospital)";
+        $sql = "INSERT INTO hospital_itu (name_itu, quant_itu, hospital)  
+        VALUES (:name_uti, :quant_itu, :hospital)";
 
         //gh significa get hospital
-        $ghId = search_max_id();
-        $ghName_uti = $uti->getName_Itu();
-        $ghName_bed = $uti->getName_bed();
+        $ghId = $uti->getHospital();
+        $ghName_uti = $uti->getNameUti();
+        $ghQuant_uti = $uti->getQuantUti();
      
 
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':name_uti', $ghName_uti);
-        $stmt->bindParam(':name_beds', $ghName_bed);
+        $stmt->bindParam(':quant_itu', $ghQuant_uti);
         $stmt->bindParam(':hospital', $ghId);
  
        $result = $stmt->execute();
@@ -77,8 +102,19 @@ class DbHospital{
     $sql = "SELECT MAX(id) as id FROM hospital";
     $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
-	$hospital = $stmt -> fetch(PDO::FETCH_OBJ);
-    return $result = $hospital->id;
+	$stmt->execute();
+	$hospital = $stmt->fetch(PDO::FETCH_OBJ);
+    return $hospital->id;
+	}
+	
+	public function search_max_id_uti(){
+
+    $sql = "SELECT MAX(id) as id FROM hospital_itu";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+	$stmt->execute();
+	$hospital = $stmt->fetch(PDO::FETCH_OBJ);
+    return $hospital->id;
 	}
 
     public function search_id($search){
@@ -89,17 +125,7 @@ class DbHospital{
     $stmt->bindParam(':id_hospital', $search);
     return $result = $stmt -> fetch(PDO::OBJ);
 	}
-	
-	  public function searchHospitalAll(){
-		$sql = "SELECT * FROM hospital";
-		$conn = new DbConnector();
-		$stmt = $conn->getConn()->prepare($sql);
-		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
-		return $result;
-    }
 
-	
     public function searchHospital($filter){
 
 
@@ -119,6 +145,16 @@ class DbHospital{
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
     }
+	
+	public function addImagem($destino,$id){
+		
+		$sql = "UPDATE `odt_soft`.`hospital` SET image = :destino WHERE id = :id";
+		$conn= new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':destino', $destino);
+		$stmt->bindParam(':id',$id);
+		$result = $stmt->execute();
+	}
 
 		
     }

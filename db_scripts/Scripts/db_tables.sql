@@ -64,7 +64,7 @@ CREATE TABLE patient(
 	`telephone_r2` varchar(20),	
 	`clinic` boolean,
 	`physician_assistant` boolean,
-	`medicalassistant` varchar(80),
+	`name_phy_assistant` varchar(80),
 	`telephone_phy_assistant` varchar(20),
 	`speciality_phy_assistant` varchar(80)
 ) ENGINE=InnoDB;
@@ -94,12 +94,8 @@ DROP TABLE IF EXISTS hospital_itu;
 CREATE TABLE hospital_itu(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`name_itu` varchar(80),
-	`name_bed` varchar(80),
-	`number_itu` int(5) NOT NULL,
-        `number_bed` int(5) NOT NULL,
-        `name_admin_itu` varchar(80) NOT NULL,
-        `telephone_admin_itu` varchar(255) NOT NULL,
+	`name_itu` varchar(80) NOT NULL,
+	`quant_itu` int(5) NOT NULL,
 	`hospital` int(11) NOT NULL
 )ENGINE=InnoDB;
 	
@@ -145,7 +141,8 @@ CREATE  TABLE files_hospital(
 
 CREATE TABLE itu_bed(
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`name_bed` varchar(80) NOT NULL,
+	`name_bed` varchar(80),
+	`number_itu` int (11) NOT NULL,
 	`itu` int (11) NOT NULL
 ) ENGINE=InnoDB;
 

@@ -60,7 +60,7 @@ $user = userInform();
 
 
 
-  <body class = "light-blue lighten-5" style="min-height:100%;position:relative;">
+  <body style="min-height:100%;position:relative;">
 
     <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
