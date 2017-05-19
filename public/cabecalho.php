@@ -107,7 +107,7 @@ $user = userInform();
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-        <li><a href="#"><i class="material-icons">business</i>Hospitais</a></li>
+        <li><a href="busca-hospital.php"><i class="material-icons">business</i>Hospitais</a></li>
         <li><a href="buscaPaciente.php"><i class="material-icons">assignment_ind</i>Pacientes</a></li>
         <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
         <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
@@ -121,5 +121,6 @@ $user = userInform();
         <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
-  </body>
+  </b
+  ody>
 </header>
