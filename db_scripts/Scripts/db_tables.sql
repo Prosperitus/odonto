@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS permition;
 CREATE TABLE permition(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`type` varchar(10) NOT NULL
+	`type` varchar(40) NOT NULL
 ) ENGINE=InnoDB;
 
 
@@ -122,14 +122,15 @@ CREATE TABLE attendance(
 	`itu` int  NOT NULL,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL
+	`admission_cause` int NOT NULL,
+	`final_date` date
 
 ) ENGINE=InnoDB; 
 
 CREATE TABLE admission_cause(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`type` varchar (10) NOT NULL
+	`type` varchar (80) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE  TABLE files_hospital(
@@ -182,7 +183,7 @@ ADD CONSTRAINT fk_status FOREIGN KEY (status) REFERENCES stats(id);
 /*INSERTS*/
 
 INSERT INTO permition (type)
-VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro');
+VALUES ('Dentista Administrador') , ('Dentista') , ('Administrador') , ('Secretaria');
 
 INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');

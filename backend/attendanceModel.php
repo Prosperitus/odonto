@@ -5,8 +5,8 @@
 
 
  class Attendance{
-	 private $dataAdmissaoUti;
-	 private $dataFinalAtendimento; //não obrigatório
+	 private $utiAdmissionDate;
+	 private $attendanceFinalDate; //não obrigatório
 	 private $admissionCause;
 	 private $attendanceStatus;
 	 private $bonequinha;
@@ -30,12 +30,12 @@
 		 $this->image = $image;
 	 }
 
-	 public function getDataFinalAtendimento(){
-		 return $this->dataFinalAtendimento;
+	 public function getAttendanceFinalDate(){
+		 return $this->attendanceFinalDate;
 	 }
 	 
-	 public function setDataFinalAtendimento($dataFinalAtendimento){
-		 $this->dataFinalAtendimento = $dataFinalAtendimento;
+	 public function setAttendanceFinalDate($attendanceFinalDate){
+		 $this->attendanceFinalDate = $attendanceFinalDate;
 	 }
 
 
@@ -47,7 +47,7 @@
 		 return $this->admissionCause;
 	 }
 	 
-	 public function setadmissionCause($admissionCause){
+	 public function setAdmissionCause($admissionCause){
 		 $this->admissionCause = $admissionCause;
 	 }
 
@@ -85,12 +85,12 @@
 	 }
 
 	 
-	 public function getDataAdmissaoUti(){
-		 return $this->dataAdmissaoUti;
+	 public function getUtiAdmissionDate(){
+		 return $this->utiAdmissionDate;
 	 }
 	 
-	 public function setDataAdmissaoUti($dataAdmissaoUti){
-		 $this->dataAdmissaoUti = $dataAdmissaoUti;
+	 public function setUtiAdmissionDate($utiAdmissionDate){
+		 $this->utiAdmissionDate = $utiAdmissionDate;
 	 }
 	 
 	 

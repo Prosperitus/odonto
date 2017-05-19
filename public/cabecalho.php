@@ -85,10 +85,6 @@ $user = userInform();
           <div class="col s10">
             <ul class="right">
               <form>
-                <div class="input-field">
-                  <input id="search" type="search" />
-                  <label for="search"><i class="material-icons">search</i></label>
-                </div>
               </form>
             </ul>
           </div>
@@ -102,12 +98,12 @@ $user = userInform();
           <div class="userView">
             <div class="background blue"></div>
             <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
-            <a href="#!name"><span class="white-text name">Bem Vindo <?=$user->name?></span></a>
-            <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
+            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a> 
+            <a href="#!email"><span class="white-text email" style="font-weight: bold"><?=$user->name.' '.$user->surname?></span></a>
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-        <li><a href="#"><i class="material-icons">business</i>Hospitais</a></li>
+        <li><a href="busca-hospital.php"><i class="material-icons">business</i>Hospitais</a></li>
         <li><a href="buscaPaciente.php"><i class="material-icons">assignment_ind</i>Pacientes</a></li>
         <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
         <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
@@ -115,11 +111,12 @@ $user = userInform();
         <li>
         <div class="divider"></div>
         </li>
-        <li><a class="subheader">Coisas que ninguem lê</a></li>
-        <li><a class="waves-effect" href="#!">Ninguem</a></li>
-        <li><a class="waves-effect" href="#!">Lê isso</a></li>
-        <li><a class="waves-effect" href="#!">Mesmo</a></li>
+        <li><a class="subheader"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
-  </body>
+  </b
+  ody>
 </header>
