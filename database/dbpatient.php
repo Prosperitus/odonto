@@ -8,7 +8,7 @@ class DbPatient{
 public function addPatient($patient){
     try{
     $sql = "INSERT INTO patient (name, surname, birthdate, gender, social_security, address, neighborhood, city, state, zip_code, health_insurance, responsible1,responsible2, telephone_r1, telephone_r2, clinic,  	name_phy_assistant, telephone_phy_assistant, speciality_phy_assistant, email)
-    VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsiblePhone, :responsible2, :responsiblePhone2, :clinic, :medicalassistant, :telephone_phy_assistant, :speciality_phy_assistant, :email)";
+    VALUES (:name, :surname, :birthdate, :gender, :socialSecurity, :address, :neighborhood, :city, :state, :cep, :healthPlan, :responsibleName, :responsible2, :responsiblePhone, :responsiblePhone2, :clinic, :medicalassistant, :telephone_phy_assistant, :speciality_phy_assistant, :email)";
 	$gpmedicalassistant = '';
 	$gptelephone_phy_assistant = '';
 	$gpspeciality_phy_assistant = '';
