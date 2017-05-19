@@ -35,6 +35,7 @@
 			}});
 			$(function() {
 		     $( "#dialogPatient" ).dialog({
+				width: 500,
 				autoOpen: false,modal: true,
 				buttons: {
 					Fechar: function() {
