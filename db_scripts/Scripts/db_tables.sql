@@ -177,10 +177,10 @@ ALTER TABLE appointment
 ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
 
 ALTER TABLE itu_bed
-ADD CONSTRAINT fk_itu_bed FOREING KEY (itu) REFERENCES hospital_itu(id);
+ADD CONSTRAINT fk_itu_bed FOREIGN KEY (itu) REFERENCES hospital_itu(id);
 
 ALTER TABLE appointment 
-ADD CONSTRAINT fk_status FOREING KEY (status) REFERENCES stats(id);
+ADD CONSTRAINT fk_status FOREIGN KEY (status) REFERENCES stats(id);
 
 /*INSERTS*/
 
