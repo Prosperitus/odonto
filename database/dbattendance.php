@@ -7,14 +7,14 @@ require_once "../backend/employeeModel.php";
 
 
 
-class Attendance(){
+class DbAttendance(){
 
 
 	public function attendance_patient($atendimento){
         try{
            $sql = "INSERT INTO attendance (admission_cause, admission_date_itu, patient, hospital, itu, doctor_responsible, data_final)  
        }
-       VALUES (:causa, :data,:data_final, :patient, :hospital, :itu, :doctor, )";
+       VALUES (:causa, :data,:data_final, :patient, :hospital, :itu, :doctor)";
 
        $gaPatient = $atendimento->getPatient();
        $gaHospital = $atendimento->getHospital();
@@ -31,8 +31,8 @@ class Attendance(){
 
        $conn = new DbConnector();
        $stmt = $conn->getConn()->prepare($sql);
-       $stmt->bindParam(':data', $gaAdmissionCause;
-       $stmt->bindParam(':data_final', $gaFinalDate;
+       $stmt->bindParam(':data', $gaAdmissionCause);
+       $stmt->bindParam(':data_final', $gaFinalDate);
        $stmt->bindParam(':causa', $gaAdmissionCause);
        $stmt->bindParam(':patient', $gaPatient);
        $stmt->bindParam(':doctor', $gaDoctorResponsible);
