@@ -51,7 +51,7 @@
         <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="paciente_email" type="email" class="validate" pattern="a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" name="paciente_email" required>
+          <input id="paciente_email" type="email" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="paciente_email" required>
           <label for="paciente_email">Email</label>
         </div>
 
@@ -129,7 +129,7 @@
          <!--NOME DO MÉDICO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="nome_medico_responsavel">Nome do Médico</label>
         </div>
   
@@ -137,14 +137,14 @@
          <!--TELEFONE DO MÉDICO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
+          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_medico_responsavel">Telefone do Médico</label>
         </div>
 
          <!--ESPECIALIDADE DO MÉDICO-->
         <div class="input-field col s5">   
           <i class="material-icons prefix">web</i>
-          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="especialidade_medico_responsavel">Especialidade do Médico</label>
         </div>
       </div>
