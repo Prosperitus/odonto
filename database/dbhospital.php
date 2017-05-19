@@ -127,13 +127,13 @@ class DbHospital{
 	}
 
      public function searchHospitalAll(){
--       $sql = "SELECT * FROM hospital";
--       $conn = new DbConnector();
--       $stmt = $conn->getConn()->prepare($sql);
--       $stmt->execute();
--       $result = $stmt->fetchAll(PDO::FETCH_OBJ);
--       return $result;
--    }
+      $sql = "SELECT * FROM hospital";
+       $conn = new DbConnector();
+       $stmt = $conn->getConn()->prepare($sql);
+       $stmt->execute();
+       $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+       return $result;
+    }
 
     public function searchHospital($filter){
 
