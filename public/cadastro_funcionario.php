@@ -163,7 +163,7 @@
         <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="funcionario_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,10}$" class="validate" name="funcionario_email" required>
+          <input id="funcionario_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" class="validate" name="funcionario_email" required>
           <label for="funcionario_email">Email</label>
         </div>
 
