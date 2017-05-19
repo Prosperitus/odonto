@@ -16,9 +16,11 @@
 
 	<center>
 		<h2>Selecione:</h2>
-	</center>
+	</center>	
+	
+	<div class="col s6 m4">
 		<?php foreach($hospitals as $hospital){ ?>
-	 <div class="col s6 m4">
+
 		<div class="card small">
 			 <div class="card-image waves-effect waves-block waves-light">
       			 <img class="activator" src="http://materializecss.com/images/office.jpg">
@@ -35,10 +37,10 @@
   			  </div>
 			
  		</div>
- 	</div>
-
+ 	
 <?php } ?>
-				
+	</div>
+			
 </div>
 
 
