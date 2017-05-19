@@ -175,17 +175,17 @@
         <div id="divMedico" style="display: none" >
           <div class="input-field col s5">
             <i class="material-icons prefix">account_circle</i>
-            <input name="nome_medico_assistente" id="nome_medico_assistente" type="text" class="validate">
+            <input name="nome_medico_assistente" id="nome_medico_assistente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
             <label for="nome_medico_assistente">Nome do Médico Assistente</label>
           </div>
           <div class="input-field col s5">
             <i class="material-icons prefix">phone</i>
-            <input name="telefone_medico_assistente" id="telefone_medico_assistente" type="text" class="validate">
+            <input name="telefone_medico_assistente" id="telefone_medico_assistente" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
             <label for="telefone_medico_assistente">Telefone do Médico Assistente</label>
           </div>
           <div class="input-field col s5">
             <i class="material-icons prefix">web</i>
-            <input name="especialidade_medico_assistente" id="especialidade_medico_assistente" type="text" class="validate">
+            <input name="especialidade_medico_assistente" id="especialidade_medico_assistente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
             <label for="especialidade_medico_assistente">Especialidade do Médico Assistente</label>
           </div>
         </div>
@@ -200,7 +200,7 @@
         <div class="input-field col s5" style="margin-bottom: 2%;margin-top: 1%;">
           <p>
             <input type="checkbox" id="clinica" name="clinica" />
-            <label for="clinica">Paciente da Clinica</label>
+            <label for="clinica">Paciente da Clínica</label>
           </p>
         </div>
 
