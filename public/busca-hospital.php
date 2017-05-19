@@ -104,3 +104,8 @@
 	      </div>
 	    </div>
 	<?php }} ?>
+			
+				</body>
+	</div>
+
+	</html>
