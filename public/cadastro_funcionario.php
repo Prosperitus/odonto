@@ -288,11 +288,11 @@
           <label for="funcionario_senha">Senha</label>
         </div>
 
-        <!--CONFIRMAÇÃO DA SENHA-->
+        <!--MOSTRAR A SENHA-->
         <div class="input-field col s5">
           <i class="material-icons prefix">vpn_key</i>
-          <input id="funcionario_confirma_senha" type="checkbox" class="" name="funcionario_confirma_senha">
-          <label for="funcionario_confirma_senha">Mostrar Senha</label>
+	  <input id="funcionario_mostrar_senha" type="checkbox" onchange="document.getElementById('funcionario_senha').type = this.checked ? 'text' : 'password'">
+          <label for="funcionario_mostrar_senha">Mostrar Senha</label>
         </div>
 
         <!--CHECK-->

@@ -35,9 +35,9 @@ $(function() {
 
     });
 
-    $("#funcionario_confirma_senha").focusout(function() {
+    $("#funcionario_mostrar_senha").checked(function() {
 
-        checkRetypePassword();
+        showPassword();
 
     });
 
@@ -117,23 +117,16 @@ $(function() {
         }
     }
 
-    function checkRetypePassword(){
-
-        var password = $("#funcionario_senha").val();
-        var retypePassword = $("#funcionario_confirma_senha").val();
-
-        if (password !== retypePassword) {
-            $("#funcionario_confirma_senha").attr("title","As senhas devem ser idênticas");
-            $("#funcionario_confirma_senha").addClass("invalid");
-        //$("#funcionario_confirma_senha").css("border-bottom", "2px solid #F44336");
-        //$("#retype_password_error_message").show();
-            //error_retype_password = true;
+    function showPassword(){
 
 
-        }else{
-            $("#retype_password_error_message").hide();
+        if (document.getElementById("#funcionario_mostrar_senha").checked) {
+            $("#funcionario_senha").attr("type","text");
+	
+        }//else{
+           // $("#retype_password_error_message").hide();
 
-        }
+        //}
     }
 
     function checkEmail(){
