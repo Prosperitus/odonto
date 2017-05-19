@@ -2,7 +2,6 @@
 	require_once "cabecalho.php";
 ?>
 
-
   <style>
 
   .tilt {
@@ -44,6 +43,7 @@
     height: 50px;
   }
   </style>
+  
   <script>
   $(onPageLoad);
 
@@ -74,9 +74,10 @@
     });
   }
   </script>
+
 <div class="main margemCentro">
 	<div class="column col s2 m2">
-      <div class="card-panel lighten-2 col s10" >Avaliação</div>
+    <div class="card-panel lighten-2 col s10" >Avaliação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Paciente Impaciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -92,11 +93,11 @@
 	</div>
 
 	<div class="column col s2 m2">
-    	<div class="card-panel lighten-2 col s10">Reavaliação</div>
+    <div class="card-panel lighten-2 col s10">Reavaliação</div>
 	</div>
 
 	<div class="column col s2 m2">
-      <div class="card-panel lighten-2 col s10">Aprovação</div>
+    <div class="card-panel lighten-2 col s10">Aprovação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Bonus Paciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -108,7 +109,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-      <div class="card-panel lighten-2 col s10">Orçamento</div>
+    <div class="card-panel lighten-2 col s10">Orçamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Carinha Que Mora Logo Ali</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -120,7 +121,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-      <div class="card-panel lighten-2 col s10">Acompanhamento</div>
+    <div class="card-panel lighten-2 col s10">Acompanhamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Pai do Cebolinha</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -132,16 +133,17 @@
 	</div>
 
 	<div class="column col s2 m2">
-      <div class="card-panel lighten-2 col s10">Concluido</div>
-	  <div class="portlet">
-	    <div class="portlet-header">Capitão Caverna</div>
+    <div class="card-panel lighten-2 col s10">Concluido</div>  
+    <div class="portlet">
+      <div class="portlet-header">Capitão Caverna</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
 	  </div>
-	  <div class="portlet">
+	  
+    <div class="portlet">
 	    <div class="portlet-header">He-Man</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	</div>
+      <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
+    </div>	
+  </div>
 </div>
 
 

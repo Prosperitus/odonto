@@ -3,7 +3,7 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
 	<head>
-		<title>Busca Hospital</title>
+		<title>Bem-Vindo</title>
 		<link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
 		<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/contentSearchUI.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/newtab/newTab.css" />
@@ -12,13 +12,12 @@
 		<script type="text/javascript;version=1.8" src="chrome://browser/content/newtab/newTab.js"></script>
 		<style>
 		  	div.welcome{
-		  			color: #274e82;
-		  			
-		  			padding: 20px;
-		  			font-family: Helvetica;
-		  			font-weight: bold;
-		    		font-size: 250%;
-		    		text-align: center;
+	  			color: #274e82;
+	  			padding: 20px;
+	  			font-family: Helvetica;
+	  			font-weight: bold;
+	    		font-size: 250%;
+	    		text-align: center;
 		  	}
 		</style>
 	</head>
