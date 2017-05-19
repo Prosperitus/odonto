@@ -85,10 +85,6 @@ $user = userInform();
           <div class="col s10">
             <ul class="right">
               <form>
-                <div class="input-field">
-                  <input id="search" type="search" />
-                  <label for="search"><i class="material-icons">search</i></label>
-                </div>
               </form>
             </ul>
           </div>
@@ -102,8 +98,8 @@ $user = userInform();
           <div class="userView">
             <div class="background blue"></div>
             <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
-            <a href="#!name"><span class="white-text name">Bem Vindo <?=$user->name?></span></a>
-            <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
+            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a> 
+            <a href="#!email"><span class="white-text email" style="font-weight: bold"><?=$user->name.' '.$user->surname?></span></a>
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
