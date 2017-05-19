@@ -18,6 +18,8 @@ class Patient{
 	private $medicalRecords;
 	private $clinic;
 	private $medicalassistant;
+	private $telephone_phy_assistant;
+	private $speciality_phy_assistant;
 	private $cpf;
 	private $pacienteEmail;
 	private $responsibleName2;
@@ -159,13 +161,14 @@ class Patient{
 		$this->cpf = $cpf;
 	}
 	
-        public function getmedicalassistant(){
+        public function getMedicalassistant(){
                return $this ->medicalassistant;
 	}
 	
-        public function setmedicalassistant($medicalassistant){
-               $this->medicalassistant =$medicalassistant;        
+        public function setMedicalassistant($medicalassistant){
+               $this->medicalassistant = $medicalassistant;        
         }
+
         
         public function getpacienteEmail(){
                return $this->pacienteEmail;  
@@ -196,4 +199,21 @@ class Patient{
 	public function setResponsibleName2($responsibleName2){
 		$this->responsibleName2 = $responsibleName2;
 	}
+
+	//alteração
+    public function getTelephone_phy_assistant(){
+       	return $this->telephone_phy_assistant;
+    }
+
+    public function setTelephone_phy_assistant($telephone_phy_assistant){
+        $this->telephone_phy_assistant = $telephone_phy_assistant;
+    }
+
+    public function getSpeciality_phy_assistant(){
+       return $this->speciality_phy_assistant;
+    }
+
+    public function setSpeciality_phy_assistant($speciality_phy_assistant){
+        $this->speciality_phy_assistant = $speciality_phy_assistant;	
+    }
 }

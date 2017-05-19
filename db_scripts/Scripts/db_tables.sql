@@ -64,7 +64,7 @@ CREATE TABLE patient(
 	`telephone_r2` varchar(20),	
 	`clinic` boolean,
 	`physician_assistant` boolean,
-	`name_phy_assistant` varchar(80),
+	`medicalassistant` varchar(80),
 	`telephone_phy_assistant` varchar(20),
 	`speciality_phy_assistant` varchar(80)
 ) ENGINE=InnoDB;
