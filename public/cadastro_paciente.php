@@ -2,7 +2,6 @@
   require_once "cabecalho.php";
 ?>
   <script src="../validation/validation.js"></script>
-
   <script type="text/javascript">
     (function($){
       $(function(){
@@ -10,16 +9,16 @@
         $('.button-collapse').sideNav();
         $('.parallax').parallax();
       }); 
-    })(jQuery); 
-   
-       function bloqueio() { 
-        if (document.getElementById("divMedico").style.display == "none"){
-          document.getElementById("divMedico").style.display = "block";
-        }else{
-          document.getElementById("divMedico").style.display = "none";}
-        }
- 
-  </script> 
+    })(jQuery);
+    
+    function bloqueio(el) {
+      var display = document.getElementById(el).style.display;
+        if(display == "none")
+            document.getElementById(el).style.display = 'block';
+        else
+            document.getElementById(el).style.display = 'none';
+    }
+  </script>
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
@@ -126,6 +125,30 @@
           <label for="telefone_responsavel_2">Telefone do Responsável 2</label>
         </div>
 
+      <div id="div_medico" style="display:none">
+         <!--NOME DO MÉDICO-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">supervisor_account</i>
+          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <label for="nome_medico_responsavel">Nome do Médico</label>
+        </div>
+  
+  
+         <!--TELEFONE DO MÉDICO-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">phone</i>
+          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
+          <label for="telefone_medico_responsavel">Telefone do Médico</label>
+        </div>
+
+         <!--ESPECIALIDADE DO MÉDICO-->
+        <div class="input-field col s5">   
+          <i class="material-icons prefix">web</i>
+          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <label for="especialidade_medico_responsavel">Especialidade do Médico</label>
+        </div>
+      </div>
+
         <!--UF-->
         <div class="input-field col s5" >
           <i class="material-icons prefix">location_on</i>
@@ -171,28 +194,10 @@
           </select>
         </div>
 
-        <!--MEDICO ASSISTENTE-->
-        <div id="divMedico" style="display: none" >
-          <div class="input-field col s5">
-            <i class="material-icons prefix">account_circle</i>
-            <input name="nome_medico_assistente" id="nome_medico_assistente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
-            <label for="nome_medico_assistente">Nome do Médico Assistente</label>
-          </div>
-          <div class="input-field col s5">
-            <i class="material-icons prefix">phone</i>
-            <input name="telefone_medico_assistente" id="telefone_medico_assistente" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
-            <label for="telefone_medico_assistente">Telefone do Médico Assistente</label>
-          </div>
-          <div class="input-field col s5">
-            <i class="material-icons prefix">web</i>
-            <input name="especialidade_medico_assistente" id="especialidade_medico_assistente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
-            <label for="especialidade_medico_assistente">Especialidade do Médico Assistente</label>
-          </div>
-        </div>
         <div class="input-field col s10" style="margin-bottom: 0%;margin-top: -1%;">
           <p>
-            <input id="medico_assistente" type="checkbox" name="medico_assistente" value="checkbox" onclick="bloqueio()" />
-            <label for="medico_assistente">Médico Assintente</label>
+            <input id="medico_responsavel" type="checkbox" name="medico_responsavel" value="checkbox" onclick="bloqueio('div_medico')" />
+            <label for="medico_responsavel">Médico Responsável</label>
           </p>
         </div>
 
