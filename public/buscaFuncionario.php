@@ -10,15 +10,15 @@
 		$(document).ready(function() {
 		    $('#example').DataTable({"oLanguage":{
 		    "sEmptyTable": "Nenhum registro encontrado",
-		    "sInfo": "Mostrando de _START_ até _END_, Total de _TOTAL_ Pacientes",
-		    "sInfoEmpty": "Mostrando 0 até 0, Total de 0 Pacientes",
+		    "sInfo": "Mostrando de _START_ até _END_. Total de _TOTAL_ Funcionarios",
+		    "sInfoEmpty": "Mostrando 0 até 0. Total de 0 funcionarios",
 		    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
 		    "sInfoPostFix": "",
 		    "sInfoThousands": ".",
 		    "sLengthMenu": "_MENU_ resultados por página",
 		    "sLoadingRecords": "Carregando...",
 		    "sProcessing": "Processando...",
-		    "sZeroRecords": "Nenhum paciente encontrado",
+		    "sZeroRecords": "Nenhum funcionario encontrado",
 		    "sSearch": "Pesquisar",
 		    "oPaginate": {
 		        "sNext": "Próximo",

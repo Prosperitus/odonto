@@ -12,8 +12,8 @@
   <head>
     <meta charset="utf-8"/>
     <title>Login</title>
-	<script type="text/javascript" href="js/jquery.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script type="text/javascript" href="js/jquery.js"></script>
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>      
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -37,18 +37,13 @@
 
   <body class = "light-blue lighten-3" background="images/turquoise.jpg">
    
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
+
     
     <!--MAIN-->
-    <div id="login-page" class="row main">
+    <div id="login-page" class="row main" style="margin-top: 10%">
       <div class="col s12 z-depth-3 card-panel">
         <form class="login-form" action="backend/login.php" method="post">     
-          <div class="row margin">
-            
+          <div class="row margin">    
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>
 			  <?php if(isset($_COOKIE['user'])){ ?>
@@ -77,7 +72,7 @@
           </div>
           
           <div class="row">          
-            <div class="input-field col s12">
+            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;">
 			<?php if(isset($_COOKIE['pass']) && isset($_COOKIE['user'])){ ?>
                 <input name="remember" type="checkbox" id="remember-me" checked />
                 <label for="remember-me">Lembrar Usuário</label>
@@ -89,8 +84,8 @@
           </div>
           
           <div class="row">
-            <div class="input-field col s12">
-              <button class="btn waves-effect waves-light col s12 light-blue bounceOutLeft">Login</button>
+            <div class="input-field">
+              <button class="btn waves-effect pulse light-blue col s12 ">Login</button>
             </div>
           </div>
 		  
@@ -109,6 +104,5 @@
         </form>
       </div>
     </div>
-
   </body>
 </html>

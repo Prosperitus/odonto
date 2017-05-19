@@ -4,7 +4,7 @@
   <head>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
-    <title>Home</title>
+    <title>Cadastro Funcionário</title>
   	<script type="text/javascript" href="../js/jquery.js"></script>  
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
@@ -137,7 +137,7 @@
     <div class="row main margemCentro">
       <form class="col s11 m12" action="../backend/addEmployee.php" method="post">
         <!--TITULO-->
-          <h3>Cadastro Funcionário</h3>
+        <h3>Cadastro Funcionário</h3>
 
         <!--NOME-->
         <div class="input-field col s5">
@@ -220,8 +220,6 @@
           <label for="funcionario_endereco">Endereço</label>
         </div>
 
-      
-
         <!--CRO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">class</i>
@@ -233,6 +231,7 @@
         <div class="input-field col s5" >
           <i class="material-icons prefix">location_on</i>
           <select class="icons" name="funcionario_crouf" id="funcionario_crouf" required>
+            <option value="" disabled selected>UF - Unidade da Federação</option>
             <option value="AC" data-icon="../images/acre.jpg" class="left circle">Acre - AC</option>
             <option value="AL" data-icon="../images/alagoas.jpg" class="left circle">Alagoas - AL</option>
             <option value="AP" data-icon="../images/amapa.jpg" class="left circle">Amapá - AP</option>

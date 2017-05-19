@@ -1,92 +1,183 @@
-<?php 
+<?php
 	require_once "cabecalho.php";
-	require "../database/dbhospital.php";
 ?>
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+	<head>
+		<title>Busca Hospital</title>
+		<link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
+		<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/contentSearchUI.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/newtab/newTab.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/skin/newtab/newTab.css" />
+		<script type="text/javascript;version=1.8" src="chrome://browser/content/contentSearchUI.js"></script>
+		<script type="text/javascript;version=1.8" src="chrome://browser/content/newtab/newTab.js"></script>
+		<style>
+		  	div.welcome{
+		  			color: #274e82;
+		  			
+		  			padding: 20px;
+		  			font-family: Helvetica;
+		  			font-weight: bold;
+		    		font-size: 250%;
+		    		text-align: center;
+		  	}
+		</style>
+	</head>
 
-
-      <?php
-	$dbhospital = new DbHospital();
-	$hospitals = $dbhospital->searchHospitalAll();
-
-
-?>
-<meta charset="utf-8" />
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-Selecione:
-
-<div class="row main" >
-
-<?php foreach($hospitals as $hospital){ ?>
-	 <div class="col s6 m4">
-<div class="card small">
+	<body dir="ltr" background="/images/turquoise.jpg">	
+	<div class="row main">
+		<div id="newtab-customize-overlay"></div>
+		<div class="welcome">
+			<p>Bem Vindo,</p>
+		    <p>Em qual hospital você está hoje?</p>
+	    </div> 
 		
-   
+	    <!--CARD HOSPITAL 1-->
+	    <div class="col s6 m4">
+	      <div class="card">
+	        <div class="card-image">
+	          <img src="../images/hospital 2.jpg">
+	          <span class="card-title"></span>
+	          <a href="#" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+	        </div>
+	        <div class="card-content">
+	          <p>Hospital 1</p>
+	        </div>
+	      </div>
+	    </div>
 
+	    <!--CARD HOSPITAL 2-->
+	    <div class="col s6 m4">
+	      <div class="card">
+	        <div class="card-image">
+	          <img src="../images/hospital 2.jpg">
+	          <span class="card-title"></span>
+	          <a href="#" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+	        </div>
+	        <div class="card-content">
+	          <p>Hospital 2</p>
+	        </div>
+	      </div>
+	    </div>
 
- <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="http://materializecss.com/images/office.jpg">
+	    <!--CARD HOSPITAL 3-->
+	    <div class="col s6 m4">
+	      <div class="card">
+	        <div class="card-image">
+	          <img src="../images/hospital 2.jpg">
+	          <span class="card-title"></span>
+	          <a href="#" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+	        </div>
+	        <div class="card-content">
+	          <p>Hospital 3</p>
+	        </div>
+	      </div>
+	    </div>
     </div>
 
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4"><?=$hospital->name?><i class="material-icons right">more_vert</i></span>
-      <p><a href="#">Selecionar</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-
- </div>
- </div>
- </div>
-
-				<?php } ?>
-				
-				</div></div>
 
 
- <!--
- <div class="row main">
-    <div class="col s6 m4">z
-      <div class="card">
-        <div class="card-image">
-          <img src="../images/medico.jpg">
-          <span class="card-title"></span>
-          <a href="cadastro_funcionario.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>Cadastro de Funcionario - <?=$hospital->name?></p>
-        </div>
-      </div>
-    </div>
-      
-      
-    <div class="col s6 m4">
-      <div class="card">
-        <div class="card-image">
-          <img src="../images/paciente.jpg">
-          <span class="card-title"></span>
-          <a href="cadastro_paciente.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>Cadastro de Paciente</p>
-        </div>
-      </div>
-    </div>
-  
-   
-    <div class="col s6 m4">
-      <div class="card">
-        <div class="card-image">
-          <img src="../images/hospital 2.jpg">
-          <span class="card-title"></span>
-          <a href="cadastro_hospital.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>Cadastro de Hospital</p>
-        </div>
-      </div>
-    </div>
-  </div>          -->
-        
-<?php require_once "rodape.php";
+
+		<!--div id="newtab-vertical-margin">
+			<div id="newtab-horizontal-margin">    		
+	    		<div class="newtab-side-margin"></div>   		
+	    		<div id="newtab-grid" style="width: 1240px; max-width: 1551px; height: 802px; max-height: 270px;">
+				  	
+				  	<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell">
+					    <div class="newtab-site" draggable="true" type="affiliate">
+						    <span class="newtab-sponsored"></span>
+						    <a class="newtab-link" title="..." href="...">  
+								<span class="newtab-thumbnail placeholder"></span>  
+								<span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;referencia&quot;);"></span>  				
+								<span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;referencia-da-imagem&quot;);"></span>  
+								<span class="newtab-title">get-name</span>
+							</a>
+							<input title="Remova este Hospital" class="newtab-control newtab-control-block" type="button" />
+							<span class="newtab-suggested"></span>
+						</div>
+					</div>
+
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+					<div class="newtab-cell"></div>
+				</div>				   
+				<div class="newtab-side-margin"></div>
+			</div>
+		  	<div id="newtab-margin-bottom"></div>	  	
+		</div-->
+	</body>
+</html>

@@ -23,7 +23,7 @@
 
 <body>
     <!--CLASS/FORM-->
-    <div class="row margemCentro">
+    <div class="row main margemCentro">
 		  <div id="formHospitalCadastro"></div>
       <form class="col s11" method="post" action="../backend/addHospital.php" enctype="multipart/form-data"> 
     

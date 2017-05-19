@@ -5,12 +5,10 @@
 
 $user = userInform();
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
+
+  <header>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
-    <title>Home</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" href="../js/jquery.js"></script> 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,25 +45,24 @@ $user = userInform();
       }
     	@media only screen and (min-width : 768px) {
         .margemCentro{
-    			margin-left: 14%;
-			padding-bottom: 60px;
+    		margin-left: 14%;
+			  padding-bottom: 60px;
     		}
       }
     	@media only screen and (max-width : 768px) {
         .margemCentro{
     			margin-left: 0;
     			margin-right: 0;
-			padding-bottom: 60px;
-
+          padding-bottom: 60px;
     		}
       }
     </style>
 
-  </head>
+
 
   <body class = "light-blue lighten-5" style="min-height:100%;position:relative;">
 
-  <!--SCRIPT SIDENAV-->
+    <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
       (function($){
           $(function(){
@@ -76,7 +73,7 @@ $user = userInform();
       })(jQuery);
     </script>
 
-<!--SIDENAV-->
+    <!--SIDENAV-->
     <nav>
       <div class="nav-wrapper light-blue">
         <div class="col s2">
@@ -110,19 +107,19 @@ $user = userInform();
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-        <li><a href="#"><i class="material-icons">add_alert</i>Hospitais</a></li>
-        <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
+        <li><a href="#"><i class="material-icons">business</i>Hospitais</a></li>
+        <li><a href="buscaPaciente.php"><i class="material-icons">assignment_ind</i>Pacientes</a></li>
         <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
-        <li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>
+        <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
+        <li><a href="../backend/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
         <li>
-          <div class="divider"></div>
+        <div class="divider"></div>
         </li>
-        <li><a class="subheader">Mais opçoes</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="subheader">Coisas que ninguem lê</a></li>
+        <li><a class="waves-effect" href="#!">Ninguem</a></li>
+        <li><a class="waves-effect" href="#!">Lê isso</a></li>
+        <li><a class="waves-effect" href="#!">Mesmo</a></li>
       </ul>
     </div>
+  </body>
+</header>

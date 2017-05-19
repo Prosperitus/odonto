@@ -3,28 +3,29 @@
 ?>
 
 <script>
-$(document).ready(function(){
-	$("#addUTI").click(function(){
-		$(".utis").append('<div class="input-field col s5">'
-          +'<i class="material-icons prefix">business</i>'
-         + '<input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>'
-         + '<label for="nome_uti">Nome da UTI</label>'
-       + '</div>'
-       + '<div class="input-field col s5">'
+  $(document).ready(function(){
+  	$("#addUTI").click(function(){
+  		$(".utis").append('<div class="input-field col s5">'
+        +'<i class="material-icons prefix">business</i>'
+        + '<input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>'
+        + '<label for="nome_uti">Nome da UTI</label>'
+        + '</div>'
+        + '<div class="input-field col s5">'
         + '<i class="material-icons prefix">business</i>'
-       +  ' <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>'
-        +  '<label for="quantidade_leito_uti">Quantidade de leito da UTI</label>'
+        + ' <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>'
+        + '<label for="quantidade_leito_uti">Quantidade de leito da UTI</label>'
         +'</div>'
-		+'</div>');
-	});
-});
+  	    +'</div>');
+  	});
+  });
 </script>
     <!--CLASS/FORM-->
     <div class="row margemCentro" style="width: 91%">
       <form class="col s11" action="../backend/addHospital.php" method="post"> 
     
-      <!--TITULO-->
-        <h3>Cadastro UTI</h3>
+    <!--TITULO-->
+    <h3>Cadastro UTI</h3>
+    
 		<div class="utis">
 		<!--NOME DA UTI-->   
         <div class="input-field col s5">
@@ -53,7 +54,6 @@ $(document).ready(function(){
               <i class="material-icons right">send</i>
             </button>
           </div>
-
       </form>
     </div>
 
