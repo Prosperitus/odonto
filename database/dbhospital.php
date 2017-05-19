@@ -126,6 +126,15 @@ class DbHospital{
     return $result = $stmt -> fetch(PDO::OBJ);
 	}
 
+     public function searchHospitalAll(){
+-       $sql = "SELECT * FROM hospital";
+-       $conn = new DbConnector();
+-       $stmt = $conn->getConn()->prepare($sql);
+-       $stmt->execute();
+-       $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+-       return $result;
+-    }
+
     public function searchHospital($filter){
 
 
