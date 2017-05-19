@@ -58,7 +58,7 @@
 		<div class="welcome">
 	
 			
-		Bem vindo,<--USUÁRIO-->
+		Bem vindo, <?=$user->name?>
 
 
 	    </div> 
