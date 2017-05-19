@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS permition;
 CREATE TABLE permition(
 
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`type` varchar(11) NOT NULL
+	`type` varchar(40) NOT NULL
 ) ENGINE=InnoDB;
 
 
