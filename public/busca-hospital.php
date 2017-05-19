@@ -96,7 +96,7 @@
 	        <div class="card-image">
 	          <img src="../images/hospital 2.jpg">
 	         
-	          <a href="#" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+	          <a href="atendimentos.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
 	        </div>
 	        <div class="card-content">
 	          <p><?=$hospital->name?></p>
