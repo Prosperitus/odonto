@@ -182,7 +182,7 @@ ADD CONSTRAINT fk_status FOREIGN KEY (status) REFERENCES stats(id);
 /*INSERTS*/
 
 INSERT INTO permition (type)
-VALUES ('Auxiliar') , ('Dentista') , ('Administrador') , ('Auxiliar_Financeiro');
+VALUES ('Dentista Administrador') , ('Dentista') , ('Administrador') , ('Secretaria');
 
 INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
