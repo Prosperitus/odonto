@@ -115,10 +115,10 @@ $user = userInform();
         <li>
         <div class="divider"></div>
         </li>
-        <li><a class="subheader">Coisas que ninguem lê</a></li>
-        <li><a class="waves-effect" href="#!">Ninguem</a></li>
-        <li><a class="waves-effect" href="#!">Lê isso</a></li>
-        <li><a class="waves-effect" href="#!">Mesmo</a></li>
+        <li><a class="subheader"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
   </body>
