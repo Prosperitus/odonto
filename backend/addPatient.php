@@ -21,6 +21,7 @@
 		$patient->setHealthPlan($_POST['plano_de_saude']);
 		$patient->setResponsibleName($_POST['nome_responsavel']);
 		$patient->setResponsibleName2($_POST['nome_responsavel_2']);
+		$patient->setPhysician_assistant($_POST['medico_responsavel']);
 		$patient->setMedicalassistant($_POST['nome_medico_responsavel']);
 		$patient->setTelephone_phy_assistant($_POST['telefone_medico_responsavel']);
 		$patient->setSpeciality_phy_assistant($_POST['especialidade_medico_responsavel']);

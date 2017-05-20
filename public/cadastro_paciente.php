@@ -197,7 +197,7 @@
         <!--MEDICO RESPONSAVEL-->
         <div class="input-field col s10" style="margin-bottom: 0%;margin-top: -1%;">
           <p>
-            <input id="medico_responsavel" type="checkbox" name="medico_responsavel" value="checkbox" onclick="bloqueio('div_medico')" />
+            <input id="medico_responsavel" type="checkbox" name="medico_responsavel" onclick="bloqueio('div_medico')" />
             <label for="medico_responsavel">Médico Responsável</label>
           </p>
         </div>
