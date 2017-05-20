@@ -16,7 +16,7 @@
 		if (!$dbh->search_id($_POST["hospital"])) {
 			echo "false";
 			return;
-
+			}
 		$dbh = new DbUti();
 		if (!$dbh->searchItuId($_POST["uti"])) {
 			echo "false";
