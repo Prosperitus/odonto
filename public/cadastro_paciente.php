@@ -125,30 +125,6 @@
           <label for="telefone_responsavel_2">Telefone do Responsável 2</label>
         </div>
 
-      <div id="div_medico" style="display:none">
-         <!--NOME DO MÉDICO-->
-        <div class="input-field col s5">
-          <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
-          <label for="nome_medico_responsavel">Nome do Médico</label>
-        </div>
-  
-  
-         <!--TELEFONE DO MÉDICO-->
-        <div class="input-field col s5">
-          <i class="material-icons prefix">phone</i>
-          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
-          <label for="telefone_medico_responsavel">Telefone do Médico</label>
-        </div>
-
-         <!--ESPECIALIDADE DO MÉDICO-->
-        <div class="input-field col s5">   
-          <i class="material-icons prefix">web</i>
-          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
-          <label for="especialidade_medico_responsavel">Especialidade do Médico</label>
-        </div>
-      </div>
-
         <!--UF-->
         <div class="input-field col s5" >
           <i class="material-icons prefix">location_on</i>
@@ -194,6 +170,31 @@
           </select>
         </div>
 
+      <div id="div_medico" style="display:none">
+        <!--NOME DO MÉDICO-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">supervisor_account</i>
+          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
+          <label for="nome_medico_responsavel">Nome do Médico</label>
+        </div>
+  
+  
+        <!--TELEFONE DO MÉDICO-->
+        <div class="input-field col s5">
+          <i class="material-icons prefix">phone</i>
+          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
+          <label for="telefone_medico_responsavel">Telefone do Médico</label>
+        </div>
+
+        <!--ESPECIALIDADE DO MÉDICO-->
+        <div class="input-field col s5">   
+          <i class="material-icons prefix">web</i>
+          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
+          <label for="especialidade_medico_responsavel">Especialidade do Médico</label>
+        </div>
+      </div>
+
+        <!--MEDICO RESPONSAVEL-->
         <div class="input-field col s10" style="margin-bottom: 0%;margin-top: -1%;">
           <p>
             <input id="medico_responsavel" type="checkbox" name="medico_responsavel" value="checkbox" onclick="bloqueio('div_medico')" />
