@@ -107,13 +107,6 @@
         <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
         <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
         <li><a href="../backend/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
-        <li>
-        <div class="divider"></div>
-        </li>
-        <li><a class="subheader"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
     <?php }else{?>
