@@ -117,6 +117,5 @@ $user = userInform();
         <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
-  </b
-  ody>
+  </body>
 </header>

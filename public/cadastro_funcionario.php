@@ -73,25 +73,21 @@
     ?>
 
     <!--CABEÇALHO-->
-    <nav>
+        <nav>
       <div class="nav-wrapper light-blue">
         <div class="col s2">
           <ul class="left">
             <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
           </ul>
-        </div>
+        </div>   
         <div class="row">
           <div class="col s10">
             <ul class="right">
               <form>
-                <div class="input-field">
-                  <input id="search" type="search" />
-                  <label for="search"><i class="material-icons">search</i></label>
-                </div>
               </form>
             </ul>
           </div>
-        </div>
+        </div>    
       </div>
     </nav>
 
@@ -101,24 +97,23 @@
           <div class="userView">
             <div class="background blue"></div>
             <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
-            <a href="#!name"><span class="white-text name">Bem Vindo <?=$user->name?></span></a>
-            <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
+            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a> 
+            <a href="#!email"><span class="white-text email" style="font-weight: bold"><?=$user->name.' '.$user->surname?></span></a>
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
-        <li><a href="#!"><i class="material-icons">add_alert</i>Hospitais</a></li>
-        <li><a href="buscaPaciente.php"><i class="material-icons">perm_identity</i>Pacientes</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>Arquivos</a></li>
-      	<li><a href="../backend/logout.php"><i class="material-icons">note_add</i>Logout</a></li>  
+        <li><a href="busca-hospital.php"><i class="material-icons">business</i>Hospitais</a></li>
+        <li><a href="buscaPaciente.php"><i class="material-icons">assignment_ind</i>Pacientes</a></li>
+        <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
+        <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
+        <li><a href="../backend/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
         <li>
-          <div class="divider"></div>
+        <div class="divider"></div>
         </li>
-        <li><a class="subheader">Mais opçoes</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="subheader"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
+        <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
     <?php }else{?>
