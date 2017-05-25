@@ -12,8 +12,8 @@ class DbAttendance(){
 
 	public function attendance_patient($attendance){
         try{
-           $sql = "INSERT INTO attendance (patient, hospital, itu, admDate, employee, finalDate, admCause)
-                  VALUES (:patient, :hospital, :itu, :admission_date_itu, :doctor_responsible, :final_date, :admission_cause)";
+           $sql = "INSERT INTO attendance (patient, hospital, itu, admDate, employee, finalDate, admCause, bonequinha)
+                  VALUES (:patient, :hospital, :itu, :admission_date_itu, :doctor_responsible, :final_date, :admission_cause, :bonequinha)";
 
        $gaPatient = $attendance->getPatient();
        $gaHospital = $attendance->getHospital();
@@ -22,7 +22,7 @@ class DbAttendance(){
        $gaEmployee = $attendance->getEmployee();
        $gaFinalDate = $attendance->getAttendanceFinalDate();
        $gaAdmCause = $attendance->getAdmissionCause();
-
+       $gaBonequinha = $attendance->getBonequinha();
 
        $conn = new DbConnector();
        $stmt = $conn->getConn()->prepare($sql);
@@ -33,7 +33,7 @@ class DbAttendance(){
        $stmt->bindParam(':doctor_responsible', $gaEmployee);
        $stmt->bindParam(':final_date', $gaFinalDate);
        $stmt->bindParam(':admission_cause', $gaAdmCause);
-
+       $stmt->bindParam(':bonequinha', $gaBonequinha);
 
        $result = $stmt->execute();
        return $result;
