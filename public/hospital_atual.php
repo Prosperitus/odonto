@@ -93,17 +93,33 @@
 
 
 			
-			<div class="col s6 m4" style="left: 34%;position:relative">
+			<?php if($hospital->image == '' || $hospital->image == null){
+	?>
+
+	    <div class="col s6 m4" style="max-width: 200px;left: 45%;position:relative">
+	      <div class="card">
+	        <div class="card-image">
+	          <img src="../images/hospital 2.jpg" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
+	        </div>
+	        <div class="card-content">
+	          <p><?=$hospital->name?></p>
+	        </div>
+	      </div>
+	    </div>
+		<?php }else{  ?>
+			
+			<div class="col s6 m4" style="max-width: 200px;left: 45%;position:relative">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="<?=$hospital->image?>" style="width: 100%;height: 88.66px">
+				  <img src="<?=$hospital->image?>" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
 				</div>
 				<div class="card-content">
 				  <p><?=$hospital->name?></p>
 				</div>
 			  </div>
 			</div>
-	<center style="position:relative;top:200px;left:-15%">
+		<?php }  ?>
+	<center style="position:relative;top:300px;left:-5.5%">
 	<a href="atendimentos.php" style="text-decoration: none;color:rgba(0,0,0,0.87);font-weight:bold">Ir para página de atendimentos</a><br><br>
 	<a href="busca-hospital.php?expired=1" style="text-decoration: none;color:#0399ff;font-weight:bold">Escolher outro hospital</a>
 	</center>

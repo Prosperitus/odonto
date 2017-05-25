@@ -8,7 +8,7 @@
 		unset($_SESSION['hospital']);
 	}
 	if(isset($_SESSION['hospital'])){
-		header("location: hospital_atual.php");
+		echo "<script>location.href='hospital_atual.php';</script>";
 		die();
 	}
 ?>
@@ -102,10 +102,10 @@
 	?>
 
 		
-	    <div class="col s6 m4">
+	    <div class="col s6 m4" style="max-width: 200px;">
 	      <div class="card">
 	        <div class="card-image">
-	          <img src="../images/hospital 2.jpg">
+	          <img src="../images/hospital 2.jpg" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
 	         
 	          <a href="hospital_atual.php?id=<?=$hospital->id?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
 	        </div>
