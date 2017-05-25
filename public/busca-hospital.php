@@ -120,7 +120,7 @@
 			<div class="col s6 m4">
 			  <div class="card">
 				<div class="card-image">
-				  <img src="<?=$hospital->image?>" style="width: 100%;height: 88.66px">
+				  <img src="<?=$hospital->image?>" style="width: auto;height:auto; max-height: 202px;max-width: 200px">
 				 
 				  <a href="hospital_atual.php?id=<?=$hospital->id?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
 				</div>
