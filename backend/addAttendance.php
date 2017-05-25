@@ -3,7 +3,11 @@
 	include "employeeModel.php";
 	include "../database/dbconnect.php";
 
-	function addAttendance(){
+	public class Attendance {
+
+
+
+	public function addAttendance(){
 		$Attendance = new Attendance();
 		$dbpatient = new DbPatient();
 		if (!$dbp->searchId($_POST["patient"])) {
@@ -33,3 +37,5 @@
 		$conn = new DbAttendance();
 		$conn->addAttendance($Attendance);
 	}
+
+}
