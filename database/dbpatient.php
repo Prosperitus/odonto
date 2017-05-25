@@ -51,6 +51,9 @@ public function addPatient($patient){
             $gpPhysician_assistant = (bool) true;
         }else{
             $gpPhysician_assistant = (bool) false;
+            unset($gpmedicalassistant);
+            unset($gpspeciality_phy_assistant);
+            unset($gptelephone_phy_assistant);
         }
 
 
