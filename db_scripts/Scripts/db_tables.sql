@@ -7,7 +7,6 @@ DEFAULT COLLATE utf8_general_ci;
 
 USE odt_soft;	
 
-DROP TABLE IF EXISTS users;	
 
 CREATE TABLE users (
 
@@ -31,8 +30,11 @@ CREATE TABLE users (
 
 ) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS permition;
-
+CREATE TABLE users_access_hospital ( 
+	
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`users` int (11) NOT NULL,
+	`hospital` int (11) NOT NULL
 
 CREATE TABLE permition(
 
@@ -41,7 +43,6 @@ CREATE TABLE permition(
 ) ENGINE=InnoDB;
 
 
-DROP TABLE IF EXISTS patient;
 
 CREATE TABLE patient(
 
@@ -68,7 +69,6 @@ CREATE TABLE patient(
 	`telephone_phy_assistant` varchar(20),
 	`speciality_phy_assistant` varchar(80)
 ) ENGINE=InnoDB;
-DROP TABLE IF EXISTS hospital;
 
 CREATE TABLE hospital(
 
@@ -81,7 +81,6 @@ CREATE TABLE hospital(
 ) ENGINE=InnoDB;
 
 
-DROP TABLE IF EXISTS stats;
 
 CREATE TABLE  stats(
 
@@ -89,7 +88,6 @@ CREATE TABLE  stats(
 	`status` varchar (80) NOT NULL
 )ENGINE=InnoDB;
 	
-DROP TABLE IF EXISTS hospital_itu;
 
 CREATE TABLE hospital_itu(
 
@@ -99,7 +97,6 @@ CREATE TABLE hospital_itu(
 	`hospital` int(11) NOT NULL
 )ENGINE=InnoDB;
 	
-DROP TABLE IF EXISTS appointment;
 	
 CREATE TABLE appointment(
 	
@@ -112,7 +109,6 @@ CREATE TABLE appointment(
 )ENGINE=InnoDB; 
 
 
-DROP TABLE IF EXISTS attendance;
 
 CREATE TABLE attendance(
 
@@ -179,6 +175,12 @@ ADD CONSTRAINT fk_itu_bed FOREIGN KEY (itu) REFERENCES hospital_itu(id);
 
 ALTER TABLE appointment 
 ADD CONSTRAINT fk_status FOREIGN KEY (status) REFERENCES stats(id);
+
+ALTER TABLE users_access_hospital 
+ADD CONSTRAINT fk_users FOREIGN KEY (users) REFERENCES users(id);
+
+ALTER TABLE users_access_hospital 
+ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 /*INSERTS*/
 
