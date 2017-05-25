@@ -58,13 +58,6 @@
           <label for="telefone_chefe_uti">Telefone do Chefe da UTI</label>
         </div>
 
-        <!--NÚMERO DE UTIs-->
-        <div class="input-field col s5">
-          <i class="material-icons prefix">view_headline</i>  
-          <input name="numeroutis_hospital" id="numeroutis_hospital" pattern="[0-9\s]{1,2}$" title="Só números" type="text" class="validate" required>
-          <label for="numeroutis_hospital">Nº de UTIs</label>
-        </div>
-		
         <!--ARQUIVOS-->
         <div class="file-field input-field col s5" style="clear:both">
           <div class="btn input-field col s5 light-blue">

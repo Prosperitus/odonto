@@ -88,9 +88,13 @@
 	echo "<center>
 	<p>Em qual hospital você está hoje?</p>
 	</center>";
-	foreach($hospitals as $hospital){ ?>
+	foreach($hospitals as $hospital){ 
+	
+	
+		if($hospital->image == '' || $hospital->image == null){
+	?>
 
-
+		
 	    <div class="col s6 m4">
 	      <div class="card">
 	        <div class="card-image">
@@ -103,9 +107,26 @@
 	        </div>
 	      </div>
 	    </div>
-	<?php }} ?>
+		
+		<?php }else{  ?>
 			
-				</body>
+			<div class="col s6 m4">
+			  <div class="card">
+				<div class="card-image">
+				  <img src="<?=$hospital->image?>" style="width: 100%;height: 88.66px">
+				 
+				  <a href="atendimentos.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+				</div>
+				<div class="card-content">
+				  <p><?=$hospital->name?></p>
+				</div>
+			  </div>
+			</div>
+		<?php }
+		
+		
+		}} ?>
+						
 	</div>
-
-	</html>
+	</body>
+</html>
