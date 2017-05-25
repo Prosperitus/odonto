@@ -64,10 +64,9 @@
 	<div class="main margin_small">
 		</br>
 		<p class="bold" style="color: #0399ff">Click na linha do paciente para ver suas informações:</p>
-	</div>
+
 	<div id="dialogPatient" title="Dados do Paciente">	</div>	
 	<input type="checkbox" value="clinica" checked />
-	<div class="margin_small">
 		<table id="example" class="hover row-border" cellspacing="0" width="100%">
 	        <thead>
 	            <tr>

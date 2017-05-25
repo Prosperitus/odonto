@@ -59,14 +59,12 @@
 	</script>
 </head>
 <body>
-	<div class="main margin_small">
+	<div class="margin_small">
 		</br>
 		<p class="bold" style="color: #0399ff">Click na linha do funcionário para ver suas informações:</p>
-	</div>
 	<div id="dialogEmployee" title="Dados do Funcionário">	</div>
 	<input type="checkbox" value="clinica" checked />
-	<div class="margin_small">
-		<table id="example" class="hover row-border" cellspacing="0" width="100%">
+		<table id="example" class="hover row-border" cellspacing="0" width="100%;">
 	        <thead>
 	            <tr>
 	                <th>Nome</th>

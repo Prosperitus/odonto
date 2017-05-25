@@ -50,6 +50,9 @@
 			}
 			
 		</style>
+		<script>
+			
+		</script>
 	</head>
 
 	<body dir="ltr" background="/images/turquoise.jpg">	
