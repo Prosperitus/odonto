@@ -1,5 +1,7 @@
 <?php 
 	require_once "cabecalho.php";
+	
+	if(isset($_SESSION['hospital'])){
 ?>
 
   <style>
@@ -147,4 +149,15 @@
 </div>
 
 
-<?php require_once "rodape.php";
+	<?php }else{ ?>
+		<center>
+			<p style="text-decoration: none;color:rgba(0,0,0,0.87);font-weight:bold">Você não selecionou um hospital!</p>
+			<a href="busca-hospital.php" style="text-decoration: none;color:#0399ff;font-weight:bold">Escolher um hospital</a>
+		</center>
+	
+	
+	
+	
+	<?php
+	}
+	require_once "rodape.php";
