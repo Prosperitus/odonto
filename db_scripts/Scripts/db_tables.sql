@@ -30,11 +30,12 @@ CREATE TABLE users (
 
 ) ENGINE=InnoDB;
 
-CREATE TABLE users_access_hospital ( 
+CREATE TABLE users_access_hospital( 
 	
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`users` int (11) NOT NULL,
 	`hospital` int (11) NOT NULL
+) ENGINE=InnoDB;
 
 CREATE TABLE permition(
 
