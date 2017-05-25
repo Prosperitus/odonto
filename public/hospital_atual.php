@@ -96,30 +96,43 @@
 			<?php if($hospital->image == '' || $hospital->image == null){
 	?>
 
-	    <div class="col s6 m4" style="max-width: 200px;left: 45%;position:relative">
+	   <div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px;left: 32%;position:absolute">
 	      <div class="card">
-	        <div class="card-image">
-	          <img src="../images/hospital 2.jpg" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
+	        <div class="card-image" style="max-height:200px">
+	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
+	         
+		  <div style="left: 230px;top: -170px;position:relative;height:auto">
+			<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+			
+		  </div>
 	        </div>
-	        <div class="card-content">
-	          <p><?=$hospital->name?></p>
-	        </div>
+		
 	      </div>
 	    </div>
+		
 		<?php }else{  ?>
 			
-			<div class="col s6 m4" style="max-width: 200px;left: 45%;position:relative">
-			  <div class="card">
-				<div class="card-image">
-				  <img src="<?=$hospital->image?>" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
+			<div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px;left: 32%;position:absolute">
+			      <div class="card">
+				<div class="card-image" style="max-height:200px">
+				  <img src="<?=$hospital->image?>" style="height: 200px;width: 200px;">
+				 
+				  <div style="left: 230px;top: -170px;position:relative;height:auto">
+					<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+			
+				  </div>
 				</div>
-				<div class="card-content">
-				  <p><?=$hospital->name?></p>
-				</div>
-			  </div>
-			</div>
+		
+			      </div>
+			    </div>
 		<?php }  ?>
-	<center style="position:relative;top:300px;left:-5.5%">
+	<center style="position:relative;top:300px;">
 	<a href="atendimentos.php" style="text-decoration: none;color:rgba(0,0,0,0.87);font-weight:bold">Ir para página de atendimentos</a><br><br>
 	<a href="busca-hospital.php?expired=1" style="text-decoration: none;color:#0399ff;font-weight:bold">Escolher outro hospital</a>
 	</center>
