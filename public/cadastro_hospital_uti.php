@@ -43,7 +43,7 @@
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
           <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>
-          <label for="quantidade_leito_uti">Quantidade de leito da UTI</label>
+          <label for="quantidade_leito_uti">Quantidade de leitos na UTI</label>
         </div>
 		</div>
 		</div>

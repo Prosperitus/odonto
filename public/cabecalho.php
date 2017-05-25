@@ -10,7 +10,6 @@ $user = userInform();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" href="../js/jquery.js"></script> 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>      
@@ -28,9 +27,12 @@ $user = userInform();
         display: flex;
         min-height: 100vh;
         flex-direction: column;
+		height: 100
       }
       .main {
         flex: 1 0 auto;
+        position:relative;
+		height:auto;
       }
       header , footer {
         padding-left: 0px;
@@ -56,6 +58,41 @@ $user = userInform();
           padding-bottom: 60px;
     		}
       }
+		.ui-button{
+			background-color: #0399ff;
+			color:white;
+			border-color:#0399ff;
+			font-weight:bold
+		}
+		.ui-button:hover{
+			background-color: white;
+			color:#0399ff;
+			border-color:#0399ff;
+			font-weight:bold
+		}
+		
+		.ui-dialog-titlebar-close
+		{
+		 position: absolute;
+		 right: .3em;
+		 top: 50%;
+		 width: 19px;
+		 margin: -10px 0 0 0;
+		 padding: 1px;
+		 height: 18px;
+
+		 /*Esconder o X*/
+		 display: none;
+		}
+		.ui-dialog-titlebar{
+			background-color: #0399ff;
+			color:white;
+			border-color:#0399ff;
+			font-weight:bold
+		}
+		
+		
+	
     </style>
 
 
@@ -85,10 +122,6 @@ $user = userInform();
           <div class="col s10">
             <ul class="right">
               <form>
-                <div class="input-field">
-                  <input id="search" type="search" />
-                  <label for="search"><i class="material-icons">search</i></label>
-                </div>
               </form>
             </ul>
           </div>
@@ -102,8 +135,8 @@ $user = userInform();
           <div class="userView">
             <div class="background blue"></div>
             <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
-            <a href="#!name"><span class="white-text name">Bem Vindo <?=$user->name?></span></a>
-            <a href="#!email"><span class="white-text email"><?=$user->email?></span></a>
+            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a> 
+            <a href="#!email"><span class="white-text email" style="font-weight: bold"><?=$user->name.' '.$user->surname?></span></a>
           </div>
         </li>
         <li><a href="board.php"><i class="material-icons">note_add</i>Cadastrar</a></li>
@@ -112,15 +145,7 @@ $user = userInform();
         <li><a href="buscaFuncionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
         <li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
         <li><a href="../backend/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
-        <li>
-        <div class="divider"></div>
-        </li>
-        <li><a class="subheader"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
-        <li><a class="waves-effect" href="#!"></a></li>
       </ul>
     </div>
-  </b
-  ody>
+  </body>
 </header>

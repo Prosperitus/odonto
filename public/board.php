@@ -43,6 +43,21 @@
         </div>
       </div>
     </div>
-  </div>         
+  </div>
+
+  <!--CARD ATENDIMENTO-->
+   <div class="col s6 m4">
+      <div class="card">
+        <div class="card-image">
+          <span class="card-title"></span>
+          <a href="cadastro_atendimento.php" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>Cadastro de Atendimento</p>
+        </div>
+      </div>
+    </div>
+
+
         
 <?php require_once "rodape.php";

@@ -13,7 +13,7 @@
 		$conn = new DbHospital();
 		$result = $conn->addHospital($Hospital);
 
-		if($result && isset($_FILES['imagemHospital'])){
+		if($result && isset($_FILES['imagemHospital']) && $_FILES['imagemHospital']['size'] > 0){
 			$id = $conn->search_max_id();
 			$extensao = strtolower(strrchr($_FILES['imagemHospital']['name'],'.'));
 			$imagem = $_FILES['imagemHospital']['name'];

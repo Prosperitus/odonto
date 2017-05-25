@@ -17,6 +17,7 @@ class Patient{
 	private $responsiblePhone;
 	private $medicalRecords;
 	private $clinic;
+	private $physician_assistant;
 	private $medicalassistant;
 	private $telephone_phy_assistant;
 	private $speciality_phy_assistant;
@@ -160,6 +161,14 @@ class Patient{
 	public function setCpf($cpf){
 		$this->cpf = $cpf;
 	}
+	
+	public function getPhysician_assistant(){
+               return $this ->physician_assistant;
+	}
+	
+        public function setPhysician_assistant($physician_assistant){
+               $this->physician_assistant = $physician_assistant;        
+        }
 	
         public function getMedicalassistant(){
                return $this ->medicalassistant;

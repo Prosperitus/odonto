@@ -123,7 +123,9 @@ class DbHospital{
     $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
     $stmt->bindParam(':id_hospital', $search);
-    return $result = $stmt -> fetch(PDO::OBJ);
+	$stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_OBJ);
+	return $result;
 	}
 
      public function searchHospitalAll(){
