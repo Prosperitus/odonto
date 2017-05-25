@@ -38,11 +38,20 @@
 <label class="bold">Bairro: </label><label class="font_big"><?=$pat->neighborhood?></label><br>
 <label class="bold">Cidade/UF: </label><label class="font_big"><?=$pat->city.'/'.$pat->state?></label><br>
 <label class="bold">Cep: </label><label class="font_big"><?=$pat->zip_code;?></label><br>
+
+<?php if($pat->physician_assistant == "1"){ ?>
+<input type="checkbox" id="medico_responsavel" name="medico_responsavel" checked readonly>
+<label class="bold">Médico Responsável</label>
+<?php }if($pat->physician_assistant == "0"){ ?>
+<input type="checkbox" id="medico_responsavel" name="medico_responsavel" readonly>
+<label class="bold">Médico Responsável</label>
+<?php } ?><br>
+
 <?php if($pat->physician_assistant == '1'){ ?>
 <label class="bold">Nome do médico responsável :</label><label class="font_big"><?=$pat->name_phy_assistant?></label><br>
 <label class="bold">Telefone do médico responsável :</label><label class="font_big"><?=$pat->telephone_phy_assistant?></label><br>
 <label class="bold">Especialidade do médico responsável :</label><label class="font_big"><?=$pat->speciality_phy_assistant?></label><br>
-<?php }
+<?php } 
 
 if($pat->clinic == "1"){ ?>
 <input type="checkbox" id="clinica" name="clinica" checked readonly>
