@@ -181,7 +181,7 @@ ALTER TABLE users_access_hospital
 ADD CONSTRAINT fk_users FOREIGN KEY (users) REFERENCES users(id);
 
 ALTER TABLE users_access_hospital 
-ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
+ADD CONSTRAINT fk_hospital_access FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 /*INSERTS*/
 
