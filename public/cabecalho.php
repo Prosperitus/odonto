@@ -3,7 +3,7 @@
 	
 	verifyLogRedirect();
 
-	 if (isset($_SESSION['ultima_atividade']) && (time() - $_SESSION['ultima_atividade'] > 10)) {
+	 if (isset($_SESSION['ultima_atividade']) && (time() - $_SESSION['ultima_atividade'] > 300)) {
 
    
     session_unset();
