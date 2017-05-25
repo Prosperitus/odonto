@@ -3,6 +3,15 @@
 	
 	verifyLogRedirect();
 
+	 if (isset($_SESSION['ultima_atividade']) && (time() - $_SESSION['ultima_atividade'] > 300)) {
+
+   
+    session_unset();
+    session_destroy();
+    header('Location: http://localhost/odonto/backend/logout.php');
+  }
+  $_SESSION['ultima_atividade'] = time();
+
 $user = userInform();
 ?>
 

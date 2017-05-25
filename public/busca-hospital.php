@@ -92,9 +92,9 @@
 		      ";
 	}else{
 		
-	echo "<center>
-	<p>Em qual hospital você está hoje?</p>
-	</center>";
+	echo '<center>
+	<p style="font-weight:bold;font-size: 20px">Em qual hospital você está hoje?</p>
+	</center>';
 	foreach($hospitals as $hospital){ 
 	
 	
@@ -102,33 +102,45 @@
 	?>
 
 		
-	    <div class="col s6 m4" style="max-width: 200px;">
+	    <div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px">
 	      <div class="card">
-	        <div class="card-image">
-	          <img src="../images/hospital 2.jpg" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
+	        <div class="card-image" style="max-height:200px">
+	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
 	         
-	          <a href="hospital_atual.php?id=<?=$hospital->id?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+	          <a href="hospital_atual.php?id=<?=$hospital->id?>" style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+		  <div style="left: 230px;top: -170px;position:relative;height:auto">
+			<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
+			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+			
+		  </div>
 	        </div>
-	        <div class="card-content">
-	          <p><?=$hospital->name?></p>
-	        </div>
+		
 	      </div>
 	    </div>
 		
 		<?php }else{  ?>
 			
-			<div class="col s6 m4">
-			  <div class="card">
-				<div class="card-image">
-				  <img src="<?=$hospital->image?>" style="width: 100%;height:38%; max-height: 202px;max-width: 200px">
+			<div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px">
+			      <div class="card">
+				<div class="card-image" style="max-height:200px">
+				  <img src="<?=$hospital->image?>" style="height: 200px;width: 200px;">
 				 
-				  <a href="hospital_atual.php?id=<?=$hospital->id?>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+				  <a href="hospital_atual.php?id=<?=$hospital->id?>" style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
+				  <div style="left: 230px;top: -170px;position:relative;height:auto">
+					<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+			
+				  </div>
 				</div>
-				<div class="card-content">
-				  <p><?=$hospital->name?></p>
-				</div>
-			  </div>
-			</div>
+		
+			      </div>
+			    </div>			
+
+			
 		<?php }
 		
 		

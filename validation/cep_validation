@@ -1,0 +1,39 @@
+
+function postcode_validate(postcode)
+{
+
+//01001-000
+
+var regRange= /^(([0][0-1][0]{3}[-][0-9]{3})|([0]{4}[1][-][0-9]{3})|([9]{4}[1-9][-][0-9]{3})|([9]{4}[0][-][9][7][1-9])|([9]{4}[0][-][9][8-9][0-9]))$/;
+
+var regPostcode = /^([0-9]){5}([-])([0-9]){3}$/;
+
+obj = document.getElementById("status");
+
+if(regRange.test(postcode) == false)
+{
+
+if(regPostcode.test(postcode) == false)
+{
+
+obj.innerHTML = "Postcode is not yet valid.";
+
+}
+else
+{
+
+obj.innerHTML = "Your postcode is valid!";
+
+}
+
+}
+else
+{
+
+obj.innerHTML = "Postcode is not yet valid.";
+
+}
+
+}
+
+</script>
