@@ -41,8 +41,8 @@
                 position:relative;
                 padding:6px 15px;
                 left:-8px;
-                border:2px solid #207cca;
-                background-color:#207cca;
+                border:2px solid #03a9f4;
+                background-color:#03a9f4;
                 color:#fafafa;
                 
 }
@@ -148,7 +148,8 @@
               <form id="formestilo2">
               <div>
                 <div id="input-field">
-                    <button id="botao" type="submit">Add Card</button>
+                    <button id="botao" type="submit">Add Atendimento</button>
+                   
                 </div>
                 </div>
               </form>
