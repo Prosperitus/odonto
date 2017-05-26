@@ -129,9 +129,9 @@ public function addPatient($patient){
 
  public function searchPatient($filter){
 
-    $sql = "SELECT id,name,social_security,health_insurance,responsible1,responsible2,FROM `odt_soft`.`patient`
-            WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :email
-            ORDER by patient.name;";
+    $sql = "SELECT id,name,surname,social_security,health_insurance,responsible1,responsible2 FROM `odt_soft`.`patient`
+            WHERE name LIKE :name OR surname LIKE :surname  OR social_security = :cpf OR health_insurance = :health_insurance OR responsible1 = :responsible_Name1 OR responsible2 =:responsible_Name2 OR email LIKE :patient_email 
+            ORDER by patient.name LIMIT 5;";
 
 
     $filter2 ="%".$filter."%";
