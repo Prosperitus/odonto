@@ -125,18 +125,13 @@ CREATE TABLE attendance(
 
 ) ENGINE=InnoDB; 
 
+
 CREATE TABLE admission_cause(
 
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`type` varchar (80) NOT NULL
 ) ENGINE=InnoDB;
 
-CREATE  TABLE files_hospital(
-	
-	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`file` varchar (255) NOT NULL,
-	`hospital` int NOT NULL
-)ENGINE=InnoDB; 
 
 CREATE TABLE itu_bed(
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -145,6 +140,27 @@ CREATE TABLE itu_bed(
 	`itu` int (11) NOT NULL
 ) ENGINE=InnoDB;
 
+
+CREATE TABLE documents(
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar (60) NOT NULL,
+	`URI` text NOT NULL 
+	
+) ENGINE=InnoDB;
+
+
+CREATE TABLE meta_entity( 
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar (63) NOT NULL 
+) ENGINE=InnoDB;
+
+
+CREATE TABLE entity_has_document( 
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`documents` int (11) NOT NULL,
+	`meta_entity` int (11) NOT NULL,
+	`entity` int (11) NOT NULL 
+) ENGINE=InnoDB;
 
 /* FOREIGN KEY */
 
@@ -162,9 +178,6 @@ ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
-
-ALTER TABLE files_hospital
-ADD CONSTRAINT fk_files_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE hospital_itu
 ADD CONSTRAINT fk_hospital_itu FOREIGN KEY (hospital) REFERENCES hospital(id);
@@ -184,6 +197,13 @@ ADD CONSTRAINT fk_users FOREIGN KEY (users) REFERENCES users(id);
 ALTER TABLE users_access_hospital 
 ADD CONSTRAINT fk_hospital_access FOREIGN KEY (hospital) REFERENCES hospital(id);
 
+ALTER TABLE entity_has_document
+ADD CONSTRAINT fk_entity_has_document_document FOREIGN KEY (documents) REFERENCES documents(id);
+
+ALTER TABLE entity_has_document
+ADD CONSTRAINT fk_entity_has_document_meta_entity FOREIGN KEY (meta_entity) REFERENCES meta_entity(id);
+
+
 /*INSERTS*/
 
 INSERT INTO permition (type)
@@ -199,7 +219,6 @@ VALUES('odonto','teste','12345','teste@gmail.com',123,'123','123','SCS','2017/03
 INSERT INTO `odt_soft`.`users`
 (`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`)
 VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
-
 
 INSERT INTO stats (status) 
 VALUES ('In_evaluation') , ('In_reavaluation') , ('In_approval') , ('Approved_by_responsable_doctor') , ('Approved_by_family') , ('In_budget') , ('Budget_approved_by_family') , ('Anexed'),
