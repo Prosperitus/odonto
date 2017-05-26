@@ -148,7 +148,7 @@ class DbHospital{
     $filter2 ="%".$filter."%";
     $conn= new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
-    $stmt->bindParam(':id', $filter);
+    $stmt->bindParam(':id', $filter2);
     $stmt->bindParam(':name', $filter2);
     $stmt->bindParam(':telephone_uti',$filter2);
     $stmt->bindParam(':telephone_chefe_uti', $filter2);
