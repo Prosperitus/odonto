@@ -6,10 +6,39 @@
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+    $('.pacientes').click(function(){
+        alert('fsdf');
+        var text = $(this).text();
+        alert(text);
+        $('#patient').val();
+    });
   });
     $('#modal1').modal('open');
     $('#modal1').modal('close');
-   
+    
+      function procurar() {
+      value = $('#patient').val();
+      if(value != ""){ 
+      $.ajax({ 
+        type: 'get',
+        dataType: 'html',
+        url: "../backend/viewAtendencePatient.php?name=" + value,
+        beforeSend: function () { 
+        }, 
+        success: function (data) {
+          $('#mostrapaciente').css('display','block');
+          $('#mostrapaciente').html(data);
+        } 
+      });
+      }else{
+        $('#mostrapaciente').css('display','none');
+        $('#mostrapaciente').html("");
+      } 
+    }
+    function clickpaciente(text){
+        $('#patient').val(text);
+        $('#mostrapaciente').css('display','none');
+    };
 </script>
 </head>
 <body>
@@ -24,8 +53,9 @@
     </form>
     <!--PACIENTE-->
     <div class="input-field col s5">
-    <input name="patient" aria-controls="example" type="search" required>
+    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="search" required>
     <label for = "patient">Paciente</label>
+    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px"></div>
     </div>
 
     <!--HOSPITAL-->
