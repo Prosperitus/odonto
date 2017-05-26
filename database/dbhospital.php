@@ -140,17 +140,21 @@ class DbHospital{
     public function searchHospital($filter){
 
 
-    $sql = "SELECT id,name, name_admin_itu, number_itu FROM `odt_soft`.`hospital`
-    WHERE name LIKE :name OR name_admin_itu LIKE :name_admin_itu OR number_itu = :number_itu
-    ORDER by hospital.name;";
+    $sql = "SELECT h.id, h.name, h.telephone_uti, h.telephone_chefe_uti, h.nome_chefe_uti, hu.name_itu, hu.quant_itu FROM `odt_soft`.`hospital` h INNER JOIN `odt_soft`.`hospital_itu` hu ON h.id = hu.hospital
+    WHERE id LIKE :id OR name LIKE :name OR telephone_uti = :telephone_uti OR telephone_chefe_uti = :telephone_chefe_uti OR nome_chefe_uti LIKE :nome_chefe_uti OR name_itu LIKE :name_itu OR quant_itu LIKE quant_itu
+    ORDER by h.name";
 
 
     $filter2 ="%".$filter."%";
     $conn= new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':id', $filter);
     $stmt->bindParam(':name', $filter2);
-    $stmt->bindParam(':name_admin_itu',$filter2);
-    $stmt->bindParam(':number_itu', $filter);
+    $stmt->bindParam(':telephone_uti',$filter2);
+    $stmt->bindParam(':telephone_chefe_uti', $filter2);
+    $stmt->bindParam(':nome_chefe_uti', $filter);
+    $stmt->bindParam(':name_itu', $filter);
+    $stmt->bindParam(':quant_itu', $filter);
     $stmt->execute();
     
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
