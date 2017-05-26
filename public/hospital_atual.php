@@ -96,12 +96,12 @@
 			<?php if($hospital->image == '' || $hospital->image == null){
 	?>
 
-	   <div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px;left: 32%;position:absolute">
+	   <div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 22%;position:absolute">
 	      <div class="card">
 	        <div class="card-image" style="max-height:200px">
 	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
 	         
-		  <div style="left: 230px;top: -170px;position:relative;height:auto">
+		  <div style="left: 230px;top: -200px;position:relative;height:auto">
 			<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
 			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
 			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
@@ -115,7 +115,7 @@
 		
 		<?php }else{  ?>
 			
-			<div class="col s6 m4" style="max-width: 700px;max-height:200px;margin-bottom:10px;left: 32%;position:absolute">
+			<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 20%;position:absolute">
 			      <div class="card">
 				<div class="card-image" style="max-height:200px">
 				  <img src="<?=$hospital->image?>" style="height: 200px;width: 200px;">

@@ -29,17 +29,17 @@
   <body class = "light-blue lighten-3">   
     <div id="recuperar_senha" class="row main" style="margin-top:10%">
       <div class="col s12 z-depth-3 card-panel">
-        <form class="form">     
+        <form class="form" method="POST" action="../backend/envia_email.php">     
           <div class="row margin">    
             <div class="input-field col s12" style="margin-top:10%">
               <i class="material-icons prefix">mail</i>
-              <input class="validate" id="email" type="email">
-              <label for="email" data-error="Email invalido" >Email</label>
+              <input id="E_mail" type="email" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="E_mail" required>
+              <label for="E_mail" >Email</label>
             </div>
           </div>         
           <div class="row">
             <div class="input-field col s12" style="margin-top:1%">
-              <a href="index.php" class="btn waves-effect waves-light light-blue bounceOutLeft">Recuperar</a>
+              <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Recuperar</button>
             </div>
           </div>        
           <div class="row">

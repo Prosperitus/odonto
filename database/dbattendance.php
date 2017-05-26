@@ -42,6 +42,26 @@ class DbAttendance(){
     return $result;
     }
 
+
+  public function searchAttendanceId($filter) {
+
+    try {
+      $sql = "SELECT * FROM attendance WHERE id = :id"
+
+      $conn = new Dbconnector;
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->bindParam(':id'; $filter);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_OBJ);
+      return $result;
+
+
+
+
+    }
+
+  }
+
 }
 
 }

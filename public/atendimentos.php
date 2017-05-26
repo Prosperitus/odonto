@@ -4,8 +4,11 @@
 
   <style>
 
+  
+
   #formestilo{
       float: right;
+      
   }
 
 
@@ -14,6 +17,7 @@
 
   #formestilo2{
       float: left;
+      
   }
 
 
@@ -24,6 +28,7 @@
                 width:500px;
                 margin:50px auto;
                  float: right;
+
                
 }
 #pesquisa {
@@ -32,6 +37,7 @@
                 border:0px solid #dbdbdb;
                 width: 200px;
                 height: 23px;
+                margin-top: 50px;
                
 
                 
@@ -44,6 +50,7 @@
                 border:2px solid #03a9f4;
                 background-color:#03a9f4;
                 color:#fafafa;
+                margin-top: 50px;
                 
 }
 #botao:hover  {
@@ -69,6 +76,7 @@
   .portlet {
     margin: 0 1em 1em 0;
     padding: 0.3em;
+
   }
   .portlet-header {
     padding: 0.2em 0.3em;
@@ -98,7 +106,7 @@
 
   function onPageLoad()
   {
-    $( ".column" ).sortable({
+    /*$( ".column" ).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
@@ -108,7 +116,7 @@
       stop: function (event, ui) {
         ui.item.removeClass('tilt');
       }
-    });
+    });*/
 
     $( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
@@ -148,7 +156,7 @@
               <form id="formestilo2">
               <div>
                 <div id="input-field">
-                    <button id="botao" type="submit">Add Atendimento</button>
+                    <button id="botao" type="submit">Adicionar Atendimento</button>
                    
                 </div>
                 </div>
