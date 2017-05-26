@@ -1,16 +1,17 @@
 <?php 
 
 include_once "dbconnect.php";
-require_once "../backend/patientModel.php";
-include_once "../backend/Hospitalmodel.php";
-require_once "../backend/employeeModel.php";
+include_once "/opt/lampp/htdocs/odonto/backend/patientModel.php";
+include_once "/opt/lampp/htdocs/odonto/backend/Hospitalmodel.php";
+include_once "/opt/lampp/htdocs/odonto/backend/employeeModel.php";
 
 
 
-class DbAttendance(){
+class DbAttendance
+{
 
 
-	public function attendance_patient($attendance){
+	public function addAttendance($attendance){
         try{
            $sql = "INSERT INTO attendance (patient, hospital, itu, admDate, employee, finalDate, admCause, bonequinha)
                   VALUES (:patient, :hospital, :itu, :admission_date_itu, :doctor_responsible, :final_date, :admission_cause, :bonequinha)";
@@ -36,27 +37,34 @@ class DbAttendance(){
        $stmt->bindParam(':bonequinha', $gaBonequinha);
 
        $result = $stmt->execute();
+       //var_dump($result);
+       //var_dump($attendance);
+       //die(); 
        return $result;
       }
-   catch(PDOExeption $e){
-    return $result;
+      catch(PDOExeption $e){
+        return $result;
     }
+ } 
 
 
   public function searchAttendanceId($filter) {
 
     try {
-      $sql = "SELECT * FROM attendance WHERE id = :id"
+      $sql = "SELECT * FROM attendance WHERE id = :id";
 
-      $conn = new Dbconnector;
+      $conn = new Dbconnector();
       $stmt = $conn->getConn()->prepare($sql);
-      $stmt->bindParam(':id'; $filter);
+      $stmt->bindParam(':id', $filter);
       $stmt->execute();
       $result = $stmt->fetch(PDO::FETCH_OBJ);
+      
       return $result;
 
+      }
 
-
+      catch(PDOExeption $e) {
+        return $result;
 
     }
 
@@ -64,5 +72,4 @@ class DbAttendance(){
 
 }
 
-}
 

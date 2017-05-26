@@ -1,13 +1,12 @@
 <?php
  // 23/03/2017
-	include "employeeModel.php";
-	include "../database/dbconnect.php";
-
-	public class Attendance {
+	include_once "/opt/lampp/htdocs/odonto/backend/employeeModel.php";
+	include_once "/opt/lampp/htdocs/odonto/database/dbconnect.php";
 
 
 
-	public function addAttendance(){
+
+	 function addAttendance(){
 		$Attendance = new Attendance();
 		$dbpatient = new DbPatient();
 		if (!$dbp->searchId($_POST["patient"])) {
@@ -38,4 +37,3 @@
 		$conn->addAttendance($Attendance);
 	}
 
-}
