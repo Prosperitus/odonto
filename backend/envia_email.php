@@ -10,11 +10,8 @@
 $para = $_POST['E_mail'];
 var_dump($para);
 
-?>
 
-<?php
-
-mail($para, "Teste", "menssagem");
+mail($para, "Teste", "menssagem", "From: magdielcrisostomo@hotmail.com");
 
 ?>
 </body>
