@@ -98,7 +98,7 @@
 
   function onPageLoad()
   {
-    $( ".column" ).sortable({
+    /*$( ".column" ).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
@@ -108,7 +108,7 @@
       stop: function (event, ui) {
         ui.item.removeClass('tilt');
       }
-    });
+    });*/
 
     $( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
