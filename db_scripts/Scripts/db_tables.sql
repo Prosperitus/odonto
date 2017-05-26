@@ -144,7 +144,8 @@ CREATE TABLE itu_bed(
 CREATE TABLE documents(
 	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` varchar (60) NOT NULL,
-	`URI` text NOT NULL 
+	`URI` text NOT NULL,
+	`doc_type` int (11) NOT NULL 
 	
 ) ENGINE=InnoDB;
 
@@ -160,6 +161,11 @@ CREATE TABLE entity_has_document(
 	`documents` int (11) NOT NULL,
 	`meta_entity` int (11) NOT NULL,
 	`entity` int (11) NOT NULL 
+) ENGINE=InnoDB;
+
+CREATE TABLE doc_type(
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` varchar (60) NOT NULL  
 ) ENGINE=InnoDB;
 
 /* FOREIGN KEY */
@@ -203,6 +209,8 @@ ADD CONSTRAINT fk_entity_has_document_document FOREIGN KEY (documents) REFERENCE
 ALTER TABLE entity_has_document
 ADD CONSTRAINT fk_entity_has_document_meta_entity FOREIGN KEY (meta_entity) REFERENCES meta_entity(id);
 
+ALTER TABLE documents
+ADD CONSTRAINT fk_doc_type FOREIGN KEY (doc_type) REFERENCES doc_type(id);
 
 /*INSERTS*/
 
