@@ -4,16 +4,24 @@
 	verifyLogRedirect();
 
 	 if (isset($_SESSION['ultima_atividade']) && (time() - $_SESSION['ultima_atividade'] > 300)) {
-
+	
    
     session_unset();
     session_destroy();
     header('Location: http://localhost/odonto/backend/logout.php');
   }
-  $_SESSION['ultima_atividade'] = time();
 
+  $_SESSION['ultima_atividade'] = time();
+	
+	JSON $time = '{nome:"'.$_SESSION['ultima_atividade'].'"}';
 $user = userInform();
 ?>
+
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+	var time = <?php echo $time; ?>;
+	alert (time);
+
+	</SCRIPT>
 
   <header>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
