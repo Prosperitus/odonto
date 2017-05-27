@@ -78,7 +78,8 @@ CREATE TABLE hospital(
 	`image` text ,
 	`telephone_uti`varchar(20) NOT NULL,
 	`telephone_chefe_uti`varchar(20) NOT NULL,
-	`nome_chefe_uti`varchar(80) NOT NULL
+	`nome_chefe_uti`varchar(80) NOT NULL,
+    `file` text
 ) ENGINE=InnoDB;
 
 
@@ -197,7 +198,7 @@ VALUES('odonto','teste','12345','teste@gmail.com',123,'123','123','SCS','2017/03
 
 INSERT INTO `odt_soft`.`users`
 (`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`)
-VALUiES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
+VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
 
 
 INSERT INTO stats (status) 
