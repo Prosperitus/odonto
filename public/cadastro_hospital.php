@@ -62,7 +62,7 @@
         <div class="file-field input-field col s5" style="clear:both">
           <div class="btn input-field col s5 light-blue">
             <span>Arquivos</span>
-            <input type="file" multiple>
+             <input type="file" name="file_upload">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload de um ou mais arquivos">
