@@ -11,10 +11,18 @@
     header('Location: http://localhost/odonto/backend/logout.php');
   }
 
-  $_SESSION['ultima_atividade'] = time();
-
-$user = userInform();
-?>
+   $_SESSION['ultima_atividade'] = time();
+   
+   JSON $time = '{nome:"'.$_SESSION['ultima_atividade'].'"}';
+ 
+   $user = userInform();
+   ?>
+  
+   <script LANGUAGE="JavaScript" TYPE="text/javascript">
+   var time = <?php echo $time; ?>;
+   alert (time);
+ 
+   </script>
 
   <header>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
