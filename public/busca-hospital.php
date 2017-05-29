@@ -7,10 +7,6 @@
 	if(isset($_GET['expired']) && $_GET['expired'] == "1"){
 		unset($_SESSION['hospital']);
 	}
-	if(isset($_SESSION['hospital'])){
-		echo "<script>location.href='hospital_atual.php';</script>";
-		die();
-	}
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
 	<head>

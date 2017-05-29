@@ -6,6 +6,6 @@
 	$dbpatient = new DbPatient();
 	$pats = $dbpatient->searchPatient($name);
 	foreach ($pats as $pat) {
-		echo '<div class="pacientes" onclick="clickpaciente(\''.$pat->name." ".$pat->surname.'\')">'.$pat->name." ".$pat->surname."</div>";
+		echo '<div class="pacientes" onclick="clickpaciente(\''.$pat->name." ".$pat->surname.'\','.$pat->id.')">'.$pat->name." ".$pat->surname."</div>";
 	}
 ?>

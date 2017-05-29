@@ -58,21 +58,6 @@
 			}
 			
 		</style>
-		<script>
-			function enviarHospital(id) { 
-			$.ajax({ 
-				type: 'get',
-				dataType: 'html',
-				url: "../backend/viewEmployee.php?id=" + id,
-				beforeSend: function () { 
-				}, 
-				success: function (data) { 
-					var novaURL = "http://www.codigofonte.com.br/";
-					$(window.document.location).attr('href',novaURL);
-				} 
-			}); 
-		}
-		</script>
 	</head>
 
 	<body dir="ltr" background="/images/turquoise.jpg">	

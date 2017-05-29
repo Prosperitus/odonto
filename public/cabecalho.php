@@ -9,6 +9,7 @@
     session_unset();
     session_destroy();
     header('Location: http://localhost/odonto/backend/logout.php');
+	die();
   }
 
    $_SESSION['ultima_atividade'] = time();

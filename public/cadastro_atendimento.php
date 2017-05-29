@@ -1,5 +1,13 @@
 <?php
 	require_once "cabecalho.php";
+	if(isset($_SESSION['hospital'])){
+		$hospital = $_SESSION['hospital'];
+		$hospital = $hospital->name;
+	}else{
+		echo "<script>location.href='busca-hospital.php';</script>";
+		die();
+	}
+
 ?>
 <head>
 <script type="text/javascript">
@@ -35,8 +43,9 @@
         $('#mostrapaciente').html("");
       } 
     }
-    function clickpaciente(text){
+    function clickpaciente(text,id){
         $('#patient').val(text);
+		$('#Idpatient').val(id);
         $('#mostrapaciente').css('display','none');
     };
 </script>
@@ -54,14 +63,15 @@
     <!--PACIENTE-->
     <div class="input-field col s5">
     <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="search" required>
+	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
-    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px"></div>
+    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
     </div>
 
     <!--HOSPITAL-->
     <div class="input-field col s5">
-    <input name="hospital" aria-controls="example" type="search" required>
-    <label for = "hospital">Hospital</label>
+    <input name="hospital" id="hospital" style="color: black;border-bottom:1px solid #9e9e9e" aria-controls="example" type="text" value="<?=$hospital?>" required disabled>
+    <label for="hospital" style="color: #9e9e9e;">Hospital</label>
     </div>
 
     <!--UTI-->
