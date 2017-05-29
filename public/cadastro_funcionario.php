@@ -5,19 +5,19 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8"/>
     <title>Cadastro Funcionário</title>
-  	<script type="text/javascript" href="../js/jquery.js"></script>  
+  	<script type="text/javascript" href="../js/jquery.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>      
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-  	<script src="../js/jquery.maskedinput.js"></script> 
+  	<script src="../js/jquery.maskedinput.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<script type="text/javascript" src="../DataTables/media/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css"> 
+    <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css">
       <style>
         body {
           display: flex;
@@ -64,8 +64,8 @@
               $('select').material_select();
               $('.button-collapse').sideNav();
               $('.parallax').parallax();
-          }); 
-      })(jQuery); 
+          });
+      })(jQuery);
     </script>
 
     <?php if(isset($_SESSION['Employee'])){
@@ -79,7 +79,7 @@
           <ul class="left">
             <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
           </ul>
-        </div>   
+        </div>
         <div class="row">
           <div class="col s10">
             <ul class="right">
@@ -87,7 +87,7 @@
               </form>
             </ul>
           </div>
-        </div>    
+        </div>
       </div>
     </nav>
 
@@ -97,7 +97,7 @@
           <div class="userView">
             <div class="background blue"></div>
             <a href="#!user"><img class="circle" src="../images/medico.jpg"></a>
-            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a> 
+            <a href="#!name"><span class="white-text name">Bem Vindo,</span></a>
             <a href="#!email"><span class="white-text email" style="font-weight: bold"><?=$user->name.' '.$user->surname?></span></a>
           </div>
         </li>
@@ -279,7 +279,7 @@
         <!--MOSTRAR A SENHA-->
         <div class="input-field col s5">
           <i class="material-icons prefix">vpn_key</i>
-	  <input id="funcionario_mostrar_senha" type="checkbox" onchange="document.getElementById('funcionario_senha').type = this.checked ? 'text' : 'password'">
+	         <input id="funcionario_mostrar_senha" type="checkbox" onchange="document.getElementById('funcionario_senha').type = this.checked ? 'text' : 'password'">
           <label for="funcionario_mostrar_senha">Mostrar Senha</label>
         </div>
 

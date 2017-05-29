@@ -7,7 +7,7 @@
         <img src="../images/tablet.png">&nbsp;&nbsp;&nbsp;&nbsp;
         <img src="../images/facebook.png">&nbsp;&nbsp;&nbsp;&nbsp;
         <img src="../images/instagram.png">&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="../images/close-envelope.png">&nbsp;&nbsp;&nbsp;&nbsp;     
+        <img src="../images/close-envelope.png">&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="grey-text text-lighten-4 right" href="#!">© 2017 EasyOdonto Solutions</a>
       </div>
     </div>
@@ -43,4 +43,3 @@
   <script src="../js/mask_funcionario.js"></script>
   <script src="../js/mask_paciente.js"></script>
   <script src="../js/mask_hospital.js"></script>
-

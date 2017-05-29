@@ -1,17 +1,17 @@
-<?php 
+<?php
 	require_once "cabecalho.php";
 ?>
 
   <style>
 
   #formestilo2 {
-    float: left; 
+    float: left;
   }
-  } 
+  }
   #formestilo {
     width:500px;
     margin:50px auto;
-    float: right;         
+    float: right;
   }
   #pesquisa {
     padding:8px 15px;
@@ -24,12 +24,12 @@
   #botao {
     position:relative;
     padding:6px 15px;
-    left:-8px;
+    left:-4px;
     border:2px solid #03a9f4;
     background-color:#03a9f4;
     color:#fafafa;
     margin-top: 50px;
-                  
+
   }
   #botao:hover  {
     background-color:#fafafa;
@@ -78,24 +78,11 @@
   </style>
 
 
-  
+
   <script>
   $(onPageLoad);
 
-  function onPageLoad()
-  {
-    /*$( ".column" ).sortable({
-      connectWith: ".column",
-      handle: ".portlet-header",
-      cancel: ".portlet-toggle",
-      start: function (event, ui) {
-        ui.item.addClass('tilt');
-      },
-      stop: function (event, ui) {
-        ui.item.removeClass('tilt');
-      }
-    });*/
-
+  function onPageLoad(){
     $( ".portlet" )
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
@@ -107,15 +94,7 @@
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
-  }
-
-  var moodal = document.getElementById("modal1");
-
-  function myFunction() {
-    var btn = document.createElement("moodal");
-    document.body.appendChild(btn);
-    return false
-  }
+  };
 
   $(document).ready(function(){
     $('.modal').modal();
@@ -127,67 +106,66 @@
 
 
 <div class="main margemCentro">
-	
-  <!--SEARCH BAR--> 
+  <!--SEARCH BAR-->
   <div class="row">
     <div class="col s8">
       <ul class="right">
         <form id="formestilo">
           <div id="input-field">
-              <input id="pesquisa" type="text" placeholder="Is it me you’re looking for?">
-              <button id="botao" type="submit">Search</button>
+            <input id="pesquisa" type="text">
+						<button id="botao" type="submit">Pesquisar</button>
           </div>
         </form>
       </ul>
-      <ul class="left">
+      <ul>
         <form id="formestilo2">
           <div id="input-field">
-            <a id="botao" class="btn waves-effect waves-light light-blue" href="#modal1">Adicionar Cadastro</a>
-            <div id="modal1" class="modal modal-fixed-footer">
+            <a id="botao" class="left" href="#modal1">Adicionar Cadastro</a>
+            <div id="modal1" class="modal ">
               <div class="modal-content">
-                <h4>Cadastro Atendimento</h4>
-                <div class="row margemCentro">
-                  <!--PACIENTE-->
-                  <div class="input-field col s5">
-                    <input name="patient" aria-controls="example" type="search" required>
-                    <label for = "patient">Paciente</label>
+								<div class="center">
+									<h4>Cadastro de Atendimento</h4>
+								</div>
+                <div class="row col s11">
+
+									<!--PACIENTE-->
+                  <div class="input-field col s6">
+                    <input name="patient" id="patient" aria-controls="example" type="search" required>
+                    <label for="patient">Paciente</label>
                   </div>
 
                   <!--HOSPITAL-->
-                  <div class="input-field col s5">
-                    <input name="hospital" aria-controls="example" type="search" required>
-                    <label for = "hospital">Hospital</label>
+									<div class="input-field col s6">
+                    <input name="hosp" id="hosp" aria-controls="example" type="search" required>
+                    <label for = "hosp">Hospital</label>
                   </div>
 
                   <!--UTI-->
-                  <div class="input-field col s5">
-                    <input name="uti" aria-controls="example" type="search" required>
+                  <div class="input-field col s6">
+                    <input name="uti" id="uti" aria-controls="example" type="search" required>
                     <label for = "uti">UTI</label>
                   </div>
 
-                  <!--DATA/ADMISSAO/UTI-->
-                  <div class="input-field col s5">
-                    <i class="material-icons prefix">today</i>
-                    <input name="admdate" id="admdate" type="text" class="datepicker" required>
-                    <label for="admdate">Data de Admissão na UTI</label>
+                  <!--MEDICO/RESPONSAVEL-->
+                  <div class="input-field col s6">
+                    <input name="medresponsavel" id="medresponsavel" aria-controls="example" type="search" required>
+                    <label for ="medresponsavel">Médico Responsável</label>
                   </div>
 
-                  <!--MEDICO/RESPONSAVEL-->
-                  <div class="input-field col s5">
-                    <input name="#" aria-controls="example" type="search" required>
-                    <label for ="#">Médico Responsável</label>
+                  <!--DATA/ADMISSAO/UTI-->
+                  <div class="input-field col s6">
+                    <input name="admdate" id="admdate" type="text" class="datepicker" required>
+                    <label for="admdate">Data de admissão na UTI</label>
                   </div>
-                
+
                   <!--DATA/FINAL-->
-                  <div class="input-field col s5">
-                    <i class="material-icons prefix">today</i>
-                     <input name="#" id="#" type="text" class="datepicker" required>
-                    <label for="#">Data final do Atendimento</label>
+                  <div class="input-field col s6">
+                     <input name="finaldate" id="finaldate" type="text" class="datepicker" required>
+                    <label for="finaldate">Data final do atendimento</label>
                   </div>
 
                   <!--CAUSA/DE/ADMISSAO-->
-                  <div class="input-field col s5">
-                    <i class="material-icons prefix">supervisor_account</i>
+                  <div class="input-field col s6">
                     <select multiple name="admcause" id="admcause" required>
                       <option value="" disabled selected>Causa de admissão</option>
                       <option value="1">Oncológico</option>
@@ -200,10 +178,8 @@
                       <option value="8">IRC</option>
                       <option value="9">Neuropata</option>
                     </select>
+										<button id="botao" class="formestilo" style="margin-top:0px">Ok</button>
                   </div>
-                </div>
-                <div id="formestilo2">
-                  <button class="btn waves-effect waves-light light-blue">Ok</button>
                 </div>
               </div>
             </div>
@@ -212,7 +188,6 @@
       </ul>
     </div>
   </div>
-  <!--END SEARCH BAR-->    
 
 
   <!-- BOARD-->
@@ -273,16 +248,16 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Concluido</div>  
+    <div class="card-panel lighten-2 col s10">Concluido</div>
     <div class="portlet">
       <div class="portlet-header">Capitão Caverna</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
 	  </div>
-	  
+
     <div class="portlet">
 	    <div class="portlet-header">He-Man</div>
       <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-    </div>	
+    </div>
   </div>
 </div>
 
