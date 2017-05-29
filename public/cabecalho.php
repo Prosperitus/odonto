@@ -13,7 +13,6 @@
 
    $_SESSION['ultima_atividade'] = time();
    
-   JSON $time = '{nome:"'.$_SESSION['ultima_atividade'].'"}';
  
    $user = userInform();
    ?>
