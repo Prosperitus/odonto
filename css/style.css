@@ -25,3 +25,6 @@ td{
 	color:white;
 	padding: 5px;
 }
+input#patient{
+	padding-left: 0px;
+}

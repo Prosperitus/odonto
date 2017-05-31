@@ -27,7 +27,7 @@ class DbHospital{
         $stmt = $conn->getConn()->prepare($sql);
         $stmt->bindParam(':name', $ghName);
         $stmt->bindParam(':telUti', $ghTelephoneUti);
-	$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
+		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
         $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
 
         
@@ -96,6 +96,27 @@ class DbHospital{
                     
     }
 
+	public function search_uti($idHospital){
+
+    $sql = "SELECT * FROM hospital_itu WHERE hospital = :id";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+	$stmt->bindParam('id',$idHospital);
+	$stmt->execute();
+	$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+	}
+	
+	public function search_uti_leito($idUti){
+
+    $sql = "SELECT * FROM itu_bed WHERE itu = :id";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+	$stmt->bindParam('id',$idUti);
+	$stmt->execute();
+	$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+	}
 	
 	public function search_max_id(){
 
