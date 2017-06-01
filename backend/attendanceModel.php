@@ -15,9 +15,9 @@
 	 private $uti;	
 
 	 //------------TIPADAS------------
-	 private Hospital $hospital;
-	 private Employee $employee;
-	 private Patient $patient;
+	 private Hospital $hospital = new Hospital();
+	 private Employee $employee = new Employee();
+	 private Patient $patient = new Patient();
 	 //--------------------------------
 
 

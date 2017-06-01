@@ -91,6 +91,21 @@
 	echo '<center>
 	<p style="font-weight:bold;font-size: 20px">Em qual hospital você está hoje?</p>
 	</center>';
+	?>
+	<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px">
+	      <div class="card">
+	        <div class="card-image" style="max-height:200px">
+	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
+	         
+	          <a href="cadastro_hospital.php" style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+				  <div style="left: 230px;top: -125px;position:relative;height:auto">
+					<p style="font-size: 18px;font-weight:bold">ADICIONAR NOVO HOSPITAL</p>
+				  </div>
+	        </div>
+		
+	      </div>
+	    </div>
+	<?php
 	foreach($hospitals as $hospital){ 
 	
 	
@@ -104,13 +119,13 @@
 	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
 	         
 	          <a href="hospital_atual.php?id=<?=$hospital->id?>" style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
-		  <div style="left: 230px;top: -200px;position:relative;height:auto">
-			<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
-			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
-			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
-			<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
-			
-		  </div>
+				  <div style="left: 230px;top: -200px;position:relative;height:auto">
+					<p style="font-size: 18px;font-weight:bold"><?=$hospital->name?></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
+					<p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+					
+				  </div>
 	        </div>
 		
 	      </div>

@@ -62,6 +62,15 @@
 	<div class="margin_small">
 		</br>
 		<p class="bold" style="color: #0399ff">Click na linha do funcionário para ver suas informações:</p>
+		<div class="row main">
+			<div class="col s6 m4" style="width: 60px;height:60px;float:right;bottom:80px;position:relative">
+			  <div class="card" style="width: 60px;height:60px">
+				<div class="card-image" style="width: 60px;height:60px">
+				  <img src="../images/medico.jpg">
+				  <a href="cadastro_funcionario.php" class="btn-floating halfway-fab waves-effect waves-light red" style="width:22px;height:22px;position:relative;left:34px;bottom:36px"><i class="material-icons" style="width:7px;height:7px;bottom:9px;right:1px;position:relative">add</i></a>
+				</div>
+			   </div>
+			</div>
 	<div id="dialogEmployee" title="Dados do Funcionário">	</div>
 	<input type="checkbox" value="clinica" checked />
 		<table id="example" class="hover row-border" cellspacing="0" width="100%;">

@@ -12,7 +12,6 @@
 	}
 
 ?>
-<head>
 <script type="text/javascript">
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -89,8 +88,7 @@
         $('#mostramedico').css('display','none');
     };
 </script>
-</head>
-<body>
+<!--MODAL-->
 <a class="btn waves-effect waves-light light-blue" href="#modal1">Modal</a>
 <div id="modal1" class="modal modal-fixed-footer">
           <div class="modal-content">
@@ -180,6 +178,7 @@
           </div>
 		</div>
 		</form>
+		<!--FIM-DO-MODAL-->
         </body>
 
 
