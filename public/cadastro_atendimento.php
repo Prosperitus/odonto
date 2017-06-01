@@ -18,15 +18,12 @@
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
     $('.pacientes').click(function(){
-        alert('fsdf');
         var text = $(this).text();
-        alert(text);
         $('#patient').val();
     });
 	
 	$('#uti').change(function(){
 		value = $('#uti').val();
-		alert(value);
 		$.ajax({ 
 			type: 'get',
 			dataType: 'html',
@@ -40,6 +37,26 @@
   });
     $('#modal1').modal('open');
     $('#modal1').modal('close');
+	
+	function procurarUser() {
+      value = $('#user').val();
+      if(value != ""){ 
+      $.ajax({ 
+        type: 'get',
+        dataType: 'html',
+        url: "../backend/viewAtendenceUser.php?name=" + value,
+        beforeSend: function () { 
+        }, 
+        success: function (data) {
+          $('#mostramedico').css('display','block');
+          $('#mostramedico').html(data);
+        } 
+      });
+      }else{
+        $('#mostramedico').css('display','none');
+        $('#mostramedico').html("");
+      } 
+    }
 	
       function procurar() {
       value = $('#patient').val();
@@ -65,6 +82,12 @@
 		$('#Idpatient').val(id);
         $('#mostrapaciente').css('display','none');
     };
+	
+	function clickmedico(text,id){
+        $('#user').val(text);
+		$('#Iduser').val(id);
+        $('#mostramedico').css('display','none');
+    };
 </script>
 </head>
 <body>
@@ -76,7 +99,7 @@
   <!--CLASS/FORM-->
    <div class="row margemCentro">
     <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    </form>
+    
     <!--PACIENTE-->
     <div class="input-field col s5">
     <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
@@ -105,6 +128,7 @@
     <!--Leito-->
     <div class="input-field col s5">
     <select name="leito" id="leito">
+	<option value="" disabled selected>Leito</option>
 	</select>
     <label for = "leito">Leito</label>
     </div>
@@ -117,9 +141,11 @@
         </div>
 
     <!--MEDICO/RESPONSAVEL-->
-     <div class="input-field col s5">
-    <input name="#" aria-controls="example" type="search" required>
-    <label for ="#">Médico Responsável</label>
+    <div class="input-field col s5">
+		<input name="user" id="user" oninput="procurarUser()" aria-controls="example" type="text" required>
+		<input name="Iduser" id="user" type="hidden" required>
+		<label for = "user">Médico Responsável</label>
+    <div id="mostramedico" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
     </div>
     
 
@@ -148,10 +174,12 @@
         </div>
         </p>
         </div>
+		</div>
           <div class="modal-footer">
-            <a href="#!" class="btn waves-effect waves-light light-blue">Ok</a>
+            <button class="btn waves-effect waves-light light-blue">Ok</a>
           </div>
-        </div>
+		</div>
+		</form>
         </body>
 
 

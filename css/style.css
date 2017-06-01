@@ -25,6 +25,12 @@ td{
 	color:white;
 	padding: 5px;
 }
-input#patient{
-	padding-left: 0px;
+.medicos{
+	padding: 5px;
+	cursor:pointer;
+}
+.medicos:hover{
+	background-color: #0399ff;
+	color:white;
+	padding: 5px;
 }
