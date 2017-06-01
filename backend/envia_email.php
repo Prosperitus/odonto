@@ -6,11 +6,13 @@ $emailDisparar = "contato@".$_SERVER['HTTP_HOST'];
 
 $cabecalho = "MIME-Version : 1.1\r\n";
 $cabecalho .= "Content-type: text/plain; charset=UTF-8\n";
-$cabecalho .= "From: magdielcrisostomo@hotmail.com\n";
-$cabecalho .= "Return-Path: magdielcrisostomo@hotmail.com\n";
+$cabecalho .= "From: \n".$emailDisparar;
+$cabecalho .= "Return-Path: \n".$emailDisparar;
 
-
+mail($para, "Assunto", "Teste de Email", $cabecalho, "-r". $emailDisparar);
 $envia = mail($para, "Assunto", "Teste de Email", $cabecalho, "-r".$emailDisparar);
+
+print("Mensagem enviada com sucesso !");
 
 
 /*if(!mail($para, "Assunto", "Teste de Email", $cabecalho ,"-r".$emailDisparar)){ // Se for Postfix
@@ -19,18 +21,10 @@ $envia = mail($para, "Assunto", "Teste de Email", $cabecalho, "-r".$emailDispara
 }*/
 
 
-if($envia){
+/*if($envia){
 	echo "Email enviado com sucesso !";
 }else{
 	echo "Email nao enviado";
-}
-
-
-
-
-
-
-
-
+}*/
 
 ?>
