@@ -40,7 +40,7 @@
 
     
     <!--MAIN-->
-    <div id="login-page" class="row main" style="margin-top: 10%">
+    <div id="login-page" class="row main" style="margin-top: 10%;position:relative;top:20%">
       <div class="col s12 z-depth-3 card-panel">
         <form class="login-form" action="backend/login.php" method="post">     
           <div class="row margin">    
