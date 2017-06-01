@@ -150,7 +150,7 @@
     <!--DATA/FINAL-->
     <div class="input-field col s5">
           <i class="material-icons prefix">today</i>
-           <input name="#" id="#" type="text" class="datepicker" required>
+           <input name="#" id="#" type="text" class="datepickerfinal" required>
           <label for="#">Data final do Atendimento</label>
         </div>
 
@@ -287,11 +287,11 @@
   <!--SEARCH BAR-->
   <div class="row">
     <div class="col s8">
-      <ul class="right">
+      <ul class="" style="float:right;bottom:47px;position: relative;left:230px">
         <form id="formestilo">
           <div id="input-field">
             <input id="pesquisa" type="text">
-						<button id="botao" type="submit">Pesquisar</button>
+			<button id="botao" type="submit">Pesquisar</button>
           </div>
         </form>
       </ul>
@@ -307,6 +307,8 @@
 
 
   <!-- BOARD-->
+<div style="bottom: 80px;position:relative">
+
   <div class="column col s2 m2">
     <div class="card-panel lighten-2 col s10" >Avaliação</div>
 	  <div class="portlet">
@@ -377,5 +379,25 @@
   </div>
 </div>
 
+</div>
+
+  <script>
+    $('.datepickerfinal').pickadate({
+    	monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+  		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+  		today: 'Hoje',
+  		clear: 'Limpar',
+  		close: 'Pronto',
+  		labelMonthNext: 'Próximo mês',
+  		labelMonthPrev: 'Mês anterior',
+  		labelMonthSelect: 'Selecione um mês',
+  		labelYearSelect: 'Selecione um ano',
+		selectYears:100,
+  		format: 'dd !de mmmm !de yyyy',
+  		formatSubmit: 'yyyy-mm-dd'
+    });
+  </script>
 
 <?php require_once "rodape.php";
