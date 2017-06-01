@@ -92,19 +92,21 @@
 	<p style="font-weight:bold;font-size: 20px">Em qual hospital você está hoje?</p>
 	</center>';
 	?>
+	<a href="cadastro_hospital.php">
 	<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px">
 	      <div class="card">
 	        <div class="card-image" style="max-height:200px">
 	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
 	         
-	          <a href="cadastro_hospital.php" style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-				  <div style="left: 230px;top: -125px;position:relative;height:auto">
-					<p style="font-size: 18px;font-weight:bold">ADICIONAR NOVO HOSPITAL</p>
-				  </div>
+	          <div style="top:120px" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></div>
+			  <div style="left: 230px;top: -125px;position:relative;height:auto">
+				<p style="font-size: 18px;font-weight:bold">ADICIONAR NOVO HOSPITAL</p>
+			  </div>
 	        </div>
 		
 	      </div>
 	    </div>
+	</a>
 	<?php
 	foreach($hospitals as $hospital){ 
 	
