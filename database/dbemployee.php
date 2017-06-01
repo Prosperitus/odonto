@@ -102,7 +102,7 @@ class DbEmployee {
         $sql = "SELECT id, name, surname, cro, email, registration, phone, phone2, address, admission_date, social_security, bank, number_of_account, agency, permition
         FROM `odt_soft`.`users`
         WHERE name LIKE :name OR surname LIKE :surname OR social_security = :cpf OR permition = :permition OR registration = :registration OR email like :email OR cro = :cro
-        ORDER BY name";
+        ORDER BY name LIMIT 5";
         $filter2 = "%".$filter."%";
         $conn =  new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
