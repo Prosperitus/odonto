@@ -6,7 +6,7 @@ $emailDisparar = "contato@".$_SERVER['HTTP_HOST'];
 
 $cabecalho = "MIME-Version : 1.1\r\n";
 $cabecalho .= "Content-type: text/plain; charset=UTF-8\n";
-$cabecalho .= "From: \n".$emailDisparar;
+$cabecalho .= "FrSom: \n".$emailDisparar;
 $cabecalho .= "Return-Path: \n".$emailDisparar;
 
 mail($para, "Assunto", "Teste de Email", $cabecalho, "-r". $emailDisparar);
