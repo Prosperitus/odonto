@@ -1,6 +1,6 @@
 
   <!--FOOTER-->
-  <footer class="page-footer light-blue" style="bottom:0%; width:100%;position:fixed; clear:both">
+  <footer class="page-footer light-blue">
     <div class="footer-copyright">
       <div class="container">
         <img src="../images/viber.png">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -11,8 +11,7 @@
         <a class="grey-text text-lighten-4 right" href="#!">© 2017 EasyOdonto Solutions</a>
       </div>
     </div>
-  </footer>
-
+</footer>
   <!--SCRIPSTS-->
   <script>
     $('.datepicker').pickadate({

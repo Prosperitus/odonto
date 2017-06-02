@@ -19,7 +19,7 @@
 	}
 
 ?>
-<script type="text/javascript">
+<script>
   $(document).ready(function(){
 	var data = "";
 	alert(data);
@@ -97,98 +97,30 @@
 		$('#Iduser').val(id);
         $('#mostramedico').css('display','none');
     };
-	
-</script>
-<!--MODAL-->
-<div id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-       <h4>Cadastro Atendimento</h4>
-         <p>
-  <!--CLASS/FORM-->
-   <div class="row margemCentro">
-    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    
-    <!--PACIENTE-->
-    <div class="input-field col s5">
-    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
-	<input name="Idpatient" id="Idpatient" type="hidden" required>
-    <label for = "patient">Paciente</label>
-    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
-    </div>
+  $(onPageLoad);
 
-    <!--HOSPITAL-->
-    <div class="input-field col s5">
-    <input name="hospital" id="hospital" style="color: black;border-bottom:1px solid #9e9e9e" aria-controls="example" type="text" value="<?=$hospitalName?>" required disabled>
-    <label for="hospital" style="color: #9e9e9e;">Hospital</label>
-    </div>
+  function onPageLoad(){
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+      .addClass( "ui-widget-header ui-corner-all" )
+      .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
 
-    <!--UTI-->
-    <div class="input-field col s5">
-	<select name="uti" id="uti">
-	<option value="" disabled selected>UTI</option>
-    <?php foreach($utis as $uti){?>
-		<option value="<?=$uti->id?>"><?=$uti->name_itu?></option>
-	<?php } ?>
-	</select>
-    <label for = "uti">UTI</label>
-    </div>
+    $( ".portlet-toggle" ).click(function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
+  };
 
-    <!--Leito-->
-    <div class="input-field col s5">
-    <select name="leito" id="leito">
-	<option value="" disabled selected>Leito</option>
-	</select>
-    <label for="leito">Leito</label>
-    </div>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+    $('#modal1').modal('open');
+    $('#modal1').modal('close');
 
-    <!--DATA/ADMISSAO/UTI-->
-    <div class="input-field col s5">
-          <i class="material-icons prefix">today</i>
-           <input name="admdate" id="admdate" type="text" class="datepicker" required>
-          <label for="admdate">Data de Admissão na UTI</label>
-        </div>
+  </script>
 
-    <!--MEDICO/RESPONSAVEL-->
-    <div class="input-field col s5">
-		<input name="user" id="user" oninput="procurarUser()" aria-controls="example" type="text" required>
-		<input name="Iduser" id="Iduser" type="hidden" required>
-		<label for = "user">Médico Responsável</label>
-    <div id="mostramedico" style="position: absolute;background-color: rgba(255,255,255,1);z-index:5;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
-    </div>
-    
-
-    <!--DATA/FINAL
-    <div class="input-field col s5">
-          <i class="material-icons prefix">today</i>
-           <input name="#" id="#" type="text" class="datepickerfinal" required>
-          <label for="#">Data final do Atendimento</label>
-        </div>
-	-->
-    <!--CAUSA/DE/ADMISSAO-->
-    <div class="input-field col s5">
-          <i class="material-icons prefix">supervisor_account</i>
-          <select multiple name="admcause" id="admcause" required>
-            <option value="" disabled selected>Causa de admissão</option>
-            <option value="1">Oncológico</option>
-            <option value="2">Cardiopatia</option>
-            <option value="3">Cirurgia</option>
-            <option value="4">Paliativo</option>
-            <option value="5">Urgente</option>
-            <option value="6">Quimioterapia</option>
-            <option value="7">Pulmonar</option>
-            <option value="8">IRC</option>
-            <option value="9">Neuropata</option>
-          </select>
-        </div>
-        </p>
-        </div>
-		</div>
-          <div class="modal-footer">
-            <button class="btn waves-effect waves-light light-blue">Cadastrar</button>
-          </div>
-		</div>
-		</form>
-		<!--FIM-DO-MODAL-->
 
   <style>
 
@@ -267,30 +199,90 @@
 
 
 
-  <script>
-  $(onPageLoad);
 
-  function onPageLoad(){
-    $( ".portlet" )
-      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-      .find( ".portlet-header" )
-      .addClass( "ui-widget-header ui-corner-all" )
-      .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
 
-    $( ".portlet-toggle" ).click(function() {
-      var icon = $( this );
-      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
-      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-    });
-  };
+  <!--MODAL-->
+<div id="modal1" class="modal">
+          <div class="modal-content">
+       <h4 class="center">Cadastro Atendimento</h4>
+         <p>
+  <!--CLASS/FORM-->
+   <div class="row">
+    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
+    
+    <!--PACIENTE-->
+    <div class="input-field col s6">
+    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
+  <input name="Idpatient" id="Idpatient" type="hidden" required>
+    <label for = "patient">Paciente</label>
+    <div id="mostrapaciente"></div>
+    </div>
 
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-    $('#modal1').modal('open');
-    $('#modal1').modal('close');
+    <!--HOSPITAL-->
+    <div class="input-field col s6">
+    <input name="hospital" id="hospital" aria-controls="example" type="text" value="<?=$hospitalName?>" required disabled>
+    <label for="hospital" style="color: #9e9e9e;">Hospital</label>
+    </div>
 
-  </script>
+    <!--UTI-->
+    <div class="input-field col s6">
+  <select name="uti" id="uti">
+  <option value="" disabled selected>UTI</option>
+    <?php foreach($utis as $uti){?>
+    <option value="<?=$uti->id?>"><?=$uti->name_itu?></option>
+  <?php } ?>
+  </select>
+    <label for = "uti">UTI</label>
+    </div>
+
+    <!--LEITO-->
+    <div class="input-field col s6">
+    <select name="leito" id="leito">
+  <option value="" disabled selected>Leito</option>
+  </select>
+    <label for="leito">Leito</label>
+    </div>
+
+    <!--DATA/ADMISSAO/UTI-->
+    <div class="input-field col s6">
+          <i class="material-icons prefix">today</i>
+           <input name="admdate" id="admdate" type="text" class="datepicker" required>
+          <label for="admdate">Data de Admissão na UTI</label>
+        </div>
+    
+    <!--CAUSA/DE/ADMISSAO-->
+    <div class="input-field col s6">
+          <i class="material-icons prefix">supervisor_account</i>
+          <select multiple name="admcause" id="admcause" required>
+            <option value="" disabled selected>Causa de admissão</option>
+            <option value="1">Oncológico</option>
+            <option value="2">Cardiopatia</option>
+            <option value="3">Cirurgia</option>
+            <option value="4">Paliativo</option>
+            <option value="5">Urgente</option>
+            <option value="6">Quimioterapia</option>
+            <option value="7">Pulmonar</option>
+            <option value="8">IRC</option>
+            <option value="9">Neuropata</option>
+          </select>
+        </div>
+
+          <!--MEDICO/RESPONSAVEL-->
+    <div class="input-field col s6">
+    <input name="user" id="user" oninput="procurarUser()" aria-controls="example" type="text" required>
+    <input name="Iduser" id="Iduser" type="hidden" required>
+    <label for = "user">Médico Responsável</label>
+    <div id="mostramedico"></div>
+    </div>
+        </p>
+        </div>
+    </div>
+          <div >
+            <button style="margin-bottom:5%; margin-right:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
+          </div>
+    </div>
+    </form>
+    <!--FIM-DO-MODAL-->
 
 
 <div class="main margemCentro">

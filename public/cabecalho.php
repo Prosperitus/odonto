@@ -111,10 +111,6 @@
 
     </style>
 
-
-
-  <body style="min-height:100%;position:relative;">
-
     <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
       (function($){
@@ -133,14 +129,6 @@
           <ul class="left">
             <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
           </ul>
-        </div>
-        <div class="row">
-          <div class="col s10">
-            <ul class="right">
-              <form>
-              </form>
-            </ul>
-          </div>
         </div>
       </div>
     </nav>
@@ -162,5 +150,4 @@
         <li><a href="../backend/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
       </ul>
     </div>
-  </body>
 </header>
