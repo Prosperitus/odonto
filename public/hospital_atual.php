@@ -81,7 +81,7 @@
 			<?php if($hospital->image == '' || $hospital->image == null){
 	?>
 
-	   <div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 22%;position:absolute">
+	   <div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 50%;position:absolute;margin-left:-300px">
 	      <div class="card">
 	        <div class="card-image" style="max-height:200px">
 	          <img src="../images/hospital 2.jpg" style="height: 200px;width: 200px;">
@@ -100,7 +100,7 @@
 		
 		<?php }else{  ?>
 			
-			<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 20%;position:absolute">
+			<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 50%;position:absolute;margin-left:-300px">
 			      <div class="card">
 				<div class="card-image" style="max-height:200px">
 				  <img src="<?=$hospital->image?>" style="height: 200px;width: 200px;">
