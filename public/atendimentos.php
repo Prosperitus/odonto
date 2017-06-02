@@ -2,6 +2,7 @@
 	require_once "cabecalho.php";
 	
 	require_once "../database/dbhospital.php";
+	require_once "../database/dbattendance.php";
 	if(isset($_SESSION['hospital'])){
 		$hospital = $_SESSION['hospital'];
 		$hospitalName = $hospital->name;
@@ -11,10 +12,18 @@
 		echo "<script>location.href='busca-hospital.php';</script>";
 		die();
 	}
+	function retornaJsonAttendance(){
+		$db = new DbAttendance();
+		$result = $db->searchAttendanceAll();
+		
+	}
 
 ?>
 <script type="text/javascript">
   $(document).ready(function(){
+	var data = "";
+	alert(data);
+	  
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
     $('.pacientes').click(function(){
@@ -88,6 +97,7 @@
 		$('#Iduser').val(id);
         $('#mostramedico').css('display','none');
     };
+	
 </script>
 <!--MODAL-->
 <div id="modal1" class="modal modal-fixed-footer">
@@ -128,7 +138,7 @@
     <select name="leito" id="leito">
 	<option value="" disabled selected>Leito</option>
 	</select>
-    <label for = "leito">Leito</label>
+    <label for="leito">Leito</label>
     </div>
 
     <!--DATA/ADMISSAO/UTI-->
@@ -141,9 +151,9 @@
     <!--MEDICO/RESPONSAVEL-->
     <div class="input-field col s5">
 		<input name="user" id="user" oninput="procurarUser()" aria-controls="example" type="text" required>
-		<input name="Iduser" id="user" type="hidden" required>
+		<input name="Iduser" id="Iduser" type="hidden" required>
 		<label for = "user">Médico Responsável</label>
-    <div id="mostramedico" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
+    <div id="mostramedico" style="position: absolute;background-color: rgba(255,255,255,1);z-index:5;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
     </div>
     
 
@@ -174,7 +184,7 @@
         </div>
 		</div>
           <div class="modal-footer">
-            <button class="btn waves-effect waves-light light-blue">Cadastrar</a>
+            <button class="btn waves-effect waves-light light-blue">Cadastrar</button>
           </div>
 		</div>
 		</form>
@@ -380,24 +390,5 @@
 </div>
 
 </div>
-
-  <script>
-    $('.datepickerfinal').pickadate({
-    	monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-  		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-  		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-  		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-  		today: 'Hoje',
-  		clear: 'Limpar',
-  		close: 'Pronto',
-  		labelMonthNext: 'Próximo mês',
-  		labelMonthPrev: 'Mês anterior',
-  		labelMonthSelect: 'Selecione um mês',
-  		labelYearSelect: 'Selecione um ano',
-		selectYears:100,
-  		format: 'dd !de mmmm !de yyyy',
-  		formatSubmit: 'yyyy-mm-dd'
-    });
-  </script>
 
 <?php require_once "rodape.php";

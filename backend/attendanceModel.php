@@ -15,12 +15,16 @@
 	 private $leito;	
 
 	 //------------TIPADAS------------
-	 private Hospital $hospital = new Hospital();
-	 private Employee $employee = new Employee();
-	 private Patient $patient = new Patient();
+	 private $hospital;
+	 private $doctor;
+	 private $patient;
 	 //--------------------------------
 
-
+	function __construct(){
+		$this->hospital = new Hospital();
+		$this->doctor = new Employee();
+		$this->patient = new Patient();
+	}
 
 	 public function getImage(){
 		 return $this->image;
@@ -39,9 +43,7 @@
 	 }
 
 
-	 function __construct(){
-
-		}
+	 
 
 	 public function getAdmissionCause(){
 		 return $this->admissionCause;
@@ -102,12 +104,12 @@
 		 $this->hospital = $hospital;
 	 }
 	 
-	 public function getEmployee(){
-		 return $this->employee;
+	 public function getDoctor(){
+		 return $this->doctor;
 	 }
 	 
-	 public function setEmployee($employee){
-		 $this->employee = $employee;
+	 public function setDoctor($doctor){
+		 $this->doctor = $doctor;
 	 }
 	 
 	 

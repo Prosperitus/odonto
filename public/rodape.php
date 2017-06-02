@@ -27,10 +27,10 @@
   		labelMonthPrev: 'Mês anterior',
   		labelMonthSelect: 'Selecione um mês',
   		labelYearSelect: 'Selecione um ano',
-      selectYears:100,
+        selectYears:100,
   		max:$.now(),
-  		format: 'dd !de mmmm !de yyyy',
-  		formatSubmit: 'yyyy-mm-dd'
+		formatSubmit: 'yyyy-mm-dd',
+  		format: 'dd !de mmmm !de yyyy'
     });
     $(document).ready(function() {
       $('select').material_select();
@@ -38,6 +38,7 @@
       $(document).ready(function() {
       $('#example').DataTable();
     } );
+  
   </script>
   <script src="../js/mask.js"></script>
   <script src="../js/mask_funcionario.js"></script>

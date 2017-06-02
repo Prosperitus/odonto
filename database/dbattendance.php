@@ -1,9 +1,9 @@
 <?php 
 
 include_once "dbconnect.php";
-include_once "/opt/lampp/htdocs/odonto/backend/patientModel.php";
-include_once "/opt/lampp/htdocs/odonto/backend/Hospitalmodel.php";
-include_once "/opt/lampp/htdocs/odonto/backend/employeeModel.php";
+include_once "../backend/patientModel.php";
+include_once "../backend/Hospitalmodel.php";
+include_once "../backend/employeeModel.php";
 
 
 
@@ -13,28 +13,27 @@ class DbAttendance
 
 	public function addAttendance($attendance){
         try{
-           $sql = "INSERT INTO attendance (patient, hospital, itu, admDate, employee, finalDate, admCause, bonequinha)
-                  VALUES (:patient, :hospital, :itu, :admission_date_itu, :doctor_responsible, :final_date, :admission_cause, :bonequinha)";
+           $sql = "INSERT INTO attendance (patient, hospital, leito,status, admission_date_itu, doctor_responsible, admission_cause)
+                  VALUES (:patient, :hospital, :leito,:status, :admission_date_itu, :doctor_responsible, :admission_cause)";
 
        $gaPatient = $attendance->getPatient();
        $gaHospital = $attendance->getHospital();
-       $gaUti = $attendance->getUti();
+       $gaLeito = $attendance->getLeito();
        $gaAdmDate = $attendance->getUtiAdmissionDate();
-       $gaEmployee = $attendance->getEmployee();
-       $gaFinalDate = $attendance->getAttendanceFinalDate();
+       $gaEmployee = $attendance->getDoctor();
        $gaAdmCause = $attendance->getAdmissionCause();
-       $gaBonequinha = $attendance->getBonequinha();
+       //$gaBonequinha = $attendance->getBonequinha();
+	   $gaStatus = 1;
 
        $conn = new DbConnector();
        $stmt = $conn->getConn()->prepare($sql);
        $stmt->bindParam(':patient', $gaPatient);
        $stmt->bindParam(':hospital', $gaHospital);
-       $stmt->bindParam(':itu', $gaUti);
+       $stmt->bindParam(':leito', $gaLeito);
+	   $stmt->bindParam(':status', $gaStatus);
        $stmt->bindParam(':admission_date_itu', $gaAdmDate);
        $stmt->bindParam(':doctor_responsible', $gaEmployee);
-       $stmt->bindParam(':final_date', $gaFinalDate);
        $stmt->bindParam(':admission_cause', $gaAdmCause);
-       $stmt->bindParam(':bonequinha', $gaBonequinha);
 
        $result = $stmt->execute();
        //var_dump($result);
@@ -68,6 +67,22 @@ class DbAttendance
 
     }
 
+  }
+  
+  public function searchAttendanceAll($filter) {
+
+    try {
+      $sql = "SELECT * FROM attendance";
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      return $result;
+      }
+      catch(PDOExeption $e) {
+        return $result;
+    }
   }
 
 }
