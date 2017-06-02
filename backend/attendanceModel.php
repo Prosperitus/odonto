@@ -12,7 +12,7 @@
 	 private $bonequinha;
 	 private $medicalRecord;
 	 private $image; //não obrigatório
-	 private $uti;	
+	 private $leito;	
 
 	 //------------TIPADAS------------
 	 private Hospital $hospital = new Hospital();
@@ -51,12 +51,12 @@
 		 $this->admissionCause = $admissionCause;
 	 }
 
-	 public function getUti(){
-		 return $this->uti;
+	 public function getLeito(){
+		 return $this->leito;
 	 }
 	 
-	 public function setUti($uti){
-		 $this->uti = $uti;
+	 public function setLeito($leito){
+		 $this->leito = $leito;
 	 }
 
 

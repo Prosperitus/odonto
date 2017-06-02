@@ -117,7 +117,8 @@ CREATE TABLE attendance(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
-	`itu` int  NOT NULL,
+	`leito` int  NOT NULL,
+	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
 	`admission_cause` int NOT NULL,
@@ -177,10 +178,16 @@ ALTER TABLE users
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
 
 ALTER TABLE attendance
-ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id); 
+ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_status_attendance FOREIGN KEY (status) REFERENCES stats(id); 
 
 ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
+
+ALTER TABLE attendance
+ADD CONSTRAINT fk_leito FOREIGN KEY (leito) REFERENCES itu_bed(id);
 
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
@@ -237,6 +244,6 @@ VALUES ('In_evaluation') , ('In_reavaluation') , ('In_approval') , ('Approved_by
 CREATE INDEX idx_patient ON attendance(patient); 
 CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
 CREATE INDEX idx_hospital ON  attendance(hospital);
-CREATE INDEX idx_itu ON  attendance(itu);
+CREATE INDEX idx_itu ON  attendance(leito);
 CREATE INDEX idx_admition_cause ON attendance(admission_cause);
 CREATE INDEX idx_admition_date_itu ON attendance(admission_date_itu);

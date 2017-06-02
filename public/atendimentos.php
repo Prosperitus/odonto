@@ -147,13 +147,13 @@
     </div>
     
 
-    <!--DATA/FINAL-->
+    <!--DATA/FINAL
     <div class="input-field col s5">
           <i class="material-icons prefix">today</i>
            <input name="#" id="#" type="text" class="datepickerfinal" required>
           <label for="#">Data final do Atendimento</label>
         </div>
-
+	-->
     <!--CAUSA/DE/ADMISSAO-->
     <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
@@ -310,7 +310,7 @@
 <div style="bottom: 80px;position:relative">
 
   <div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" >Avaliação</div>
+    <div class="card-panel lighten-2 col s10" id="avaliacao">Avaliação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Paciente Impaciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -326,11 +326,11 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Reavaliação</div>
+    <div class="card-panel lighten-2 col s10" id="reavaliacao">Reavaliação</div>
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Aprovação</div>
+    <div class="card-panel lighten-2 col s10" id="aprovacao">Aprovação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Bonus Paciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -342,7 +342,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Orçamento</div>
+    <div class="card-panel lighten-2 col s10" id="orcamento">Orçamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Carinha Que Mora Logo Ali</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -354,7 +354,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Acompanhamento</div>
+    <div class="card-panel lighten-2 col s10" id="acompanhamento">Acompanhamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Pai do Cebolinha</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -366,7 +366,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10">Concluido</div>
+    <div class="card-panel lighten-2 col s10" id="concluido">Concluido</div>
     <div class="portlet">
       <div class="portlet-header">Capitão Caverna</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
