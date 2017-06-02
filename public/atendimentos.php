@@ -119,6 +119,22 @@
     $('#modal1').modal('open');
     $('#modal1').modal('close');
 
+
+
+    $(document).ready(function(){
+      $("#adicionar").click(function(){
+        var template = [
+          '<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">',
+            '<div class="portlet-header ui-widget-header ui-corner-all">Paciente Extra <span class="ui-icon ui-icon-minusthick portlet-togle"></span></div>',
+            '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>',
+          '</div>'
+        ].join('');
+        $("#conteudo").append(template);
+      });
+    });
+
+
+
   </script>
 
 
@@ -278,7 +294,7 @@
         </div>
     </div>
           <div >
-            <button style="margin-bottom:5%; margin-right:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
+            <button id="adicionar" style="margin-bottom:5%; margin-right:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
           </div>
     </div>
     </form>
@@ -327,7 +343,7 @@
 	  </div>
 	</div>
 
-	<div class="column col s2 m2">
+	<div id="conteudo" class="column col s2 m2">
     <div class="card-panel lighten-2 col s10" id="reavaliacao">Reavaliação</div>
 	</div>
 
