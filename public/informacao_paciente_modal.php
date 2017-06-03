@@ -10,101 +10,114 @@
     $('#modal1').modal('open');
     $('#modal1').modal('close');
    
+
 </script>
 </head>
 <body>
 <a class="btn waves-effect waves-light light-blue" href="#modal1">Modal</a>
-<div id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-       <h4>Card</h4>
-         <p>
-  <!--CLASS/FORM-->
-   <div class="row margemCentro">
-    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    </form>
-    <!--PACIENTE-->
- 
+<div style="width:900px; height:700px;" id="modal1" class="modal modal-fixed-footer">
+          <div style="width:900px; height:700px;" class="modal-content">
+      
+      <div style="background-color: #03a9f4;">
+      <div style="display:inline-block;">
+      <h4 style="text-align: center; margin:20px;color:white;">Alvin's Card</h4>
+      </div>
+      <div style="display:inline-block; margin:20px;float: right;">
+      <a class="btn-floating btn-small waves-effect waves-light light-blue darken-2"><i class="material-icons">mode_edit</i></a>
+      </div>
+      </div>
 
-    <div class="input-field col s5">
-      <input value="Alvin" id="first_name2" type="text" class="validate">
-      <label class="active" for="first_name2">First Name</label>
+          <!--Foto-->
+
+        <div class="col s12" style=" height:130px; background-color: #f5f5f5;">
+        <div class="col s12">
+        <img  style="width:100px; margin:15px;display:inline-block;" src="../images/paciente.jpg" alt="" class="circle responsive-img col s6"> <!-- notice the "circle" class -->
+         </div> 
+        </div>
+     
+  <!--CLASS/FORM-->
+   <div style="background-color: #f5f5f5;" class="row">
+    <form class="col s12 m12" action="../backend/addAttendance.php" method="post" required>
+    </form>
+
+
+    <!--PACIENTE-->
+
+
+    <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a;" value="Alvin" id="first_name2" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="first_name2">First Name</label>
     </div>
  
 
 
-    <div class="input-field col s5">
-      <input value="Fields" id="second_name" type="text" class="validate">
-      <label class="active" for="second_name">Second Name</label>
+    <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="Fields" id="second_name" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="second_name">Second Name</label>
     </div>
  
 
         
     <!--HOSPITAL-->
    
-    <div class="input-field col s5">
-      <input value="Santa Helena" id="hospital" type="text" class="validate">
-      <label class="active" for="hospital">Hospital</label>
+    <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="Santa Helena" id="hospital" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="hospital">Hospital</label>
     </div>
 
     <!--UTI-->
-    <div class="input-field col s5">
-      <input value="2" id="uti" type="text" class="validate">
-      <label class="active" for="uti">UTI</label>
+    <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="2" id="uti" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="uti">UTI</label>
     </div>
     <!--LEITO-->
-    <div class="input-field col s5">
-      <input value="3" id="leito" type="text" class="validate">
-      <label class="active" for="leito">Leito</label>
+    <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="3" id="leito" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="leito">Leito</label>
     </div>
 
     <!--DATA/ADMISSAO/UTI-->
-    <div class="input-field col s5">
-           <input value="02/10/1988" name="admdate" id="admdate" type="text" class="datepicker" required>
-          <label class="active" for="admdate">Data de Admissão na UTI</label>
+    <div class="input-field col s6">
+           <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="02/10/1988" name="admdate" id="admdate" type="text" class="datepicker" required disabled>
+          <label style="color: #26a69a;" class="active" for="admdate">Data de Admissão na UTI</label>
         </div>
 
     <!--MEDICO/RESPONSAVEL-->
-     <div class="input-field col s5">
-      <input value="Rodrigo da Silva" id="medicoresponsavel" type="text" class="validate">
-      <label class="active" for="medicoresponsavel">Medico Responsavel</label>
+     <div class="input-field col s6">
+      <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="Rodrigo da Silva" id="medicoresponsavel" type="text" class="validate" disabled>
+      <label style="color: #26a69a;" class="active" for="medicoresponsavel">Medico Responsavel</label>
     </div>
     
 
     <!--DATA/FINAL-->
-    <div class="input-field col s5">
-           <input value="02/10/2016" name="admdate" id="enddate" type="text" class="datepicker" required>
-          <label class="active" for="enddate">Data Final do Atendimento</label>
+    <div class="input-field col s6">
+           <input style="color: #5e5e5e;border-bottom:1px solid #26a69a" value="02/10/2016" name="admdate" id="enddate" type="text" class="datepicker" required disabled>
+          <label style="color: #26a69a;" class="active" for="enddate">Data Final do Atendimento</label>
         </div>
 
 
 
     <!--CAUSA/DE/ADMISSAO-->
-    <div class="input-field col s5">
-     <label class="active" for="enddate">Causa de admissão</label>
-          <select multiple name="admcause" id="admcause" required>
-            <option value="Perca de molar" disabled selected>Causa de admissão</option>
-            <option value="1">Oncológico</option>
-            <option value="2">Cardiopatia</option>
-            <option value="3">Cirurgia</option>
-            <option value="4">Paliativo</option>
-            <option value="5">Urgente</option>
-            <option value="6">Quimioterapia</option>
-            <option value="7">Pulmonar</option>
-            <option value="8">IRC</option>
-            <option value="9">Neuropata</option>
+    <div class="input-field col s6">
+     <label style="color: #26a69a;" class="active" for="enddate">Causa de admissão</label>
+          <select multiple name="admcause" id="admcause" required disabled>
+            <option style="color: #5e5e5e;" value="Perca de molar" selected>Causa de admissão</option>
+            <option style="color: #5e5e5e;" value="1">Oncológico</option>
+            <option style="color: #5e5e5e;" value="2">Cardiopatia</option>
+            <option style="color: #5e5e5e;"  value="3">Cirurgia</option>
+            <option style="color: #5e5e5e;" value="4">Paliativo</option>
+            <option style="color: #5e5e5e;" value="5">Urgente</option>
+            <option style="color: #5e5e5e;"  value="6">Quimioterapia</option>
+            <option style="color: #5e5e5e;" value="7">Pulmonar</option>
+            <option style="color: #5e5e5e;" value="8">IRC</option>
+            <option style="color: #5e5e5e;" value="9">Neuropata</option>
           </select>
         </div>
         </p>
         </div>
-
-        
-          <div>
-            <a href="#!" class="btn waves-effect waves-light light-blue">Ok</a>
-          </div>
-        </div>
-        </body>
-
-
+             <button   class="btn waves-effect waves-light light-blue">Salvar</button>
+       
+       
     <!--SCRIPSTS-->
   <script>
     $('.datepicker').pickadate({
