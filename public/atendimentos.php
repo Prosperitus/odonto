@@ -20,7 +20,17 @@
 
 ?>
 <script>
+ 
   $(document).ready(function(){
+     $("#adicionar").click(function(){
+        var template = [
+          '<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">',
+            '<div class="portlet-header ui-widget-header ui-corner-all">Paciente Extra <span class="ui-icon ui-icon-minusthick portlet-togle"></span></div>',
+            '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>',
+          '</div>'
+        ].join('');
+        $("#conteudo").append(template);
+      });
 	var data = "";
 	alert(data);
 	  
@@ -97,29 +107,9 @@
 		$('#Iduser').val(id);
         $('#mostramedico').css('display','none');
     };
-<<<<<<< HEAD
-	
-</script>
-<!--MODAL-->
-<div style="width:900px; height:700px;" id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-       <h4 style="margin:20px;margin-bottom:40px;">Cadastro Atendimento</h4>
-         <p>
 
-  <!--CLASS/FORM-->
-   <div class="row margemCentro">
-    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    
-    <!--PACIENTE-->
-    <div class="input-field col s5">
-    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
-	<input name="Idpatient" id="Idpatient" type="hidden" required>
-    <label for = "patient">Paciente</label>
-    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
-    </div>
-=======
-  $(onPageLoad);
->>>>>>> 35d6aa5aa4f94bf705a5bb6e33c1aef5ebdaffcc
+	$(onPageLoad);
+
 
   function onPageLoad(){
     $( ".portlet" )
@@ -140,11 +130,28 @@
   });
     $('#modal1').modal('open');
     $('#modal1').modal('close');
+</script>
+<!--MODAL-->
+<div style="width:900px; height:700px;" id="modal1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+       <h4 style="margin:20px;margin-bottom:40px;">Cadastro Atendimento</h4>
+         <p>
 
+  <!--CLASS/FORM-->
+   <div class="row margemCentro">
+    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
+    
+    <!--PACIENTE-->
+    <div class="input-field col s5">
+    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
+	<input name="Idpatient" id="Idpatient" type="hidden" required>
+    <label for = "patient">Paciente</label>
+    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
+    </div>
 
+  
 
-<<<<<<< HEAD
-    <!--DATA/FINAL
+    <!--DATA/FINAL-->
     <div class="input-field col s5">
           <i class="material-icons prefix">today</i>
            <input name="#" id="#" type="text" class="datepickerfinal" required>
@@ -176,24 +183,11 @@
 		</div>
 		</form>
 		<!--FIM-DO-MODAL-->
-=======
-    $(document).ready(function(){
-      $("#adicionar").click(function(){
-        var template = [
-          '<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">',
-            '<div class="portlet-header ui-widget-header ui-corner-all">Paciente Extra <span class="ui-icon ui-icon-minusthick portlet-togle"></span></div>',
-            '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>',
-          '</div>'
-        ].join('');
-        $("#conteudo").append(template);
-      });
-    });
+
+ 
 
 
 
-  </script>
-
->>>>>>> 35d6aa5aa4f94bf705a5bb6e33c1aef5ebdaffcc
 
   <style>
 
