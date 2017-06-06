@@ -1,6 +1,6 @@
 <?php
 	require_once "cabecalho.php";
-	
+
 	require_once "../database/dbhospital.php";
 	require_once "../database/dbattendance.php";
 	if(isset($_SESSION['hospital'])){
@@ -15,93 +15,95 @@
 	function retornaJsonAttendance(){
 		$db = new DbAttendance();
 		$result = $db->searchAttendanceAll();
-		
+
 	}
 
 ?>
 <script>
- 
-  $(document).ready(function(){
-     $("#adicionar").click(function(){
-        var template = [
-          '<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">',
-            '<div class="portlet-header ui-widget-header ui-corner-all">Paciente Extra <span class="ui-icon ui-icon-minusthick portlet-togle"></span></div>',
-            '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>',
-          '</div>'
-        ].join('');
-        $("#conteudo").append(template);
-      });
-	var data = "";
-	alert(data);
-	  
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
+		$(document).ready(function(){
+      $("#adicionar").click(function(){
+        var addCard = [
+					 '<div class="portlet">'
+				 +   '<div class="portlet-header">Bonus Paciente'
+				 +		'<span class="btn-floating waves-effect waves-light"><i class="material-icons">mode_edit</i></span>'
+				 +		'</div>'
+				 +   '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>'
+				 + '</div>'
+			];
+				$("#conteudo").append(addCard);
+				$(".portlet")
+					.addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+					.find(".portlet-header")
+					.addClass("ui-widget-header ui-corner-all")
+			});
+    });
+
     $('.modal').modal();
     $('.pacientes').click(function(){
         var text = $(this).text();
         $('#patient').val();
     });
-	
+$(document).ready(function(){
 	$('#uti').change(function(){
 		value = $('#uti').val();
-		$.ajax({ 
+		$.ajax({
 			type: 'get',
 			dataType: 'html',
 			url: "../backend/viewLeitoUti.php?id=" + value,
 			success: function (data) {
 			  $('#leito').html(data);
 			  $('select').material_select();
-			} 
+			}
         });
 	});
-  });
-    $('#modal1').modal('open');
-    $('#modal1').modal('close');
-	
+});
+
 	function procurarUser() {
       value = $('#user').val();
-      if(value != ""){ 
-      $.ajax({ 
+      if(value != ""){
+      $.ajax({
         type: 'get',
         dataType: 'html',
         url: "../backend/viewAtendenceUser.php?name=" + value,
-        beforeSend: function () { 
-        }, 
+        beforeSend: function () {
+        },
         success: function (data) {
           $('#mostramedico').css('display','block');
           $('#mostramedico').html(data);
-        } 
+        }
       });
       }else{
         $('#mostramedico').css('display','none');
         $('#mostramedico').html("");
-      } 
+      }
     }
-	
+
       function procurar() {
       value = $('#patient').val();
-      if(value != ""){ 
-      $.ajax({ 
+      if(value != ""){
+      $.ajax({
         type: 'get',
         dataType: 'html',
         url: "../backend/viewAtendencePatient.php?name=" + value,
-        beforeSend: function () { 
-        }, 
+        beforeSend: function () {
+        },
         success: function (data) {
           $('#mostrapaciente').css('display','block');
           $('#mostrapaciente').html(data);
-        } 
+        }
       });
       }else{
         $('#mostrapaciente').css('display','none');
         $('#mostrapaciente').html("");
-      } 
+      }
     }
     function clickpaciente(text,id){
         $('#patient').val(text);
 		$('#Idpatient').val(id);
         $('#mostrapaciente').css('display','none');
     };
-	
+
 	function clickmedico(text,id){
         $('#user').val(text);
 		$('#Iduser').val(id);
@@ -116,13 +118,7 @@
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
       .addClass( "ui-widget-header ui-corner-all" )
-      .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-
-    $( ".portlet-toggle" ).click(function() {
-      var icon = $( this );
-      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
-      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-    });
+			//.append( "<a class='btn-floating'><i class='material-icons'>mode_edit</i></a>");
   };
 
   $(document).ready(function(){
@@ -131,66 +127,16 @@
     $('#modal1').modal('open');
     $('#modal1').modal('close');
 </script>
-<!--MODAL-->
-<div style="width:900px; height:700px;" id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-       <h4 style="margin:20px;margin-bottom:40px;">Cadastro Atendimento</h4>
-         <p>
-
-  <!--CLASS/FORM-->
-   <div class="row margemCentro">
-    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    
-    <!--PACIENTE-->
-    <div class="input-field col s5">
-    <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
-	<input name="Idpatient" id="Idpatient" type="hidden" required>
-    <label for = "patient">Paciente</label>
-    <div id="mostrapaciente" style="position: absolute;background-color: rgba(255,255,255,1);z-index:4;top:46px;width:322px;border-left: 1px solid #aaaaaa;border-right: 1px solid #aaaaaa;border-bottom: 1px solid #aaaaaa;display: none;border-radius: 0px 0px 5px 5px;"></div>
-    </div>
-
-  
-
-    <!--DATA/FINAL-->
-    <div class="input-field col s5">
-          <i class="material-icons prefix">today</i>
-           <input name="#" id="#" type="text" class="datepickerfinal" required>
-          <label for="#">Data final do Atendimento</label>
-        </div>
-	-->
-    <!--CAUSA/DE/ADMISSAO-->
-    <div class="input-field col s5">
-          <i class="material-icons prefix">supervisor_account</i>
-          <select multiple name="admcause" id="admcause" required>
-            <option value="" disabled selected>Causa de admissão</option>
-            <option value="1">Oncológico</option>
-            <option value="2">Cardiopatia</option>
-            <option value="3">Cirurgia</option>
-            <option value="4">Paliativo</option>
-            <option value="5">Urgente</option>
-            <option value="6">Quimioterapia</option>
-            <option value="7">Pulmonar</option>
-            <option value="8">IRC</option>
-            <option value="9">Neuropata</option>
-          </select>
-        </div>
-        </p>
-        </div>
-		</div>
-          <div class="modal-footer">
-            <button style="margin:5px;" class="btn waves-effect waves-light light-blue">Cadastrar</button>
-          </div>
-		</div>
-		</form>
-		<!--FIM-DO-MODAL-->
-
- 
-
-
-
-
   <style>
-
+	.botao {
+		position:relative;
+		padding:6px 15px;
+		left:-4px;
+		border:2px solid #03a9f4;
+		background-color:#03a9f4;
+		color:#fafafa;
+		margin-top: 50px;
+	}
   #formestilo2 {
     float: left;
   }
@@ -216,17 +162,10 @@
     background-color:#03a9f4;
     color:#fafafa;
     margin-top: 50px;
-
   }
   #botao:hover  {
     background-color:#fafafa;
     color:#207cca;
-  }
-
-  .tilt {
-    transform: rotate(3deg);
-    -moz-transform: rotate(3deg);
-    -webkit-transform: rotate(3deg);
   }
 
   body {
@@ -241,18 +180,15 @@
   .portlet {
     margin: 0 1em 1em 0;
     padding: 0.3em;
-
   }
+	.column-title{
+	margin: 0 1em 1em 0;
+	padding: 0.3em;
+	}
   .portlet-header {
     padding: 0.2em 0.3em;
     margin-bottom: 0.5em;
     position: relative;
-  }
-  .portlet-toggle {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -8px;
   }
   .portlet-content {
     padding: 0.4em;
@@ -264,19 +200,15 @@
   }
   </style>
 
-
-
-
-
   <!--MODAL-->
-<div id="modal1" class="modal">
+<div id="modal1" style="width:60%;" class="modal">
           <div class="modal-content">
        <h4 class="center">Cadastro Atendimento</h4>
          <p>
   <!--CLASS/FORM-->
    <div class="row">
     <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
-    
+
     <!--PACIENTE-->
     <div class="input-field col s6">
     <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
@@ -312,14 +244,12 @@
 
     <!--DATA/ADMISSAO/UTI-->
     <div class="input-field col s6">
-          <i class="material-icons prefix">today</i>
            <input name="admdate" id="admdate" type="text" class="datepicker" required>
           <label for="admdate">Data de Admissão na UTI</label>
         </div>
-    
+
     <!--CAUSA/DE/ADMISSAO-->
     <div class="input-field col s6">
-          <i class="material-icons prefix">supervisor_account</i>
           <select multiple name="admcause" id="admcause" required>
             <option value="" disabled selected>Causa de admissão</option>
             <option value="1">Oncológico</option>
@@ -341,12 +271,13 @@
     <label for = "user">Médico Responsável</label>
     <div id="mostramedico"></div>
     </div>
-        </p>
+		<div >
+			<button id="adicionar" style="margin-top:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
+		</div>
+				</p>
         </div>
     </div>
-          <div >
-            <button id="adicionar" style="margin-bottom:5%; margin-right:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
-          </div>
+
     </div>
     </form>
     <!--FIM-DO-MODAL-->
@@ -367,7 +298,7 @@
       <ul>
         <form id="formestilo2">
           <div id="input-field">
-			<a class="btn waves-effect waves-light light-blue" href="#modal1">Adicionar Cadastro</a>
+			<a id="botao" href="#modal1">Adicionar Cadastro</a>
           </div>
         </form>
       </ul>
@@ -379,7 +310,7 @@
 <div style="bottom: 80px;position:relative">
 
   <div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="avaliacao">Avaliação</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="avaliacao">Avaliação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Paciente Impaciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -395,11 +326,11 @@
 	</div>
 
 	<div id="conteudo" class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="reavaliacao">Reavaliação</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="reavaliacao">Reavaliação</div>
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="aprovacao">Aprovação</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="aprovacao">Aprovação</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Bonus Paciente</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -411,7 +342,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="orcamento">Orçamento</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="orcamento">Orçamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Carinha Que Mora Logo Ali</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -423,7 +354,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="acompanhamento">Acompanhamento</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="acompanhamento">Acompanhamento</div>
 	  <div class="portlet">
 	    <div class="portlet-header">Pai do Cebolinha</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
@@ -435,7 +366,7 @@
 	</div>
 
 	<div class="column col s2 m2">
-    <div class="card-panel lighten-2 col s10" id="concluido">Concluido</div>
+    <div class="portlet column-title lighten-2 col s10 center" id="concluido">Concluído</div>
     <div class="portlet">
       <div class="portlet-header">Capitão Caverna</div>
 	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
