@@ -23,6 +23,13 @@
   	});
   });
 </script>
+<style>
+	footer{
+		bottom:0%;
+		width:100%;
+		position:fixed;
+	}
+</style>
     <!--CLASS/FORM-->
     <div class="row margemCentro" style="width: 91%">
       <form class="col s11" action="../backend/addUti.php" method="post"> 
