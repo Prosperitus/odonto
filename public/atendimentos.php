@@ -25,17 +25,18 @@
       $("#adicionar").click(function(){
         var addCard = [
 					 '<div class="portlet">'
-				 +   '<div class="portlet-header">Bonus Paciente'
-				 +		'<span class="btn-floating waves-effect waves-light"><i class="material-icons">mode_edit</i></span>'
+				 +   '<div class="portlet-header">Novo Paciente'
 				 +		'</div>'
-				 +   '<div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>'
+				 +   '<div class="portlet-content">'
+				 +		'<div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div>'
+				 +		'Comentarios e detalhes sobre o novo paciente.</div>'
 				 + '</div>'
 			];
 				$("#conteudo").append(addCard);
-				$(".portlet")
-					.addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
-					.find(".portlet-header")
-					.addClass("ui-widget-header ui-corner-all")
+				$( ".portlet" )
+		      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+		      .find( ".portlet-header" )
+		      .addClass( "ui-widget-header ui-corner-all" )
 			});
     });
 
@@ -118,8 +119,9 @@ $(document).ready(function(){
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
       .addClass( "ui-widget-header ui-corner-all" )
-			//.append( "<a class='btn-floating'><i class='material-icons'>mode_edit</i></a>");
-  };
+		$(".portlet-content")
+			.prepend( "<div><span class='btn btn-small btn-flat waves-effect waves-light' style='float:right'><i class='material-icons'>mode_edit</i></span></div>");
+  	};
 
   $(document).ready(function(){
     $('.modal').modal();
@@ -128,22 +130,16 @@ $(document).ready(function(){
     $('#modal1').modal('close');
 </script>
   <style>
-	.botao {
-		position:relative;
-		padding:6px 15px;
-		left:-4px;
-		border:2px solid #03a9f4;
-		background-color:#03a9f4;
-		color:#fafafa;
-		margin-top: 50px;
+	.btn-small {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
 	}
   #formestilo2 {
     float: left;
   }
   }
   #formestilo {
-    width:500px;
-    margin:50px auto;
     float: right;
   }
   #pesquisa {
@@ -163,7 +159,20 @@ $(document).ready(function(){
     color:#fafafa;
     margin-top: 50px;
   }
-  #botao:hover  {
+	#adicionar {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+	#adicionar:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+	#botao:hover  {
     background-color:#fafafa;
     color:#207cca;
   }
@@ -272,12 +281,11 @@ $(document).ready(function(){
     <div id="mostramedico"></div>
     </div>
 		<div >
-			<button id="adicionar" style="margin-top:5%" class="btn waves-effect waves-light light-blue right">Cadastrar</button>
+			<button id="adicionar" style="margin:5%; margin-top:2%">Cadastrar</button>
 		</div>
 				</p>
         </div>
     </div>
-
     </div>
     </form>
     <!--FIM-DO-MODAL-->
@@ -285,30 +293,21 @@ $(document).ready(function(){
 
 <div class="main margemCentro">
   <!--SEARCH BAR-->
-  <div class="row">
-    <div class="col s8">
-      <ul class="" style="float:right;bottom:47px;position: relative;left:230px">
-        <form id="formestilo">
-          <div id="input-field">
-            <input id="pesquisa" type="text">
-			<button id="botao" type="submit">Pesquisar</button>
-          </div>
-        </form>
-      </ul>
-      <ul>
-        <form id="formestilo2">
-          <div id="input-field">
-			<a id="botao" href="#modal1">Adicionar Cadastro</a>
-          </div>
-        </form>
-      </ul>
-    </div>
+  <div class="row col s12">
+			<ul>
+				<div class="col s4" style="float:left">
+					<a href="#modal1"><button id="botao">Adicionar Cadastro</button></a>
+				</div>
+				<div class="col s6" style="float:right">
+          <input id="pesquisa" type="text">
+					<button id="botao" type="submit">Pesquisar</button>
+				</div>
+			</ul>
   </div>
 
 
   <!-- BOARD-->
-<div style="bottom: 80px;position:relative">
-
+<div class="col s12">
   <div class="column col s2 m2">
     <div class="portlet column-title lighten-2 col s10 center" id="avaliacao">Avaliação</div>
 	  <div class="portlet">
