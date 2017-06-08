@@ -13,8 +13,8 @@ class DbAttendance
 
 	public function addAttendance($attendance){
         try{
-           $sql = "INSERT INTO attendance (patient, hospital, leito,status, admission_date_itu, doctor_responsible, admission_cause)
-                  VALUES (:patient, :hospital, :leito,:status, :admission_date_itu, :doctor_responsible, :admission_cause)";
+           $sql = "INSERT INTO attendance (patient, hospital, leito,status, admission_date_itu, doctor_responsible, admission_cause,observacoes)
+                  VALUES (:patient, :hospital, :leito,:status, :admission_date_itu, :doctor_responsible, :admission_cause,:observacoes)";
 
        $gaPatient = $attendance->getPatient();
        $gaHospital = $attendance->getHospital();
@@ -22,6 +22,7 @@ class DbAttendance
        $gaAdmDate = $attendance->getUtiAdmissionDate();
        $gaEmployee = $attendance->getDoctor();
        $gaAdmCause = $attendance->getAdmissionCause();
+	   $gaObsPatient = $attendance->getObservacoes();
        //$gaBonequinha = $attendance->getBonequinha();
 	   $gaStatus = 1;
 
@@ -34,6 +35,7 @@ class DbAttendance
        $stmt->bindParam(':admission_date_itu', $gaAdmDate);
        $stmt->bindParam(':doctor_responsible', $gaEmployee);
        $stmt->bindParam(':admission_cause', $gaAdmCause);
+	   $stmt->bindParam(':observacoes', $gaObsPatient);
 
        $result = $stmt->execute();
        //var_dump($result);
@@ -69,12 +71,45 @@ class DbAttendance
 
   }
   
+  public function searchAttendanceLast() {
+
+    try {
+      $sql = "SELECT a.id,a.admission_date_itu,u.name as nameUser,u.surname as surnameUser,u.cro as croUser,
+	  h.name as nameHospital,h.nome_chefe_uti,h.telephone_chefe_uti,
+	  h.telephone_uti,l.name_bed,l.number_itu,hi.name_itu,s.status,ac.type,a.observacoes,p.name as namePatient,
+	  p.surname as surnamePatient
+	  FROM attendance a INNER JOIN patient p ON a.patient = p.id
+	  INNER JOIN users u ON a.doctor_responsible = u.id
+	  INNER JOIN hospital h ON a.hospital = h.id
+	  INNER JOIN itu_bed l ON a.leito = l.id
+	  INNER JOIN hospital_itu hi ON hi.id = l.itu
+	  INNER JOIN stats s ON a.status = s.id
+	  INNER JOIN admission_cause ac on ac.id = a.admission_cause
+	  WHERE a.hospital = :idHospital ORDER BY ID DESC LIMIT 1";
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_OBJ);
+      
+      return $result;
+
+      }
+
+      catch(PDOExeption $e) {
+        return $result;
+
+    }
+
+  }
+  
   public function searchAttendanceAll($idHospital) {
 
     try {
       $sql = "SELECT a.id,a.admission_date_itu,u.name as nameUser,u.surname as surnameUser,u.cro as croUser,
 	  h.name as nameHospital,h.nome_chefe_uti,h.telephone_chefe_uti,
-	  h.telephone_uti,l.name_bed,l.number_itu,hi.name_itu,s.status,ac.type
+	  h.telephone_uti,l.name_bed,l.number_itu,hi.name_itu,s.status,ac.type,a.observacoes,p.name as namePatient,
+	  p.surname as surnamePatient
 	  FROM attendance a INNER JOIN patient p ON a.patient = p.id
 	  INNER JOIN users u ON a.doctor_responsible = u.id
 	  INNER JOIN hospital h ON a.hospital = h.id

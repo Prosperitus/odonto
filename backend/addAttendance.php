@@ -18,6 +18,7 @@
 		$Attendance->setUtiAdmissionDate($_POST["admdate"]);
 		$Attendance->setAdmissionCause($_POST["admcause"]);
 		$Attendance->setDoctor($_POST["Iduser"]);
+		$Attendance->setObservacoes($_POST["obsPaciente"]);
 		//$Attendance->setBonequinha($_POST["bonequinha"]);
 		//$Attendance->setImage($_POST["image"]);
 		//$Attendance->setStatus($_POST["status"]);
@@ -27,8 +28,15 @@
 	}
 
 if(addAttendance()){
-	header("location: ../public/atendimentos.php");
-	die();
+	$conn = new DbAttendance();
+	$result = $conn->searchAttendanceLast();
+	echo '<script>
+			$(document).ready(function(){
+			$("#avaliacao").append(\'<div class="portlet">\'
+			+ \'<div class="portlet-header">'.$result->namePatient.' '.$result->surnamePatient.'</div>\'
+			+ \'<div class="portlet-content">'.$result->observacoes.'</div>\'
+			+ \'</div>\');
+			});</script>';
 }else{
 	header("location: ../public/fail_register.php");
 	die();

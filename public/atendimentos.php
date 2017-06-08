@@ -25,32 +25,25 @@
 ?>
 
 <script>
-
-		$(document).ready(function(){
+$(document).ready(function(){
       $("#adicionar").click(function(){
-        var addCard = [
-					 '<div class="portlet">'
-				 +   '<div class="portlet-header">Novo Paciente'
-				 +		'</div>'
-				 +   '<div class="portlet-content">'
-				 +		'<div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div>'
-				 +		'Comentarios e detalhes sobre o novo paciente.</div>'
-				 + '</div>'
-			];
-				$("#conteudo").append(addCard);
-				$( ".portlet" )
-		      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-		      .find( ".portlet-header" )
-		      .addClass( "ui-widget-header ui-corner-all" )
-			});
-    });
+        $.ajax({
+			type: 'POST',
+			dataType: 'html',
+			data: $('#formAddAttendance').serialize(),
+			url: "../backend/addAttendance.php",
+			success: function (data) {
+				$("#avaliacao").append(data);
+				$('#modal1').modal('close');
+			}
+        });
+		});
 
     $('.modal').modal();
     $('.pacientes').click(function(){
         var text = $(this).text();
         $('#patient').val();
     });
-$(document).ready(function(){
 	$('#uti').change(function(){
 		value = $('#uti').val();
 		$.ajax({
@@ -218,17 +211,17 @@ $(document).ready(function(){
 <div id="modal1" style="width:60%;" class="modal">
           <div class="modal-content">
        <h4 class="center">Cadastro Atendimento</h4>
-         <p>
+   
   <!--CLASS/FORM-->
    <div class="row">
-    <form class="col s11 m12" action="../backend/addAttendance.php" method="post" required>
+    <form class="col s11 m12" id="formAddAttendance" required>
 
     <!--PACIENTE-->
     <div class="input-field col s6">
     <input name="patient" id="patient" oninput="procurar()" aria-controls="example" type="text" required>
-  <input name="Idpatient" id="Idpatient" type="hidden" required>
+	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
-    <div id="mostrapaciente"></div>
+    <div id="mostrapaciente" class="spacewhite"></div>
     </div>
 
     <!--HOSPITAL-->
@@ -283,12 +276,18 @@ $(document).ready(function(){
     <input name="user" id="user" oninput="procurarUser()" aria-controls="example" type="text" required>
     <input name="Iduser" id="Iduser" type="hidden" required>
     <label for = "user">Médico Responsável</label>
+    <div id="mostramedico" class="spacewhite"></div>
+    </div>
+	
+	     <!--OBSERVAÇÕES/PACIENTE-->
+	<div class="input-field col s6">
+	<textarea placeholder="Comentarios e detalhes sobre o paciente" style="height: 70px" name="obsPaciente" required></textarea>
     <div id="mostramedico"></div>
     </div>
 		<div >
 			<button id="adicionar" style="margin:5%; margin-top:2%">Cadastrar</button>
 		</div>
-				</p>
+				
         </div>
     </div>
     </div>

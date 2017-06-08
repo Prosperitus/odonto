@@ -12,7 +12,8 @@
 	 private $bonequinha;
 	 private $medicalRecord;
 	 private $image; //não obrigatório
-	 private $leito;	
+	 private $leito;
+	 private $observacoes;
 
 	 //------------TIPADAS------------
 	 private $hospital;
@@ -26,6 +27,14 @@
 		$this->patient = new Patient();
 	}
 
+	 public function getObservacoes(){
+		 return $this->observacoes;
+	 }
+	 
+	 public function setObservacoes($observacoes){
+		 $this->observacoes = $observacoes;
+	 }
+	 
 	 public function getImage(){
 		 return $this->image;
 	 }
