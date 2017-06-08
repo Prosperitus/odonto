@@ -4,6 +4,7 @@
 	require_once "../database/dbhospital.php";
 	require_once "../database/dbattendance.php";
 	require_once "../backend/prepareAttendance.php";
+	
 	$hospital = "";
 	if(isset($_SESSION['hospital'])){
 		$hospital = $_SESSION['hospital'];
@@ -26,6 +27,17 @@
 
 <script>
 $(document).ready(function(){
+	  $("#botaoPesquisar").click(function(){
+		  var text = $('#pesquisa').val();
+		  $.ajax({
+			type: 'get',
+			dataType: 'html',
+			url: "../backend/consultAttendance.php?text="+text,
+			success: function (data) {
+				$('#boardAttendance').html(data);
+			}
+        });
+	  });
       $("#adicionar").click(function(){
         $.ajax({
 			type: 'POST',
@@ -33,8 +45,8 @@ $(document).ready(function(){
 			data: $('#formAddAttendance').serialize(),
 			url: "../backend/addAttendance.php",
 			success: function (data) {
-				$("#avaliacao").append(data);
 				$('#modal1').modal('close');
+				$("#avaliacao").append(data);
 			}
         });
 		});
@@ -157,6 +169,17 @@ $(document).ready(function(){
     color:#fafafa;
     margin-top: 50px;
   }
+  
+  #botaoPesquisar {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+  
 	#adicionar {
     position:relative;
     padding:6px 15px;
@@ -171,6 +194,11 @@ $(document).ready(function(){
     color:#207cca;
   }
 	#botao:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+  
+  #botaoPesquisar:hover  {
     background-color:#fafafa;
     color:#207cca;
   }
@@ -303,15 +331,15 @@ $(document).ready(function(){
 					<a href="#modal1"><button id="botao">Adicionar Cadastro</button></a>
 				</div>
 				<div class="col s6" style="float:right">
-          <input id="pesquisa" type="text">
-					<button id="botao" type="submit">Pesquisar</button>
+					<input id="pesquisa" type="text">
+					<button id="botaoPesquisar">Pesquisar</button>
 				</div>
 			</ul>
   </div>
 
 
   <!-- BOARD-->
-<div class="col s12">
+<div class="col s12" id="boardAttendance">
   <div class="column col s2 m2" id="avaliacao">
     <div class="portlet column-title lighten-2 col s10 center" >Avaliação</div>
 	</div>
