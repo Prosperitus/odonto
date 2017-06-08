@@ -16,6 +16,15 @@
    
  
    $user = userInform();
+
+
+   $sessao = $_GET['sessao'];
+	if($sessao == 1){
+		
+	}else if($sessao == 0){
+		
+	}
+
    ?>
   
    <script LANGUAGE="JavaScript" TYPE="text/javascript">
@@ -39,6 +48,23 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<script type="text/javascript" src="../dataTables/media/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../dataTables/media/css/jquery.dataTables.min.css">
+
+	<script>
+	var tempo = 60; //sem segundos
+	function contar()
+	{
+	if (tempo <= 0)
+	{
+	}
+	else
+	{
+	  tempo = tempo - 1;
+	}
+
+	setTimeout('java script:contar();', 1000);
+	}
+	</script>
+
 
     <style>
       body {
@@ -110,7 +136,7 @@
 		}
 
     </style>
-
+<body onload="java script:contar();">
     <!--SCRIPT SIDENAV-->
     <script type="text/javascript">
       (function($){
