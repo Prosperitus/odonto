@@ -3,6 +3,8 @@
 
 	require_once "../database/dbhospital.php";
 	require_once "../database/dbattendance.php";
+	require_once "../backend/prepareAttendance.php";
+	$hospital = "";
 	if(isset($_SESSION['hospital'])){
 		$hospital = $_SESSION['hospital'];
 		$hospitalName = $hospital->name;
@@ -12,13 +14,16 @@
 		echo "<script>location.href='busca-hospital.php';</script>";
 		die();
 	}
-	function retornaJsonAttendance(){
 		$db = new DbAttendance();
-		$result = $db->searchAttendanceAll();
-
-	}
+		$attendances = $db->searchAttendanceAll($hospital->id);
+		if($attendances != null || $attendances != false){
+			foreach($attendances as $attendance){
+				echo prepareAttendance($attendance);
+			}
+		}
 
 ?>
+
 <script>
 
 		$(document).ready(function(){
@@ -228,7 +233,7 @@ $(document).ready(function(){
 
     <!--HOSPITAL-->
     <div class="input-field col s6">
-    <input name="hospital" id="hospital" aria-controls="example" type="text" value="<?=$hospitalName?>" required disabled>
+    <input name="hospital" id="hospital" style="border-bottom: 1px solid #9e9e9e;color:inherit;" aria-controls="example" type="text" value="<?=$hospitalName?>" required disabled>
     <label for="hospital" style="color: #9e9e9e;">Hospital</label>
     </div>
 
@@ -308,73 +313,28 @@ $(document).ready(function(){
 
   <!-- BOARD-->
 <div class="col s12">
-  <div class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="avaliacao">Avaliação</div>
-	  <div class="portlet">
-	    <div class="portlet-header">Paciente Impaciente</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	  <div class="portlet">
-	    <div class="portlet-header">Outro Paciente</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	  <div class="portlet">
-	    <div class="portlet-header">Mais um Paciente</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
+  <div class="column col s2 m2" id="avaliacao">
+    <div class="portlet column-title lighten-2 col s10 center" >Avaliação</div>
 	</div>
 
-	<div id="conteudo" class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="reavaliacao">Reavaliação</div>
+	<div id="conteudo" class="column col s2 m2" id="reavaliacao">
+    <div class="portlet column-title lighten-2 col s10 center">Reavaliação</div>
 	</div>
 
-	<div class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="aprovacao">Aprovação</div>
-	  <div class="portlet">
-	    <div class="portlet-header">Bonus Paciente</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	  <div class="portlet">
-	    <div class="portlet-header">Paciente Extra</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
+	<div class="column col s2 m2" id="aprovacao">
+    <div class="portlet column-title lighten-2 col s10 center">Aprovação</div>
 	</div>
 
-	<div class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="orcamento">Orçamento</div>
-	  <div class="portlet">
-	    <div class="portlet-header">Carinha Que Mora Logo Ali</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	  <div class="portlet">
-	    <div class="portlet-header">Cebolinha</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
+	<div class="column col s2 m2" id="orcamento">
+    <div class="portlet column-title lighten-2 col s10 center">Orçamento</div>
 	</div>
 
-	<div class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="acompanhamento">Acompanhamento</div>
-	  <div class="portlet">
-	    <div class="portlet-header">Pai do Cebolinha</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-	  <div class="portlet">
-	    <div class="portlet-header">Justin Bieber</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
+	<div class="column col s2 m2" id="acompanhamento">
+    <div class="portlet column-title lighten-2 col s10 center">Acompanhamento</div>
 	</div>
 
-	<div class="column col s2 m2">
-    <div class="portlet column-title lighten-2 col s10 center" id="concluido">Concluído</div>
-    <div class="portlet">
-      <div class="portlet-header">Capitão Caverna</div>
-	    <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-	  </div>
-
-    <div class="portlet">
-	    <div class="portlet-header">He-Man</div>
-      <div class="portlet-content">Comentarios e detalhes sobre o paciente.</div>
-    </div>
+	<div class="column col s2 m2" id="concluido">
+    <div class="portlet column-title lighten-2 col s10 center">Concluído</div>
   </div>
 </div>
 
