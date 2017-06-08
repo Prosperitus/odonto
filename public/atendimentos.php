@@ -27,6 +27,20 @@
 
 <script>
 $(document).ready(function(){
+	
+	  $('#botaoAddAttendance').click(function(){
+		  $('#Idpatient').val('');
+		  $('#patient').val('');
+		  $('#obsPaciente').val('');
+		  $('#admdate').val('');
+		  $('#Iduser').val('');
+		  $('#user').val('');
+		  $('#mostrapaciente').html('');
+		  $('#mostramedico').html('');
+          $('#mostrapaciente').css('display','none');
+		  $('#mostramedico').css('display','none');
+	  });
+	
 	  $("#botaoPesquisar").click(function(){
 		  var text = $('#pesquisa').val();
 		  $.ajax({
@@ -180,6 +194,16 @@ $(document).ready(function(){
     margin-top: 50px;
   }
   
+  #botaoAddAttendance {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+  
 	#adicionar {
     position:relative;
     padding:6px 15px;
@@ -199,6 +223,11 @@ $(document).ready(function(){
   }
   
   #botaoPesquisar:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+  
+  #botaoAddAttendance:hover  {
     background-color:#fafafa;
     color:#207cca;
   }
@@ -261,7 +290,7 @@ $(document).ready(function(){
     <!--UTI-->
     <div class="input-field col s6">
   <select name="uti" id="uti">
-  <option value="" disabled selected>UTI</option>
+  <option value="n" disabled selected>UTI</option>
     <?php foreach($utis as $uti){?>
     <option value="<?=$uti->id?>"><?=$uti->name_itu?></option>
   <?php } ?>
@@ -272,7 +301,7 @@ $(document).ready(function(){
     <!--LEITO-->
     <div class="input-field col s6">
     <select name="leito" id="leito">
-  <option value="" disabled selected>Leito</option>
+  <option value="n" disabled selected>Leito</option>
   </select>
     <label for="leito">Leito</label>
     </div>
@@ -286,7 +315,7 @@ $(document).ready(function(){
     <!--CAUSA/DE/ADMISSAO-->
     <div class="input-field col s6">
           <select multiple name="admcause" id="admcause" required>
-            <option value="" disabled selected>Causa de admissão</option>
+            <option value="n" disabled selected>Causa de admissão</option>
             <option value="1">Oncológico</option>
             <option value="2">Cardiopatia</option>
             <option value="3">Cirurgia</option>
@@ -309,8 +338,7 @@ $(document).ready(function(){
 	
 	     <!--OBSERVAÇÕES/PACIENTE-->
 	<div class="input-field col s6">
-	<textarea placeholder="Comentarios e detalhes sobre o paciente" style="height: 70px" name="obsPaciente" required></textarea>
-    <div id="mostramedico"></div>
+	<textarea placeholder="Comentarios e detalhes sobre o paciente" style="height: 70px" id="obsPaciente" name="obsPaciente" required></textarea>
     </div>
 		<div >
 			<button id="adicionar" style="margin:5%; margin-top:2%">Cadastrar</button>
@@ -328,7 +356,7 @@ $(document).ready(function(){
   <div class="row col s12">
 			<ul>
 				<div class="col s4" style="float:left">
-					<a href="#modal1"><button id="botao">Adicionar Cadastro</button></a>
+					<a href="#modal1"><button id="botaoAddAttendance">Adicionar Cadastro</button></a>
 				</div>
 				<div class="col s6" style="float:right">
 					<input id="pesquisa" type="text">
