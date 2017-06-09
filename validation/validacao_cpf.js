@@ -1,5 +1,5 @@
 function TestaCPF() {
-        var strCPF = $('#cpf').val();
+        var strCPF = $('#funcionario_cpf').val();
 
         var resto2;
         var soma1;
@@ -18,7 +18,7 @@ function TestaCPF() {
    
       
         if (num1 == num2 && num2 == num3 && num3 == num4 && num4 == num5 && num5 == num6 && num6 == num7 && num7 == num8 && num8 == num9 && num9 == num10 && num10 == num11){
-            document.getElementById("cpf").setCustomValidity('Invalid');
+            document.getElementById("funcionario_cpf").setCustomValidity('Invalid');
             return false;
         }
       
@@ -28,17 +28,17 @@ function TestaCPF() {
       
         if (resto1 == 10){
             resto1 = 0;
-            
+            alert("funcionou");
         }
         soma2 = (num1 * 11) + (num2 * 10) + (num3 * 9) + (num4 * 8) + (num5 * 7) + (num6 * 6) + (num7 * 5) + (num8 * 4) + (num9 * 3) + (num10 * 2);
       
         resto2 = (soma2 * 10) % 11;
       
         if ((resto1 == num10) && (resto2 == num11)){
-            document.getElementById("cpf").setCustomValidity('');
+            document.getElementById("funcionario_cpf").setCustomValidity('');
           
         }else{
-            document.getElementById("cpf").setCustomValidity("Invalid");
+            document.getElementById("funcionario_cpf").setCustomValidity("Invalid");
           
         }
      
