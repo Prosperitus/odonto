@@ -17,4 +17,4 @@ insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Van',
 insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Vittoria', 17, 17);
 insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Rochette', 18, 18);
 insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Whitaker', 19, 19);
-insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Goldy', 20, 20);i
+insert into odt_soft.hospital_itu (name_itu, quant_itu, hospital) values ('Goldy', 20, 20);
