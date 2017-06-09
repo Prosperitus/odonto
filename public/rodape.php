@@ -44,5 +44,5 @@
   <script src="../js/mask_paciente.js"></script>
   <script src="../js/mask_hospital.js"></script>
   <script src="../validation/validacao_cpf.js"></script>
-  
+  <script src="../validation/paciente_script.js"></script>
 </body>

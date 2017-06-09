@@ -140,6 +140,64 @@ class DbEmployee {
 		return $result;
     }
 
+    public function updateEmployee($id) {
+        try {
+            
+            $geName = $employee->getName();
+            $geSurname = $employee->getSurname();
+            $geCro = $employee->getCro();
+            $geAdmissionDate = $employee->getAdmissionDate();
+            $geNregistration = $employee->getRegistration();
+            $geSocialSecurity = $employee->getCpf();
+            $geAddress = $employee->getAddress();
+            $geBank = $employee->getBank();
+            $geAccNumber = $employee->getNumberOfAccount();
+            $geAgencia = $employee->getAgency();
+            $gePhone = $employee->getPhone();
+            $gePhone2 = $employee->getPhone2();
+            $geEmail = $employee->getEmail();
+            
+            $sql = "UPDATE users SET 
+                    name = :name,
+                    surname = :surname,
+                    cro = :cro,
+                    admission_date = :admDate,
+                    registration = registration,
+                    social_security = :socialSecurity,
+                    adress = :adress,
+                    bank = :bank,
+                    number_of_account = :accountNumber,
+                    agency = :agencia,
+                    phone = :phone,
+                    phone2 = :phone2,
+                    email = :email
+                    WHERE id = :id",;
+            $conn =  new DbConnector();
+            $stmt = $conn->getConn()->prepare($sql);
+            $stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
+            $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR, 255);
+            $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
+            $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
+            $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
+            $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':accountNumber', $geAccNumber, PDO::PARAM_STR, 15);
+            $stmt->bindParam(':agencia', $geAgencia, PDO::PARAM_STR, 11);
+            $stmt->bindParam(':phone', $gePhone, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':phone2', $gePhone2, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':email', $geEmail, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':id', $id);
+            $result = $stmt->execute();
+            return $result;
+            }
+        catch(PDOExeption $e) {
+            return $result;
+        }
+    }
+
+
+
 }
 
 

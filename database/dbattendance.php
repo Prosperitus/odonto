@@ -13,8 +13,8 @@ class DbAttendance
 
 	public function addAttendance($attendance){
         try{
-           $sql = "INSERT INTO attendance (patient, hospital, leito,status, admission_date_itu, doctor_responsible, admission_cause,observacoes)
-                  VALUES (:patient, :hospital, :leito,:status, :admission_date_itu, :doctor_responsible, :admission_cause,:observacoes)";
+           $sql = "INSERT INTO attendance (patient, hospital, leito,status, admission_date_itu, doctor_responsible, admission_cause)
+                  VALUES (:patient, :hospital, :leito,:status, :admission_date_itu, :doctor_responsible, :admission_cause)";
 
        $gaPatient = $attendance->getPatient();
        $gaHospital = $attendance->getHospital();
@@ -35,7 +35,6 @@ class DbAttendance
        $stmt->bindParam(':admission_date_itu', $gaAdmDate);
        $stmt->bindParam(':doctor_responsible', $gaEmployee);
        $stmt->bindParam(':admission_cause', $gaAdmCause);
-	   $stmt->bindParam(':observacoes', $gaObsPatient);
 
        $result = $stmt->execute();
        //var_dump($result);

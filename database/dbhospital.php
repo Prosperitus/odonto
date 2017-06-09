@@ -14,7 +14,7 @@ class DbHospital{
     try {
         //checar com o SGBD os nomes das colunas
         $sql = "INSERT INTO hospital (name, telephone_uti, telephone_chefe_uti,nome_chefe_uti)  
-        VALUES (:name, :telUti, :telUtiChefe,:nmeUtiChefe)";
+        VALUES (:name, :telUti, :telUtiChefe,:nomeUtiChefe)";
 
 
         //gh significa get hospital
@@ -28,7 +28,7 @@ class DbHospital{
         $stmt->bindParam(':name', $ghName);
         $stmt->bindParam(':telUti', $ghTelephoneUti);
 		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
-        $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
+        $stmt->bindParam(':nomeUtiChefe', $ghNomeUtiChefe);
 
         
        
@@ -203,7 +203,33 @@ class DbHospital{
 
 	
 
+    public function updateHospital($id) {
+        try{
 
+            $sql = "UPDATE hospital SET
+            name = :name,
+            telephone_uti = :telUti,
+            telephone_chefe_uti = :telUtiChefe,
+            nome_chefe_uti = :nomeUtiChefe
+            WHERE id = :id";
+
+        $conn= new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':name', $ghName);
+        $stmt->bindParam(':telUti', $ghTelephoneUti);
+        $stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
+        $stmt->bindParam(':nomeUtiChefe', $ghNomeUtiChefe);
+        $stmt->bindParam(':id', $id);
+
+        $result = $stmt->execute();
+        return $result;
+
+        }
+
+        catch(PDOExeption $e) {
+            return $result;
+        }
+    }
 
 
 

@@ -84,20 +84,78 @@ ORDER BY `users`.`name`, `users`.`surname`;
 
 /* Select de todas as tabelas */
 
-SELECT *
-FROM odt_soft.users, 
-odt_soft.patient, 
-odt_soft.hospital, 
-odt_soft.stats, 
-odt_soft.hospital_itu, 
-odt_soft.appointment,
-odt_soft.attendance,
-odt_soft.admission_cause
-WHERE `users`.id = `attendance`.doctor_responsible
-AND   `patient`.id = `attendance`.patient
-AND   `hospital`.id = `attendance`.hospital
-AND   `stats`.id = `appointment`.status
-AND   `hospital_itu`.id = `attendance`.hospital
-AND   `appointment`.attendance = `attendance`.id
-AND   `admission_cause`.id = `attendance`.admission_cause;
+SELECT
+    `users`.`id`,
+    `users`.`name`,
+    `users`.`surname`,
+    `users`.`cro`,
+    `users`.`email`,
+    `users`.`registration`,
+    `users`.`phone`,
+    `users`.`phone2`,
+    `users`.`address`,
+    `users`.`admission_date`,
+    `users`.`password`,
+    `users`.`social_security`,
+    `users`.`bank`,
+    `users`.`number_of_account`,
+    `users`.`agency`,
+    `users`.`permition`,
+    `patient`.`id`,
+    `patient`.`name`,
+    `patient`.`surname`,
+    `patient`.`social_security`,
+    `patient`.`birthdate`,
+    `patient`.`gender`,
+    `patient`.`address`,
+    `patient`.`neighborhood`,
+    `patient`.`city`,
+    `patient`.`state`,
+    `patient`.`zip_code`,
+    `patient`.`health_insurance`,
+    `patient`.`responsible1`,
+    `patient`.`telephone_r1`,
+    `patient`.`responsible2`,
+    `patient`.`telephone_r2`,
+    `patient`.`clinic`,
+    `patient`.`physician_assistant`,
+    `patient`.`name_phy_assistant`,
+    `patient`.`telephone_phy_assistant`,
+    `patient`.`speciality_phy_assistant`,
+    `stats`.`id`,
+    `stats`.`status`,
+    `hospital_itu`.`id`,
+    `hospital_itu`.`name_itu`,
+    `hospital_itu`.`quant_itu`,
+    `hospital_itu`.`hospital`,
+    `appointment`.`id`,
+    `appointment`.`description`,
+    `appointment`.`initial_date`,
+    `appointment`.`final_date`,
+    `appointment`.`status`,
+    `appointment`.`attendance`,
+    `attendance`.`id`,
+    `attendance`.`patient`,
+    `attendance`.`hospital`,
+    `attendance`.`bed`,
+    `attendance`.`status`,
+    `attendance`.`admission_date_itu`,
+    `attendance`.`doctor_responsible`,
+    `attendance`.`admission_cause`,
+    `attendance`.`final_date`
+    FROM odt_soft.users, 
+    odt_soft.patient, 
+    odt_soft.hospital, 
+    odt_soft.stats, 
+    odt_soft.hospital_itu, 
+    odt_soft.appointment,
+    odt_soft.attendance,
+    odt_soft.admission_cause
+    WHERE `users`.id = `attendance`.doctor_responsible
+    AND   `patient`.id = `attendance`.patient
+    AND   `hospital`.id = `attendance`.hospital
+    AND   `stats`.id = `appointment`.status
+    AND   `hospital_itu`.id = `attendance`.hospital
+    AND   `appointment`.attendance = `attendance`.id
+AND `admission_cause`.id = `attendance`.admission_cause;
 

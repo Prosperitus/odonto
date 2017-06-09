@@ -152,6 +152,70 @@ public function addPatient($patient){
 
  }
 
+    public function updatePatient($id) {
+
+        try{
+
+            $sql = "UPDATE patient SET 
+            name = :name,
+            surname = :surname,
+            birthdate = :birthdate,
+            gender = :gender,
+            social_security = socialSecurity,
+            address = :address,
+            neighborhood = :neighborhood,
+            city = :city,
+            state = :state,
+            zip_code = :cep,
+            health_insurance = :healthPlan,
+            responsible1 = :responsibleName,
+            responsible2 = :responsible2,
+            telephone_r1 = :responsiblePhone,
+            telephone_r2 = :responsiblePhone2,
+            clinic = :clinic,
+            physician_assistant = :physician_assistant,
+            name_phy_assistant = :medicalassistant,
+            telephone_phy_assistant = :telephone_phy_assistant,
+            speciality_phy_assistant = :speciality_phy_assistant,
+            email = :email
+            WHERE id = :id";
+
+            $conn = new DbConnector();
+            $stmt = $conn->getConn()->prepare($sql);
+            $stmt->bindParam(':name', $gpName, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':surname', $gpSurname, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':birthdate', $gpBirthdate, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':gender', $gpGender, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':socialSecurity', $gpSocial_security, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':address', $gpAddress,  PDO::PARAM_STR,  255);
+            $stmt->bindParam(':neighborhood', $gpNeighborhood, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':city', $gpCity, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':state', $gpState, PDO::PARAM_STR, 23);
+            $stmt->bindParam(':cep', $gpCep, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':healthPlan', $gpHealthPlan, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':responsibleName', $gpResponsibleName, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':responsiblePhone', $gpResponsiblePhone, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':responsible2', $gpResponsibleName2, PDO::PARAM_STR, 255);
+            $stmt->bindParam(':responsiblePhone2', $gpResponsiblePhone2, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':clinic', $gpClinic,PDO::PARAM_BOOL);
+            $stmt->bindParam(':physician_assistant', $gpPhysician_assistant,PDO::PARAM_BOOL);
+            $stmt->bindParam(':medicalassistant', $gpmedicalassistant,PDO::PARAM_STR, 255);
+            $stmt->bindParam(':telephone_phy_assistant', $gptelephone_phy_assistant,PDO::PARAM_STR, 100);
+            $stmt->bindParam(':speciality_phy_assistant', $gpspeciality_phy_assistant,PDO::PARAM_STR,100);
+            $stmt->bindParam(':email', $gpEmail,PDO::PARAM_STR,100);
+            $stmt->bindParam(':id', $id);
+
+            $result = $stmt->execute();
+            return = $result;
+
+
+        }
+        catch(PDOExeption $e) {
+            return $result;
+        }
+
+
+    }
 
 
 }
