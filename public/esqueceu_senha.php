@@ -29,7 +29,7 @@
   <body class = "light-blue lighten-3">   
     <div id="recuperar_senha" class="row main" style="margin-top:10%">
       <div class="col s12 z-depth-3 card-panel">
-        <form class="form" method="POST" action="../backend/Envia_Email.php">     
+        <form class="form" method="POST" action="../backend/envia_email.php">     
           <div class="row margin">    
             <div class="input-field col s12" style="margin-top:10%">
               <i class="material-icons prefix">mail</i>
