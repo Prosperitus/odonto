@@ -162,16 +162,16 @@ class DbEmployee {
                     surname = :surname,
                     cro = :cro,
                     admission_date = :admDate,
-                    registration = registration,
+                    registration = :nregistration,
                     social_security = :socialSecurity,
-                    adress = :adress,
+                    adress = :address,
                     bank = :bank,
                     number_of_account = :accountNumber,
                     agency = :agencia,
                     phone = :phone,
                     phone2 = :phone2,
                     email = :email
-                    WHERE id = :id",;
+                    WHERE id = :id";
             $conn =  new DbConnector();
             $stmt = $conn->getConn()->prepare($sql);
             $stmt->bindParam(':name', $geName, PDO::PARAM_STR, 255);

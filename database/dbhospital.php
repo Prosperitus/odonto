@@ -198,12 +198,7 @@ class DbHospital{
 		$result = $stmt->execute();
 	}
 
-		
-    }
-
-	
-
-    public function updateHospital($id) {
+     public function updateHospital($id) {
         try{
 
             $sql = "UPDATE hospital SET
@@ -230,6 +225,12 @@ class DbHospital{
             return $result;
         }
     }
+		
+    }
+
+	
+
+   
 
 
 
