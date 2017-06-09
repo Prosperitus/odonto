@@ -117,13 +117,12 @@ CREATE TABLE attendance(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
-	`leito` int  NOT NULL,
+	`bed` int  NOT NULL,
 	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
 	`admission_cause` int NOT NULL,
-	`final_date` date,
-	`observacoes` text
+	`final_date` date
 
 ) ENGINE=InnoDB; 
 
@@ -188,7 +187,7 @@ ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE attendance
-ADD CONSTRAINT fk_leito FOREIGN KEY (leito) REFERENCES itu_bed(id);
+ADD CONSTRAINT fk_bed FOREIGN KEY (bed) REFERENCES itu_bed(id);
 
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
@@ -237,14 +236,16 @@ INSERT INTO `odt_soft`.`users`
 VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
 
 INSERT INTO stats (status) 
-VALUES ('In_evaluation') , ('In_reavaluation') , ('In_approval') , ('Approved_by_responsable_doctor') , ('Approved_by_family') , ('In_budget') , ('Budget_approved_by_family') , ('Anexed'),
-('In_supervison') , ('dismissed') , ('died') , ('discharged') , ('Concluded') ;
+VALUES ('Em avaliação') , ('Em reavaliação') , ('Em aprovação') , ('Aprovado pelo médico responsável') , ('Aprovado pelo família') , ('Em orçamento') , ('Orçamento aprovado pelo família') , ('Anexa parecer'),
+('Em acompanhamento') , ('Dispensa') , ('Óbito') , ('Alta') , ('Concluído') ;
 
+INSERT INTO meta_entity(name)
+VALUES ('Hospital') , ('Paciente') , ('Funcionário') , ('Atendimento');
 /*INDEX*/
 
 CREATE INDEX idx_patient ON attendance(patient); 
 CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
 CREATE INDEX idx_hospital ON  attendance(hospital);
-CREATE INDEX idx_itu ON  attendance(leito);
+CREATE INDEX idx_itu ON  attendance(bed);
 CREATE INDEX idx_admition_cause ON attendance(admission_cause);
 CREATE INDEX idx_admition_date_itu ON attendance(admission_date_itu);

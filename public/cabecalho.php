@@ -17,14 +17,6 @@
  
    $user = userInform();
 
-
-   $sessao = $_GET['sessao'];
-	if($sessao == 1){
-		
-	}else if($sessao == 0){
-		
-	}
-
    ?>
   
    <script LANGUAGE="JavaScript" TYPE="text/javascript">

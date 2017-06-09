@@ -76,8 +76,8 @@ $(document).ready(function(){
 			data: $('#formAddAttendance').serialize(),
 			url: "../backend/addAttendance.php",
 			success: function (data) {
-				$('#modal1').modal('close');
 				$("#avaliacao").append(data);
+				$('#modal1').modal('close');
 			}
         });
 		});
@@ -351,11 +351,6 @@ $(document).ready(function(){
     <input name="Iduser" id="Iduser" type="hidden" required>
     <label for = "user">Médico Responsável</label>
     <div id="mostramedico" class="spacewhite"></div>
-    </div>
-	
-	     <!--OBSERVAÇÕES/PACIENTE-->
-	<div class="input-field col s6">
-	<textarea placeholder="Comentarios e detalhes sobre o paciente" style="height: 70px" id="obsPaciente" name="obsPaciente" required></textarea>
     </div>
 		<div >
 			<button id="adicionar" style="margin:5%; margin-top:2%">Cadastrar</button>
