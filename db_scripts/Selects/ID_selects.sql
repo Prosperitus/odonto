@@ -1,11 +1,11 @@
 /*Selects do hospital POR ID*/
 SELECT `hospital`.`id`,
-    `hospital`.`name`,
-    `hospital`.`number_itu`,
-    `hospital`.`number_bed`,
-    `hospital`.`name_admin_itu`,
-    `hospital`.`telephone_admin_itu`,
-    `hospital`.`telephone_hospital`
+       `hospital`.`name`,
+       `hospital`.`image`,
+       `hospital`.`telephone_uti`,
+       `hospital`.`telephone_chefe_uti`,
+       `hospital`.`nome_chefe_uti`,
+       `hospital`.`file`
 FROM odt_soft.hospital WHERE  `hospital`.`id` = ?;
 
 /* Select do login POR ID*/
