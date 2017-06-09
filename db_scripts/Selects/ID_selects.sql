@@ -1,4 +1,4 @@
-elects do hospital POR ID*/
+/*Selects do hospital POR ID*/
 SELECT `hospital`.`id`,
     `hospital`.`name`,
     `hospital`.`number_itu`,
