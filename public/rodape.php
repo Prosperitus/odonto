@@ -43,4 +43,6 @@
   <script src="../js/mask_funcionario.js"></script>
   <script src="../js/mask_paciente.js"></script>
   <script src="../js/mask_hospital.js"></script>
+  <script src="../validation/validacao_cpf.js"></script>
+  
 </body>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<script type="text/javascript" src="../DataTables/media/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../DataTables/media/css/jquery.dataTables.min.css">
+    
       <style>
         body {
           display: flex;
@@ -144,7 +145,7 @@
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">perm_identity</i>
-          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" required>
+          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" onblur="TestaCPF()" required>
           <label for="funcionario_cpf">CPF</label>
         </div>
 
@@ -291,4 +292,5 @@
         </div>
       </form>
     </div>
+   
 <?php require_once "rodape.php";
