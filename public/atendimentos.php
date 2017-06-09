@@ -296,6 +296,7 @@ $(document).ready(function(){
 	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
     <div id="mostrapaciente" class="spacewhite"></div>
+
     </div>
 
     <!--HOSPITAL-->
@@ -332,16 +333,15 @@ $(document).ready(function(){
     <!--CAUSA/DE/ADMISSAO-->
     <div class="input-field col s6">
           <select multiple name="admcause" id="admcause" required>
-            <option value="n" disabled selected>Causa de admissão</option>
+            <option value="n" disabled selected>Condição Sistêmica</option>
             <option value="1">Oncológico</option>
             <option value="2">Cardiopatia</option>
-            <option value="3">Cirurgia</option>
-            <option value="4">Paliativo</option>
-            <option value="5">Urgente</option>
-            <option value="6">Quimioterapia</option>
-            <option value="7">Pulmonar</option>
-            <option value="8">IRC</option>
-            <option value="9">Neuropata</option>
+            <option value="3">Paliativo</option>
+            <option value="4">Urgente</option>
+            <option value="5">Quimioterapia</option>
+            <option value="6">Pulmonar</option>
+            <option value="7">IRC</option>
+            <option value="8">Neuropata</option>
           </select>
         </div>
 
