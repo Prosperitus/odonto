@@ -117,13 +117,12 @@ CREATE TABLE attendance(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
-	`leito` int  NOT NULL,
+	`bed` int  NOT NULL,
 	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
 	`admission_cause` int NOT NULL,
 	`final_date` date,
-	`observacoes` text
 
 ) ENGINE=InnoDB; 
 
@@ -188,7 +187,7 @@ ALTER TABLE attendance
 ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital) REFERENCES hospital(id);
 
 ALTER TABLE attendance
-ADD CONSTRAINT fk_leito FOREIGN KEY (leito) REFERENCES itu_bed(id);
+ADD CONSTRAINT fk_bed FOREIGN KEY (bed) REFERENCES itu_bed(id);
 
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_patient FOREIGN KEY (patient) REFERENCES patient(id);
