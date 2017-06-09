@@ -25,6 +25,23 @@
 
 ?>
 
+     <div class="col s6 m4" style="width: 600px;height:100px;margin-bottom:10px;left: 14%;position:relative;margin-left:1px;top:15px">
+        <div>
+          <div>
+            <img src="../images/hospital 2.jpg" style="height: 100px;width: 100px;">
+           
+      <div style="left: 110px;top: -113px;position:relative;height:auto">
+      <p style="font-size: 15px;font-weight:bold;margin-bottom:0px"><?=$hospital->name?></p>
+      <p style="margin-top:0px;"><label style="font-size: 10px;color:black;font-weight:bold;margin-right:2px;">Nome do chefe da Uti:  </label><label style="font-size: 10px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
+      <p><label style="font-size: 10px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 10px;color:black"><?=$hospital->telephone_uti?></label></p>
+      <p><label style="font-size: 10px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 10px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
+      
+      </div>
+          </div>
+    
+        </div>
+      </div>
+
 <script>
 $(document).ready(function(){
 	
