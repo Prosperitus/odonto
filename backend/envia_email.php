@@ -22,26 +22,44 @@
 		    <div class="main margin_small">
 				<br/>
 				<?php
+				require_once "Mail.php";
+
 					$quebra_linha = "\n";
-					$envia_email = "contato@".$_SERVER['HTTP_HOST'];
+					$envia_email = "<easyodonto2017@gmail.com>";
 					$destinatario = $_POST['E_mail'];
 					$assunto = "Email teste";
 					$mensagem = "Funciona";
 
-					$mensagemHTML = '<p> Teste de Email </p>
+					/*$mensagemHTML = '<p> Teste de Email </p>
 					<p> Titulo </p>
 					<p><b><t>'.$mensagem.'</p></b></t>
-					<br>';
+					<br>';*/
 
-					$headers = "MIME-Version: 1.1".$quebra_linha;
-					$headers .= "Content-type: text/html; chaset = iso-8859-1".$quebra_linha;
-					$headers .= "From: ".$envia_email.$quebra_linha;
-					$headers .= "Return-Path: ".$envia_email.$quebra_linha;
+					$headers = array(
+						'From' => $envia_email,
+						'to' => $destinatario,
+						'Subject' => $assunto
+						);
 
-					mail($destinatario, $assunto, $mensagemHTML, $headers, "-r". $envia_email);
+					$smtp = Mail::factory('smtp', array(
+						'host' => 'ssl://smtp.gmail.com',
+						'port' => '465',
+						'auth' => true,
+						'username' => 'easyodonto2017@gmail.com',
+						'password' => 'odonto123456'
+					));
 
-					print("Mensagem enviada!");
-					?>
+					//mail($destinatario, $assunto, $mensagemHTML, $headers, "-r". $envia_email);
+					$mail = $smtp->send($destinatario, $headers, $mensagem);
+
+					if (PEAR::isError($mail)) {
+    					echo('<p>' . $mail->getMessage() . '</p>');
+					} else {
+   					 	echo('<p>Mansagem enviada !</p>');
+					}
+
+				?>
+
 			</div>
 		</div>
 		<!-- <h6 style="margin-left: 400">Obs: Rodrigo não teve qualquer tipo de envolvimento na criação deste código.</h6>	-->
