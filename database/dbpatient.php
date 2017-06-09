@@ -206,7 +206,7 @@ public function addPatient($patient){
             $stmt->bindParam(':id', $id);
 
             $result = $stmt->execute();
-            return = $result;
+            return $result;
 
 
         }
