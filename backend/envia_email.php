@@ -3,13 +3,6 @@
     	<title>Envia Email</title>
 	    <meta charset="utf-8"/>
 	    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-	 	<style type="text/css">
-	 		.mensagem {
-	 			font-size: 50px;
-	 			margin-left: 430;
-	 			margin-top: 150;
-	 		}
-	 	</style>
 	</head>
   	<body>
   		<header>
@@ -18,8 +11,8 @@
 		      </div>
 		    </nav>
 	    </header>
-	    <div class="mensagem">
-		    <div class="main margin_small">
+	    <a href="redefinir_senha.php">redefinir</a>
+		    <div class="mensagem">
 				<br/>
 				<?php
 				require_once "Mail.php";
@@ -59,10 +52,8 @@
 					}
 
 				?>
-
 			</div>
-		</div>
-		<!-- <h6 style="margin-left: 400">Obs: Rodrigo não teve qualquer tipo de envolvimento na criação deste código.</h6>	-->
+			<br/>
       	<footer class="page-footer light-blue" style="margin: auto; width: 100%; bottom: 0; position: fixed;">
 		    <div class="footer-copyright">
 		    	<div class="container">	
