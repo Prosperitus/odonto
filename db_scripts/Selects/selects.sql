@@ -85,7 +85,6 @@ ORDER BY `users`.`name`, `users`.`surname`;
 /* Select de todas as tabelas */
 
 SELECT
-
     `users`.`id`,
     `users`.`name`,
     `users`.`surname`,
@@ -102,7 +101,6 @@ SELECT
     `users`.`number_of_account`,
     `users`.`agency`,
     `users`.`permition`,
-
     `patient`.`id`,
     `patient`.`name`,
     `patient`.`surname`,
@@ -124,22 +122,18 @@ SELECT
     `patient`.`name_phy_assistant`,
     `patient`.`telephone_phy_assistant`,
     `patient`.`speciality_phy_assistant`,
-
     `stats`.`id`,
     `stats`.`status`,
-
     `hospital_itu`.`id`,
     `hospital_itu`.`name_itu`,
     `hospital_itu`.`quant_itu`,
     `hospital_itu`.`hospital`,
-
     `appointment`.`id`,
     `appointment`.`description`,
     `appointment`.`initial_date`,
     `appointment`.`final_date`,
     `appointment`.`status`,
     `appointment`.`attendance`,
-    
     `attendance`.`id`,
     `attendance`.`patient`,
     `attendance`.`hospital`,
@@ -148,9 +142,7 @@ SELECT
     `attendance`.`admission_date_itu`,
     `attendance`.`doctor_responsible`,
     `attendance`.`admission_cause`,
-    `attendance`.`final_date`,
-
-
+    `attendance`.`final_date`
     FROM odt_soft.users, 
     odt_soft.patient, 
     odt_soft.hospital, 
@@ -165,5 +157,5 @@ SELECT
     AND   `stats`.id = `appointment`.status
     AND   `hospital_itu`.id = `attendance`.hospital
     AND   `appointment`.attendance = `attendance`.id
-    AND   `admission_cause`.id = `attendance`.admission_cause;
+AND `admission_cause`.id = `attendance`.admission_cause;
 
