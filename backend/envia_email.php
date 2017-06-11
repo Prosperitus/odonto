@@ -16,6 +16,7 @@
 				<br/>
 				<?php
 				require_once "Mail.php";
+				require_once "../database/dbconnect.php";
 
 					$quebra_linha = "\n";
 					$envia_email = "<easyodonto2017@gmail.com>";
@@ -23,12 +24,26 @@
 					$assunto = "Email teste";
 					$mensagem = "Funciona";
 
+					$conexao = mysqli_connect("localhost", "root", "", "odt_soft");
+
+					$sql = "SELECT * FROM odt_soft.users WHERE email= '$destinatario' ";
+					$query = mysqli_query($conexao, $sql);
+					$cont = mysqli_num_rows($query);
+
+					var_dump($cont);
+
+					$novasenha = substr(md5(time()), 0, 6);
+					$nscriptografada = md5(md5($novasenha));
+
+					//var_dump($novasenha);
+					//var_dump($nscriptografada);
+
 					/*$mensagemHTML = '<p> Teste de Email </p>
 					<p> Titulo </p>
 					<p><b><t>'.$mensagem.'</p></b></t>
 					<br>';*/
 
-					$headers = array(
+					/*$headers = array(
 						'From' => $envia_email,
 						'to' => $destinatario,
 						'Subject' => $assunto
@@ -49,7 +64,7 @@
     					echo('<p>' . $mail->getMessage() . '</p>');
 					} else {
    					 	echo('<p>Mansagem enviada !</p>');
-					}
+					}*/
 
 				?>
 			</div>
