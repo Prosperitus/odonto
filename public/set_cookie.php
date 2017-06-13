@@ -1,18 +1,16 @@
 <?php
  
  function setCookie(){
- 	$cookie_name = "name";
- 	$cookie_value = "value";
-
+ 	$cookie_name = $_COOKIE['patient'];
  	?>
  	<html>
  	<body>
  	<?php
  	$true = true;
  	$false = false;	
- 	setcookie("name","value", time()+(86400 * 30), "/");
+		setcookie("Paciente",$cookie_name, time()+(86400 * 30), "/");
  	 
- 	 if(!isset($_COOKIE[$cookie_name])){
+ 	 if(!isset($cookie_name)){
  	 	return $false;
  	 	}else{
  	 		return $true;

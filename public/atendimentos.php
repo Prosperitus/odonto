@@ -296,6 +296,7 @@ $(document).ready(function(){
 	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
     <div id="mostrapaciente" class="spacewhite"></div>
+    <a class="waves-effect waves-light btn-small" href="cadastro_paciente.php">Adicionar Paciente</a>
 
     </div>
 
@@ -328,6 +329,12 @@ $(document).ready(function(){
     <div class="input-field col s6">
            <input name="admdate" id="admdate" type="text" class="datepicker" required>
           <label for="admdate">Data de Admissão na UTI</label>
+        </div>
+
+        <!--DATA/FINAL/ATENDIMENTO-->
+         <div class="input-field col s6">
+           <input name="finaldate" id="finaldate" type="text" class="datepicker" required>
+          <label for="finaldate">Data final do atendimento</label>
         </div>
 
     <!--CAUSA/DE/ADMISSAO-->
