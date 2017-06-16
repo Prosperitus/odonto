@@ -20,10 +20,10 @@
       
       <div style="background-color: #03a9f4;">
       <div style="display:inline-block;">
-      <h4 style="text-align: center; margin:20px;color:white;">Alvin's Card</h4>
+      <h4 style=" font-size:30px; text-align: center; margin:20px;color:white;">Alvin's Card</h4>
       </div>
       <div style="display:inline-block; margin:20px;float: right;">
-      <a class="btn-floating btn-small waves-effect waves-light light-blue darken-2"><i class="material-icons">mode_edit</i></a>
+      <a style="width:50% height:50%" class="btn-floating btn-medium waves-effect waves-light light-blue darken-2"><i style="width:10% height:10%"" class="material-icons">mode_edit</i></a>
       </div>
       </div>
 
