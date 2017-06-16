@@ -9,11 +9,5 @@
 <script src="../js/chart.js"></script>
 
 <?php
-	$db = new AttendanceDb();
-	$countStatus = $db->searchCountStatus();
-	$json = json_encode($countStatus);
-	echo '<script>searchchart('.$json.');</script>';
-
-
 	require_once "rodape.php";
 ?>

@@ -66,6 +66,7 @@
 			<li><a href="busca_paciente.php"><i class="material-icons">assignment_ind</i>Pacientes</a></li>
 			<li><a href="busca_funcionario.php"><i class="material-icons">perm_identity</i>Funcionários</a></li>
 			<li><a href="atendimentos.php"><i class="material-icons">view_array</i>Atendimentos</a></li>
+			<li><a href="graficos.php"><i class="material-icons">insert_chart</i>Grafico</a></li>
 			<li><a href="../request/logout.php"><i class="material-icons">power_settings_new</i>Logout</a></li>
 		  </ul>
 		</div>

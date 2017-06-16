@@ -1,51 +1,46 @@
 // SCRIPTS DE GRAFICOS
 
-alert("sfddf");
-function searchchart(var resultJson){
-		alert("sucesso");
+$.ajax({
+	type: 'POST',
+	dataType: 'html',
+	data: {data: []},
+	url: "../request/searchCountStatus.php",
+	success: function (data) {
+		var dataJson = $.parseJSON(data);
 		var arrayColor = ['red',
 						'orange',
 						'yellow',
 						'green',
 						'blue',
-						'turquoise1',
-						'Brown1',
-						'SeaGreen1',
-						'Purple1',
-						'Goldenrod2',
-						'DarkCyan',
-						'IndianRed1',
-						'LightSkyBlue1',
-						'SaddleBrown'];
-		var dataJson = JSON.parse(resultJson);
+						'#00F5FF',
+						'#FF4040',
+						'#54FF9F',
+						'#9B30FF',
+						'#FFDEAD',
+						'#008B8B',
+						'#FF6A6A',
+						'#B0E2FF'];
+		var dados = dataJson['count'];
+		var nomes = dataJson['name'];
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart(ctx, {
 			type: 'pie',
 			data: {
 				
-				labels: [
-				for(int i = 0;dataJson.length>i;i++){
-					eval(dataJson[i].name);
-				},
+				labels: nomes,
 				datasets: [{
-					 labels: [
-						"Red",
-						"Orange",
-						"Yellow",
-						"Green",
-						"Blue"
-					],
-					data: [
-						for(int i = 0;dataJson.length>i;i++){
-							eval(dataJson[i].count);
-						}
-					],
-					backgroundColor: [
-						for(int i = 0;dataJson.length>i;i++){
-							eval(arrayColor[i]);
-						}
-					],
+					 labels: arrayColor,
+					data: dados,
+					backgroundColor: arrayColor,
 					borderColor: [
+						'white',
+						'white',
+						'white',
+						'white',
+						'white',
+						'white',
+						'white',
+						'white',
 						'white',
 						'white',
 						'white',
@@ -61,5 +56,6 @@ function searchchart(var resultJson){
 		});
 	}
 });
-}
+		
+
 

@@ -49,7 +49,7 @@ class AttendanceDb
    public function searchCountStatus() {
 
     try {
-      $sql = "SELECT count(a.status) as count,a.status,s.status as name FROM attendance a inner join stats s on a.status = s.id GROUP BY status";
+      $sql = "SELECT count(a.status) as count,s.status as name FROM attendance a right join stats s on a.status = s.id GROUP BY s.status,a.status";
 
       $conn = new Dbconnector();
       $stmt = $conn->getConn()->prepare($sql);
