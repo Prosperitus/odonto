@@ -435,5 +435,30 @@ td{
     margin: 0 1em 1em 0;
     height: 50px;
   }
+  
+  #hospitalSelecionado{
+	  width: 600px;
+	  height:200px;
+	  margin-bottom:10px;
+	  left: 14%;
+	  position:relative;
+	  margin-left:1px;
+	  top:25px;
+  }
+  
+  #imagemHospitalMenor{
+	  height: 150px;
+	  width: 150px;
+  }
 
+  #divHospitalConteudo3{
+	left: 163px;
+	top: -170px;
+	position:relative;
+	height:auto
+  }
+  
+  .pHospitalConteudo2{
+	  font-size: 22px;font-weight:bold;margin-bottom:0px; color:#046B64;
+  }
   /* ---------------------------*/

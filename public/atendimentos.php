@@ -28,22 +28,20 @@
 	$(onPageLoad);
 </script>
 
-<div class="col s6 m4" style="width: 600px;height:200px;margin-bottom:10px;left: 14%;position:relative;margin-left:1px;top:25px">
+<div class="col s6 m4" id="hospitalSelecionado">
+    <div>
         <div>
-          <div>
-            <img src="../images/hospital 2.jpg" style="height: 150px;width: 150px;">
-           
-      <div style="left: 163px;top: -170px;position:relative;height:auto">
-      <p style="font-size: 22px;font-weight:bold;margin-bottom:0px; color:#046B64;"><?=$hospital->name?></p>
-      <p style><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px;">Nome do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->nome_chefe_uti?></label></p>
-      <p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_uti?></label></p>
-      <p><label style="font-size: 15px;color:black;font-weight:bold;margin-right:2px">Telefone do chefe da Uti:  </label><label style="font-size: 15px;color:black"><?=$hospital->telephone_chefe_uti?></label></p>
-      
-      </div>
-          </div>
-    
+            <img src="../images/hospital 2.jpg" id="imagemHospitalMenor">
+			<div style="" id="divHospitalConteudo3">
+				<p class="pHospitalConteudo2"><?=$hospital->name?></p>
+				<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
+				<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
+				<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
+			</div>
         </div>
-      </div>
+    
+    </div>
+</div>
 
   <!--MODAL-->
 <div id="modalCadAttendance" style="width:60%;" class="modal">
