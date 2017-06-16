@@ -42,10 +42,10 @@
 	</center>';
 	?>
 	<a href="cadastro_hospital.php">
-	<div class="col s6 m4" id="tituloAdicionaHospital">
-	      <div class="card">
-	        <div class="card-image" style="max-height:200px">
-	          <img src="../images/hospital 2.jpg" id="imagemHospital">
+	<div class="col s6 m4" id="tituloAdicionaHospital" style="margin-right:20px;margin-left:20px; margin-bottom: 40px;">
+	      <div class="card" style="width: 630px;margin: auto;">
+	        <div class="card-image" style="max-height:220px">
+	          <img  src="../images/hospital 2.jpg" id="imagemHospital">
 	          <div id="botaoBuscaHospital" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></div>
 			  <div id="divHospitalConteudo2">
 				<p class="pHospitalConteudo1">ADICIONAR NOVO HOSPITAL</p>
@@ -63,13 +63,13 @@
 	?>
 
 		
-	    <div class="col s6 m4" id="tituloAdicionaHospital">
-	      <div class="card">
+	    <div class="col s6 m4" id="tituloAdicionaHospital" style="margin-right:20px;margin-left:20px; margin-bottom: 40px;">
+	      <div class="card col s6" style="width: 630px;margin: auto;">
 	        <div class="card-image" style="max-height:200px">
 	          <img src="../images/hospital 2.jpg" id="imagemHospital">
 	         
-	          <a href="hospital_atual.php?id=<?=$hospital->id?>" id="botaoBuscaHospital" class=" btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">done</i></a>
-				  <div id="divHospitalConteudo1">
+	          <a href="hospital_atual.php?id=<?=$hospital->id?>" id="botaoBuscaHospital" class=" btn-floating halfway-fab waves-effect waves-light red"><i  class="material-icons">done</i></a>
+				  <div id="divHospitalConteudo1" >
 					<p class="pHospitalConteudo1"><?=$hospital->name?></p>
 					<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo"><?=$hospital->nome_chefe_uti?></label></p>
 					<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo"><?=$hospital->telephone_uti?></label></p>
