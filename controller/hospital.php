@@ -58,8 +58,8 @@ class HospitalController{
 			move_uploaded_file( $arquivo_tmp, $destino);
 			move_uploaded_file( $arquivo_tmp_file, $destino_file);
 			
-			$conn->addImagem($destino,$id);
-			$conn->addArquivo($destino_file,$id);
+			$conn->addImage($destino,$id);
+			$conn->addFile($destino_file,$id);
 			
 			
 		}

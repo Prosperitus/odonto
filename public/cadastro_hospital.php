@@ -3,9 +3,8 @@
 ?>
 
     <!--CLASS/FORM-->
-    <div class="row main margemCentro">
-		  <div id="formHospitalCadastro"></div>
-      <form class="col s11" method="post" action="../request/addHospital.php" enctype="multipart/form-data"> 
+    <div class="row margemCentro" style="left:100px;position:relative">
+      <form class="col s11 m12" method="post" action="../request/addHospital.php" enctype="multipart/form-data"> 
     
         <!--TITULO-->
         <h3>Cadastro Hospital</h3>
