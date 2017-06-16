@@ -31,16 +31,14 @@
 <label class="bold">Cep: </label><label class="font_big"><?=$pat->zip_code;?></label><br>
 
 <?php if($pat->physician_assistant == '1'){ ?>
-<label class="bold">Nome do médico responsável :</label><label class="font_big"><?=$pat->name_phy_assistant?></label><br>
-<label class="bold">Telefone do médico responsável :</label><label class="font_big"><?=$pat->telephone_phy_assistant?></label><br>
-<label class="bold">Especialidade do médico responsável :</label><label class="font_big"><?=$pat->speciality_phy_assistant?></label><br>
+<label class="bold">Nome do médico responsável: </label><label class="font_big"><?=$pat->name_phy_assistant?></label><br>
+<label class="bold">Telefone do médico responsável: </label><label class="font_big"><?=$pat->telephone_phy_assistant?></label><br>
+<label class="bold">Especialidade do médico responsável: </label><label class="font_big"><?=$pat->speciality_phy_assistant?></label><br>
 <?php } 
 
 if($pat->clinic == "1"){ ?>
-<input type="checkbox" id="clinica" name="clinica" checked readonly>
-<label class="bold">Paciente da Clinica</label>
+<label class="bold">Paciente da Clinica: </label><label class="font_big">Sim</label><br>
 <?php }if($pat->clinic == "0"){ ?>
-<input type="checkbox" id="clinica" name="clinica" readonly>
-<label class="bold">Paciente da Clinica</label>
+<label class="bold">Paciente da Clinica: </label><label class="font_big">Não</label><br>
 </div>
 <?php } ?>
