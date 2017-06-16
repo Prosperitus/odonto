@@ -29,13 +29,13 @@
 			<div class="col s12 z-depth-3 card-panel">
 				<div class="row margin">
 					<div class="input-field col s12" style="margin-top: 10%">
-						<input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
+						<input id="password" type="password" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="password" required>
 						<label for="password">Nova Senha</label>
 					</div>
-				</div>
+  					</div>
 				<div class="row margin">
 					<div class="input-field col s12" style="margin-top: 10%">
-						<input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
+						<input id="password" type="password" class="validate" name="password" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="password" required>
 						<label for="password">Confirme sua nova senha</label>
 					</div>
 				</div>		
