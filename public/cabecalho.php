@@ -28,7 +28,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
 	<script type="text/javascript" src="../js/scripts.js"></script>
 	<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
 	
 	<!-- BUSCA HOSPITAL-->
 	<link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/contentSearchUI.css" />

@@ -24,9 +24,11 @@
 
 ?>
 
+
 <script>
 	$(onPageLoad);
 </script>
+
 
 <div class="col s6 m4" id="hospitalSelecionado">
     <div>

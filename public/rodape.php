@@ -14,6 +14,7 @@
 </footer>
 
   <!--SCRIPTS-->
+  	
   <script type="text/javascript" src="../js/scriptsrodape.js"></script>
   <script src="../js/mask.js"></script>
   <script src="../js/mask_funcionario.js"></script>
