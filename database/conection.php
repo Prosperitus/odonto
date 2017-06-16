@@ -12,7 +12,7 @@ class DbConnector {
     public function __construct() { 
     try {
             
-    	$this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha");
+    	$this->conn = new PDO ("mysql:host=$this->Servidor;dbname=$this->BancoDados;","$this->Usuario","$this->Senha",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     	//$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_OBJ);
   
     }catch (PDOException $e) {

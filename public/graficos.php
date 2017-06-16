@@ -1,5 +1,6 @@
 <?php
 	require_once "cabecalho.php";
+	require_once "../database/attendance.php";
 ?>
 <div class="welcome">Quantidade de atendimentos por status</div>
 <div style="width:400px;height:400px;left:50%;margin-left:-200px;position:relative;margin-bottom: 100px" class="center">
@@ -8,5 +9,11 @@
 <script src="../js/chart.js"></script>
 
 <?php
+	$db = new AttendanceDb();
+	$countStatus = $db->searchCountStatus();
+	$json = json_encode($countStatus);
+	echo '<script>searchchart('.$json.');</script>';
+
+
 	require_once "rodape.php";
 ?>

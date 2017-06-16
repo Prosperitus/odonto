@@ -46,6 +46,25 @@ class AttendanceDb
     }
  } 
 
+   public function searchCountStatus() {
+
+    try {
+      $sql = "SELECT count(a.status) as count,a.status,s.status as name FROM attendance a inner join stats s on a.status = s.id GROUP BY status";
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      return $result;
+
+      }
+
+      catch(PDOExeption $e) {
+        return $result;
+
+    }
+
+  }
 
   public function searchId($filter) {
 
