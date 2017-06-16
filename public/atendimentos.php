@@ -47,8 +47,11 @@
 
   <!--MODAL-->
 <div id="modalCadAttendance" style="width:60%;" class="modal">
-          <div class="modal-content">
-       <h4 class="center">Cadastro Atendimento</h4>
+        <div class="modal-content">
+       	<div style="height:80px;background-color: #03a9f4; margin-bottom:50px;">
+       	<h3 style=" font-size:40px; text-align: center;color:white; padding:20px;" class="center">Cadastro Atendimento</h3>
+       	</div>
+
    
   <!--CLASS/FORM-->
    <div class="row">
@@ -60,7 +63,8 @@
 	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
     <div id="mostrapaciente" class="spacewhite"></div>
-	<a class="waves-effect waves-light btn-small" href="cadastro_paciente.php">Adicionar Paciente</a>
+
+
     </div>
 
     <!--HOSPITAL-->
@@ -116,14 +120,13 @@
     <label for = "user">Médico Responsável</label>
     <div id="mostramedico" class="spacewhite"></div>
     </div>
-
 		<div >
-			<button id="adicionar" style="margin:5%; margin-top:2%">Cadastrar</button>
 		</div>
-				
         </div>
+        <button id="adicionar" style=" float:left; margin:2%; margin-top:2%">Cadastrar</button>
     </div>
     </div>
+
     </form>
     <!--FIM-DO-MODAL-->
 

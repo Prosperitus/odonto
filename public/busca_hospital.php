@@ -48,7 +48,7 @@
 	          <img  src="../images/hospital 2.jpg" id="imagemHospital">
 	          <div id="botaoBuscaHospital" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></div>
 			  <div id="divHospitalConteudo2">
-				<p class="pHospitalConteudo1">ADICIONAR NOVO HOSPITAL</p>
+				<p class="pHospitalConteudo1">ADICIONAR NOVO HOSPITAL</p>	
 			  </div>
 	        </div>
 		
@@ -62,7 +62,8 @@
 		if($hospital->image == '' || $hospital->image == null){
 	?>
 
-		
+	
+
 	    <div class="col s6 m4" id="tituloAdicionaHospital" style="margin-right:20px;margin-left:20px; margin-bottom: 40px;">
 	      <div class="card col s6" style="width: 630px;margin: auto;">
 	        <div class="card-image" style="max-height:200px">
