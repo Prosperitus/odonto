@@ -3,7 +3,7 @@
 	require_once "../database/attendance.php";
 ?>
 <div class="welcome">Quantidade de atendimentos por status</div>
-<div style="width:400px;height:400px;left:50%;margin-left:-200px;position:relative;margin-bottom: 100px" class="center">
+<div class="grafico center">
 	<canvas id="myChart" width="400" height="400"></canvas>
 </div>
 <script src="../js/chart.js"></script>
