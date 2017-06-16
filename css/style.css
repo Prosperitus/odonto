@@ -1,3 +1,7 @@
+/* ESTILOS GERAIS */
+.positionStatic{
+	position:static;
+}
 .bold{
 	font-weight: bold;
 	font-size: 16px;
@@ -46,3 +50,390 @@ td{
 	display: none;
 	border-radius: 0px 0px 5px 5px;
 }
+
+/* ESTILO DE VIEW ATENDIMENTO */
+
+.btn-small {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
+	}
+ .column {
+    width: 170px;
+    float: left;
+    padding-bottom: 100px;
+  }
+  .portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+	.column-title{
+	margin: 0 1em 1em 0;
+	padding: 0.3em;
+	}
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .portlet-content {
+    padding: 0.4em;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }
+  
+ /* ---------------------------*/
+ 
+ /* ESTILO GERAL DO SISTEMA */
+ 
+ 
+ body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	height: 100
+  }
+  .main {
+	flex: 1 0 auto;
+	position:relative;
+	height:auto;
+  }
+  header , footer {
+	padding-left: 0px;
+  }
+  main {
+	padding-left: 100px
+  }
+  @media only screen and (max-width : 992px) {
+	header, main, footer {
+	  padding-left: 0;
+	}
+  }
+	@media only screen and (min-width : 768px) {
+	.margemCentro{
+		margin-left: 14%;
+		  padding-bottom: 60px;
+		}
+  }
+	@media only screen and (max-width : 768px) {
+	.margemCentro{
+			margin-left: 0;
+			margin-right: 0;
+	  padding-bottom: 60px;
+		}
+  }
+	
+	.ui-button:active{
+		background-color: #0399ff;
+		color:white;
+		border-color:#0399ff;
+		font-weight:bold
+	}
+	
+  
+	.ui-button{
+		background-color: #0399ff;
+		color:white;
+		border-color:#0399ff;
+		font-weight:bold
+	}
+	.ui-button:hover{
+		background-color: white;
+		color:#0399ff;
+		border-color:#0399ff;
+		font-weight:bold
+	}
+
+	.ui-dialog-titlebar-close
+	{
+	 position: absolute;
+	 right: .3em;
+	 top: 50%;
+	 width: 19px;
+	 margin: -10px 0 0 0;
+	 padding: 1px;
+	 height: 18px;
+
+	 /*Esconder o X*/
+	 display: none;
+	}
+	.ui-dialog-titlebar{
+		background-color: #0399ff;
+		color:white;
+		border-color:#0399ff;
+		font-weight:bold
+	}
+		
+/* ---------------------------*/
+
+ /* ESTILO BUSCA HOSPITAL */
+	div.welcome{
+			color: #274e82;
+			
+			padding: 20px;
+			font-family: Helvetica;
+			font-weight: bold;
+			font-size: 250%;
+			text-align: center;
+	}
+	
+	p{
+		font-size: 18px;
+	}
+	
+	h4{
+		font-size: 14px;
+		font-weight: bold; 
+		 text-shadow: 2px -2px -5px ; 
+	}
+	h2{
+		font-size:26px;
+		font-weight: bold; 
+	
+	}
+	.row.main{
+		width: 50%;
+		height:50%;
+	}
+	
+	.tituloPrincipalHospital{
+		font-weight:bold;
+		font-size: 20px
+	}
+	#tituloAdicionaHospital{
+		width: 600px;
+		height:200px;
+		margin-bottom:10px;
+	}
+	#imagemHospital{
+		height: 200px;
+		width: 200px;
+	}
+	#botaoBuscaHospital{
+		top:120px;
+	}
+	#divHospitalConteudo1{
+		left: 230px;
+		top: -200px;
+		position:relative;
+		height:auto;
+		width: 300px;
+	}
+	
+	#divHospitalConteudo2{
+		left: 230px;
+		top: -125px;
+		position:relative;
+		height:auto;
+		width: 300px;
+	}
+	.pHospitalConteudo1{
+		font-size: 18px;
+		font-weight:bold
+	}
+	.lblHospitalConteudo{
+		font-size: 15px;
+		color:black;
+		font-weight:bold;
+		margin-right:2px;
+		width: 300px;
+	}
+	.lblHospitalConteudo2{
+		font-size: 15px;
+		color:black;
+		width: 300px;
+	}
+/* ---------------------------*/
+ /* ESTILO BUSCA PACIENTE E FUNCIONARIO */
+ 
+	.tituloAzul{
+		color: #0399ff;
+	}
+	.posicaoCardCadastro{
+		width: 60px;
+		height:60px;
+		float:right;
+		bottom:80px;
+		position:relative;
+	}
+	#CardCadastro{
+		width: 60px;
+		height:60px
+	}
+
+	#divCardCadastro{
+		width:22px;
+		height:22px;
+		position:relative;
+		left:34px;
+		bottom:36px
+	}
+	.iconeCardCadastro{
+		width:7px;
+		height:7px;
+		bottom:9px;
+		right:1px;
+		position:relative
+	}
+	
+ /* ---------------------------*/
+  /* ESTILO CADASTRO FUNCIONARIO */
+ 
+ body {
+          display: flex;
+          min-height: 100vh;
+          flex-direction: column;
+        }
+        .main {
+          flex: 1 0 auto;
+        }
+        header , footer {
+          padding-left: 0px;
+        }
+        main {
+          padding-left: 100px
+        }
+        @media only screen and (max-width : 992px) {
+          header, main, footer {
+            padding-left: 0;
+          }
+        }
+      	@media only screen and (min-width : 768px) {
+        .margemCentro{
+    			margin-left: 14%;
+			padding-bottom: 60px;
+    		}
+      }
+    	@media only screen and (max-width : 768px) {
+        .margemCentro{
+    			margin-left: 0;
+    			margin-right: 0;
+			padding-bottom: 60px;
+
+    		}
+      }
+	  
+ /* ---------------------------*/
+   /* ESTILO FOOTER */
+   
+ footer{
+		bottom:0%;
+		width:100%;
+		position:fixed;
+ }
+  /* ---------------------------*/
+
+  /* ESTILO ATENDIMENTO */
+  
+  	.btn-small {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
+	}
+  #formestilo2 {
+    float: left;
+  }
+  #formestilo {
+    float: right;
+  }
+  #pesquisa {
+    padding:8px 15px;
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+    width: 200px;
+    height: 23px;
+    margin-top: 50px;
+  }
+  #botao {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+  
+  #botaoPesquisar {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+  
+  #botaoAddAttendance {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+  
+	#adicionar {
+    position:relative;
+    padding:6px 15px;
+    left:-4px;
+    border:2px solid #03a9f4;
+    background-color:#03a9f4;
+    color:#fafafa;
+    margin-top: 50px;
+  }
+	#adicionar:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+	#botao:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+  
+  #botaoPesquisar:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+  
+  #botaoAddAttendance:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+  }
+
+  body {
+    min-width: 520px;
+  }
+
+  .column {
+    width: 170px;
+    float: left;
+    padding-bottom: 100px;
+  }
+  .portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+  }
+	.column-title{
+	margin: 0 1em 1em 0;
+	padding: 0.3em;
+	}
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .portlet-content {
+    padding: 0.4em;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }
+
+  /* ---------------------------*/

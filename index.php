@@ -11,7 +11,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>Login</title>
+	<title>EasyOdonto</title>
 	  <script type="text/javascript" href="js/jquery.js"></script>
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,7 +42,7 @@
     <!--MAIN-->
     <div id="login-page" class="row main" style="margin-top: 10%;position:relative;top:20%">
       <div class="col s12 z-depth-3 card-panel">
-        <form class="login-form" action="backend/login.php" method="post">     
+        <form class="login-form" action="request/login.php" method="post">     
           <div class="row margin">    
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>

@@ -16,7 +16,7 @@
         <div class="card-content">
         </div>
         <div class="card-action">
-          <a href="busca-hospital.php">Tela Principal</a>
+          <a href="busca_hospital.php">Tela Principal</a>
           <a href='#' onclick="window.history.back()">Cadastrar Novamente</a>
         </div>
       </div>

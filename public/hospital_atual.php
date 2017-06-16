@@ -1,24 +1,18 @@
 <?php
 	require_once "cabecalho.php";
-	require_once "../backend/addSessao.php";
+	require_once "../controller/session.php";
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
-		addSessionHospital($id);
+		$sessao = new Session();
+		$sessao->addHospital($id);
 	}
-	if(!isset($_SESSION['hospital'])){
+	if(isset($_SESSION['hospital'])){
+		header("location: atendimentos.php");
+		die();
+	}else{
 		header("location: busca-hospital.php");
 		die();
 	}
 	
-	$hospital = $_SESSION['hospital'];
-
-	echo '<script>window.location.href = "atendimentos.php"</script>';
-	die();
 
 ?>
-	
-
-
-
-
-

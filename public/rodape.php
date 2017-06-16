@@ -12,37 +12,12 @@
       </div>
     </div>
 </footer>
-  <!--SCRIPSTS-->
-  <script>
-    $('.datepicker').pickadate({
-    	monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-  		monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-  		weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-  		weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-  		today: 'Hoje',
-  		clear: 'Limpar',
-  		close: 'Pronto',
-  		labelMonthNext: 'Próximo mês',
-  		labelMonthPrev: 'Mês anterior',
-  		labelMonthSelect: 'Selecione um mês',
-  		labelYearSelect: 'Selecione um ano',
-        selectYears:100,
-  		max:$.now(),
-		formatSubmit: 'yyyy-mm-dd',
-  		format: 'dd !de mmmm !de yyyy'
-    });
-    $(document).ready(function() {
-      $('select').material_select();
-    });
-      $(document).ready(function() {
-      $('#example').DataTable();
-    } );
-  
-  </script>
+
+  <!--SCRIPTS-->
+  <script type="text/javascript" src="../js/scriptsrodape.js"></script>
   <script src="../js/mask.js"></script>
   <script src="../js/mask_funcionario.js"></script>
   <script src="../js/mask_paciente.js"></script>
   <script src="../js/mask_hospital.js"></script>
-  <script src="../validation/validacao_cpf.js"></script>
-  <script src="../validation/paciente_script.js"></script>
 </body>
+</html>

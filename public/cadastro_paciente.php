@@ -2,27 +2,10 @@
   require_once "cabecalho.php";
 ?>
   <script src="../validation/validation.js"></script>
-  <script type="text/javascript">
-    (function($){
-      $(function(){
-        $('select').material_select();
-        $('.button-collapse').sideNav();
-        $('.parallax').parallax();
-      }); 
-    })(jQuery);
-    
-    function bloqueio(el) {
-      var display = document.getElementById(el).style.display;
-        if(display == "none")
-            document.getElementById(el).style.display = 'block';
-        else
-            document.getElementById(el).style.display = 'none';
-    }
-  </script>
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
-      <form class="col s11 m12" action="../backend/addPatient.php" method="post">
+      <form class="col s11 m12" action="../request/addpatient.php" method="post">
 
         <!--TITULO-->
         <h3>Cadastro Paciente</h3>
@@ -44,7 +27,7 @@
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">web</i>
-          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" onblur="TestaCPF()"required>
+          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" required>
           <label for="cpf">CPF</label>
         </div>
     

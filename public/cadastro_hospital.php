@@ -1,31 +1,11 @@
 <?php 
 	require_once "cabecalho.php";
 ?>
-<head>
-  <script>
-    $(document).ready(function(){
-    	$("#addUTI").click(function(){
-    		$(".utis").append('<div class="input-field col s5">'
-            +'<i class="material-icons prefix">business</i>'
-            + '<input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>'
-            + '<label for="nome_uti">Nome da UTI</label>'
-            + '</div>'
-            + '<div class="input-field col s5">'
-            + '<i class="material-icons prefix">business</i>'
-            +  ' <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>'
-            +  '<label for="quantidade_leito_uti">Quantidade de leito da UTI</label>'
-            +'</div>'
-    		+'</div>');
-    	});
-    });
-  </script>
-</head>
 
-<body>
     <!--CLASS/FORM-->
     <div class="row main margemCentro">
 		  <div id="formHospitalCadastro"></div>
-      <form class="col s11" method="post" action="../backend/addHospital.php" enctype="multipart/form-data"> 
+      <form class="col s11" method="post" action="../request/addHospital.php" enctype="multipart/form-data"> 
     
         <!--TITULO-->
         <h3>Cadastro Hospital</h3>
