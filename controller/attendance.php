@@ -40,9 +40,6 @@ class AttendanceController{
 					<div class="portlet-header">'.$result->namePatient.' '.$result->surnamePatient.'</div>
 					<div class="portlet-content"></div>
 				</div>';
-		}else{
-			header("location: ../public/fail_register.php");
-			die();
 		}
 	}
 	
