@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS odt_soft;
+﻿DROP DATABASE IF EXISTS odt_soft;
 
 CREATE DATABASE odt_soft	
 
@@ -236,7 +236,7 @@ INSERT INTO `odt_soft`.`users`
 VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
 
 INSERT INTO stats (status) 
-VALUES ('Em avaliação') , ('Em reavaliação') , ('Em aprovação') , ('Aprovado pelo médico responsável') , ('Aprovado pelo família') , ('Em orçamento') , ('Orçamento aprovado pelo família') , ('Anexa parecer'),
+VALUES ('Em avaliação') , ('Em reavaliação') , ('Em aprovação') , ('Aprovado pelo médico responsável') , ('Aprovado pela família') , ('Em orçamento') , ('Orçamento aprovado pela família') , ('Anexa parecer'),
 ('Em acompanhamento') , ('Dispensa') , ('Óbito') , ('Alta') , ('Concluído') ;
 
 INSERT INTO meta_entity(name)
