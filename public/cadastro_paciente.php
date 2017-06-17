@@ -5,7 +5,7 @@
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
-      <form class="col s11 m12" action="../request/addpatient.php" method="post">
+      <form class="col s11 m12" action="../request/addPatient.php" method="post">
 
         <!--TITULO-->
         <h3>Cadastro Paciente</h3>
