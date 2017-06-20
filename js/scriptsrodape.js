@@ -21,28 +21,25 @@ $('.datepicker').pickadate({
     $(document).ready(function() {
       $('select').material_select();
     });
-      $(document).ready(function() {
-      $('#example').DataTable();
-    } );
 	
 /////////////////////////////////
 
 //SCRIPT BUSCA DE FUNCIONARIO
 
 $(document).ready(function() {
-		    $('#pacienteDatatable').DataTable({
+		    $('#funcionarioDatatable').DataTable({
 			"pageLength": 50,	
 			"oLanguage":{
 		    "sEmptyTable": "Nenhum registro encontrado",
 		    "sInfo": "Mostrando de _START_ até _END_. Total de _TOTAL_ Funcionários",
-		    "sInfoEmpty": "Mostrando 0 até 0. Total de 0 funcionarios",
+		    "sInfoEmpty": "Mostrando 0 até 0. Total de 0 Funcionários",
 		    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
 		    "sInfoPostFix": "",
 		    "sInfoThousands": ".",
 		    "sLengthMenu": "",
 		    "sLoadingRecords": "Carregando...",
 		    "sProcessing": "Processando...",
-		    "sZeroRecords": "Nenhum funcionario encontrado",
+		    "sZeroRecords": "Nenhum funcionário encontrado",
 		    "sSearch": "Pesquisar",
 		    "oPaginate": {
 		        "sNext": "Próximo",
@@ -86,7 +83,7 @@ $(document).ready(function() {
 //SCRIPT BUSCA DE PACIENTE
 
 $(document).ready(function() {
-		    $('#example2').DataTable({
+		    $('#pacienteDatatable').DataTable({
 			"pageLength": 50,	
 			"oLanguage":{
 		    "sEmptyTable": "Nenhum registro encontrado",

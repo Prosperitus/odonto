@@ -21,7 +21,7 @@
 			</a>
 	<div id="dialogEmployee" title="Dados do Funcionário">	</div>
 	<input type="checkbox" value="clinica" checked />
-		<table id="example2" class="hover row-border" cellspacing="0" width="100%;">
+		<table id="funcionarioDatatable" class="hover row-border" cellspacing="0" width="100%;">
 	        <thead>
 	            <tr>
 	                <th>Nome</th>
