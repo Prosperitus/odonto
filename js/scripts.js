@@ -105,9 +105,6 @@ $(document).ready(function(){
 			type: 'get',
 			dataType: 'html',
 			url: "../request/viewAttendance.php?text="+text,
-			beforeSend: function () {
-				$('#boardAttendance').addClass('loader');
-			},
 			success: function (data) {
 				$('#boardAttendance').removeClass('loader');
 				$('#boardAttendance').html(data);
@@ -120,9 +117,6 @@ $(document).ready(function(){
 			dataType: 'html',
 			data: $('#formAddAttendance').serialize(),
 			url: "../request/addAttendance.php",
-			beforeSend: function () {
-				$('#modalCadAttendance').addClass('loader');
-			},
 			success: function (data) {
 				$('#modalCadAttendance').removeClass('loader');
 				$('#modalCadAttendance').modal('close');
