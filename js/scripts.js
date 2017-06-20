@@ -157,9 +157,6 @@ $(document).ready(function(){
         type: 'get',
         dataType: 'html',
         url: "../request/searchEmployee.php?name=" + value,
-        beforeSend: function () {
-			$().addClass('loader');
-        },
         success: function (data) {
           $('#mostramedico').css('display','block');
           $('#mostramedico').html(data);
@@ -178,8 +175,6 @@ $(document).ready(function(){
         type: 'get',
         dataType: 'html',
         url: "../request/searchPatient.php?name=" + value,
-        beforeSend: function () {
-        },
         success: function (data) {
           $('#mostrapaciente').css('display','block');
           $('#mostrapaciente').html(data);

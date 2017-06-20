@@ -69,13 +69,11 @@ $(document).ready(function() {
 				type: 'get',
 				dataType: 'html',
 				url: "../request/viewEmployee.php?id=" + id,
-				beforeSend: function () {
-					$('#dialogPatient').addClass('loader');
-					$( "#dialogPatient" ).dialog('open');
+				beforeSend: function () { 
 				}, 
-				success: function (data) {
-					$('#dialogPatient').removeClass('loader');
-					$("#dialogEmployee").html(data);
+				success: function (data) { 
+					$("#dialogEmployee").html(data); 
+					$( "#dialogEmployee" ).dialog('open');
 				} 
 			}); 
 		}
@@ -128,13 +126,9 @@ $(document).ready(function() {
 				type: 'get',
 				dataType: 'html',
 				url: "../request/viewPatient.php?id=" + id,
-				beforeSend: function () {
-					$('#dialogPatient').addClass('loader');
+				success: function (data) { 
+					$("#dialogPatient").html(data); 
 					$( "#dialogPatient" ).dialog('open');
-				}, 
-				success: function (data) {
-					$('#dialogPatient').removeClass('loader');
-					$("#dialogPatient").html(data);
 				} 
 			}); 
 		}
