@@ -28,7 +28,7 @@ $('.datepicker').pickadate({
 
 $(document).ready(function() {
 		    $('#funcionarioDatatable').DataTable({
-			"pageLength": 50,	
+			"pageLength": 30,	
 			"oLanguage":{
 		    "sEmptyTable": "Nenhum registro encontrado",
 		    "sInfo": "Mostrando de _START_ até _END_. Total de _TOTAL_ Funcionários",
@@ -69,11 +69,13 @@ $(document).ready(function() {
 				type: 'get',
 				dataType: 'html',
 				url: "../request/viewEmployee.php?id=" + id,
-				beforeSend: function () { 
+				beforeSend: function () {
+					$('#dialogPatient').addClass('loader');
+					$( "#dialogPatient" ).dialog('open');
 				}, 
-				success: function (data) { 
-					$("#dialogEmployee").html(data); 
-					$( "#dialogEmployee" ).dialog('open');
+				success: function (data) {
+					$('#dialogPatient').removeClass('loader');
+					$("#dialogEmployee").html(data);
 				} 
 			}); 
 		}
@@ -84,7 +86,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 		    $('#pacienteDatatable').DataTable({
-			"pageLength": 50,	
+			"pageLength": 30,	
 			"oLanguage":{
 		    "sEmptyTable": "Nenhum registro encontrado",
 		    "sInfo": "Mostrando de _START_ até _END_, Total de _TOTAL_ Pacientes",
@@ -111,7 +113,6 @@ $(document).ready(function() {
 			}}
 			
 			);
-			$(function() {
 		     $( "#dialogPatient" ).dialog({
 				width: 500,
 				autoOpen: false,modal: true,
@@ -121,18 +122,19 @@ $(document).ready(function() {
 					}
 				}
 			});
-		})
 		});	
 		function visualizarPaciente(id) { 
 			$.ajax({ 
 				type: 'get',
 				dataType: 'html',
 				url: "../request/viewPatient.php?id=" + id,
-				beforeSend: function () { 
-				}, 
-				success: function (data) { 
-					$("#dialogPatient").html(data); 
+				beforeSend: function () {
+					$('#dialogPatient').addClass('loader');
 					$( "#dialogPatient" ).dialog('open');
+				}, 
+				success: function (data) {
+					$('#dialogPatient').removeClass('loader');
+					$("#dialogPatient").html(data);
 				} 
 			}); 
 		}

@@ -105,7 +105,11 @@ $(document).ready(function(){
 			type: 'get',
 			dataType: 'html',
 			url: "../request/viewAttendance.php?text="+text,
+			beforeSend: function () {
+				$('#boardAttendance').addClass('loader');
+			},
 			success: function (data) {
+				$('#boardAttendance').removeClass('loader');
 				$('#boardAttendance').html(data);
 			}
         });
@@ -116,7 +120,11 @@ $(document).ready(function(){
 			dataType: 'html',
 			data: $('#formAddAttendance').serialize(),
 			url: "../request/addAttendance.php",
+			beforeSend: function () {
+				$('#modalCadAttendance').addClass('loader');
+			},
 			success: function (data) {
+				$('#modalCadAttendance').removeClass('loader');
 				$('#modalCadAttendance').modal('close');
 				$("#avaliacao").append(data);
 			}
@@ -150,6 +158,7 @@ $(document).ready(function(){
         dataType: 'html',
         url: "../request/searchEmployee.php?name=" + value,
         beforeSend: function () {
+			$().addClass('loader');
         },
         success: function (data) {
           $('#mostramedico').css('display','block');

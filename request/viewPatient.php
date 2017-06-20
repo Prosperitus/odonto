@@ -10,7 +10,7 @@
 	
 ?>
 
-<label class="bold">Nome: </label><label class="font_big"><?=$pat->name.' '.$pat->surname;?></label><br>
+<label class="bold" id="nmePatient">Nome: </label><label class="font_big"><?=$pat->name.' '.$pat->surname;?></label><br>
 <label class="bold">Email: </label><label class="font_big"><?=$pat->email;?></label><br>
 <label class="bold">CPF: </label><label class="font_big"><?=$pat->social_security;?></label><br>
 <label class="bold">Plano de Saúde: </label><label class="font_big"><?=$pat->health_insurance;?></label><br>

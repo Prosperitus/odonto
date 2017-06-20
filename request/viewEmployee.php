@@ -12,7 +12,7 @@
 	$emp = $funcionarioControle->searchId($id);	
 ?>
 
-<label class="bold">Nome: </label><label class="font_big"><?=$emp->name.' '.$emp->surname;?></label><br>
+<label class="bold" id="nmeEmployee">Nome: </label><label class="font_big"><?=$emp->name.' '.$emp->surname;?></label><br>
 <label class="bold">Email: </label><label class="font_big"><?=$emp->email;?></label><br>
 <label class="bold">CPF: </label><label class="font_big"><?=$emp->social_security;?></label><br>
 <label class="bold">CRO: </label><label class="font_big"><?=$emp->cro;?></label><br>
