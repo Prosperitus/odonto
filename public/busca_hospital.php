@@ -33,7 +33,7 @@
 <!--MODAL-->
   <div id="modalEditHospital" class="modal">
     <div class="modal-content">
-	  <form class="col s11 m12" id="formEditHospital" required>
+	  <form class="col s11 m12" id="formEditHospital" method="post" action="" enctype="multipart/form-data" required>
       <!--TITULO-->
         <h3>Cadastro Hospital</h3>
 		
@@ -87,6 +87,7 @@
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" id="image_path" type="text" placeholder="Upload de uma imagem">
+			<input name="image_path" id="image_path_hidden" type="hidden">
           </div>
         </div>
 

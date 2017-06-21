@@ -223,6 +223,7 @@ $(document).ready(function(){
 			  $('#modalEditHospital #nome_chefe_uti').val('');
 			  $('#modalEditHospital #file_path').val('');
 			  $('#modalEditHospital #image_path').val('');
+			  $('#modalEditHospital #image_path_hidden').val('');
 			  $('#modalEditHospital #nome_hospital').focusin();
 			  $('#modalEditHospital #telefone_uti').focusin();
 			  $('#modalEditHospital #telefone_chefe_uti').focusin();
@@ -233,6 +234,7 @@ $(document).ready(function(){
 			  $('#modalEditHospital #telefone_chefe_uti').val(dataJson['telephone_chefe_uti']);
 			  $('#modalEditHospital #nome_chefe_uti').val(dataJson['nome_chefe_uti']);
 			  $('#modalEditHospital #image_path').val(dataJson['image']);
+			  $('#modalEditHospital #image_path_hidden').val(dataJson['image']);
 			}
 		});
 	}
@@ -250,18 +252,19 @@ $(document).ready(function(){
 			});
 		}
 	$(document).ready(function(){
-		$('#buttonEditHospital').click(function(){
+		$('#formEditHospital').on('submit',function(e){
+			e.preventDefault();
 			$.ajax({
 				type: 'POST',
 				dataType: 'html',
-				data: $('#formEditHospital').serialize(),
-				mimeType:"multipart/form-data",
+				data: new FormData(this),
 				contentType: false,
 				cache: false,
 				processData:false,
 				url: "../request/editHospital.php",
 				success: function (data) {
 					$('#boardHospitais').html(data);
+					$('#modalEditHospital').modal('close');
 				}
 			});
 		});

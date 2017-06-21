@@ -91,7 +91,13 @@ class HospitalController{
 		if($result &&  ( isset($_FILES['imagemHospital']) && $_FILES['imagemHospital']['size'] > 0 
 		|| isset($_FILES['file_upload']) && $_FILES['imagemHospital']['size'] > 0)){
 		
-			$id = $conn->searchMaxId();
+			$id = $_POST['id_hospital'];
+			if(isset($_POST['image_path'])){
+				$path = $_POST['image_path'];
+				if(unlink($path)){
+					
+				}
+			}
 			
 			$extensao_file = strtolower(strrchr($_FILES['file_upload']['name'],'.'));
 			$extensao = strtolower(strrchr($_FILES['imagemHospital']['name'],'.'));
