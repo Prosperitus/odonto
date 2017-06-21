@@ -41,6 +41,119 @@ class HospitalDb{
                     
 	}
 	
+	public function edit($hospital) {
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "UPDATE  hospital SET name = :name, telephone_uti = :telUti, telephone_chefe_uti = :telUtiChefe,nome_chefe_uti = :nmeUtiChefe WHERE id = :id";
+
+
+        //gh significa get hospital
+        $ghName = $hospital->getNameHosp();
+        $ghTelephoneUti = $hospital->getPhoneUti();
+        $ghTelephoneUtiChefe = $hospital->getPhoneChef();
+		$ghNomeUtiChefe = $hospital->getChefUti();
+		$ghId = $hospital->getId();
+      
+        $conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':name', $ghName);
+        $stmt->bindParam(':telUti', $ghTelephoneUti);
+		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
+        $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
+		$stmt->bindParam(':id', $ghId);
+
+        
+       
+       $result = $stmt->execute();
+        return $result;
+	
+	
+    }
+    catch(PDOExeption $e){
+        
+        return $result;
+    }
+                    
+	}
+	
+	public function delete($id){
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "DELETE FROM hospital WHERE id = :id";
+		$idHospital = $id;
+		
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':id', $idHospital);
+        $result = $stmt->execute();
+        return $result;
+    }
+    catch(PDOExeption $e){
+        
+        return $result;
+    }
+                    
+	}
+	
+	public function updateAttendace($id){
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "UPDATE attendance SET bed = null WHERE bed = :id";
+		$idHospital = $id;
+		
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':id', $idHospital);
+        $result = $stmt->execute();
+        return $result;
+		
+    }
+    catch(PDOExeption $e){
+        
+        return $result;
+    }
+	}
+	
+	public function deleteLeito($id){
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "DELETE FROM itu_bed WHERE itu = :id";
+		$idHospital = $id;
+		
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':id', $idHospital);
+        $result = $stmt->execute();
+        return $result;
+		
+    }
+    catch(PDOExeption $e){
+        
+        return $result;
+    }
+                    
+	}
+	
+	public function deleteUti($id){
+    try {
+        //checar com o SGBD os nomes das colunas
+        $sql = "DELETE FROM hospital_itu WHERE hospital = :id";
+		$idHospital = $id;
+		
+		$conn = new DbConnector();
+        $stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':id', $idHospital);
+        $result = $stmt->execute();
+        return $result;
+		
+    }
+    catch(PDOExeption $e){
+        
+        return $result;
+    }
+                    
+	}
+	
 	 public function addBed($itu,$number) {
     try {
         //checar com o SGBD os nomes das colunas
@@ -145,6 +258,17 @@ class HospitalDb{
     $result = $stmt->fetch(PDO::FETCH_OBJ);
 	return $result;
 	}
+	
+	public function searchName($search){
+
+    $sql = "SELECT id,name FROM hospital WHERE id = :id_hospital";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':id_hospital', $search);
+	$stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_OBJ);
+	return $result;
+	}
 
      public function searchAll(){
       $sql = "SELECT * FROM hospital";
@@ -176,6 +300,16 @@ class HospitalDb{
     }
 	
 	public function addImage($destino,$id){
+		
+		$sql = "UPDATE `odt_soft`.`hospital` SET image = :destino WHERE id = :id";
+		$conn= new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':destino', $destino);
+		$stmt->bindParam(':id',$id);
+		$result = $stmt->execute();
+	}
+	
+	public function editImage($destino,$id){
 		
 		$sql = "UPDATE `odt_soft`.`hospital` SET image = :destino WHERE id = :id";
 		$conn= new DbConnector();

@@ -1,7 +1,7 @@
 <?php
 
 class Hospital{
-
+		private $id;
 		private $namehosp;
 		private $chefuti;
 		private $phonechef;
@@ -11,7 +11,16 @@ class Hospital{
 
 		}		
 
+		
+		public function getId(){
+			return $this->id;
+		}
+		
+		public function setId($id){
+			$this->id = $id;
+		}
 
+		
 		public function getNameHosp(){
 			return $this->namehosp;
 		}

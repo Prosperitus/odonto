@@ -170,6 +170,13 @@ td{
 /* ---------------------------*/
 
  /* ESTILO BUSCA HOSPITAL */
+ 
+	#hospitalFile{
+		clear:both;
+		width:83%;
+		position:relative;
+	}
+ 
 	div.welcome{
 			color: #274e82;
 			
@@ -218,6 +225,12 @@ td{
 	}
 	#botaoBuscaHospital{
 		top:120px;
+	}
+	#botaoEditHospital{
+		top:70px;
+	}
+	#botaoDeleteHospital{
+		top:20px;
 	}
 	#divHospitalConteudo1{
 		left: 230px;

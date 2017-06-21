@@ -38,7 +38,7 @@
         </div>
 
         <!--ARQUIVOS-->
-        <div class="file-field input-field col s5" style="clear:both">
+        <div class="file-field input-field col s5" id="hospitalFile">
           <div class="btn input-field col s5 light-blue">
             <span>Arquivos</span>
              <input type="file" name="file_upload">
@@ -49,7 +49,7 @@
         </div>
 				  
         <!--IMAGEM-->
-        <div class="file-field input-field col s5" style="clear:both">
+        <div class="file-field input-field col s5" id="hospitalFile">
           <div class="btn input-field col s5 light-blue">
             <span>Imagem</span>
             <input type="file" name="imagemHospital" accept="image/*">

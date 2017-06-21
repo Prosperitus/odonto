@@ -79,14 +79,15 @@ class HospitalController{
 
 	public function edit(){
 		$Hospital = new Hospital();
+		$Hospital->setId($_POST['id_hospital']);
 		$Hospital->setNameHosp($_POST["nome_hospital"]);
 		$Hospital->setChefUti($_POST["nome_chefe_uti"]);
 		$Hospital->setPhoneChef($_POST["telefone_chefe_uti"]);
 		$Hospital->setPhoneUti($_POST["telefone_uti"]);
+		
 		$conn = new HospitalDb();
 		
 		$result = $conn->edit($Hospital);
-
 		if($result &&  ( isset($_FILES['imagemHospital']) && $_FILES['imagemHospital']['size'] > 0 
 		|| isset($_FILES['file_upload']) && $_FILES['imagemHospital']['size'] > 0)){
 		
@@ -115,7 +116,19 @@ class HospitalController{
 			
 			
 		}
+		return $Hospital;
 	
+	}
+	
+	public function del($id){
+		$conn = new HospitalDb();
+		$conn->updateAttendace($id);
+		$utis = $conn->searchUti($id);
+		foreach($utis as $uti){
+			$conn->deleteLeito($uti->id);
+		}
+		$conn->deleteUti($id);
+		$result = $conn->delete($id);
 	}
 
 

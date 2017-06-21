@@ -117,7 +117,7 @@ CREATE TABLE attendance(
 	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`patient`  int NOT NULL,
 	`hospital` int NOT NULL,
-	`bed` int  NOT NULL,
+	`bed` int,
 	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,

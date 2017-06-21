@@ -118,7 +118,6 @@ $(document).ready(function(){
 			data: $('#formAddAttendance').serialize(),
 			url: "../request/addAttendance.php",
 			success: function (data) {
-				$('#modalCadAttendance').removeClass('loader');
 				$('#modalCadAttendance').modal('close');
 				$("#avaliacao").append(data);
 			}
@@ -207,4 +206,77 @@ $(document).ready(function(){
     $('#modalCadAttendance').modal('close');
 	
 /////////////////////////////////
+
+//SCRIPT EDITAR E EXCLUIR HOSPITAL
+
+	function buscarHospital(id){
+		$.ajax({
+			type: 'get',
+			dataType: 'html',
+			url: "../request/searchHospital.php?id=" + id,
+			success: function (data) {
+			  var dataJson = $.parseJSON(data);
+			  $('#modalEditHospital #nome_hospital').val('');
+			  $('#modalEditHospital #id_hospital').val('');
+			  $('#modalEditHospital #telefone_uti').val('');
+			  $('#modalEditHospital #telefone_chefe_uti').val('');
+			  $('#modalEditHospital #nome_chefe_uti').val('');
+			  $('#modalEditHospital #file_path').val('');
+			  $('#modalEditHospital #image_path').val('');
+			  $('#modalEditHospital #nome_hospital').focusin();
+			  $('#modalEditHospital #telefone_uti').focusin();
+			  $('#modalEditHospital #telefone_chefe_uti').focusin();
+			  $('#modalEditHospital #nome_chefe_uti').focusin();
+			  $('#modalEditHospital #nome_hospital').val(dataJson['name']);
+			  $('#modalEditHospital #id_hospital').val(dataJson['id']);
+			  $('#modalEditHospital #telefone_uti').val(dataJson['telephone_uti']);
+			  $('#modalEditHospital #telefone_chefe_uti').val(dataJson['telephone_chefe_uti']);
+			  $('#modalEditHospital #nome_chefe_uti').val(dataJson['nome_chefe_uti']);
+			  $('#modalEditHospital #image_path').val(dataJson['image']);
+			}
+		});
+	}
+	
+		function buscarHospitalName(id){
+			$.ajax({
+				type: 'get',
+				dataType: 'html',
+				url: "../request/searchHospitalName.php?id=" + id,
+				success: function (data) {
+				  var dataJson = $.parseJSON(data);
+				  $('#lblDeleteHospital').html('Deseja Realmente excluir o hospital '+dataJson['name']+'?');
+				  $('#idHospitalExcluir').val(dataJson['id']);
+				}
+			});
+		}
+	$(document).ready(function(){
+		$('#buttonEditHospital').click(function(){
+			$.ajax({
+				type: 'POST',
+				dataType: 'html',
+				data: $('#formEditHospital').serialize(),
+				mimeType:"multipart/form-data",
+				contentType: false,
+				cache: false,
+				processData:false,
+				url: "../request/editHospital.php",
+				success: function (data) {
+					$('#boardHospitais').html(data);
+				}
+			});
+		});
+		$('#yesDeleteHospital').click(function(){
+			var id = $('#idHospitalExcluir').val();
+			$.ajax({
+				type: 'GET',
+				dataType: 'html',
+				url: "../request/deleteHospital.php?id="+id,
+				success: function (data) {
+					$('#boardHospitais').html(data);
+				}
+			});
+		});
+	});
+
+
 
