@@ -136,7 +136,7 @@
 	<div class="row col s12">
 		<ul>
 			<div class="col s4" style="float:left">
-				<a href="#modalCadAttendance"><button id="botaoAddAttendance">Adicionar Cadastro</button></a>
+				<a href="#modalCadAttendance"><button id="botaoAddAttendance">Cadastrar Atendimento</button></a>
 			</div>
 			<div class="col s6" style="float:right">
 				<input id="pesquisa" type="text">
