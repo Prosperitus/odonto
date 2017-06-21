@@ -49,7 +49,7 @@
 <div id="modalCadAttendance" style="width:60%;" class="modal">
         <div class="modal-content">
        	<div style="height:80px;background-color: #03a9f4; margin-bottom:50px;">
-       	<h3 style=" font-size:40px; text-align: center;color:white; padding:20px;" class="center">Cadastro Atendimento</h3>
+       	<h3 style=" font-size:40px; text-align: center;color:white; padding:20px;" class="center">Cadastro de Atendimento</h3>
        	</div>
 
    
