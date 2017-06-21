@@ -94,9 +94,9 @@ class HospitalController{
 			$id = $_POST['id_hospital'];
 			if(isset($_POST['image_path'])){
 				$path = $_POST['image_path'];
-				if(unlink($path)){
-					
-				}
+				ini_set('display_errors', 0 );
+				error_reporting(0);
+				unlink($path);
 			}
 			
 			$extensao_file = strtolower(strrchr($_FILES['file_upload']['name'],'.'));

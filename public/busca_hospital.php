@@ -21,6 +21,7 @@
 <!--MODAL-->
   <div id="modalDeleteHospital" class="modal" style="width:300px;">
     <div class="modal-content">
+		<h5>Exclusão de Hospital</h5>
 		<label class="bold" id="lblDeleteHospital">Deseja Realmente excluir o hospital?</label>
 		<input name="idHospitalExcluir" id="idHospitalExcluir" type="hidden">
 	</div>
@@ -35,7 +36,7 @@
     <div class="modal-content">
 	  <form class="col s11 m12" id="formEditHospital" method="post" action="" enctype="multipart/form-data" required>
       <!--TITULO-->
-        <h3>Cadastro Hospital</h3>
+        <h3>Edição de Hospital</h3>
 		
 		<!--ID DO HOSPITAL-->   
 		<input name="id_hospital" id="id_hospital" type="hidden">
