@@ -63,6 +63,7 @@
 	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
     <div id="mostrapaciente" class="spacewhite"></div>
+    <a class="waves-effect waves-light btn-small" href="cadastro_paciente.php">Adicionar Paciente</a>
 
 
     </div>
