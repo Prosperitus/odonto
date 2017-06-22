@@ -2,6 +2,8 @@
   require_once "cabecalho.php";
 ?>
   <script src="../validation/validation.js"></script>
+  <script src="../validation/validacao_cpf.js"></script>
+
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
@@ -27,7 +29,7 @@
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">web</i>
-          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" required>
+          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" onblur="TestaCPF()" required>
           <label for="cpf">CPF</label>
         </div>
     
