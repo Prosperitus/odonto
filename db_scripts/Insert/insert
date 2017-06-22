@@ -1,3 +1,6 @@
+###################
+# INSERTS PADRÕES # 
+###################
 INSERT INTO `odt_soft`.`admission_cause`
 (`id`,
 `type`)
@@ -176,3 +179,62 @@ VALUES
 <{number_of_account: }>,
 <{agency: }>,
 <{permition: }>);
+
+###############################
+# INSERTS  PARA O ATENDIMENTO #
+###############################
+INSERT INTO `odt_soft`.`hospital`
+(`name`,
+`telephone_uti`,
+`telephone_chefe_uti`,
+`nome_chefe_uti`)
+VALUES
+(<{name: }>,
+<{telephone_uti: }>,
+<{telephone_chefe_uti: }>,
+<{nome_chefe_uti: }>);
+
+INSERT INTO `odt_soft`.`patient`
+(`name`,
+`gender`)
+VALUES
+(<{name: }>,
+<{gender: }>);
+
+INSERT INTO `odt_soft`.`users`
+(`name`,
+`surname`,
+`email`,
+`registration`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+(<{name: }>,
+<{surname: }>,
+<{email: }>,
+<{registration: }>,
+<{phone2: }>,
+<{address: }>,
+<{admission_date: }>,
+<{password: }>,
+<{social_security: }>,
+<{bank: }>,
+<{number_of_account: }>,
+<{agency: }>,
+<{permition: }>);
+
+INSERT INTO `odt_soft`.`hospital_itu`
+(`name_itu`,
+`quant_itu`,
+`hospital`)
+VALUES
+(<{name_itu: }>,
+<{quant_itu: }>,
+<{hospital: }>);
