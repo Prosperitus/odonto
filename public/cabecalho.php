@@ -71,3 +71,65 @@
 		  </ul>
 		</div>
 	</header>
+
+	<script>
+		$(document).ready(function(){
+			setTimeout(expireSessoes,108000000);
+		});
+	</script>
+	
+	<div id="modalReLogin" class="modal" style="background-color:transparent;padding: 0px;width: 500px;height:auto;">
+    <div class="modal-content" style="background-color:transparent;padding: 0px;">
+		<div class="col s12 z-depth-3 card-panel" style="margin:0px">
+		<h4>Sua Sessão expirou, logue novamente para continuar utilizando o sistema!<h4>
+        <form class="login-form" id="loginNoRedirect" action="../request/login.php" method="post">     
+          <div class="row margin">    
+            <div class="input-field col s12">
+              <i class="material-icons prefix">face</i>
+			  <?php if(isset($_COOKIE['user'])){ ?>
+              <input id="username" type="text" name="username" value="<?=$_COOKIE['user']?>">
+              <label for="username">Usuário</label>
+			  <?php }else{ ?>
+			  <input id="username" type="text" name="username">
+              <label for="username">Usuário</label>
+			  <?php } ?>
+            </div>
+          </div>
+          
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">lock</i>
+			  
+			  <?php if(isset($_COOKIE['pass'])){ ?>
+              <input id="password" type="password" name="password" value="<?=$_COOKIE['pass']?>">
+              <label for="password">Senha</label>
+			  <?php }else{ ?>
+			  <input id="password" type="password" name="password">
+              <label for="password">Senha</label>
+			  <?php } ?>
+              
+            </div>
+          </div>
+          
+          <div class="row">          
+            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;">
+			<?php if(isset($_COOKIE['pass']) && isset($_COOKIE['user'])){ ?>
+                <input name="remember" type="checkbox" id="remember-me" checked />
+                <label for="remember-me">Lembrar Usuário</label>
+			<?php }else{ ?>
+				<input name="remember" type="checkbox" id="remember-me"/>
+                <label for="remember-me">Lembrar Usuário</label>
+			<?php } ?>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="input-field">
+              <button class="btn waves-effect pulse light-blue col s12 ">Login</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+	</div>
+  </div>

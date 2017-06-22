@@ -281,5 +281,20 @@ $(document).ready(function(){
 		});
 	});
 
+	
+/////////////////////////////////
 
+//SCRIPT CABECALHO
+
+	function expireSessoes(){
+		$.ajax({
+			type: 'GET',
+			dataType: 'html',
+			url: "../request/logout.php",
+			success: function (data) {
+				$('#modalReLogin').modal('open');
+			}
+		});
+		
+	}
 
