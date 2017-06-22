@@ -94,9 +94,6 @@
           <?php if(isset($_SESSION['msg'])){unset($_SESSION['msg']);}?>
           <div class="row">
             <div class="input-field col s6">
-              <p class="margin left medium-small"><a href="public/cadastro_funcionario.php">Cadastrar</a></p>
-            </div>
-            <div class="input-field col s6">
                 <p class="margin right medium-small"><a href='public/esqueceu_senha.php'>Esqueceu a senha?</a></p>
             </div>          
           </div>

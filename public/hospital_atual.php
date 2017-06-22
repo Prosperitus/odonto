@@ -7,11 +7,9 @@
 		$sessao->addHospital($id);
 	}
 	if(isset($_SESSION['hospital'])){
-		header("location: atendimentos.php");
-		die();
+		echo '<script>location.href = "atendimentos.php"</script>';
 	}else{
-		header("location: busca-hospital.php");
-		die();
+		echo '<script>location.href = "busca_hospital.php"</script>';
 	}
 	
 
