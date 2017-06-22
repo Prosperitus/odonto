@@ -14,14 +14,14 @@
 		<!--NOME DA UTI-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>
+          <input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" pattern="^\S[\w]\s*$" type="text" class="validate" required>
           <label for="nome_uti">Nome da UTI</label>
         </div>
 		
 		<!--QUANTIDADE DE LEITO DA UTI-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" type="text" class="validate" required>
+          <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leito da UTI" pattern="^\S[0-9]*$" type="text" class="validate" required>
           <label for="quantidade_leito_uti">Quantidade de leitos na UTI</label>
         </div>
 		</div>
