@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../dataTables/media/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
 	<script type="text/javascript" src="../js/scripts.js"></script>
+    <script src="../validation/validacao_cpf.js"></script> 
 	<link type="text/css" rel="stylesheet" href="../css/style.css"/>
   </head>
 
@@ -70,7 +71,7 @@
       </div>
     </nav>
     <?php }?>
-    <script src="../validation/funcionario_script.js"></script>
+    <!-- <script src="../validation/funcionario_script.js"></script>-->
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
@@ -81,28 +82,28 @@
         <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_nome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
+          <input id="funcionario_nome" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
           <label for="funcionario_nome">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
 		      <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_sobrenome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
+          <input id="funcionario_sobrenome" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
           <label for="funcionario_sobrenome">Sobrenome</label>
         </div>
 
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">perm_identity</i>
-          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" required>
+          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" onblur="TestaCPF()" required>
           <label for="funcionario_cpf">CPF</label>
         </div>
 
         <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="funcionario_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" class="validate" name="funcionario_email" required>
+          <input id="funcionario_email" type="email" pattern="^\S[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" class="validate" name="funcionario_email" required>
           <label for="funcionario_email">Email</label>
         </div>
 
@@ -129,33 +130,33 @@
         <!--INFORMACOES BANCARIAS-->
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_banco" type="text" class="validate" name="funcionario_banco" required>
+          <input id="funcionario_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_banco" required>
           <label for="funcionario_banco">Banco</label>
         </div>
 
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_conta_banco" type="text" class="validate" name="funcionario_conta_banco" required>
+          <input id="funcionario_conta_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_conta_banco" required>
           <label for="funcionario_conta_banco">Conta Bancaria</label>
         </div>
 
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_agencia_banco" type="text" class="validate" name="funcionario_agencia_banco" required>
+          <input id="funcionario_agencia_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_agencia_banco" required>
           <label for="funcionario_agencia_banco">Agência Bancaria</label>
         </div>
 
         <!--CEP-->
         <div class="input-field col s5">
           <i class="material-icons prefix">my_location</i>
-          <input id="funcionario_cep" type="text" title="00000-00" class="validate" name="funcionario_cep" required>
+          <input id="funcionario_cep" type="text" title="00000-000" class="validate" name="funcionario_cep" required>
           <label for="funcionario_cep">CEP</label>
         </div>
 
         <!--ENDEREÇO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input id="funcionario_endereco" type="text" class="validate" name="funcionario_endereco" required>
+          <input id="funcionario_endereco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_endereco" required>
           <label for="funcionario_endereco">Endereço</label>
         </div>
 
