@@ -149,7 +149,7 @@
         <!--CEP-->
         <div class="input-field col s5">
           <i class="material-icons prefix">my_location</i>
-          <input id="funcionario_cep" type="text" title="00000-00" class="validate" name="funcionario_cep" required>
+          <input id="funcionario_cep" type="text" title="00000-000" class="validate" name="funcionario_cep" required>
           <label for="funcionario_cep">CEP</label>
         </div>
 
