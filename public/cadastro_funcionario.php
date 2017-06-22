@@ -82,14 +82,14 @@
         <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_nome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
+          <input id="funcionario_nome" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
           <label for="funcionario_nome">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
 		      <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_sobrenome" type="text" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
+          <input id="funcionario_sobrenome" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
           <label for="funcionario_sobrenome">Sobrenome</label>
         </div>
 
@@ -103,7 +103,7 @@
         <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="funcionario_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" class="validate" name="funcionario_email" required>
+          <input id="funcionario_email" type="email" pattern="^\S[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$" class="validate" name="funcionario_email" required>
           <label for="funcionario_email">Email</label>
         </div>
 
@@ -130,19 +130,19 @@
         <!--INFORMACOES BANCARIAS-->
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_banco" type="text" class="validate" name="funcionario_banco" required>
+          <input id="funcionario_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_banco" required>
           <label for="funcionario_banco">Banco</label>
         </div>
 
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_conta_banco" type="text" class="validate" name="funcionario_conta_banco" required>
+          <input id="funcionario_conta_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_conta_banco" required>
           <label for="funcionario_conta_banco">Conta Bancaria</label>
         </div>
 
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input id="funcionario_agencia_banco" type="text" class="validate" name="funcionario_agencia_banco" required>
+          <input id="funcionario_agencia_banco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_agencia_banco" required>
           <label for="funcionario_agencia_banco">Agência Bancaria</label>
         </div>
 
@@ -156,7 +156,7 @@
         <!--ENDEREÇO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input id="funcionario_endereco" type="text" class="validate" name="funcionario_endereco" required>
+          <input id="funcionario_endereco" type="text" class="validate" pattern="^\S[\w\s]+$" name="funcionario_endereco" required>
           <label for="funcionario_endereco">Endereço</label>
         </div>
 
