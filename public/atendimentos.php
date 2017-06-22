@@ -101,7 +101,7 @@
 
     <!--CAUSA/DE/ADMISSAO-->
     <div class="input-field col s6">
-		<select multiple name="admcause" id="admcause" required>
+		<select multiple name="admcause[]" id="admcause" required>
 			<option value="n" disabled selected>Condição Sistêmica</option>
 			<option value="1">Oncológico</option>
 			<option value="2">Cardiopatia</option>

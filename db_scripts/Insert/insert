@@ -1,3 +1,6 @@
+###################
+# INSERTS PADRÕES # 
+###################
 INSERT INTO `odt_soft`.`admission_cause`
 (`id`,
 `type`)
@@ -176,3 +179,175 @@ VALUES
 <{number_of_account: }>,
 <{agency: }>,
 <{permition: }>);
+
+###############################
+# INSERTS  PARA O ATENDIMENTO #
+###############################
+INSERT INTO `odt_soft`.`hospital`
+(`name`,
+`telephone_uti`,
+`telephone_chefe_uti`,
+`nome_chefe_uti`)
+VALUES
+('Hospital Teste',
+32165498,
+24567984,
+'Chefe Uti Teste');
+
+INSERT INTO `odt_soft`.`patient`
+(`name`,
+`gender`)
+VALUES
+('Paciente',
+'1');
+
+INSERT INTO `odt_soft`.`users`
+(`name`,
+`surname`,
+`email`,
+`registration`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+('Médico Teste',
+'Testador',
+'medico.teste@gmail.com',
+'1',
+25814736,
+'Rua Teste, 123',
+'2017-05-05',
+'321654987',
+'654987321',
+'Banco Teste',
+'456789132',
+'789456123',
+1);
+
+INSERT INTO `odt_soft`.`hospital_itu`
+(`name_itu`,
+`quant_itu`,
+`hospital`)
+VALUES
+('UTI Teste',
+5,
+1);
+
+INSERT INTO `odt_soft`.`hospital`
+(`name`,
+`telephone_uti`,
+`telephone_chefe_uti`,
+`nome_chefe_uti`)
+VALUES
+('Santa luzia',
+33435656,
+33218484,
+'Afonso Bino') ;
+
+INSERT INTO `odt_soft`.`patient`
+(`name`,
+`gender`)
+VALUES
+('Davidsyon',
+'1');
+
+INSERT INTO `odt_soft`.`users`
+(`name`,
+`surname`,
+`email`,
+`registration`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+('Grete',
+'Souza',
+'GretinhaLindinha@gmail.com',
+'2',
+999551082,
+'SQSW' ,
+'2017-02-25',
+'senha123456',
+'05195014160',
+'Bank of America',
+'121245',
+'21545',
+2);
+
+INSERT INTO `odt_soft`.`hospital_itu`
+(`name_itu`,
+`quant_itu`,
+`hospital`)
+VALUES
+('uti santa luzia',
+7,
+2);
+
+
+INSERT INTO `odt_soft`.`hospital`
+(`name`,
+`telephone_uti`,
+`telephone_chefe_uti`,
+`nome_chefe_uti`)
+VALUES
+('Pao de queijo',
+99876588,
+99876543,
+'Osvaldo');
+
+INSERT INTO `odt_soft`.`patient`
+(`name`,
+`gender`)
+VALUES
+('Jusevaldo',
+'1');
+
+INSERT INTO `odt_soft`.`users`
+(`name`,
+`surname`,
+`email`,
+`registration`,
+`phone2`,
+`address`,
+`admission_date`,
+`password`,
+`social_security`,
+`bank`,
+`number_of_account`,
+`agency`,
+`permition`)
+VALUES
+('Medico doente',
+'Doente medico',
+'doente.juvenal@medico.com.br',
+3,
+99876543,
+'Quadra doente, Conjunto cancer, Numero 0',
+'2017-05-06',
+'pizzacomcebola',
+'123456789010',
+'Banco Doente',
+'12345678901010',
+'1034',
+3);
+
+INSERT INTO `odt_soft`.`hospital_itu`
+(`name_itu`,
+`quant_itu`,
+`hospital`)
+VALUES
+('Doença',
+4,
+3);

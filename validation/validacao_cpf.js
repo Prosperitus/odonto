@@ -26,13 +26,18 @@ function TestaCPF() {
      
         var resto1 = (soma1 * 10) % 11;
       
-        if (resto1 == 10){
+        if (resto1 == 10 || resto1 == 11){
             resto1 = 0;
             
         }
         soma2 = (num1 * 11) + (num2 * 10) + (num3 * 9) + (num4 * 8) + (num5 * 7) + (num6 * 6) + (num7 * 5) + (num8 * 4) + (num9 * 3) + (num10 * 2);
       
         resto2 = (soma2 * 10) % 11;
+	
+	if (resto2 == 10 || resto2 == 11){
+            resto2 = 0;
+            
+        }
       
         if ((resto1 == num10) && (resto2 == num11)){
             document.getElementById("funcionario_cpf").setCustomValidity('');
@@ -71,14 +76,18 @@ function TestaCPFPaciente() {
      
         var resto1 = (soma1 * 10) % 11;
       
-        if (resto1 == 10){
+        if (resto1 == 10 || resto1 == 11){
             resto1 = 0;
             
         }
         soma2 = (num1 * 11) + (num2 * 10) + (num3 * 9) + (num4 * 8) + (num5 * 7) + (num6 * 6) + (num7 * 5) + (num8 * 4) + (num9 * 3) + (num10 * 2);
       
         resto2 = (soma2 * 10) % 11;
-      
+        
+	if (resto2 == 10 || resto2 == 11){
+            resto2 = 0;
+            
+        }
         if ((resto1 == num10) && (resto2 == num11)){
             document.getElementById("cpf").setCustomValidity('');
           
