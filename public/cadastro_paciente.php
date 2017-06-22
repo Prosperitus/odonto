@@ -2,6 +2,8 @@
   require_once "cabecalho.php";
 ?>
   <script src="../validation/validation.js"></script>
+  <script src="../validation/validacao_cpf.js"></script>
+
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
@@ -13,28 +15,28 @@
         <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input name="nome_paciente" id="nome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="nome_paciente" id="nome_paciente" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="nome_paciente">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input name="sobrenome_paciente" id="sobrenome_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="sobrenome_paciente" id="sobrenome_paciente" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="sobrenome_paciente">Sobrenome</label>
         </div>
 
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">web</i>
-          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" required>
+          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" onblur="TestaCPFPaciente()" required>
           <label for="cpf">CPF</label>
         </div>
     
         <!--EMAIL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">email</i>
-          <input id="paciente_email" type="email" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="paciente_email" required>
+          <input id="paciente_email" type="email" class="validate" pattern="^\S[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="paciente_email" required>
           <label for="paciente_email">Email</label>
         </div>
 
@@ -48,21 +50,21 @@
         <!--ENDEREÇO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input name="endereco_paciente" id="endereco_paciente" type="text" class="validate" required>
+          <input name="endereco_paciente" id="endereco_paciente" pattern="^\S[\w\s]+$" type="text" class="validate" required>
           <label for="endereco_paciente">Endereço</label>
         </div>
 
         <!--BAIRRO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input name="bairro_paciente" id="bairro_paciente" type="text" class="validate" required>
+          <input name="bairro_paciente" id="bairro_paciente" pattern="^\S[\w\s]+$" type="text" class="validate" required>
           <label for="bairro_paciente">Bairro</label>
         </div>
 
         <!--CIDADE-->
         <div class="input-field col s5">
           <i class="material-icons prefix">store</i>
-          <input name="cidade_paciente" id="cidade_paciente" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="cidade_paciente" id="cidade_paciente" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="cidade_paciente">Cidade</label>
         </div>
 
@@ -76,35 +78,35 @@
         <!--PLANO DE SAÚDE-->
         <div class="input-field col s5">
           <i class="material-icons prefix">payment</i>
-          <input name="plano_de_saude" id="plano_de_saude" type="text" class="validate" required>
+          <input name="plano_de_saude" id="plano_de_saude" pattern="^\S[\w\s]+$" type="text" class="validate" required>
           <label for="plano_de_saude">Plano de Saúde do Paciente</label>
         </div>
 
         <!--NOME DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_responsavel" id="nome_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="nome_responsavel" id="nome_responsavel" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
           <label for="nome_responsavel">Nome do Responsável 1</label>
         </div>
   
         <!--TELEFONE DO RESPONSÁVEL-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_responsavel" id="telefone_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
+          <input name="telefone_responsavel" id="telefone_responsavel" pattern="^\S([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" required>
           <label for="telefone_responsavel">Telefone do Responsável 1</label>
         </div>
 
         <!--NOME DO RESPONSÁVEL 2-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_responsavel_2" id="nome_responsavel_2" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" >
+          <input name="nome_responsavel_2" id="nome_responsavel_2" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" >
           <label for="nome_responsavel_2">Nome do Responsável 2</label>
         </div>
 
         <!--TELEFONE DO RESPONSÁVEL 2-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_responsavel_2" id="telefone_responsavel_2" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" >
+          <input name="telefone_responsavel_2" id="telefone_responsavel_2" pattern="^\S([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate" >
           <label for="telefone_responsavel_2">Telefone do Responsável 2</label>
         </div>
 
@@ -157,7 +159,7 @@
         <!--NOME DO MÉDICO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">supervisor_account</i>
-          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
+          <input name="nome_medico_responsavel" id="nome_medico_responsavel" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="nome_medico_responsavel">Nome do Médico</label>
         </div>
   
@@ -165,14 +167,14 @@
         <!--TELEFONE DO MÉDICO-->
         <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
-          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
+          <input name="telefone_medico_responsavel" id="telefone_medico_responsavel" pattern="^\S([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(00) 00000-0000" type="text" class="validate">
           <label for="telefone_medico_responsavel">Telefone do Médico</label>
         </div>
 
         <!--ESPECIALIDADE DO MÉDICO-->
         <div class="input-field col s5">   
           <i class="material-icons prefix">web</i>
-          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
+          <input name="especialidade_medico_responsavel" id="especialidade_medico_responsavel" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate">
           <label for="especialidade_medico_responsavel">Especialidade do Médico</label>
         </div>
       </div>

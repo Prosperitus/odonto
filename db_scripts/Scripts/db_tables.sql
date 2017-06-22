@@ -179,7 +179,7 @@ CREATE TABLE attendance_cause(
 /* FOREIGN KEY */
 
 ALTER TABLE attendance_cause
-ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
+ADD CONSTRAINT fk_attendance_cause FOREIGN KEY (attendance) REFERENCES attendance(id);
 
 ALTER TABLE attendance_cause
 ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
@@ -189,9 +189,6 @@ ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES
 
 ALTER TABLE users 
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
-
-ALTER TABLE attendance
-ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
 
 ALTER TABLE attendance
 ADD CONSTRAINT fk_status_attendance FOREIGN KEY (status) REFERENCES stats(id); 

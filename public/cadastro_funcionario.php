@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../dataTables/media/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
 	<script type="text/javascript" src="../js/scripts.js"></script>
+    <script src="../validation/validacao_cpf.js"></script> 
 	<link type="text/css" rel="stylesheet" href="../css/style.css"/>
   </head>
 
@@ -70,7 +71,7 @@
       </div>
     </nav>
     <?php }?>
-    <script src="../validation/funcionario_script.js"></script>
+    <!-- <script src="../validation/funcionario_script.js"></script>-->
 
     <!--CLASS/FORM-->
     <div class="row margemCentro">
@@ -95,7 +96,7 @@
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">perm_identity</i>
-          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" required>
+          <input id="funcionario_cpf" type="text" title="000.000.000-00" class="validate" name="funcionario_cpf" onblur="TestaCPF()" required>
           <label for="funcionario_cpf">CPF</label>
         </div>
 

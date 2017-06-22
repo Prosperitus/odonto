@@ -49,7 +49,6 @@ $(function() {
     });
     /*$("#button").submit(function(){
      validateForm();
-
      });
     */
      $("#funcionario_cpf").focusout(function() {
@@ -143,8 +142,6 @@ $(function() {
     }
 
     /*
-
-
     function validateForm(){
         if(error_name === false || error_surname === false || error_password ===  false || error_retype_password == false || error_email === false ){
             alert("Falha na validacao");
