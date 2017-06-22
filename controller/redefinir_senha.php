@@ -28,13 +28,19 @@
 		<div id="redefinir_senha" class="row main" style="margin-top: 10%">
 			<div class="col s12 z-depth-3 card-panel">
 				<div class="row margin">
-					<div class="input-field col s12" style="margin-top: 10%">
+					<div class="input-field col s12" style="margin-top: 15%">
+						<input id="senha_recebida" type="password" name="senha_recebida" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="password" required>
+						<label for="password">Senha Recebida</label>
+					</div>
+				</div>	
+				<div class="row margin">
+					<div class="input-field col s12" style="margin-top: 1%">
 						<input id="password" type="password" class="validate" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="password" required>
 						<label for="password">Nova Senha</label>
 					</div>
-  					</div>
+  				</div>
 				<div class="row margin">
-					<div class="input-field col s12" style="margin-top: 10%">
+					<div class="input-field col s12" style="margin-top: 2%">
 						<input id="password" type="password" class="validate" name="password" title="A senha deve conter no mínimo 6 caracteres" minlength="6" name="password" required>
 						<label for="password">Confirme sua nova senha</label>
 					</div>
