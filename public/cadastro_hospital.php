@@ -12,7 +12,7 @@
         <!--NOME DO HOSPITAL-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="nome_hospital" id="nome_hospital" pattern="[0-9a-zA-ZÀ-úẽẼ\s]+$" title="Digite o nome do Hospital" type="text" class="validate" required>
+          <input name="nome_hospital" id="nome_hospital" pattern="^\S[0-9a-zA-ZÀ-úẽẼ\s]*$" title="Digite o nome do Hospital" type="text" class="validate" required>
           <label for="nome_hospital">Nome do Hospital</label>
         </div>
 
@@ -26,7 +26,7 @@
         <!--NOME DO CHEFE DA UTI-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>  
-          <input name="nome_chefe_uti" id="nome_chefe_uti" pattern="[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <input name="nome_chefe_uti" id="nome_chefe_uti" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" type="text" class="validate" required>
           <label for="nome_chefe_uti">Nome do Chefe da UTI</label>
         </div>
        
