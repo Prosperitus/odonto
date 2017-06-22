@@ -169,7 +169,20 @@ CREATE TABLE doc_type(
 	`name` varchar (60) NOT NULL  
 ) ENGINE=InnoDB;
 
+CREATE TABLE attendance_cause(
+	`id` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`attendance` int NOT NULL,
+	`admission_cause` int NOT NULL
+) ENGINE=InnoDB;
+
+
 /* FOREIGN KEY */
+
+ALTER TABLE attendance_cause
+ADD CONSTRAINT fk_attendance FOREIGN KEY (attendance) REFERENCES attendance(id);
+
+ALTER TABLE attendance_cause
+ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
 
 ALTER TABLE attendance
 ADD CONSTRAINT fk_doctor_responsable FOREIGN KEY (doctor_responsible) REFERENCES users(id);
