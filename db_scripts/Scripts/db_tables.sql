@@ -191,9 +191,6 @@ ALTER TABLE users
 ADD CONSTRAINT fk_permition FOREIGN KEY (permition) REFERENCES permition(id);
 
 ALTER TABLE attendance
-ADD CONSTRAINT fk_admission_cause FOREIGN KEY (admission_cause) REFERENCES admission_cause(id);
-
-ALTER TABLE attendance
 ADD CONSTRAINT fk_status_attendance FOREIGN KEY (status) REFERENCES stats(id); 
 
 ALTER TABLE attendance
