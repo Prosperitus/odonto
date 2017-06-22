@@ -29,7 +29,7 @@
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">web</i>
-          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" onblur="TestaCPF()" required>
+          <input name="cpf" id="cpf" title="000.000.000-00" type="text" class="validate" onblur="TestaCPFPaciente()" required>
           <label for="cpf">CPF</label>
         </div>
     
