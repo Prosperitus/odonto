@@ -6,6 +6,7 @@
 	require_once "../controller/attendance.php";
 	require_once "../controller/uti.php";
 	require_once "../controller/session.php";
+
 	
 	$hospital = "";
 	
@@ -23,6 +24,7 @@
 	$attendances = $attendanceController->searchAll($hospital);
 
 ?>
+
 
 
 <script>
@@ -63,8 +65,8 @@
 	<input name="Idpatient" id="Idpatient" type="hidden" required>
     <label for = "patient">Paciente</label>
     <div id="mostrapaciente" class="spacewhite"></div>
-    <a class="waves-effect waves-light btn-small" href="cadastro_paciente.php">Adicionar Paciente</a>
-
+	<a class="waves-effect waves-light btn-small" href="cadastro_paciente.php">Adicionar Paciente</a>
+   
 
     </div>
 
@@ -175,5 +177,61 @@
 </div>
 
 </div>
+
+<!---MODELOS/DE/REQUISAO/PARA/SEREM/TESTADOS-->
+
+<script>
+
+var requestpatient = new XMLHttpRequest();
+
+requestpatient.open("POST", "cadastro_paciente.php", true);
+requestpatient.setRequestHeader("Content-type", "localhost/odonto/public/cadastro_paciente.php");
+
+requestpatient.send();
+
+requestpatient.onreadystatechange = function() {
+
+	if (searchLast()) {
+		var data = requestpatient.responseText;
+  
+		console.log(data);
+	}
+}
+</script>
+
+<script>
+$('document').ready(function(){
+
+	$("#btn-login").click(function(){
+		var data = $("#login-form").serialize();
+			
+		$.ajax({
+			type : 'POST',
+			url  : 'cadastro_paciente.php',
+			data : data,
+			dataType: 'json',
+			beforeSend: function()
+			{	
+				$("#btn-login").html('Validando ...');
+			},
+			success :  function(response){						
+				if(response.codigo == "1"){	
+					$("#btn-login").html('Entrar');
+					$("#login-alert").css('display', 'none')
+					window.location.href = "atendimentos.php";
+				}
+				else{			
+					$("#btn-login").html('Entrar');
+					$("#login-alert").css('display', 'block')
+					$("#mensagem").html('<strong>Erro! </strong>' + response.mensagem);
+				}
+		    }
+		});
+	});
+
+});
+</script>
+
+<!---FIM/DA/REQUISAO-->
 
 <?php require_once "rodape.php";
