@@ -57,6 +57,12 @@ $(document).ready(function() {
 		     	width: 500,
 				autoOpen: false,modal: true,
 				buttons: {
+					Excluir: function(){
+						$( "#dialogPatient" ).dialog('close');
+						},
+					Editar: function(){
+						$( "#dialogPatient" ).dialog('close');
+					},
 					Fechar: function() {
 						$( "#dialogEmployee" ).dialog('close');
 					}
