@@ -189,17 +189,17 @@ INSERT INTO `odt_soft`.`hospital`
 `telephone_chefe_uti`,
 `nome_chefe_uti`)
 VALUES
-(<{name: }>,
-<{telephone_uti: }>,
-<{telephone_chefe_uti: }>,
-<{nome_chefe_uti: }>);
+('Santa luzia',
+33435656,
+33218484,
+'Afonso Bino') ;
 
 INSERT INTO `odt_soft`.`patient`
 (`name`,
 `gender`)
 VALUES
-(<{name: }>,
-<{gender: }>);
+('Davidsyon',
+'1');
 
 INSERT INTO `odt_soft`.`users`
 (`name`,
@@ -216,25 +216,25 @@ INSERT INTO `odt_soft`.`users`
 `agency`,
 `permition`)
 VALUES
-(<{name: }>,
-<{surname: }>,
-<{email: }>,
-<{registration: }>,
-<{phone2: }>,
-<{address: }>,
-<{admission_date: }>,
-<{password: }>,
-<{social_security: }>,
-<{bank: }>,
-<{number_of_account: }>,
-<{agency: }>,
-<{permition: }>);
+('Grete',
+'Souza',
+'GretinhaLindinha@gmail.com',
+'2',
+999551082,
+'SQSW' ,
+'2017-02-25',
+'senha123456',
+'05195014160',
+'Bank of America',
+'121245',
+'21545',
+2;
 
 INSERT INTO `odt_soft`.`hospital_itu`
 (`name_itu`,
 `quant_itu`,
 `hospital`)
 VALUES
-(<{name_itu: }>,
-<{quant_itu: }>,
-<{hospital: }>);
+('UTI Santa Luzia',
+7,
+'Santa Luzia');
