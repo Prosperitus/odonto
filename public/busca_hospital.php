@@ -123,7 +123,7 @@
 	}else{
 		
 	echo '<center>
-	<p class="tituloPrincipalHospital">Em qual hospital você está hoje?</p>
+	<p style="padding-bottom:20px;" class="tituloPrincipalHospital">Em qual hospital você está hoje?</p>
 	</center>';
 	?>
 	<a href="cadastro_hospital.php">
