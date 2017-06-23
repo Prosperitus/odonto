@@ -95,7 +95,7 @@ class AttendanceDb
       $stmt = $conn->getConn()->prepare($sql);
 	  $stmt->bindParam(':patient', $patient);
       $stmt->execute();
-      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      $result = $stmt->fetch(PDO::FETCH_OBJ);
       return $result;
 
       }

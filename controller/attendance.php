@@ -17,7 +17,7 @@ class AttendanceController{
 	 public function add(){
 		$conn = new AttendanceDb();
 		$patient = $conn->searchPatient($_POST["Idpatient"]);
-		if($patient != null && $patient != false && $patient != '' && $patient != 0){
+		if($patient == false){
 			$Attendance = new Attendance();
 			session_start();
 			$hosp = $_SESSION['hospital'];

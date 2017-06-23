@@ -14,7 +14,7 @@
 		<!--NOME DA UTI-->   
         <div class="input-field col s5">
           <i class="material-icons prefix">business</i>
-          <input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" pattern="^\S[\w]\s*$" type="text" class="validate" required>
+          <input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>
           <label for="nome_uti">Nome da UTI</label>
         </div>
 		
