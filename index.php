@@ -33,7 +33,7 @@
     </style>
   </head>
 
-  <body style=" background-color:#039be5" >
+  <body style=" background-color:#03a9f4" >
    
       <div align="center">
          <img style="padding:40px;" src="images/logo.png">
@@ -73,7 +73,7 @@
           </div>
           
           <div class="row">          
-            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;float:left;">
+            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;  float:left;">
 			<?php if(isset($_COOKIE['pass']) && isset($_COOKIE['user'])){ ?>
                 <input name="remember" type="checkbox" id="remember-me" checked />
                 <label for="remember-me">Lembrar Usuário</label>
