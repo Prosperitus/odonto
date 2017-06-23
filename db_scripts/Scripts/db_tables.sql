@@ -256,5 +256,4 @@ CREATE INDEX idx_patient ON attendance(patient);
 CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
 CREATE INDEX idx_hospital ON  attendance(hospital);
 CREATE INDEX idx_itu ON  attendance(bed);
-CREATE INDEX idx_admition_cause ON attendance(admission_cause);
 CREATE INDEX idx_admition_date_itu ON attendance(admission_date_itu);
