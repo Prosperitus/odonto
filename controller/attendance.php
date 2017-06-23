@@ -17,7 +17,7 @@ class AttendanceController{
 	 public function add(){
 		$conn = new AttendanceDb();
 		$patient = $conn->searchPatient($_POST["Idpatient"]);
-		if($patient == false){
+		if($patient == false || $patient->status == 13){
 			$Attendance = new Attendance();
 			session_start();
 			$hosp = $_SESSION['hospital'];
@@ -96,7 +96,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#reavaliacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;">'.$attendance->observacoes.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -105,7 +105,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#aprovacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;">'.$attendance->observacoes.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -114,7 +114,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#orcamento").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;">'.$attendance->observacoes.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -123,7 +123,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#acompanhamento").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;">'.$attendance->observacoes.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -132,7 +132,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#concluido").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;">'.$attendance->observacoes.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
 			+ \'</div>\');
 			});</script>';
 		}
