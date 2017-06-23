@@ -121,7 +121,6 @@ CREATE TABLE attendance(
 	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL,
 	`final_date` date
 
 ) ENGINE=InnoDB; 
