@@ -15,31 +15,35 @@ class AttendanceController{
 	}
 	
 	 public function add(){
-		$Attendance = new Attendance();
-		session_start();
-		$hosp = $_SESSION['hospital'];
-		$Attendance->setPatient($_POST["Idpatient"]);
-		$Attendance->setHospital($hosp->id);
-		$Attendance->setBed($_POST["leito"]);
-		$Attendance->setUtiAdmissionDate($_POST["admdate"]);
-		$Attendance->setDoctor($_POST["Iduser"]);
-		//$Attendance->setBonequinha($_POST["bonequinha"]);
-		//$Attendance->setImage($_POST["image"]);
-		//$Attendance->setStatus($_POST["status"]);
 		$conn = new AttendanceDb();
-		$result = $conn->add($Attendance);
-		if($result){
-			$attendanceLast = $conn->searchLast();
-			$admcauses = $_POST["admcause"];
-			if(is_array($admcauses)){
-				foreach($admcauses as $admCauseSingle){
-					 $conn->addCauseAdmission($admCauseSingle,$attendanceLast->id);
+		$patient = $conn->searchPatient($_POST["Idpatient"]);
+		if($patient != null && $patient != false && $patient != '' && $patient != 0){
+			$Attendance = new Attendance();
+			session_start();
+			$hosp = $_SESSION['hospital'];
+			$Attendance->setPatient($_POST["Idpatient"]);
+			$Attendance->setHospital($hosp->id);
+			$Attendance->setBed($_POST["leito"]);
+			$Attendance->setUtiAdmissionDate($_POST["admdate"]);
+			$Attendance->setDoctor($_POST["Iduser"]);
+			//$Attendance->setBonequinha($_POST["bonequinha"]);
+			//$Attendance->setImage($_POST["image"]);
+			//$Attendance->setStatus($_POST["status"]);
+			
+			$result = $conn->add($Attendance);
+			if($result){
+				$attendanceLast = $conn->searchLast();
+				$admcauses = $_POST["admcause"];
+				if(is_array($admcauses)){
+					foreach($admcauses as $admCauseSingle){
+						 $conn->addCauseAdmission($admCauseSingle,$attendanceLast->id);
+					}
+				}else{
+					$conn->addCauseAdmission($admcauses,$attendanceLast->id);
 				}
-			}else{
-				$conn->addCauseAdmission($admcauses,$attendanceLast->id);
 			}
+			$this->redirect($result);
 		}
-		$this->redirect($result);
 	}
 	
 	private function redirect($result){

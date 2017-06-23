@@ -85,6 +85,27 @@ class AttendanceDb
     }
 
   }
+  
+  public function searchPatient($patient) {
+
+    try {
+      $sql = "SELECT * FROM attendance WHERE patient = :patient";
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+	  $stmt->bindParam(':patient', $patient);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      return $result;
+
+      }
+
+      catch(PDOExeption $e) {
+        return $result;
+
+    }
+
+  }
 
   public function searchId($filter) {
 
