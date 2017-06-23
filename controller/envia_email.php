@@ -43,7 +43,7 @@
                         $sql_subst = "UPDATE odt_soft.users SET password= '$nscriptografada' WHERE email= '$destinatario' ";
                         mysqli_query($conexao, $sql_subst);
                     }else{
-                        echo "email nao cadastrado.";
+                        echo "<script>alert('email nao cadastrado!');</script>";
                     }
 
 					/*$mensagemHTML = '<p> Teste de Email </p>
@@ -72,7 +72,7 @@
 					if (PEAR::isError($mail)) {
     					echo('<p>' . $mail->getMessage() . '</p>');
 					} else {
-   					 	echo('<p>Mansagem enviada !</p>');
+   					 	echo "<script>alert('Mansagem enviada !');</script>";
 					}
 
 				?>
