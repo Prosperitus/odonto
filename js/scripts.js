@@ -113,6 +113,23 @@ $(document).ready(function(){
 	});
 
 
+
+	$("#btnAddBackAttendance").click(function(){
+	$.ajax({
+            type: 'GET',
+            url: 'atendimentos.php',
+            dataType: 'html',
+            success: function(data) {
+
+                
+                $('#modalCadPatient').modal('close');
+                $('#modalCadAttendance').modal('open');
+            }
+        });
+	});
+
+
+
 	
 	  $('#botaoAddAttendance').click(function(){
 		  $('#Idpatient').val('');

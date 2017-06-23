@@ -228,6 +228,8 @@
           <label for="funcionario_senha">Senha</label>
         </div>
 
+
+
         <!--MOSTRAR A SENHA-->
         <div class="input-field col s5">
           <i class="material-icons prefix">vpn_key</i>
@@ -235,12 +237,33 @@
           <label for="funcionario_mostrar_senha">Mostrar Senha</label>
         </div>
 
+
+
+
+        <!--IMAGEM DO FUNCIONÁRIO-->
+        <div class="file-field input-field col s8" id="funcionarioFile">
+          <div class="btn input-field col s5 light-blue">
+            <span>Foto</span>
+            <input type="file" name="imagemFuncionario" accept="image/*">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload de uma foto de perfil">
+          </div>
+        </div>
+
+
+
+
         <!--CHECK-->
         <div class="input-field col s12 main">
           <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
             <i class="material-icons right">send</i>
           </button>
         </div>
+
+
+
+
       </form>
     </div>
 <?php require_once "rodape.php";
