@@ -133,6 +133,7 @@
 		</div>
         </div>
         <button id="adicionar" style=" float:left; margin:2%; margin-top:2%">Cadastrar</button>
+        <a href="atendimentos.php" id="adicionar" style=" float:right; position:relative; top:-27px; ">Cancelar</a>
     </div>
     </div>
 
