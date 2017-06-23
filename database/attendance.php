@@ -192,8 +192,13 @@ class AttendanceDb
 
     try {
       $sql = "SELECT a.id,a.status,p.name as namePatient,
-	  p.surname as surnamePatient
+	  p.surname as surnamePatient, u.name as nameDoctor, u.surname as surnameDoctor,
+	  h.name as nameHospital, b.number_itu as uti,i.name_itu
 	  FROM attendance a INNER JOIN patient p ON a.patient = p.id
+	  INNER JOIN hospital h ON a.hospital = h.id
+	  INNER JOIN users u ON a.doctor_responsible = u.id
+	  INNER JOIN itu_bed b ON a.bed = b.id
+	  INNER JOIN hospital_itu i ON i.id = b.itu
 	  WHERE a.hospital = :idHospital";
 
       $conn = new Dbconnector();

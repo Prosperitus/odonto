@@ -87,7 +87,8 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#avaliacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"></div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<b>UTI:</b> <br> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -139,3 +140,4 @@ class AttendanceController{
 	}
 
 }
+
