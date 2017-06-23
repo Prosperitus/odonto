@@ -27,6 +27,7 @@ CREATE TABLE users (
 	`number_of_account` varchar (20) NOT NULL,
 	`agency` varchar(80) NOT NULL,
 	`permition` int (11) NOT NULL
+	`deleted` boolean
 
 ) ENGINE=InnoDB;
 
@@ -68,7 +69,8 @@ CREATE TABLE patient(
 	`physician_assistant` boolean,
 	`name_phy_assistant` varchar(80),
 	`telephone_phy_assistant` varchar(20),
-	`speciality_phy_assistant` varchar(80)
+	`speciality_phy_assistant` varchar(80),
+	`deleted` boolean
 ) ENGINE=InnoDB;
 
 CREATE TABLE hospital(
