@@ -33,7 +33,7 @@
 					var_dump($cont);
 
 					$novasenha = substr(md5(time()), 0, 6);
-					$nscriptografada = md5(md5($novasenha));
+					$nscriptografada = hash("sha256", $novasenha);
 
 					var_dump($novasenha);
 					var_dump($nscriptografada);
