@@ -85,6 +85,34 @@ function bloqueio(el) {
 //SCRIPT ATENDIMENTO
 
 $(document).ready(function(){
+
+	$('#btnAddPatientModal').click(function(){
+		$('#modalCadPatient').modal('close');
+        $('#modalCadAttendance').modal('open');
+		$.ajax({
+            type: 'POST',
+            data: $('#formAddPatient').serialize(),
+            url: '../request/addPatientModal.php',
+            dataType: 'html',
+            success: function(data) {
+            }
+        });
+	});
+
+	$("#btnAddPatient").click(function(){
+	$.ajax({
+            type: 'GET',
+            url: 'cadastro_paciente_modal.php',
+            dataType: 'html',
+            success: function(data) {
+                $('#modalCadAttendance').modal('close');
+                $('#modalCadPatient').html(data);
+                $('#modalCadPatient').modal('open');
+            }
+        });
+	});
+
+
 	
 	  $('#botaoAddAttendance').click(function(){
 		  $('#Idpatient').val('');
