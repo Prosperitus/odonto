@@ -36,7 +36,7 @@
     <div class="modal-content">
 	  <form class="col s11 m12" id="formEditHospital" method="post" action="" enctype="multipart/form-data" required>
       <!--TITULO-->
-        <h3>Edição de Hospital</h3>
+        <h3 style="height:80px;background-color: #03a9f4; margin-bottom:50px;font-size:40px; text-align: center;color:white; padding:20px;";>Edição de Hospital</h3>
 		
 		<!--ID DO HOSPITAL-->   
 		<input name="id_hospital" id="id_hospital" type="hidden">
