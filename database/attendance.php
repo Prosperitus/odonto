@@ -13,15 +13,14 @@ class AttendanceDb
 
 	public function add($attendance){
         try{
-           $sql = "INSERT INTO attendance (patient, hospital, bed,status, admission_date_itu, doctor_responsible, admission_cause)
-                  VALUES (:patient, :hospital, :bed,:status, :admission_date_itu, :doctor_responsible, :admission_cause)";
+           $sql = "INSERT INTO attendance (patient, hospital, bed,status, admission_date_itu, doctor_responsible)
+                  VALUES (:patient, :hospital, :bed,:status, :admission_date_itu, :doctor_responsible)";
 
        $gaPatient = $attendance->getPatient();
        $gaHospital = $attendance->getHospital();
        $gaLeito = $attendance->getBed();
        $gaAdmDate = $attendance->getUtiAdmissionDate();
        $gaEmployee = $attendance->getDoctor();
-       $gaAdmCause = $attendance->getAdmissionCause();
        //$gaBonequinha = $attendance->getBonequinha();
 	   $gaStatus = 1;
 
@@ -33,12 +32,33 @@ class AttendanceDb
 	   $stmt->bindParam(':status', $gaStatus);
        $stmt->bindParam(':admission_date_itu', $gaAdmDate);
        $stmt->bindParam(':doctor_responsible', $gaEmployee);
-       $stmt->bindParam(':admission_cause', $gaAdmCause);
 
        $result = $stmt->execute();
        //var_dump($result);
        //var_dump($attendance);
        //die(); 
+       return $result;
+      }
+      catch(PDOExeption $e){
+        return $result;
+    }
+ } 
+ 
+ public function addCauseAdmission($admission_cause,$attendance){
+        try{
+           $sql = "INSERT INTO attendance_cause (attendance,admission_cause)
+                  VALUES (:attendance, :admission_cause)";
+
+		$adm = $admission_cause;
+		$att = $attendance;
+       
+
+       $conn = new DbConnector();
+       $stmt = $conn->getConn()->prepare($sql);
+       $stmt->bindParam(':attendance', $att);
+       $stmt->bindParam(':admission_cause', $adm);
+
+       $result = $stmt->execute();
        return $result;
       }
       catch(PDOExeption $e){
@@ -89,7 +109,8 @@ class AttendanceDb
   }
   
   public function searchLast() {
-
+	session_start();
+	$hospital = $_SESSION['hospital'];
     try {
       $sql = "SELECT a.id,s.status,p.name as namePatient,
 	  p.surname as surnamePatient
@@ -99,6 +120,7 @@ class AttendanceDb
 
       $conn = new Dbconnector();
       $stmt = $conn->getConn()->prepare($sql);
+	  $stmt->bindParam(':idHospital', $hospital->id);
       $stmt->execute();
       $result = $stmt->fetch(PDO::FETCH_OBJ);
       
