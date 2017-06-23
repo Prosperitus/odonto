@@ -25,6 +25,5 @@
 <label class="bold">Endereço: </label><label class="font_big"><?=$emp->address?></label><br>
 <label class="bold">Data de Admissão: </label><label class="font_big"><?=$emp->admission_date?></label><br>
 <label class="bold">Banco: </label><label class="font_big"><?=$emp->bank?></label><br>
-<label class="bold">Número da Conta: </label><label class="font_big"><?=$emp->number_of_account;?></label><br>
 <label class="bold">Agência: </label><label class="font_big"><?=$emp->agency;?></label><br>
-
+<label class="bold">Número da Conta: </label><label class="font_big"><?=$emp->number_of_account;?></label><br>
