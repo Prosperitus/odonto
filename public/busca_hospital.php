@@ -11,7 +11,7 @@
 ?>
 	<div class="row" style="width: 100%">
 		<div id="newtab-customize-overlay"></div>
-		<div class="welcome">
+		<div class="welcome" style="padding-top:30px;">
 	
 		Bem vindo, <?=$user->name?>
 
