@@ -25,11 +25,20 @@ class Patient{
 	private $pacienteEmail;
 	private $responsibleName2;
 	private $responsiblePhone2;
+	private $id;
 	
 
 	public function __construct(){
 
 	}
+
+	public function getId() {
+	 	return $this->id;
+	 }
+
+	 public function setId() {
+	 	$this->id = $id;
+	 }
 
 	public function getName(){
 		return $this->name;

@@ -13,6 +13,7 @@
 	 private $medicalRecord;
 	 private $image; //não obrigatório
 	 private $bed;
+	 private $id;
 
 	 //------------TIPADAS------------
 	 private $hospital;
@@ -26,6 +27,14 @@
 		$this->patient = new Patient();
 	}
 	 
+	 public function getId() {
+	 	return $this->id;
+	 }
+
+	 public function setId() {
+	 	$this->id = $id;
+	 }
+
 	 public function getImage(){
 		 return $this->image;
 	 }

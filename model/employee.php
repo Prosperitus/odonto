@@ -18,11 +18,19 @@
 		private $numberOfAccount;
 		private $agency;
 		private $permission;
-		
+		private $id;
 		
 		function __construct(){
 
 		}		
+
+		public function getId() {
+	 		return $this->id;
+	 	}
+
+	 	public function setId() {
+	 		$this->id = $id;
+	 	}
 
 		public function getCpf(){
 			return $this->cpf;

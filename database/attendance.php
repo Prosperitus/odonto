@@ -293,6 +293,62 @@ class AttendanceDb
     }
   }
 
+  public function editStatus($attendance) {
+
+    
+    try {
+
+      $sql = "UPDATE attendance SET status = :status WHERE id = :id";
+
+      $gaStatus = $attendance->getAttendanceStatus();
+      $gaId = $attendance->getId();
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->bindParam(':status', $gaStatus);
+      $stmt->bindParam(':id', $gaId);
+      $result = $stmt->execute();
+      return $result;
+    }
+    catch(PDOExeption $e) {
+      return $result;
+    }
+  }
+
+  public function edit($attendance) {
+
+    try {
+
+      $sql = "UPDATE attendance SET patient = :patient, hospital = :hospital, bed = :bed, status = :status, admission_date_itu = :admission_date_itu, doctor_responsible = :doctor_responsible WHERE id = :id";
+
+      $gaPatient = $attendance->getPatient();
+      $gaHospital = $attendance->getHospital();
+      $gaLeito = $attendance->getBed();
+      $gaAdmDate = $attendance->getUtiAdmissionDate();
+      $gaEmployee = $attendance->getDoctor();
+      $gaBonequinha = $attendance->getBonequinha();
+      $gaStatus = $attendace->getAttendanceStatus();
+      $gaId = $attendance->getId();
+
+      $conn = new DbConnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->bindParam(':patient', $gaPatient);
+      $stmt->bindParam(':hospital', $gaHospital);
+      $stmt->bindParam(':bed', $gaLeito);
+      $stmt->bindParam(':status', $gaStatus);
+      $stmt->bindParam(':admission_date_itu', $gaAdmDate);
+      $stmt->bindParam(':doctor_responsible', $gaEmployee);
+      $stmt->bindParam(':id', $gaId);
+
+      $result = $stmt->execute(); 
+      return $result;
+    }
+    catch(PDOExeption $e) {
+      return $result;
+    }
+
+  }
+
 }
 
 
