@@ -2,26 +2,29 @@
 	require_once "cabecalho.php";
 ?>
 
+ 
 
 
-  <div class="container main" align="center" style="position:relative;left: 5%;">
-  <div class="row">
-    <div class="col s2">&nbsp;</div>
-    <div class="col s6">
-      <div class="card" >
-        <div class="card-image">
-          <img src="../images/checked.jpg">
-          <span class="card-title">Cadastro realizado com sucesso</span>           
-        </div>     
-        <div class="card-content">
-        </div>
-        <div class="card-action">
-          <a href="busca_hospital.php">Tela Principal</a>
-          <a href='#' onclick="window.history.back()">Cadastrar Novamente</a>
-        </div>
-      </div>
+
+
+  <div style="background: rgb(80,180,80);position:absolute;height:100%;width:100%;padding:100px; ">
+
+    <div align="center">
+       <img style="padding-bottom:80px" src="../images/checked.png">
+        <h3 style="color: white; font-size:35px;font-weight: 590;">Parabéns</h3>
+        <h3 style="color: white; font-size:20px; padding-bottom:80px ; padding-top:20px;font-weight: 150; ">Operação realizada com sucesso</h3>
     </div>
+    <div align="center">
+        <div style="display: inline;padding-right:80px ">
+            <img src="../images/home.png" style="vertical-align:middle;padding-right:10px">
+            <a  style="color: white; " href="busca_hospital.php">Tela Principal</h4>
+        </div>
+        <div style="display: inline;">
+            <img src="../images/left-arrow.png" style="vertical-align:middle;padding-right:10px">
+            <a style="color: white;" onclick="history.go(-1)" href="#">Voltar</a>
+        </div>
+    </div>    
+
   </div>
-</div>
 
  <?php require_once "rodape.php";
