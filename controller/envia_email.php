@@ -24,7 +24,7 @@
 					$assunto = "Email teste";
 					$mensagem = "Funciona";
 
-					/*$conexao = mysqli_connect("localhost", "root", "", "odt_soft");
+					$conexao = mysqli_connect("localhost", "root", "", "odt_soft");
 
 					$sql = "SELECT * FROM odt_soft.users WHERE email= '$destinatario' ";
 					$query = mysqli_query($conexao, $sql);
@@ -33,10 +33,18 @@
 					var_dump($cont);
 
 					$novasenha = substr(md5(time()), 0, 6);
-					$nscriptografada = md5(md5($novasenha));/*/
+					$nscriptografada = md5(md5($novasenha));
 
-					//var_dump($novasenha);
-					//var_dump($nscriptografada);*/
+					var_dump($novasenha);
+					var_dump($nscriptografada);
+
+					 if ($cont != 0){
+
+                        $sql_subst = "UPDATE odt_soft.users SET password= '$nscriptografada' WHERE email= '$destinatario' ";
+                        mysqli_query($conexao, $sql_subst);
+                    }else{
+                        echo "email nao cadastrado.";
+                    }
 
 					/*$mensagemHTML = '<p> Teste de Email </p>
 					<p> Titulo </p>
