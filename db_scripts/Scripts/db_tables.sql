@@ -26,7 +26,7 @@ CREATE TABLE users (
 	`bank` varchar (80) NOT NULL,
 	`number_of_account` varchar (20) NOT NULL,
 	`agency` varchar(80) NOT NULL,
-	`permition` int (11) NOT NULL
+	`permition` int (11) NOT NULL,
 	`deleted` boolean
 
 ) ENGINE=InnoDB;
