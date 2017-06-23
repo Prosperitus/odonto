@@ -2,6 +2,7 @@
   <script src="../validation/validation.js"></script>
   <script src="../validation/validacao_cpf.js"></script>
 
+
     <br><br>
     <!--CLASS/FORM-->
     <div class="row">
@@ -203,9 +204,13 @@
       </form>
     </div>
 
+  <!--CANCELAR-->
+    <a class="btn waves-effect waves-light light-blue" href="atendimentos.php" style=" position:relative; left: 840px; top: -50px;" >Cancelar</a>
+        
+
+
     <script type="text/javascript" src="../js/scriptsrodape.js"></script>
   <script src="../js/mask.js"></script>
   <script src="../js/mask_funcionario.js"></script>
   <script src="../js/mask_paciente.js"></script>
   <script src="../js/mask_hospital.js"></script>
-
