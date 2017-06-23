@@ -30,10 +30,10 @@ if ($cont_pass !=0){
 	echo "senha alterada com sucesso!";
 	}
 	else{
-		echo "as senhas sao incompativeis!";
+		echo "<script>alert('as senhas sao incompativeis !');</script>";
 	}
 }else{
-	echo "a senha informada e invalida!";
+	echo "<script>('a senha informada e invalida !')</script>";
 }
 /*
 var_dump($cont);
