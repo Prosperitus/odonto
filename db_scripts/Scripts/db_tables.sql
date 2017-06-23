@@ -79,7 +79,8 @@ CREATE TABLE hospital(
 	`telephone_uti`varchar(20) NOT NULL,
 	`telephone_chefe_uti`varchar(20) NOT NULL,
 	`nome_chefe_uti`varchar(80) NOT NULL,
-    `file` text
+	`deleted` boolean,
+        `file` text
 ) ENGINE=InnoDB;
 
 
@@ -121,7 +122,6 @@ CREATE TABLE attendance(
 	`status` int Not Null,
 	`admission_date_itu` date NOT NULL,
 	`doctor_responsible` int  NOT NULL,
-	`admission_cause` int NOT NULL,
 	`final_date` date
 
 ) ENGINE=InnoDB; 
@@ -257,5 +257,4 @@ CREATE INDEX idx_patient ON attendance(patient);
 CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
 CREATE INDEX idx_hospital ON  attendance(hospital);
 CREATE INDEX idx_itu ON  attendance(bed);
-CREATE INDEX idx_admition_cause ON attendance(admission_cause);
 CREATE INDEX idx_admition_date_itu ON attendance(admission_date_itu);

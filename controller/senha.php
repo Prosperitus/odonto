@@ -27,13 +27,13 @@ if ($cont_pass !=0){
 	if ($conf_red_senha == $red_senha){
 	$sql_subst = "UPDATE odt_soft.users SET password= '$nsred_senha' WHERE password= '$ns_recebida' ";
 	$query_subst = mysqli_query($conexao, $sql_subst);
-	echo "senha alterada com sucesso!";
+	echo "<script>alert('senha alterada com sucesso!')</script>";
 	}
 	else{
-		echo "as senhas sao incompativeis!";
+		echo "<script>alert('as senhas sao incompativeis !');</script>";
 	}
 }else{
-	echo "a senha informada e invalida!";
+	echo "<script>alert('a senha informada e invalida !')</script>";
 }
 /*
 var_dump($cont);
