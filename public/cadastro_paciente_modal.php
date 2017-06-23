@@ -205,7 +205,7 @@
     </div>
 
   <!--CANCELAR-->
-    <a class="btn waves-effect waves-light light-blue" href="atendimentos.php" style=" position:relative; left: 840px; top: -50px;" >Cancelar</a>
+    <a class="btn waves-effect waves-light light-blue" id="btnAddBackAttendance" style=" position:relative; left: 840px; top: -50px;" >Cancelar</a>
         
 
 
