@@ -6,7 +6,6 @@
 	require_once "../controller/attendance.php";
 	require_once "../controller/uti.php";
 	require_once "../controller/session.php";
-	require_once "request_paciente.php";
 
 	
 	$hospital = "";
