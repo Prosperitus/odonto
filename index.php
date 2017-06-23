@@ -25,9 +25,7 @@
 
     <style>
       body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
+       
       }
       .main {
         flex: 1 0 auto;
@@ -35,14 +33,17 @@
     </style>
   </head>
 
-  <body class = "light-blue lighten-3" background="images/turquoise.jpg">
+  <body style=" background-color:#039be5" >
    
-
+      <div align="center">
+         <img style="padding:40px;" src="images/logo.png">
+    
+      </div>
     
     <!--MAIN-->
-    <div id="login-page" class="row main" style="margin-top: 10%;position:relative;top:20%">
-      <div class="col s12 z-depth-3 card-panel">
-        <form class="login-form" action="request/login.php" method="post">     
+    <div id="login-page" class="row main" style="position:relative;width:300px;padding-top:10px;padding-bottom:30px;">
+      <div class="col s12 z-depth-3 card-panel" style="height:460px;padding-top:30px;" >
+        <form class="login-form" action="request/login.php" method="post"  >     
           <div class="row margin">    
             <div class="input-field col s12">
               <i class="material-icons prefix">face</i>
@@ -72,7 +73,7 @@
           </div>
           
           <div class="row">          
-            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;">
+            <div class="input-field col s9 " style="margin-bottom: 7%;margin-top: -6%;float:left;">
 			<?php if(isset($_COOKIE['pass']) && isset($_COOKIE['user'])){ ?>
                 <input name="remember" type="checkbox" id="remember-me" checked />
                 <label for="remember-me">Lembrar Usuário</label>
@@ -92,8 +93,8 @@
 		 
           <label id="msg" style="position:relative;left: 50px;color:red;"><?=$msg?></label>    
           <?php if(isset($_SESSION['msg'])){unset($_SESSION['msg']);}?>
-          <div class="row">
-            <div class="input-field col s6">
+          <div class="row" style="float:left" >
+            <div class="input-field col s12">
                 <p class="margin right medium-small"><a href='public/esqueceu_senha.php'>Esqueceu a senha?</a></p>
             </div>          
           </div>
