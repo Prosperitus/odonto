@@ -136,7 +136,7 @@ $(document).ready(function(){
 			}
         });
 	  });
-      $("#adicionar").click(function(){
+      $("#formAddAttendance").submit(function(){
         $.ajax({
 			type: 'POST',
 			dataType: 'html',

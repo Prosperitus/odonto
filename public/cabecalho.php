@@ -39,7 +39,7 @@
   <head>
   
   
-<body onload="java script:contar();" style="width: 100%;">
+<body onload="java script:contar();" style="">
     <!--SIDENAV-->
 	<header>
 		<nav>
