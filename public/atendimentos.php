@@ -30,22 +30,45 @@
 <script>
 	$(onPageLoad);
 </script>
+<?php
+if($hospital->image == '' || $hospital->image == null){
+	?>
 
-
-<div class="col s6 m4" id="hospitalSelecionado">
-    <div>
-        <div>
-            <img src="<?=$hospital->image?>" id="imagemHospitalMenor">
-			<div style="" id="divHospitalConteudo3">
-				<p class="pHospitalConteudo2"><?=$hospital->name?></p>
-				<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
-				<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
-				<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
+	
+	<div class="col s6 m4" id="hospitalSelecionado">
+		<div>
+			<div>
+				<img src="../images/hospital 2.jpg" id="imagemHospitalMenor">
+				<div style="" id="divHospitalConteudo3">
+					<p class="pHospitalConteudo2"><?=$hospital->name?></p>
+					<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
+					<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
+					<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
+				</div>
 			</div>
-        </div>
-    
-    </div>
-</div>
+		</div>
+	</div>
+
+		<?php }else{  ?>
+			
+	<div class="col s6 m4" id="hospitalSelecionado">
+		<div>
+			<div>
+				<img src="<?=$hospital->image?>" id="imagemHospitalMenor">
+				<div style="" id="divHospitalConteudo3">
+					<p class="pHospitalConteudo2"><?=$hospital->name?></p>
+					<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
+					<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
+					<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+			
+		<?php } ?>
+
+
 
 	<div id="modalCadPatient" style="width:60%;" class="modal">
         <div class="modal-content">
