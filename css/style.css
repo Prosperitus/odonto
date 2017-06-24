@@ -369,9 +369,9 @@ td{
     float: right;
   }
   #pesquisa {
-    padding:8px 15px;
-    background:rgba(50, 50, 50, 0.2);
-    border:0px solid #dbdbdb;
+    padding:6px 15px;
+    background:transparent;
+    border-bottom:1px solid #dbdbdb;
     width: 200px;
     height: 23px;
     margin-top: 50px;
@@ -388,12 +388,8 @@ td{
   
   #botaoPesquisar {
     position:relative;
-    padding:6px 15px;
-    left:-4px;
-    border:2px solid #03a9f4;
     background-color:#03a9f4;
     color:#fafafa;
-    margin-top: 50px;
   }
   
   #botaoAddAttendance {

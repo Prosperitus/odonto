@@ -174,7 +174,7 @@ if($hospital->image == '' || $hospital->image == null){
 			</div>
 			<div class="col s6" style="float:right">
 				<input id="pesquisa" type="text">
-				<button id="botaoPesquisar">Pesquisar</button>
+				<a id="botaoPesquisar" class="btn-floating blue positionStatic"> <i class="material-icons">search</i></a>
 			</div>
 		</ul>
 	</div>
