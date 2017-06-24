@@ -9,36 +9,46 @@
 	$pat = $pacienteControle->searchId($id);
 	
 ?>
-
-<label class="bold" id="nmePatient">Nome: </label><label class="font_big"><?=$pat->name.' '.$pat->surname;?></label><br>
-<label class="bold">Email: </label><label class="font_big"><?=$pat->email;?></label><br>
-<label class="bold">CPF: </label><label class="font_big"><?=$pat->social_security;?></label><br>
-<label class="bold">Plano de Saúde: </label><label class="font_big"><?=$pat->health_insurance;?></label><br>
+<form class="form" method="POST" action="../request/atualizar_paciente.php">
+<label class="bold" id="nmePatient">Nome: </label> <input type="text" name="name" value="<?=$pat->name.' '.$pat->surname;?>"></input><br>
+<label class="bold">Email: </label><input type="text" name="email" value="<?=$pat->email;?>"> </input><br>
+<label class="bold">CPF: </label><input type="text" name="cpf" value="<?=$pat->social_security;?>"></input><br>
+<label class="bold">Plano de Saúde: </label><input type="text" name="health_insurance" value="<?=$pat->health_insurance;?>"></input><br>
 <?php if($pat->responsible2 != null && $pat->responsible2 != ""){ ?>
-<label class="bold">Responsável 1: </label><label class="font_big"><?=$pat->responsible1.', '.$pat->telephone_r1?></label><br>
-<label class="bold">Responsável 2: </label><label class="font_big"><?=$pat->responsible2.', '.$pat->telephone_r2?></label><br>
+<label class="bold">Responsável 1: </label><input type="text" name ="responsible1" value="<?=$pat->responsible1.', '.$pat->telephone_r1?>"></input><br>
+<label class="bold">Responsável 2: </label><input type="text" name ="responsible2" value="<?=$pat->responsible2.', '.$pat->telephone_r2?>"></input><br>
 <?php }else{ ?>
-<label class="bold">Responsável 1: </label><label class="font_big"><?=$pat->responsible1.', '.$pat->telephone_r1?></label><br>
+<label class="bold">Responsável 1: </label><input type="text" name ="responsible1" value="<?=$pat->responsible1.', '.$pat->telephone_r1?>"></input><br>
 <?php } ?>
 <?php if($pat->gender == 1){ ?>
-	<label class="bold">Gênero: </label><label class="font_big">Masculino</label><br>
+	<label class="bold">Gênero: </label><input type="text" name ="gender" value="Masculino"></input><br>
 <?php }if($pat->gender == 2){ ?>
-	<label class="bold">Gênero: </label><label class="font_big">Feminino</label><br>
+	<label class="bold">Gênero: </label><input type="text" name ="gender" value="Feminino"></input><br>
 <?php } ?>
-<label class="bold">Endereço: </label><label class="font_big"><?=$pat->address?></label><br>
-<label class="bold">Bairro: </label><label class="font_big"><?=$pat->neighborhood?></label><br>
-<label class="bold">Cidade/UF: </label><label class="font_big"><?=$pat->city.'/'.$pat->state?></label><br>
-<label class="bold">Cep: </label><label class="font_big"><?=$pat->zip_code;?></label><br>
-
+<label class="bold">Endereço: </label><input type="text" name ="address" value="<?=$pat->address?>"></input><br>
+<label class="bold">Bairro: </label><input type="text" name="neighborhood" value="<?=$pat->neighborhood?>"></input><br>
+<label class="bold">Cidade/UF: </label><input type="text" name ="state" value="<?=$pat->city.'/'.$pat->state?>"></input><br>
+<label class="bold">Cep: </label><input type="text" name ="zip_code" value="<?=$pat->zip_code;?>"></input><br>
 <?php if($pat->physician_assistant == '1'){ ?>
-<label class="bold">Nome do médico responsável: </label><label class="font_big"><?=$pat->name_phy_assistant?></label><br>
-<label class="bold">Telefone do médico responsável: </label><label class="font_big"><?=$pat->telephone_phy_assistant?></label><br>
-<label class="bold">Especialidade do médico responsável: </label><label class="font_big"><?=$pat->speciality_phy_assistant?></label><br>
-<?php } 
+<label class="bold">Nome do médico responsável: </label><input type="text" name ="name_phy_assistant" value="<?=$pat->name_phy_assistant?>"></input><br>
+<label class="bold">Telefone do médico responsável: </label><input type="text" name ="telephone_phy_assistant" value="<?=$pat->telephone_phy_assistant?>"></input><br>
+<label class="bold">Especialidade do médico responsável: </label><input type="text" name ="speciality_phy_assistant" value="<?=$pat->speciality_phy_assistant?>"></input><br>
+<?php } else {?>
+	<input type="text" name ="name_phy_assistant" value="0" size="0" hidden></input>
+	<input type="text" name ="telephone_phy_assistant" value="0" size="0" hidden></input>
+	<input type="text" name ="speciality_phy_assistant" value="0" size="0" hidden></input>
+<?php }
 
 if($pat->clinic == "1"){ ?>
-<label class="bold">Paciente da Clinica: </label><label class="font_big">Sim</label><br>
+<label class="bold">Paciente da Clinica: </label><input type="text" name ="patient" value="Sim"></input><br>
 <?php }if($pat->clinic == "0"){ ?>
-<label class="bold">Paciente da Clinica: </label><label class="font_big">Não</label><br>
-</div>
+<label class="bold">Paciente da Clinica: </label><input type="text" name ="patient" value="Nao"></input><br>
 <?php } ?>
+	<div class="row">
+            <div class="input-field col s12" style="margin-top:1%">
+                  <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Atualizar paciente</button>
+            </div>    
+        </div>
+	</div>
+</form>
+

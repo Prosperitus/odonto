@@ -187,6 +187,7 @@ public function add($patient){
  }
 
  public function edit($patient) {
+    var_dump($patient);
 
     $gpmedicalassistant = '';
     $gptelephone_phy_assistant = '';

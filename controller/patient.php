@@ -103,4 +103,42 @@ class PatientController{
 			die();
 		 }
 	}
+
+	public function edit() {
+	$responsible1 = $_POST["responsible1"];
+	for ($i = 0;$i < strlen($responsible1); $i++){
+		if($responsible1[$i] == ','){
+			$nome_responsavel1 = substr($responsible1,0, $i);
+			$telefone_responsavel1 = substr($responsible1, $i++);
+		}
+	}
+	$responsible2 = $_POST["responsible2"];
+	for ($i = 0;$i < strlen($responsible2); $i++){
+		if($responsible2[$i] == ','){
+			$nome_responsavel2 = substr($responsible2,0, $i);
+			$telefone_responsavel2 = substr($responsible2, $i++);
+		}
+	}
+	
+	$patient = new Patient();
+	$patient->setName($_POST["name"]);
+	$patient->setpacienteEmail($_POST["email"]);
+	$patient->setCpf($_POST["cpf"]);
+	$patient->setHealthPlan($_POST["health_insurance"]);
+	$patient->setGender($_POST["gender"]);
+	$patient->setAdress($_POST["address"]);
+	$patient->setNeighborhood($_POST["neighborhood"]);
+	$patient->setState($_POST["state"]);
+	$patient->setCep($_POST["zip_code"]);
+	$patient->setResponsibleName($nome_responsavel1);
+	$patient->setResponsiblePhone($telefone_responsavel1);
+	$patient->setResponsibleName2($nome_responsavel2);
+	$patient->setResponsiblePhone2($telefone_responsavel2);
+	$patient->setMedicalassistant($_POST["name_phy_assistant"]);
+	$patient->setTelephone_phy_assistant($_POST["telephone_phy_assistant"]);
+	$patient->setSpeciality_phy_assistant($_POST["speciality_phy_assistant"]);
+	$patient->setClinic($_POST["patient"]);
+	$conn = new PatientDb();
+	$result = $conn->edit($patient);
+	}
 }
