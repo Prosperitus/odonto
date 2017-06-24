@@ -49,19 +49,19 @@
                         mysqli_query($conexao, $sql_subst);
                          $link = "<a href=\"".$odonsite."\">$localadress$odoncripcrip</a>";
                          var_dump($link);
+                        $mensagemHTML = '<p> Olá, </p>
+                    					<p> sua nova senha é: </p>
+                    					<p><b><t>'.$novasenha.'</p></b></t><br>
+                    					<p> Para redefini-lá clique no link: </p>
+                    					<p><b><t>'.$link.'</p></b></t><br>
+                    					<p> Atenciosamente <p/>
+                    					<p>2017 EasyOdonto Solutions<p>
+                    					<br>';
+                    	var_dump($mensagemHTML);
+
                     }else{
                         echo "<script>alert('email nao cadastrado!');</script>";
                     }
-
-                    $mensagemHTML = '<p> Olá, </p>
-                    <p> sua nova senha é: </p>
-                    <p><b><t>'.$novasenha.'</p></b></t><br>
-                    <p> Para redefini-lá clique no link: </p>
-                    <p><b><t>'.$link.'</p></b></t><br>
-                    <p> Atenciosamente <p/>
-                    <p>2017 EasyOdonto Solutions<p>
-                    <br>';
-                    var_dump($mensagemHTML);
 
                     $headers = array(
                         'From' => $envia_email,
