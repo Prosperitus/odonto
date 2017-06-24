@@ -371,7 +371,7 @@ td{
   #pesquisa {
     padding:6px 15px;
     background:transparent;
-    border-bottom:1px solid #dbdbdb;
+    border-bottom:1px solid #bfbfbf;
     width: 200px;
     height: 23px;
     margin-top: 50px;
@@ -390,6 +390,7 @@ td{
     position:relative;
     background-color:#03a9f4;
     color:#fafafa;
+	right: 8px;
   }
   
   #botaoAddAttendance {
