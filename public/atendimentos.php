@@ -35,7 +35,7 @@
 <div class="col s6 m4" id="hospitalSelecionado">
     <div>
         <div>
-            <img src="../images/hospital 2.jpg" id="imagemHospitalMenor">
+            <img src="<?=$hospital->image?>" id="imagemHospitalMenor">
 			<div style="" id="divHospitalConteudo3">
 				<p class="pHospitalConteudo2"><?=$hospital->name?></p>
 				<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
