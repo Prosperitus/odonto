@@ -63,7 +63,7 @@
    
   <!--CLASS/FORM-->
    <div class="row">
-    <form class="col s11 m12" id="formAddAttendance" required>
+    <form class="col s11 m12" id="formAddAttendance" autocomplete="off" required>
 
     <!--PACIENTE-->
     <div class="input-field col s6">
