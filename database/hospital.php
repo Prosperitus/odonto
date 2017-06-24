@@ -79,7 +79,7 @@ class HospitalDb{
 	public function delete($id){
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "DELETE FROM hospital WHERE id = :id";
+        $sql = "UPDATE hospital SET deleted = true WHERE id = :id";
 		$idHospital = $id;
 		
 		$conn = new DbConnector();
@@ -271,7 +271,7 @@ class HospitalDb{
 	}
 
      public function searchAll(){
-      $sql = "SELECT * FROM hospital";
+      $sql = "SELECT * FROM hospital WHERE deleted = false";
        $conn = new DbConnector();
        $stmt = $conn->getConn()->prepare($sql);
        $stmt->execute();

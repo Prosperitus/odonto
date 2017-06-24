@@ -133,12 +133,6 @@ class HospitalController{
 	
 	public function del($id){
 		$conn = new HospitalDb();
-		$conn->updateAttendace($id);
-		$utis = $conn->searchUti($id);
-		foreach($utis as $uti){
-			$conn->deleteLeito($uti->id);
-		}
-		$conn->deleteUti($id);
 		$result = $conn->delete($id);
 	}
 

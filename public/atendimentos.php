@@ -172,7 +172,7 @@ if($hospital->image == '' || $hospital->image == null){
 			<div class="col s4" style="float:left">
 				<a href="#modalCadAttendance"><button id="botaoAddAttendance">Cadastrar Atendimento</button></a>
 			</div>
-			<div class="col s6" style="float:right">
+			<div class="col s6" style="left:335px;position: relative">
 				<input id="pesquisa" type="text">
 				<a id="botaoPesquisar" class="btn-floating blue positionStatic"> <i class="material-icons">search</i></a>
 			</div>
