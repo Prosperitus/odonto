@@ -44,6 +44,32 @@ class EmployeeController{
 		$conn = new EmployeeDb();
 		$result = $conn->add($Employee);
 		$this->redirect($result);
+
+		if($result &&  ( isset($_FILES['imagemEmployee']) && $_FILES['imagemEmployee']['size'] > 0 || isset($_FILES['file_upload']) && $_FILES['imagemEmployee']['size'] > 0)){
+        
+            $id = $conn->searchMaxId();
+            
+             $extensao_file = strtolower(strrchr($_FILES['file_upload']['name'],'.'));
+            $extensao = strtolower(strrchr($_FILES['imagemEmployee']['name'],'.'));
+            
+            $file = $_FILES['file_upload']['name'];
+            $imagem = $_FILES['imagemEmployee']['name'];
+            
+            $file = substr(hash("sha256",md5(uniqid(time()))),0,12).$extensao_file;
+            $imagem = substr(hash("sha256",date("Y-m-d H:i:s")),0,12).$extensao;
+            
+            $destino = '../images/Employee/' .$imagem;
+            $destino_file = '../file_upload/Employee/' .$file;
+            
+            $arquivo_tmp = $_FILES['imagemEmployee']['tmp_name'];
+            $arquivo_tmp_file = $_FILES['file_upload']['tmp_name'];
+            
+            move_uploaded_file( $arquivo_tmp, $destino);
+            move_uploaded_file( $arquivo_tmp_file, $destino_file);
+            
+            $conn->addImage($destino,$id);
+            $conn->addFile($destino_file,$id);
+
 	}
 
 	private function redirect($result){
