@@ -37,7 +37,32 @@
           <label for="telefone_chefe_uti">Telefone do Chefe da UTI</label>
         </div>
 
-        <!--ARQUIVOS-->
+    
+		<div class="utis">
+		<div class="uti">
+		<!--NOME DA UTI-->   
+        <div class="input-field col s5">
+          <i class="material-icons prefix">business</i>
+          <input name="nome_uti[]" id="nome_uti" title="Digite o nome da UTI" type="text" class="validate" required>
+          <label for="nome_uti">Nome da UTI</label>
+        </div>
+		
+		<!--QUANTIDADE DE LEITO DA UTI-->   
+        <div class="input-field col s5">
+          <i class="material-icons prefix">business</i>
+          <input name="quantidade_leito_uti[]" id="quantidade_leito_uti" title="Digite quantidade de leitos da UTI" pattern="^\S[0-9]*$" type="text" class="validate" required>
+          <label for="quantidade_leito_uti">Quantidade de leitos na UTI</label>
+        </div>
+		</div>
+		</div>
+		
+		<!--ADD UTI-->
+          <div class="input-field col s9">
+            <a id="addUTI" class="btn-floating blue positionStatic"> <i class="material-icons">add</i></a>
+			<a id="delUTI" class="btn-floating red positionStatic"> <i class="material-icons">delete</i></a>
+          </div>
+		  
+		      <!--ARQUIVOS-->
         <div class="file-field input-field col s5" id="hospitalFile">
           <div class="btn input-field col s5 light-blue">
             <span>Arquivos</span>
@@ -58,6 +83,7 @@
             <input class="file-path validate" type="text" placeholder="Upload de uma imagem">
           </div>
         </div>
+		
 
         <!--CHECK-->
         <div class="input-field col s9">

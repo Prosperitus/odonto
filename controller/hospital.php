@@ -3,6 +3,7 @@
 	require_once "../model/hospital.php";
 	require_once "../database/hospital.php";
 	require_once "../controller/verifyLogin.php";
+	require_once "../controller/uti.php";
 
 class HospitalController{
 	
@@ -63,13 +64,17 @@ class HospitalController{
 			
 			
 		}
+		if($result){
+			$uti = new UtiController();
+			$uti->add();
+		}
 		$this->redirect($result);
 	}
 
 
 	private function redirect($result){
 		if($result){
-			header("location: ../public/cadastro_hospital_uti.php");
+			header("location: ../public/success_register.php");
 			die();
 		 }else{
 			 header("location: ../public/fail_register.php");
