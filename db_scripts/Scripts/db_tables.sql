@@ -240,12 +240,12 @@ INSERT INTO admission_cause (type)
 VALUES ('Oncologico') , ('Cardiopata') , ('Cirurgia') , ('Paliativo') , ('Urgente') , ('Quimioterapia') , ('Pulmonar') , ('IRC') , ('Neuropata');
 
 INSERT INTO `odt_soft`.`users`
-(`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`)
-VALUES('odonto','teste','12345','teste@gmail.com',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
+(`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`,`deleted`)
+VALUES('odonto','teste','12345','teste@gmail.com',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3,false);
 
 INSERT INTO `odt_soft`.`users`
-(`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`)
-VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3);
+(`name`,`surname`,`cro`,`email`,`registration`,`phone`,`phone2`,`address`,`admission_date`,`password`,`social_security`,`bank`,`number_of_account`,`agency`,`permition`,`deleted`)
+VALUES('Renata','Monteiro de Paula Sgarioni','12345','renata@amareodontologia.com.br',123,'123','123','SCS','2017/03/03','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92','456789','BANCO','99','987',3,false);
 
 INSERT INTO stats (status) 
 VALUES ('Em avaliação') , ('Em reavaliação') , ('Em aprovação') , ('Aprovado pelo médico responsável') , ('Aprovado pela família') , ('Em orçamento') , ('Orçamento aprovado pela família') , ('Anexa parecer'),
