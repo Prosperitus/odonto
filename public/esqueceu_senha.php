@@ -26,9 +26,10 @@
     </style>
   </head>
 
-  <body class = "light-blue lighten-3">   
+  <body style="background-color: #03a9f4;">   
     <div id="recuperar_senha" class="row main" style="margin-top:10%">
-      <div class="col s12 z-depth-3 card-panel">
+      <div style="width:400px;" class="col s12 z-depth-3 card-panel">
+      <h4 style="margin-top:30px;margin-bottom:10px;margin-left:10px; ">Esqueceu sua senha?</h4>
         <form class="form" method="POST" action="../controller/envia_email.php">     
           <div class="row margin">    
             <div class="input-field col s12" style="margin-top:10%">
