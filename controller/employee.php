@@ -70,6 +70,7 @@ class EmployeeController{
             $conn->addImage($destino,$id);
             $conn->addFile($destino_file,$id);
 
+		}
 	}
 
 	private function redirect($result){
@@ -82,17 +83,3 @@ class EmployeeController{
 		}
 	}
 }
-
-
-
-		
-		
-	
-		
-		
-
-		
-
-
-
-
