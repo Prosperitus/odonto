@@ -85,6 +85,28 @@ class AttendanceDb
     }
 
   }
+
+  public function searchCountAdmissionCause() {
+
+    try {
+      $sql = "SELECT ac.type as name,count(ac.type) as count FROM admission_cause ac INNER JOIN attendance_cause a ON ac.id = a.admission_cause GROUP BY ac.type";
+
+      $conn = new Dbconnector();
+      $stmt = $conn->getConn()->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      return $result;
+
+      }
+
+      catch(PDOExeption $e) {
+        return $result;
+
+    }
+
+  }
+
+  
   
   public function searchPatient($patient) {
 
