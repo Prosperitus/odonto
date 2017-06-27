@@ -24,8 +24,12 @@
           }
         </style>
     </head>
-    <body class="light-blue lighten-3">
-        <div id="redefinir_senha" class="row main" style="margin-top: 10%">
+    <body style="background-color: #03a9f4;">
+        <div align="center">
+             <img style="padding:40px;" src="../images/logo.png">
+        
+          </div>
+        <div id="redefinir_senha" class="row main" style="margin-top: 1%">
             <div class="col s12 z-depth-3 card-panel">
                 <form class="form" method="POST" action="../controller/senha.php">
                     <div class="row margin">

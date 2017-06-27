@@ -3,7 +3,7 @@
 	require_once "../database/attendance.php";
 ?>
 
-<div class="input-field col s6" style="width: 300px;left:40%;margin_left:-150px">
+<div class="input-field col s6" style="width: 300px;left:40%;margin_left:-150px;margin-top:50px;">
     <select name="graficoSelect" id="graficoSelect">
     	<option value="n" disabled selected>Selecione um tipo de gráfico</option>
 		<option value="1">Quantidade de atendimentos por status</option>
