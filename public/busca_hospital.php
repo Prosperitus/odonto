@@ -120,7 +120,7 @@
 				
 				<p><b>Oops! Não achamos nada! ;(</p>
 				<p><a href='cadastro_hospital.php'>Clique aqui e <u>cadastre seu primeiro hospital</u></a></p>
-				<a class="">button</a>
+				
 		
 		      ";
 	}else{
