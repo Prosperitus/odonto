@@ -9,9 +9,11 @@
 		unset($_SESSION['hospital']);
 	}
 ?>
-	<div class="row" style="width: 100%">
+	<div style="background-color: white;width:100%;height:100%">
+
+	<div style="background-color: white;" class="row" style="width: 100%">
 		<div id="newtab-customize-overlay"></div>
-		<div class="welcome" style="padding-top:30px;">
+		<div class="welcome" style="padding:50px;">
 	
 		Bem vindo, <?=$user->name?>
 
@@ -110,14 +112,15 @@
 		
 		<center>
 		
-				<img width=300px height=250px alt='Oops! Não há nada aqui, cadastre seu primeiro hospital!'
+				<img width=400px height=296px alt='Oops! Não há nada aqui, cadastre seu primeiro hospital!'
 			title='alt='Oops! Não há nada aqui, cadastre seu primeiro hospital!' 
-			src='../images/hospital/icon_hospital_nothing_here.png'/>
+			src='../images/hospital/hospitalnovo2.png'/>
 				
 				<br/>
 				
 				<p><b>Oops! Não achamos nada! ;(</p>
 				<p><a href='cadastro_hospital.php'>Clique aqui e <u>cadastre seu primeiro hospital</u></a></p>
+				
 		
 		      ";
 	}else{
@@ -197,6 +200,7 @@
 		
 		}} ?>
 	</div>				
+	</div>
 	</div>
 	</body>
 </html>
