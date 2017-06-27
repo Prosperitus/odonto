@@ -69,7 +69,7 @@ $(document).ready(function(){
 				}
 
 				if(value == '2'){
-					$('#welcomeGrafic').html("Quantidade de atendimentos por status");
+					$('#welcomeGrafic').html("Condição Sistêmica por status");
 					var dataJson = $.parseJSON(data);
 					var arrayColor = ['red',
 									'orange',
