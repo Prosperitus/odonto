@@ -155,8 +155,8 @@ if($hospital->image == '' || $hospital->image == null){
 		<div >
 		</div>
         </div>
-        <input type="submit" value="Cadastrar" id="adicionar" style=" float:left; margin:2%; margin-top:2%">
-        <a href="atendimentos.php" id="cancelar" style=" float:right; position:relative; top:-27px; ">Cancelar</a>
+         <input type="submit" value="Cadastrar" id="adicionar" style=" float:left;top:-75px;left:22px">
+        <a href="atendimentos.php" id="cancelar" style=" float:right; position:relative; top:-27px;border: 2px solid #03a9f4;background-color: #03a9f4;padding: 6px 15px;color: #fafafa;right:22px">Cancelar</a>
     </div>
     </div>
 
