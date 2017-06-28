@@ -10,8 +10,8 @@ class HospitalDb{
    public function add($hospital) {
     try {
         //checar com o SGBD os nomes das colunas
-        $sql = "INSERT INTO hospital (name, telephone_uti, telephone_chefe_uti,nome_chefe_uti, deleted)  
-        VALUES (:name, :telUti, :telUtiChefe,:nmeUtiChefe, :deleted)";
+        $sql = "INSERT INTO hospital (name, telephone_uti, telephone_chefe_uti,nome_chefe_uti)  
+        VALUES (:name, :telUti, :telUtiChefe,:nmeUtiChefe)";
 
 
         //gh significa get hospital
@@ -19,7 +19,7 @@ class HospitalDb{
         $ghTelephoneUti = $hospital->getPhoneUti();
         $ghTelephoneUtiChefe = $hospital->getPhoneChef();
 		$ghNomeUtiChefe = $hospital->getChefUti();
-		$ghDeleted = 0;
+		
       
         $conn = new DbConnector();
         $stmt = $conn->getConn()->prepare($sql);
@@ -27,7 +27,6 @@ class HospitalDb{
         $stmt->bindParam(':telUti', $ghTelephoneUti);
 		$stmt->bindParam(':telUtiChefe', $ghTelephoneUtiChefe);
         $stmt->bindParam(':nmeUtiChefe', $ghNomeUtiChefe);
-		$stmt->bindParam(':deleted', $ghDeleted);
 
         
        
