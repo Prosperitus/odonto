@@ -81,7 +81,7 @@ CREATE TABLE hospital(
 	`telephone_uti`varchar(20) NOT NULL,
 	`telephone_chefe_uti`varchar(20) NOT NULL,
 	`nome_chefe_uti`varchar(80) NOT NULL,
-	`deleted` boolean,
+	`deleted` boolean NOT NULL,
     `file` text
 ) ENGINE=InnoDB;
 
