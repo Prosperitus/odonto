@@ -2,7 +2,6 @@
 
 	class Employee{
 		
-		
 		private $name;
 		private $surname;
 		private $cro;
@@ -28,7 +27,7 @@
 	 		return $this->id;
 	 	}
 
-	 	public function setId() {
+	 	public function setId($id) {
 	 		$this->id = $id;
 	 	}
 

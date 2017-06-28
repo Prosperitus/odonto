@@ -120,6 +120,15 @@ class EmployeeDb {
         return $result;
     }
 
+	public function searchLast(){
+    $sql = "SELECT * FROM users ORDER BY id DESC LIMIT 1";
+    $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_OBJ);
+    return $result;
+ }
+	
     public function searchId($filter) {
         $sql = "SELECT * FROM users WHERE id = :id";
         $conn =  new DbConnector();
@@ -142,12 +151,11 @@ class EmployeeDb {
 
     public function edit($employee) {
         try {
-            
+ 
             $geName = $employee->getName();
             $geSurname = $employee->getSurname();
             $geCro = $employee->getCro();
             $geAdmissionDate = $employee->getAdmissionDate();
-            $geNregistration = $employee->getRegistration();
             $geSocialSecurity = $employee->getCpf();
             $geAddress = $employee->getAddress();
             $geBank = $employee->getBank();
@@ -164,9 +172,8 @@ class EmployeeDb {
                     surname = :surname,
                     cro = :cro,
                     admission_date = :admDate,
-                    registration = :nregistration,
                     social_security = :socialSecurity,
-                    adress = :address,
+                    address = :address,
                     bank = :bank,
                     number_of_account = :accountNumber,
                     agency = :agencia,
@@ -180,7 +187,6 @@ class EmployeeDb {
             $stmt->bindParam(':surname', $geSurname, PDO::PARAM_STR, 255);
             $stmt->bindParam(':cro', $geCro, PDO::PARAM_STR, 10);
             $stmt->bindParam(':admDate', $geAdmissionDate,PDO::PARAM_STR, 255);
-            $stmt->bindParam(':nregistration', $geNregistration, PDO::PARAM_INT, 11);
             $stmt->bindParam(':socialSecurity', $geSocialSecurity, PDO::PARAM_STR, 50);
             $stmt->bindParam(':address', $geAddress, PDO::PARAM_STR,255);
             $stmt->bindParam(':bank', $geBank, PDO::PARAM_STR, 255);

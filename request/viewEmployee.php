@@ -10,18 +10,19 @@
 	$id = $_GET['id'];
 	$funcionarioControle = new EmployeeController();	
 	$emp = $funcionarioControle->searchId($id);
+	
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css"/>
 <script type="text/javascript" src="../js/scripts.js"></script>
 
 <!--CLASS/FORM-->
     <div class="row">
-      <form class="col s11 m12" action="" method="post">
+      <form class="col s11 m12" action="" id="formEditEmployee" method="post">
         <!--TITULO-->
 		<div class="divModalTitles">
 			<h3 class="center modalTitles">Dados do Funcionário</h3>
 		</div>
-		<input value="<?=$emp->id?>" type="hidden" name="funcionario_id" required>
+		<input value="<?=$emp->id?>" type="hidden" name="funcionario_id" id="funcionario_id" required>
         <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>

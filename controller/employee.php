@@ -66,9 +66,9 @@ class EmployeeController{
 		}
 	}
 	
-	public function edit(){
+	public function edit($id){
 		$Employee = new Employee();
-		$Hospital->setId($_POST['funcionario_id']);
+		$Employee->setId($id);
 		$Employee->setName($_POST["funcionario_nome"]);
 		$Employee->setSurname($_POST["funcionario_sobrenome"]);
 		$Employee->setCro($_POST["funcionario_cro"]);

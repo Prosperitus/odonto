@@ -312,3 +312,29 @@ $(document).ready(function(){
 		
 	}
 
+/////////////////////////////////
+
+//SCRIPT EDITAR FUNCIONARIO
+
+$(document).ready(function(){
+		$('#formEditEmployee').on('submit',function(e){
+			e.preventDefault();
+			$.ajax({
+				type: 'POST',
+				dataType: 'html',
+				data: new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
+				url: "../request/editEmployee.php",
+				success: function (data) {
+					var id = $('#funcionario_id').val();
+					$('#modalEditEmployee').modal('close');
+					$('#employee'+id).html(data);
+					
+				}
+			});
+		});
+	});
+	
+	

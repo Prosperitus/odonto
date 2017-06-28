@@ -46,9 +46,9 @@
 					<th>Número de Matrícula</th>
 	            </tr>
 	        </tfoot>
-	        <tbody>
+	        <tbody id="listEmployeeBody">
 				<?php foreach($employees as $employee){ ?>
-					<tr class="listPatient" onclick="visualizarFuncionario(<?=$employee->id?>)">
+					<tr class="listPatient" id="employee<?=$employee->id?>" onclick="visualizarFuncionario(<?=$employee->id?>)">
 						<td><?=$employee->name.' '.$employee->surname?></td>
 						<td><?=$employee->social_security?></td>
 						<td><?=$employee->email?></td>
