@@ -21,6 +21,7 @@
 		<div class="divModalTitles">
 			<h3 class="center modalTitles">Dados do Funcionário</h3>
 		</div>
+		<input value="<?=$emp->id?>" type="hidden" name="funcionario_id" required>
         <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
@@ -116,7 +117,7 @@
 
         <!--CHECK-->
         <div class="input-field col s12 main">
-          <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
+          <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Atualizar funcionário
             <i class="material-icons right">send</i>
           </button>
         </div>

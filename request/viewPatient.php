@@ -20,19 +20,22 @@
 		<div class="divModalTitles">
 			<h3 class="center modalTitles">Dados do Paciente</h3>
 		</div>
-		<!--NOME-->
+		<input value="<?=$pat->id?>" type="hidden" name="paciente_id" required>
+
+        <!--NOME-->
         <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_nome" value="<?=$pat->name?>" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_nome" required>
-          <label for="funcionario_nome" id="noneTransformLabel">Nome</label>
+          <input name="nome_paciente" id="nome_paciente" value="<?=$pat->name?>" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <label for="nome_paciente" id="noneTransformLabel">Nome</label>
         </div>
 
         <!--SOBRENOME-->
         <div class="input-field col s5">
-		      <i class="material-icons prefix">account_circle</i>
-          <input id="funcionario_sobrenome" value="<?=$pat->surname?>" type="text" pattern="^\S[a-zA-ZÀ-úẽẼ\s]*$" title="Apenas Letras" class="validate" name="funcionario_sobrenome" required>
-          <label for="funcionario_sobrenome" id="noneTransformLabel">Sobrenome</label>
+          <i class="material-icons prefix">account_circle</i>
+          <input name="sobrenome_paciente" id="sobrenome_paciente" value="<?=$pat->surname?>" pattern="^\S[a-zA-ZÀ-úẽẼ\s]+$" title="Apenas Letras" type="text" class="validate" required>
+          <label for="sobrenome_paciente" id="noneTransformLabel">Sobrenome</label>
         </div>
+
         <!--CPF-->
         <div class="input-field col s5">
           <i class="material-icons prefix">web</i>
@@ -253,14 +256,9 @@
 		<?php } ?>
         <!--CHECK-->
         <div class="input-field col s9">
-          <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Confirmar Cadastro
+          <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Atualizar paciente
             <i class="material-icons right">send</i>
           </button>
-        </div>
-	<div class="row">
-            <div class="input-field col s12" style="margin-top:1%">
-                  <button class="btn waves-effect waves-light light-blue" type="submit" name="action">Atualizar paciente</button>
-            </div>    
         </div>
 	</div>
  </form>
