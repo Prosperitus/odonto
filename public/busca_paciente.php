@@ -8,6 +8,11 @@
 	$pat = null;
 ?>
 
+	<div id="modalEditPatient" style="width:60%;" class="modal">
+        <div class="modal-content">
+        </div>
+    </div>
+
 	<div class="main margin_small">
 		</br>
 		<p class="bold tituloAzul">Click na linha do paciente para ver suas informações:</p>
@@ -21,7 +26,6 @@
 			   </div>
 			</div>
 		</a>
-	<div id="dialogPatient" title="Dados do Paciente">	</div>	
 	<input type="checkbox" value="clinica" checked />
 		<table id="pacienteDatatable" class="hover row-border" cellspacing="0" width="100%">
 	        <thead>

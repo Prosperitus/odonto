@@ -5,7 +5,14 @@
 	$dbemployee = new EmployeeDb();
 	$employees = $dbemployee->searchAll();
 	$emp = null;
-?>
+?>	
+
+
+	<div id="modalEditEmployee" style="width:60%;" class="modal">
+        <div class="modal-content">
+        </div>
+    </div>
+	
 	<div class="margin_small main">
 		</br>
 		<p class="bold tituloAzul">Click na linha do funcionário para ver suas informações:</p>
@@ -19,7 +26,6 @@
 			   </div>
 			</div>
 			</a>
-	<div id="dialogEmployee" title="Dados do Funcionário">	</div>
 	<input type="checkbox" value="clinica" checked />
 		<table id="funcionarioDatatable" class="hover row-border" cellspacing="0" width="100%;">
 	        <thead>

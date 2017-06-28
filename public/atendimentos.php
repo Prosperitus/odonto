@@ -79,8 +79,8 @@ if($hospital->image == '' || $hospital->image == null){
   <!--MODAL-->
 	<div id="modalCadAttendance" style="width: 60%; z-index: 1003; display: none; opacity: 1; transform: scaleX(1); top: 10%;" class="modal">
         <div class="modal-content">
-       	<div style="height:80px;background-color: #03a9f4; margin-bottom:50px;">
-       	<h3 style=" font-size:40px; text-align: center;color:white; padding:20px;" class="center">Cadastro de Atendimento</h3>
+       	<div class="divModalTitles">
+       	<h3 class="center modalTitles">Cadastro de Atendimento</h3>
     </div>
 
    

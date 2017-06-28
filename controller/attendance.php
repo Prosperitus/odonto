@@ -87,7 +87,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#avaliacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
 			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';
@@ -97,8 +97,8 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#reavaliacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
-			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'\'
 			+ \'</div>\');
 			});</script>';
 		}
@@ -107,7 +107,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#aprovacao").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
 			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';
@@ -117,7 +117,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#orcamento").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
 			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';
@@ -127,7 +127,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#acompanhamento").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
 			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';
@@ -137,7 +137,7 @@ class AttendanceController{
 			$(document).ready(function(){
 			$("#concluido").append(\'<div class="portlet">\'
 			+ \'<div class="portlet-header" style="word-wrap: break-word;">'.$attendance->namePatient.' '.$attendance->surnamePatient.'</div>\'
-			+ \'<div class="portlet-content" style="word-wrap: break-word;"><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
+			+ \'<div class="portlet-content" style="word-wrap: break-word;"><div><span class="btn btn-small btn-flat waves-effect waves-light" style="float:right"><i class="material-icons">mode_edit</i></span></div><b>Doutor responsável:</b> <br> '.$attendance->nameDoctor.' '.$attendance->surnameDoctor.', <br>\'
 			+ \'<b>UTI:</b> '.$attendance->name_itu.', <br> <b>Leito:</b> '.$attendance->uti.'</div>\'
 			+ \'</div>\');
 			});</script>';

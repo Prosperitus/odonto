@@ -8,8 +8,6 @@ $(onPageLoad);
       .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
       .find( ".portlet-header" )
       .addClass( "ui-widget-header ui-corner-all" )
-		$(".portlet-content")
-			.prepend( "<div><span class='btn btn-small btn-flat waves-effect waves-light' style='float:right'><i class='material-icons'>mode_edit</i></span></div>");
   	};
 	
 /////////////////////////////////
@@ -214,15 +212,6 @@ $(document).ready(function(){
 		$('#Iduser').val(id);
         $('#mostramedico').css('display','none');
     };
-
-  function onPageLoad(){
-    $( ".portlet" )
-      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-      .find( ".portlet-header" )
-      .addClass( "ui-widget-header ui-corner-all" )
-		$(".portlet-content")
-			.prepend( "<div><span class='btn btn-small btn-flat waves-effect waves-light' style='float:right'><i class='material-icons'>mode_edit</i></span></div>");
-  	};
 
   $(document).ready(function(){
     $('.modal').modal();

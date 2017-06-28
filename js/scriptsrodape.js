@@ -52,17 +52,6 @@ $(document).ready(function() {
 		        "sSortDescending": ": Ordenar colunas de forma descendente"
 		    }
 			}});
-			$(function() {
-		     $( "#dialogEmployee" ).dialog({
-		     	width: 500,
-				autoOpen: false,modal: true,
-				buttons: {
-					Fechar: function() {
-						$( "#dialogEmployee" ).dialog('close');
-					}
-				}
-			});
-		})
 		});	
 		function visualizarFuncionario(id) { 
 			$.ajax({ 
@@ -72,8 +61,8 @@ $(document).ready(function() {
 				beforeSend: function () { 
 				}, 
 				success: function (data) { 
-					$("#dialogEmployee").html(data); 
-					$( "#dialogEmployee" ).dialog('open');
+					$("#modalEditEmployee").html(data); 
+					$( "#modalEditEmployee" ).modal('open');
 				} 
 			}); 
 		}
@@ -111,15 +100,6 @@ $(document).ready(function() {
 			}}
 			
 			);
-		     $( "#dialogPatient" ).dialog({
-				width: 500,
-				autoOpen: false,modal: true,
-				buttons: {
-					Fechar: function() {
-						$( "#dialogPatient" ).dialog('close');
-					}
-				}
-			});
 		});	
 		function visualizarPaciente(id) { 
 			$.ajax({ 
@@ -127,8 +107,8 @@ $(document).ready(function() {
 				dataType: 'html',
 				url: "../request/viewPatient.php?id=" + id,
 				success: function (data) { 
-					$("#dialogPatient").html(data); 
-					$( "#dialogPatient" ).dialog('open');
+					$("#modalEditPatient").html(data); 
+					$( "#modalEditPatient" ).modal('open');
 				} 
 			}); 
 		}

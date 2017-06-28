@@ -16,7 +16,7 @@ CREATE TABLE users (
 	`cro` varchar(10),
 	`email`varchar(80) NOT NULL,
 	`registration` int (11) NOT NULL,
-	`image` text ,  
+	`image` text,  
 	`phone` varchar (20) NOT NULL,
 	`phone2` varchar(20), 
 	`address` varchar(80) NOT NULL,

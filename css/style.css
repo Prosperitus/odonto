@@ -1,4 +1,20 @@
 /* ESTILOS GERAIS */
+.modalTitles{
+	font-size:40px;
+	text-align: center;
+	color:white;
+	padding:20px;
+}
+.divModalTitles{
+	height:80px;
+	background-color: #03a9f4;
+	margin-bottom:50px;
+}
+#noneTransformLabel{
+	top:-0.2rem;
+	font-size:11px;
+	transform:none
+}
 .positionStatic{
 	position:static;
 }
