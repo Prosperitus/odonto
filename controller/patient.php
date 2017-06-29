@@ -6,7 +6,7 @@
 	include_once "../database/patient.php";
 	require_once "../controller/verifyLogin.php";
 	require_once "../controller/session.php";
-        include_once "../request/atualizar_paciente.php";
+        
         
         
 
