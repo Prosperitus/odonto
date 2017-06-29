@@ -121,7 +121,7 @@ class PatientController{
 			$telefone_responsavel2 = substr($responsible2, $i++);
 		}
 	}
-	echo 'ola';
+	
 	$patient = new Patient();
 	$patient->setName(filter_input(INPUT_POST, 'name'));
 	$patient->setPacienteEmail(filter_input(INPUT_POST, 'email'));
