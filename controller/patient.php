@@ -7,6 +7,7 @@
 	require_once "../controller/verifyLogin.php";
 	require_once "../controller/session.php";
         
+        
 
 class PatientController{
 	
@@ -120,7 +121,7 @@ class PatientController{
 			$telefone_responsavel2 = substr($responsible2, $i++);
 		}
 	}
-	
+	echo 'ola';
 	$patient = new Patient();
 	$patient->setName(filter_input(INPUT_POST, 'name'));
 	$patient->setPacienteEmail(filter_input(INPUT_POST, 'email'));
@@ -129,8 +130,8 @@ class PatientController{
 	$patient->setGender(filter_input(INPUT_POST,'gender'));
 	$patient->setAdress(filter_input(INPUT_POST,'address'));
 	$patient->setNeighborhood(filter_input(INPUT_POST,'neighborhood'));
-	$patient->setState(filter_input(INPUT_POST,'$state'));
-	$patient->setCep(filter_input(INPUT_POST,'$zip_code'));
+	$patient->setState(filter_input(INPUT_POST,'state'));
+	$patient->setCep(filter_input(INPUT_POST,'zip_code'));
 	$patient->setResponsibleName(filter_input(INPUT_POST, 'nome_responsavel1'));
 	$patient->setResponsiblePhone(filter_input(INPUT_POST,'telefone_responsavel1'));
 	$patient->setResponsibleName2(filter_input(INPUT_POST, 'nome_responsavel2'));
@@ -141,5 +142,15 @@ class PatientController{
 	$patient->setClinic(filter_input(INPUT_POST, 'patient'));
 	$conn = new PatientDb();
 	$result = $conn->edit($patient);
+        
+        function redirect($result){
+		if($result){
+			header("location: ../public/success_register.php");
+			die();
+		}else{
+			header("location: ../public/fail_register.php");
+			die();
+		}
 	}
+	} 
 }
