@@ -69,26 +69,26 @@ class EmployeeController{
 	public function edit($id){
 		$Employee = new Employee();
 		$Employee->setId($id);
-		$Employee->setName($_POST["funcionario_nome"]);
-		$Employee->setSurname($_POST["funcionario_sobrenome"]);
-		$Employee->setCro($_POST["funcionario_cro"]);
-		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
-		$Employee->setCpf($_POST["funcionario_cpf"]);
-		$Employee->setPhone($_POST["funcionario_telefone"]);
-		$Employee->setPhone2($_POST["funcionario_celular"]);
-		$Employee->setAddress($_POST["funcionario_endereco"]);
-		$Employee->setBank($_POST["funcionario_banco"]);
-		$Employee->setEmail($_POST["funcionario_email"]);
-		$Employee->setNumberOfAccount($_POST["funcionario_conta_banco"]);
-		$Employee->setAgency($_POST["funcionario_agencia_banco"]);
+		$Employee->setName(filter_input(INPUT_POST,'funcionario_nome'));
+		$Employee->setSurname(filter_input(INPUT_POST,'funcionario_sobrenome'));
+		$Employee->setCro(filter_input(INPUT_POST,'funcionario_cro'));
+		$Employee->setAdmissionDate(filter_input(INPUT_POST,'funcionario_admissao'));
+		$Employee->setCpf(filter_input(INPUT_POST,'funcionario_cpf'));
+		$Employee->setPhone(filter_input(INPUT_POST,'funcionario_telefone'));
+		$Employee->setPhone2(filter_input(INPUT_POST,'funcionario_celular'));
+		$Employee->setAddress(filter_input(INPUT_POST,'funcionario_endereco'));
+		$Employee->setBank(filter_input(INPUT_POST,'funcionario_banco'));
+		$Employee->setEmail(filter_input(INPUT_POST,'funcionario_email'));
+		$Employee->setNumberOfAccount(filter_input(INPUT_POST,'funcionario_conta_banco'));
+		$Employee->setAgency(filter_input(INPUT_POST,'funcionario_agencia_banco'));
 		$conn = new EmployeeDb();
 		$result = $conn->edit($Employee);
 
 		if($result &&  ( isset($_FILES['imagemEmployee']) && $_FILES['imagemEmployee']['size'] > 0 || isset($_FILES['file_upload']) && $_FILES['imagemEmployee']['size'] > 0)){
         
-            $id = $_POST['funcionario_id'];
+            $id = (filter_input(INPUT_POST,'funcionario_id'));
 			if(isset($_POST['image_path'])){
-				$path = $_POST['image_path'];
+				$path = filter_input(INPUT_POST, 'image_path');
 				ini_set('display_errors', 0 );
 				error_reporting(0);
 				unlink($path);
