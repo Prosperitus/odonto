@@ -320,18 +320,52 @@ class HospitalDb{
 		$result = $stmt->execute();
 	}
 	
-	public function addFile($destino_file,$id){
+	public function searchMaxDocumentId(){
+    
+        $sql = "SELECT MAX(id) as id from documents";
+        $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+	$stmt->execute();
+	$hospital = $stmt->fetch(PDO::FETCH_OBJ);
+    return $hospital->id;
+    }
+	
+	
+	
+	public function addHasDocument($lastDocument, $meta_entity){
+    
 		
-		$sql = "UPDATE `odt_soft`.`hospital` SET file = :destino WHERE id = :id";
+		$sql = "INSERT INTO entity_has_document (documents, meta_entity, entity) VALUES (:idocuments, :idmetaentity, 1)";
+		$conn = new DbConnector();
+		$stmt = $conn->getConn()->prepare($sql);
+		//$stmt->bindParam(':idocuments', $last);
+		
+		$stmt->bindParam(':idocuments', $lastDocument);
+		$stmt->bindParam(':idmetaentity', $meta_entity);
+		
+		
+		
+		
+		$result = $stmt->execute();
+    }
+	
+	
+	public function addFile($file, $destino_file, $tipo_documento, $meta_entity){
+		
+		//$sql = "UPDATE `odt_soft`.`hospital` SET file = :destino WHERE id = :id";
+		$sql = "INSERT INTO documents (name, URI, doc_type) VALUES (:nomearquivo, :destino, :tipodocumento)";
 		$conn= new DbConnector();
 		$stmt = $conn->getConn()->prepare($sql);
+		$stmt->bindParam(':nomearquivo', $file);
 		$stmt->bindParam(':destino', $destino_file);
-		$stmt->bindParam(':id',$id);
+		$stmt->bindParam(':tipodocumento', $tipo_documento);
+		//$stmt->bindParam(':id',$id);
 		$result = $stmt->execute();
+		
 	}
 
 		
-    }
+}
 
 	
 
