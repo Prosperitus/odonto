@@ -6,6 +6,7 @@
 	include_once "../database/patient.php";
 	require_once "../controller/verifyLogin.php";
 	require_once "../controller/session.php";
+        
 
 class PatientController{
 	
@@ -67,12 +68,12 @@ class PatientController{
 
 	public function addModal(){
 		$patient = new Patient();
-		$patient ->setpacienteEmail($_POST['paciente_email']);
-        $patient->setName($_POST['nome_paciente']);
+		$patient->setPacienteEmail($_POST['paciente_email']);
+                $patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
 		$patient->setBirthdate($_POST['date_paciente']);
-        $patient->setAdress($_POST['endereco_paciente']);
+                $patient->setAdress($_POST['endereco_paciente']);
 		$patient->setNeighborhood($_POST['bairro_paciente']);
 		$patient->setCity($_POST['cidade_paciente']);
 		$patient->setState($_POST['paciente_uf']);
@@ -105,14 +106,14 @@ class PatientController{
 	}
 
 	public function edit() {
-	$responsible1 = $_POST["responsible1"];
+	$responsible1 = filter_input(INPUT_POST, 'responsible1');
 	for ($i = 0;$i < strlen($responsible1); $i++){
 		if($responsible1[$i] == ','){
 			$nome_responsavel1 = substr($responsible1,0, $i);
 			$telefone_responsavel1 = substr($responsible1, $i++);
 		}
 	}
-	$responsible2 = $_POST["responsible2"];
+	$responsible2 = filter_input(INPUT_POST, 'responsible2');
 	for ($i = 0;$i < strlen($responsible2); $i++){
 		if($responsible2[$i] == ','){
 			$nome_responsavel2 = substr($responsible2,0, $i);
@@ -121,23 +122,23 @@ class PatientController{
 	}
 	
 	$patient = new Patient();
-	$patient->setName($_POST["name"]);
-	$patient->setpacienteEmail($_POST["email"]);
-	$patient->setCpf($_POST["cpf"]);
-	$patient->setHealthPlan($_POST["health_insurance"]);
-	$patient->setGender($_POST["gender"]);
-	$patient->setAdress($_POST["address"]);
-	$patient->setNeighborhood($_POST["neighborhood"]);
-	$patient->setState($_POST["state"]);
-	$patient->setCep($_POST["zip_code"]);
-	$patient->setResponsibleName($nome_responsavel1);
-	$patient->setResponsiblePhone($telefone_responsavel1);
-	$patient->setResponsibleName2($nome_responsavel2);
-	$patient->setResponsiblePhone2($telefone_responsavel2);
-	$patient->setMedicalassistant($_POST["name_phy_assistant"]);
-	$patient->setTelephone_phy_assistant($_POST["telephone_phy_assistant"]);
-	$patient->setSpeciality_phy_assistant($_POST["speciality_phy_assistant"]);
-	$patient->setClinic($_POST["patient"]);
+	$patient->setName(filter_input(INPUT_POST, 'name'));
+	$patient->setPacienteEmail(filter_input(INPUT_POST, 'email'));
+	$patient->setCpf(filter_input(INPUT_POST,'cpf'));
+	$patient->setHealthPlan(filter_input(INPUT_POST, 'health_insurance'));
+	$patient->setGender(filter_input(INPUT_POST,'gender'));
+	$patient->setAdress(filter_input(INPUT_POST,'address'));
+	$patient->setNeighborhood(filter_input(INPUT_POST,'neighborhood'));
+	$patient->setState(filter_input(INPUT_POST,'$state'));
+	$patient->setCep(filter_input(INPUT_POST,'$zip_code'));
+	$patient->setResponsibleName(filter_input(INPUT_POST, 'nome_responsavel1'));
+	$patient->setResponsiblePhone(filter_input(INPUT_POST,'telefone_responsavel1'));
+	$patient->setResponsibleName2(filter_input(INPUT_POST, 'nome_responsavel2'));
+	$patient->setResponsiblePhone2(filter_input(INPUT_POST, 'telefone_responsavel2'));
+	$patient->setMedicalassistant(filter_input(INPUT_POST, 'name_phy_assistant'));
+	$patient->setTelephone_phy_assistant(filter_input(INPUT_POST, 'telephone_phy_assistant'));
+	$patient->setSpeciality_phy_assistant(filter_input(INPUT_POST, 'speciality_phy_assistant'));
+	$patient->setClinic(filter_input(INPUT_POST, 'patient'));
 	$conn = new PatientDb();
 	$result = $conn->edit($patient);
 	}
