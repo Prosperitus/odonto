@@ -6,6 +6,7 @@
 	include_once "../database/patient.php";
 	require_once "../controller/verifyLogin.php";
 	require_once "../controller/session.php";
+        include_once "../request/atualizar_paciente.php";
         
         
 
@@ -142,7 +143,7 @@ class PatientController{
 	$patient->setClinic(filter_input(INPUT_POST, 'patient'));
 	$conn = new PatientDb();
 	$result = $conn->edit($patient);
-        
+        $this->redirect($result);
         function redirect($result){
 		if($result){
 			header("location: ../public/success_register.php");
