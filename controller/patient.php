@@ -143,15 +143,9 @@ class PatientController{
 	$patient->setClinic(filter_input(INPUT_POST, 'patient'));
 	$conn = new PatientDb();
 	$result = $conn->edit($patient);
-        $this->redirect($result);
-        function redirect($result){
-		if($result){
-			header("location: ../public/success_register.php");
-			die();
-		}else{
-			header("location: ../public/fail_register.php");
-			die();
-		}
-	}
+        
+        $id = (filter_input(INPUT_POST,'patient_id'));
+        
+      
 	} 
 }
