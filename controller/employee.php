@@ -1,156 +1,123 @@
 <?php
-
-	class Employee{
-		
-		private $name;
-		private $surname;
-		private $cro;
-		private $email;
-		private $registration;
-		private $cpf;
-		private $phone;
-		private $phone2;
-		private $address;
-		private $admissionDate;
-		private $password;
-		private $bank;
-		private $numberOfAccount;
-		private $agency;
-		private $permission;
-		private $id;
-		
-		function __construct(){
-
-		}		
-
-		public function getId() {
-	 		return $this->id;
-	 	}
-
-	 	public function setId($id) {
-	 		$this->id = $id;
-	 	}
-
-		public function getCpf(){
-			return $this->cpf;
-		}
-		
-		public function setCpf($cpf){
-			$this->cpf = $cpf;
-		}
-		
-		public function getName(){
-			return $this->name;
-		}
-		
-		public function setName($name){
-			$this->name = $name;
-		}
-
-		public function getSurname(){
-			return $this->surname;
-		}
-		
-		public function setSurname($surname){
-			$this->surname = $surname;
-		}
+	require_once "../model/employee.php";
+	require_once "generator.php";
+	require_once "../database/employee.php";
+	require_once "../controller/verifyLogin.php";
 	
-		public function getCro(){
-			return $this->cro;
+class EmployeeController{
+	
+	function __construct(){
+		verifyLogRedirect();
+	}
+	
+	public function searchName($name){
+		$db = new EmployeeDb();
+		$emps = $db->search($name);
+		foreach ($emps as $emp) {
+			echo '<div class="medicos" onclick="clickmedico(\''.$emp->name." ".$emp->surname.'\','.$emp->id.')">'.$emp->name." ".$emp->surname."</div>";
 		}
-		
-		public function setCro($cro){
-			$this->cro = $cro;
-		}
+	}
+	
+	public function searchId($id){
+		$db = new EmployeeDb();
+		$emp = $db->searchId($id);
+		return $emp;
+	}
+	
+	public function add(){
+		$Employee = new Employee();
+		$Employee->setName($_POST["funcionario_nome"]);
+		$Employee->setSurname($_POST["funcionario_sobrenome"]);
+		$Employee->setCro($_POST["funcionario_cro"]);
+		$Employee->setRegistration(generator(6));
+		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
+		$Employee->setCpf($_POST["funcionario_cpf"]);
+		$Employee->setPhone($_POST["funcionario_telefone"]);
+		$Employee->setPhone2($_POST["funcionario_celular"]);
+		$Employee->setAddress($_POST["funcionario_endereco"]);
+		$Employee->setBank($_POST["funcionario_banco"]);
+		$Employee->setPermission($_POST["permissao"]);
+		$Employee->setPassword(hash("sha256",($_POST["funcionario_senha"])));
+		$Employee->setEmail($_POST["funcionario_email"]);
+		$Employee->setNumberOfAccount($_POST["funcionario_conta_banco"]);
+		$Employee->setAgency($_POST["funcionario_agencia_banco"]);
+		$conn = new EmployeeDb();
+		$result = $conn->add($Employee);
+		$this->redirect($result);
 
-		public function getEmail(){
-			return $this->email;
-		}
-		
-		public function setEmail($email){
-			$this->email = $email;
-		}
+		if($result &&  ( isset($_FILES['imagemEmployee']) && $_FILES['imagemEmployee']['size'] > 0 || isset($_FILES['file_upload']) && $_FILES['imagemEmployee']['size'] > 0)){
+        
+            $id = $conn->searchMaxId();
+            
+            $extensao = strtolower(strrchr($_FILES['imagemEmployee']['name'],'.'));
+            
+            $imagem = $_FILES['imagemEmployee']['name'];
+            
+            $imagem = substr(hash("sha256",date("Y-m-d H:i:s")),0,12).$extensao;
+            
+            $destino = '../images/Employee/' .$imagem;
+            
+            $arquivo_tmp = $_FILES['imagemEmployee']['tmp_name'];
+            
+            move_uploaded_file( $arquivo_tmp, $destino);
+            
+            $conn->addImage($destino,$id);
 
-		public function getAdmissionDate(){
-			return $this->admissionDate;
 		}
-		
-		public function setAdmissionDate($admissionDate){
-			$this->admissionDate = $admissionDate;
-		}
+	}
+	
+	public function edit($id){
+		$Employee = new Employee();
+		$Employee->setId($id);
+		$Employee->setName($_POST["funcionario_nome"]);
+		$Employee->setSurname($_POST["funcionario_sobrenome"]);
+		$Employee->setCro($_POST["funcionario_cro"]);
+		$Employee->setAdmissionDate($_POST["funcionario_admissao"]);
+		$Employee->setCpf($_POST["funcionario_cpf"]);
+		$Employee->setPhone($_POST["funcionario_telefone"]);
+		$Employee->setPhone2($_POST["funcionario_celular"]);
+		$Employee->setAddress($_POST["funcionario_endereco"]);
+		$Employee->setBank($_POST["funcionario_banco"]);
+		$Employee->setEmail($_POST["funcionario_email"]);
+		$Employee->setNumberOfAccount($_POST["funcionario_conta_banco"]);
+		$Employee->setAgency($_POST["funcionario_agencia_banco"]);
+		$conn = new EmployeeDb();
+		$result = $conn->edit($Employee);
 
-		public function getRegistration(){
-			return $this->registration;
-		}
-		
-		public function setRegistration($registration){
-			$this->registration = $registration;
-		}
+		if($result &&  ( isset($_FILES['imagemEmployee']) && $_FILES['imagemEmployee']['size'] > 0 || isset($_FILES['file_upload']) && $_FILES['imagemEmployee']['size'] > 0)){
+        
+            $id = $_POST['funcionario_id'];
+			if(isset($_POST['image_path'])){
+				$path = $_POST['image_path'];
+				ini_set('display_errors', 0 );
+				error_reporting(0);
+				unlink($path);
+			}
+            
+            $extensao = strtolower(strrchr($_FILES['imagemEmployee']['name'],'.'));
+            
+            $imagem = $_FILES['imagemEmployee']['name'];
+            
+            $imagem = substr(hash("sha256",date("Y-m-d H:i:s")),0,12).$extensao;
+            
+            $destino = '../images/Employee/' .$imagem;
+            
+            $arquivo_tmp = $_FILES['imagemEmployee']['tmp_name'];
+            
+            move_uploaded_file( $arquivo_tmp, $destino);
+            
+            $conn->addImage($destino,$id);
 
-		
-		public function getPhone(){
-			return $this->phone;
-		}
-		
-		public function setPhone($phone){
-			$this->phone = $phone;
-		}
-
-
-		public function getPhone2(){
-			return $this->phone2;
-		}
-		
-		public function setPhone2($phone2){
-			$this->phone2 = $phone2;
-		}
-
-
-		public function getAddress(){
-			return $this->address;
-		}
-		
-		public function setAddress($address){
-			$this->address = $address;
-		}
-		public function getPassword(){
-			return $this->password;
-		}
-		
-		public function setPassword($password){
-			$this->password = $password;
-		}
-
-		public function getBank(){
-			return $this->bank;
-		}
-		
-		public function setBank($bank){
-			$this->bank = $bank;
-		}
-
-		public function getNumberOfAccount(){
-			return $this->numberOfAccount;
-		}
-		
-		public function setNumberOfAccount($numberOfAccount){
-			$this->numberOfAccount = $numberOfAccount;
-		}
-
-		public function getPermission(){
-			return $this->permission;
-		}
-		
-		public function setPermission($permission){
-			$this->permission = $permission;
-		}
-		
-		public function getAgency(){
-			return $this->agency;
-		}
-		
-		public function setAgency($agency){
-			$this->agency = $agency;
 		}
 	}
 
+	private function redirect($result){
+		if($result){
+			header("location: ../public/success_register.php");
+			die();
+		}else{
+			header("location: ../public/fail_register.php");
+			die();
+		}
+	}
+}
