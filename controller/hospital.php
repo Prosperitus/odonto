@@ -33,37 +33,86 @@ class HospitalController{
 		$Hospital->setPhoneChef($_POST["telefone_chefe_uti"]);
 		$Hospital->setPhoneUti($_POST["telefone_uti"]);
 		$conn = new HospitalDb();
-		
+		$fileObj = new HospitalDb();
 		$result = $conn->add($Hospital);
 
-		if($result &&  ( isset($_FILES['imagemHospital']) && $_FILES['imagemHospital']['size'] > 0 
-		|| isset($_FILES['file_upload']) && $_FILES['imagemHospital']['size'] > 0)){
+		
+		//IMAGEM
+		
+		if($result &&  ( isset($_FILES['imagemHospital']) && $_FILES['imagemHospital']['size'] > 0 )){
 		
 			$id = $conn->searchMaxId();
 			
-			$extensao_file = strtolower(strrchr($_FILES['file_upload']['name'],'.'));
+			
 			$extensao = strtolower(strrchr($_FILES['imagemHospital']['name'],'.'));
 			
-			$file = $_FILES['file_upload']['name'];
+			
 			$imagem = $_FILES['imagemHospital']['name'];
 			
-			$file = substr(hash("sha256",md5(uniqid(time()))),0,12).$extensao_file;
+			
+			
 			$imagem = substr(hash("sha256",date("Y-m-d H:i:s")),0,12).$extensao;
 			
 			$destino = '../images/hospital/' .$imagem;
-			$destino_file = '../file_upload/hospital/' .$file;
+			
 			
 			$arquivo_tmp = $_FILES['imagemHospital']['tmp_name'];
-			$arquivo_tmp_file = $_FILES['file_upload']['tmp_name'];
+			
 			
 			move_uploaded_file( $arquivo_tmp, $destino);
-			move_uploaded_file( $arquivo_tmp_file, $destino_file);
 			
 			$conn->addImage($destino,$id);
-			$conn->addFile($destino_file,$id);
-			
 			
 		}
+			 
+			 
+			// ARQUIVOS 
+			
+if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']))
+{
+	
+	
+	$meta_entity = 1;
+     $destino = '../arquivos';
+     $arquivos = $_FILES['arquivos'];
+	 $tipo_documento = 1;
+     $total = count($arquivos['name']);
+ 
+ if(  $total > 0 ){
+	 
+    for ($i = 0; $i < $total; $i++)
+    {
+        //variaveis de utilidade
+		
+        // - $arquivos['name'][$i]
+        // - $arquivos['tmp_name'][$i]
+        // - $arquivos['size'][$i]
+        // - $arquivos['error'][$i]
+        // - $arquivos['type'][$i]
+		
+        
+		 
+        if (!move_uploaded_file($arquivos['tmp_name'][$i], $destino . '/' . $arquivos['name'][$i]))
+        {
+            echo "Erro ao enviar o arquivo: " . $arquivos['name'][$i];
+        }
+		
+		
+		 $extensao_file = strtolower(strrchr($_FILES['arquivos']['name'][$i],'.'));
+		 $file = substr(hash("sha256",md5(uniqid(time()))),0,12);
+		
+		 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $tipo_documento, $meta_entity);
+		 $last = $conn->searchMaxDocumentId();
+		 $conn->addHasDocument($last, $meta_entity);
+		 
+    }
+ }
+  
+	
+}
+			
+		
+		
 		if($result){
 			$uti = new UtiController();
 			$uti->add();
@@ -71,7 +120,8 @@ class HospitalController{
 		$this->redirect($result);
 	}
 
-
+	
+	
 	private function redirect($result){
 		if($result){
 			header("location: ../public/success_register.php");
