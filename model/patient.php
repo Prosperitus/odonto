@@ -36,7 +36,7 @@ class Patient{
 	 	return $this->id;
 	 }
 
-	 public function setId() {
+	 public function setId($id) {
 	 	$this->id = $id;
 	 }
 
