@@ -7,7 +7,7 @@
 
 
 
-  <div style="background-color:#03a9f4;position:absolute;height:100%;width:100%;padding:100px; ">
+  <div style="background-color:#df1f1f;position:absolute;height:100%;width:100%;padding:100px; ">
 
     <div align="center">
        <img style="padding-bottom:80px" src="../images/close.png">
