@@ -337,4 +337,25 @@ $(document).ready(function(){
 		});
 	});
 	
-	
+	//SCRIPT EDITAR PACIENTE
+
+$(document).ready(function(){
+		$('#formEditPatient').on('submit',function(e){
+			e.preventDefault();
+			$.ajax({
+				type: 'POST',
+				dataType: 'html',
+				data: new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
+				url: "../request/edit_patient.php",
+				success: function (data) {
+					var id = $('#patient_id').val();
+					$('#modalEditPatient').modal('close');
+					$('#patient'+id).html(data);
+					
+				}
+			});
+		});
+	});
