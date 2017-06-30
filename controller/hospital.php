@@ -69,8 +69,8 @@ class HospitalController{
 			 
 			// ARQUIVOS 
 			
-if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']) )
-{
+		if ($result && !empty( $_FILES['arquivos']) && ($_FILES['arquivos']['error'] != 4)  )
+		{
 	
 		// Entidade Hospital
 		$metaentity = 1;
@@ -80,9 +80,9 @@ if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']) )
 		$tipo_documento = 1;
 		$total = count($arquivos['name']);
 	
- if(  $total > 0 ){
+ 			if(  $total > 0 ){
 	 
-    for ($i = 0; $i < $total; $i++)
+   				 for ($i = 0; $i < $total; $i++)
     {
         //variaveis de utilidade
 		
@@ -92,27 +92,27 @@ if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']) )
         // - $arquivos['error'][$i]
         // - $arquivos['type'][$i]
 		
-         $extensao_file = strtolower(strrchr($_FILES['arquivos']['name'][$i],'.'));
-	 $file = substr(hash("sha256",md5(uniqid(time()))),0,12);
+        				 $extensao_file = strtolower(strrchr($_FILES['arquivos']['name'][$i],'.'));
+	 				 $file = substr(hash("sha256",md5(uniqid(time()))),0,12);
 		
 		 
-        if (!move_uploaded_file($arquivos['tmp_name'][$i], $destino . '/' . $file . $extensao_file))
-        {
-            echo "Erro ao enviar o arquivo: " . $arquivos['name'][$i];
-        }
+        				if (!move_uploaded_file($arquivos['tmp_name'][$i], $destino . '/' . $file . $extensao_file))
+        					{
+        				    echo "Erro ao enviar o arquivo: " . $arquivos['name'][$i];
+        					}
 		
 		
 		
-		 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $tipo_documento, $meta_entity);
-		 $last = $conn->searchMaxDocumentId();
-		 $max = $conn->searchMaxId();
-		 $conn->addHasDocument($last, 1, $max);
+						 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $tipo_documento, $meta_entity);
+		 		 		 $last = $conn->searchMaxDocumentId();
+						 $max = $conn->searchMaxId();
+						 $conn->addHasDocument($last, 1, $max);
 		
-    }
- }
+    						}
+				 }
   
 	
-}
+		}
 			
 		
 		
