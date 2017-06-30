@@ -32,7 +32,7 @@ class PatientController{
 	
 	public function add(){
 		$patient = new Patient();
-		$patient ->setpacienteEmail($_POST['paciente_email']);
+		$patient ->setPacienteEmail($_POST['paciente_email']);
         $patient->setName($_POST['nome_paciente']);
 		$patient->setSurname($_POST['sobrenome_paciente']);
 		$patient->setGender($_POST['genero_paciente']);
@@ -97,17 +97,10 @@ class PatientController{
 		$result = $conn->add($patient);
 	}
 
-	private function redirect($result){
-		 if($result){
-			header("location: ../public/success_register.php");
-			die();
-		 }else{
-			header("location: ../public/fail_register.php");
-			die();
-		 }
-	}
+	
 
-	public function edit() {
+	public function edit($id) {
+
 	$responsible1 = filter_input(INPUT_POST, 'responsible1');
 	for ($i = 0;$i < strlen($responsible1); $i++){
 		if($responsible1[$i] == ','){
@@ -124,34 +117,35 @@ class PatientController{
 	}
 	
 	$patient = new Patient();
-	$patient->setName(filter_input(INPUT_POST, 'name'));
-	$patient->setPacienteEmail(filter_input(INPUT_POST, 'email'));
-	$patient->setCpf(filter_input(INPUT_POST,'cpf'));
-	$patient->setHealthPlan(filter_input(INPUT_POST, 'health_insurance'));
-	$patient->setGender(filter_input(INPUT_POST,'gender'));
-	$patient->setAdress(filter_input(INPUT_POST,'address'));
-	$patient->setNeighborhood(filter_input(INPUT_POST,'neighborhood'));
-	$patient->setState(filter_input(INPUT_POST,'state'));
-	$patient->setCep(filter_input(INPUT_POST,'zip_code'));
-	$patient->setResponsibleName(filter_input(INPUT_POST, 'nome_responsavel1'));
-	$patient->setResponsiblePhone(filter_input(INPUT_POST,'telefone_responsavel1'));
-	$patient->setResponsibleName2(filter_input(INPUT_POST, 'nome_responsavel2'));
-	$patient->setResponsiblePhone2(filter_input(INPUT_POST, 'telefone_responsavel2'));
-	$patient->setMedicalassistant(filter_input(INPUT_POST, 'name_phy_assistant'));
-	$patient->setTelephone_phy_assistant(filter_input(INPUT_POST, 'telephone_phy_assistant'));
-	$patient->setSpeciality_phy_assistant(filter_input(INPUT_POST, 'speciality_phy_assistant'));
-	$patient->setClinic(filter_input(INPUT_POST, 'patient'));
+	$patient->setId($id);
+	$patient ->setPacienteEmail($_POST['paciente_email']);
+	$patient->setName($_POST['nome_paciente']);
+	$patient->setSurname($_POST['sobrenome_paciente']);
+	$patient->setGender($_POST['genero_paciente']);
+	$patient->setBirthdate($_POST['date_paciente']);
+	$patient->setAdress($_POST['endereco_paciente']);
+	$patient->setNeighborhood($_POST['bairro_paciente']);
+	$patient->setCity($_POST['cidade_paciente']);
+	$patient->setState($_POST['paciente_uf']);
+	$patient->setCep($_POST['cep_paciente']);
+	$patient->setCpf($_POST['cpf']);
+	$patient->setHealthPlan($_POST['plano_de_saude']);
+	$patient->setResponsibleName($_POST['nome_responsavel']);
+	$patient->setResponsibleName2($_POST['nome_responsavel_2']);
+	//$patient->setPhysician_assistant($_POST['medico_responsavel']);
+	//$patient->setMedicalassistant($_POST['nome_medico_responsavel']);
+	//$patient->setTelephone_phy_assistant($_POST['telefone_medico_responsavel']);
+	//$patient->setSpeciality_phy_assistant($_POST['especialidade_medico_responsavel']);
+	//$patient->setmedicalassistant($_POST['medicalassistant']);
+	//$patient->setmedicalRecords($_POST['medicalRecords']);
+	$patient->setResponsiblePhone($_POST['telefone_responsavel']);
+	$patient->setResponsiblePhone2($_POST['telefone_responsavel_2']);
+	if(isset($_POST['clinica'])){
+	$patient->setClinic($_POST['clinica']);
+	}
 	$conn = new PatientDb();
 	$result = $conn->edit($patient);
-        $this->redirect($result);
-        function redirect($result){
-		if($result){
-			header("location: ../public/success_register.php");
-			die();
-		}else{
-			header("location: ../public/fail_register.php");
-			die();
-		}
-	}
+	
+	
 	} 
 }
