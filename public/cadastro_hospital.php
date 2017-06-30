@@ -66,7 +66,7 @@
         <div class="file-field input-field col s5" id="hospitalFile">
           <div class="btn input-field col s3 light-blue">
             <span>Arquivos</span>
-             <input type="file" name="file_upload">
+             <input type="file" name="arquivos[]" multiple>
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload de um ou mais arquivos">
