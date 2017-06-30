@@ -66,18 +66,20 @@ class HospitalController{
 		}
 			 
 			 
+			 
 			// ARQUIVOS 
 			
-if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']))
+if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']) )
 {
 	
+		// Entidade Hospital
+		$metaentity = 1;
+		//$entity = 1;
+		$destino = '../arquivos';
+		$arquivos = $_FILES['arquivos'];
+		$tipo_documento = 1;
+		$total = count($arquivos['name']);
 	
-	$meta_entity = 1;
-     $destino = '../arquivos';
-     $arquivos = $_FILES['arquivos'];
-	 $tipo_documento = 1;
-     $total = count($arquivos['name']);
- 
  if(  $total > 0 ){
 	 
     for ($i = 0; $i < $total; $i++)
@@ -103,8 +105,9 @@ if (isset($_FILES['arquivos']) && !empty($_FILES['arquivos']['name']))
 		
 		 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $tipo_documento, $meta_entity);
 		 $last = $conn->searchMaxDocumentId();
-		 $conn->addHasDocument($last, $meta_entity);
-		 
+		 $max = $conn->searchMaxId();
+		 $conn->addHasDocument($last, 1, $max);
+		
     }
  }
   
