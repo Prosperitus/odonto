@@ -46,7 +46,7 @@
 	        </tfoot>
 	        <tbody>
 				<?php foreach($patients as $patient){ ?>
-					<tr class="listPatient" onclick="visualizarPaciente(<?=$patient->id?>)">
+					<tr class="listPatient"  id="patient<?=$patient->id?>" onclick="visualizarPaciente(<?=$patient->id?>)">
 						<td><?=$patient->name.' '.$patient->surname?></td>
 						<td><?=$patient->social_security?></td>
 						<td><?=$patient->health_insurance?></td>
