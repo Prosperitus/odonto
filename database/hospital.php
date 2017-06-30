@@ -320,33 +320,62 @@ class HospitalDb{
 		$result = $stmt->execute();
 	}
 	
-	public function searchMaxDocumentId(){
+	public function searchIdDocumentsByIdHospital($idHospital){
+
+
+    $sql = "SELECT documents FROM entity_has_document 
+    WHERE meta_entity = 1 AND entity = :idbyhospital ;";
+
+
     
+    $conn= new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+    $stmt->bindParam(':idbyhospital', $idHospital);
+   
+    $stmt->execute();
+    
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+    }
+	
+	
+	public function searchMaxDocumentId(){
+    try{
         $sql = "SELECT MAX(id) as id from documents";
         $conn = new DbConnector();
     $stmt = $conn->getConn()->prepare($sql);
 	$stmt->execute();
 	$hospital = $stmt->fetch(PDO::FETCH_OBJ);
     return $hospital->id;
+	 }
+    catch(PDOExeption $e){
+        return $hospital;
+    }
     }
 	
 	
 	
-	public function addHasDocument($lastDocument, $meta_entity){
+	public function addHasDocument($lastDocument, $meta_entity,  $entity){
     
-		
-		$sql = "INSERT INTO entity_has_document (documents, meta_entity, entity) VALUES (:idocuments, :idmetaentity, 1)";
+		try{
+		$sql = "INSERT INTO entity_has_document (documents, meta_entity, entity) VALUES (:idocuments, :idmetaentity, :identity)";
 		$conn = new DbConnector();
 		$stmt = $conn->getConn()->prepare($sql);
 		//$stmt->bindParam(':idocuments', $last);
 		
 		$stmt->bindParam(':idocuments', $lastDocument);
 		$stmt->bindParam(':idmetaentity', $meta_entity);
+		$stmt->bindParam(':identity', $entity);
 		
 		
 		
 		
 		$result = $stmt->execute();
+		
+				 }
+    catch(PDOExeption $e){
+        return $result;
+    }
     }
 	
 	
