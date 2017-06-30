@@ -21,7 +21,7 @@
         </div>
         <div style="display: inline;">
             <img src="../images/left-arrow.png" style="vertical-align:middle;padding-right:10px">
-            <a style="color: white;" onclick="history.go(-1)" href="#">Voltar</a>
+            <a style="color: white;" onclick="history.go(-2)" >Voltar</a>
         </div>
     </div>    
 
