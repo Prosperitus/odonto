@@ -6,7 +6,7 @@ class DbConnector {
     private $Servidor = "localhost";
     private $BancoDados = "odt_soft";
     private $Usuario = "root";
-    private $Senha = "";
+    private $Senha = "root";
     private $conn;
     
     public function __construct() { 

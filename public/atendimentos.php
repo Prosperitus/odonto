@@ -25,7 +25,49 @@
 
 ?>
 
+<div id="editAttendanceModal" class="modal">
+        <div class="modal-content">
+          <h4>'.$attendance->namePatient.' '.$attendance->surnamePatient.'</h4>
+          <div>
+              <form action="radios">
+			    <p>
+			      <input name="group1" type="radio" onchange="checkAvaliation()" id="test1" checked/>
+			      <label for="test1">Avaliação</label>
+			    </p>
+			    <div id="checkAvaliation">
+			    	<p>
+				      
+				      <label>exemplo1</label><br>
+				      <textarea></textarea>
+			    	</p>
+			    	<p>
+				      <label>exemplo2</label><br>
+				      <textarea></textarea>
+			    	</p>
+			    	<p>
+				      <label>exemplo3</label><br>
+				      <textarea></textarea>
+			    	</p>
+			    </div>
 
+			    <p>
+			      <input name="group1" type="radio" onchange="checkReavaliation()" id="test2" />
+			      <label for="test2">Reavaliação</label>
+			    </p>
+			    <div id="checkReavaliation">
+			    	</div>
+			    <p>
+			      <input name="group1" type="radio" id="test3"  />
+			      <label for="test3">Concluído</label>
+			    </p>
+			    </p>
+			  </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat">Concluído</a>
+        </div>
+      </div>
 
 <script>
 	$(onPageLoad);

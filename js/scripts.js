@@ -360,3 +360,40 @@ $(document).ready(function(){
 			});
 		});
 	});
+
+  //////////////////////////////
+ 
+ //SCRIPT EDITAR ATENDIMENTO
+
+       	function checkAvaliation(){
+      		$('#checkReavaliation').html('');
+      		$('#checkAvaliation').html('<p>'
+											      
+											      +'<label>exemplo1</label><br>'
+											      +'<textarea></textarea>'
+										    	+'</p>'
+										    	+'<p>'
+											     + '<label>exemplo2</label><br>'
+											      +'<textarea></textarea>'
+										    	+'</p>'
+										    	+'<p>'
+											     + '<label>exemplo3</label><br>'
+											     + '<textarea></textarea>'
+										    	+'</p>');
+      	}
+      	function checkReavaliation(){
+      		$('#checkAvaliation').html('');
+      		$('#checkReavaliation').html('<p>'
+											      
+											      +'<label>exemplo1</label><br>'
+											      +'<textarea></textarea>'
+										    	+'</p>'
+										    	+'<p>'
+											     + '<label>exemplo2</label><br>'
+											      +'<textarea></textarea>'
+										    	+'</p>'
+										    	+'<p>'
+											     + '<label>exemplo3</label><br>'
+											     + '<textarea></textarea>'
+										    	+'</p>');
+      	}
