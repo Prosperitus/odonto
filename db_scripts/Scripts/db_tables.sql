@@ -253,7 +253,14 @@ VALUES ('Em avaliação') , ('Em reavaliação') , ('Em aprovação') , ('Aprova
 
 INSERT INTO meta_entity(name)
 VALUES ('Hospital') , ('Paciente') , ('Funcionário') , ('Atendimento');
+
+INSERT INTO doc_type (name)
+VALUES ('.txt'),('.pdf'),('.docx'),('.doc');
+
 /*INDEX*/
+
+
+
 
 CREATE INDEX idx_patient ON attendance(patient); 
 CREATE INDEX idx_doctor_responsable ON attendance(doctor_responsible);
