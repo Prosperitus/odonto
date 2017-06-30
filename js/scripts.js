@@ -349,9 +349,10 @@ $(document).ready(function(){
 				contentType: false,
 				cache: false,
 				processData:false,
-				url: "../request/edit_patient.php",
+				url: "../request/editPatient.php",
 				success: function (data) {
-					var id = $('#patient_id').val();
+					console.log(data);
+					var id = $('#paciente_id').val();
 					$('#modalEditPatient').modal('close');
 					$('#patient'+id).html(data);
 					
