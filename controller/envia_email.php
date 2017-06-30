@@ -29,15 +29,12 @@
                     $query = mysqli_query($conexao, $sql);
                     $cont = mysqli_num_rows($query);
 
-                    var_dump($cont);
 
                     $novasenha = substr(md5(time()), 0, 6);
                     $nscriptografada = hash("sha256", $novasenha);
 
-                    var_dump($novasenha);
-                    var_dump($nscriptografada);
                     $localadress = "http://www.alteredepois.com/";
-                    $odon = md5("odonto");
+                    $odon = md5("redefinir_senha");
                     $odoncrip = hash("sha256" , $odon);
                     $odoncripcrip = base64_encode($odoncrip);
                     $odonsite = "redefinir_senha.php";
@@ -48,7 +45,6 @@
                         $sql_subst = "UPDATE odt_soft.users SET password= '$nscriptografada' WHERE email= '$destinatario' ";
                         mysqli_query($conexao, $sql_subst);
                          $link = "<a href=\"".$odonsite."\">$localadress$odoncripcrip</a>";
-                         var_dump($link);
                         $mensagemHTML = '<p> Olá, </p>
                     					<p> sua nova senha é: </p>
                     					<p><b><t>'.$novasenha.'</p></b></t><br>
@@ -57,7 +53,7 @@
                     					<p> Atenciosamente <p/>
                     					<p>2017 EasyOdonto Solutions<p>
                     					<br>';
-                    	var_dump($mensagemHTML);
+                    	echo "$mensagemHTML";
 
                     }else{
                         echo "<script>alert('email nao cadastrado!');</script>";

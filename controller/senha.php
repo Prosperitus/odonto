@@ -9,14 +9,6 @@ $conf_red_senha = $_POST['conf_re_senha'];
 $ns_recebida = hash("sha256", $senha);
 $nsred_senha = hash("sha256", $red_senha);
 
-//8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-//NmZhOTBhNzg3YzZlNDFhMWJlZjlkNGM3NWJjMzQ2MDM0ZTY3NDEzOA==
-var_dump($senha);
-var_dump($ns_recebida);
-var_dump($red_senha);
-var_dump($nsred_senha);
-
-
 $conexao = mysqli_connect("localhost", "root", "", "odt_soft");
 
 $sql_pass = "SELECT * FROM odt_soft.users WHERE password= '$ns_recebida' ";
