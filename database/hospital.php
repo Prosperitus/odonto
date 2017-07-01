@@ -341,6 +341,20 @@ class HospitalDb{
    		 return $result;
    	 }
 	
+	public function searchIdExtDocuments($extensao){
+		try{
+        $sql = "SELECT MAX(id) as id from doc_type WHERE name = :extensao";
+        $conn = new DbConnector();
+    $stmt = $conn->getConn()->prepare($sql);
+	$stmt->bindParam(':extensao', $extensao);
+	$stmt->execute();
+	$hospital = $stmt->fetch(PDO::FETCH_OBJ);
+    return $hospital->id;
+	 }
+    catch(PDOExeption $e){
+        return $hospital;
+    }
+    }
 	
 	public function searchMaxDocumentId(){
     try{
