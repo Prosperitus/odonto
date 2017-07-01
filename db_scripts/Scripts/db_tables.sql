@@ -255,7 +255,7 @@ INSERT INTO meta_entity(name)
 VALUES ('Hospital') , ('Paciente') , ('Funcionário') , ('Atendimento');
 
 INSERT INTO doc_type (name)
-VALUES ('.txt'),('.pdf'),('.docx'),('.doc');
+VALUES ('.txt'),('.pdf'),('.docx'),('.doc'),('.xls'),('.ppt');
 
 /*INDEX*/
 
