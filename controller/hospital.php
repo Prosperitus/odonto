@@ -77,7 +77,6 @@ class HospitalController{
 		//$entity = 1;
 		$destino = '../arquivos';
 		$arquivos = $_FILES['arquivos'];
-		$tipo_documento = 1;
 		$total = count($arquivos['name']);
 	
  			if(  $total > 0 ){
@@ -95,21 +94,27 @@ class HospitalController{
         				 $extensao_file = strtolower(strrchr($_FILES['arquivos']['name'][$i],'.'));
 	 				 $file = substr(hash("sha256",md5(uniqid(time()))),0,12);
 		
+					 
+					 	
+					$verifExt = $conn->searchIdExtDocuments($extensao_file);
 		 
-        				if (!move_uploaded_file($arquivos['tmp_name'][$i], $destino . '/' . $file . $extensao_file))
-        					{
-        				    echo "Erro ao enviar o arquivo: " . $arquivos['name'][$i];
-        					}
+						if($verifExt != null && !empty($verifExt)){
+			 
+		 
+        						if (!move_uploaded_file($arquivos['tmp_name'][$i], $destino . '/' . $file . $extensao_file))
+        							{
+        						    echo "Erro ao enviar o arquivo: " . $arquivos['name'][$i];
+        							}
 		
 		
 		
-						 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $tipo_documento, $meta_entity);
-		 		 		 $last = $conn->searchMaxDocumentId();
-						 $max = $conn->searchMaxId();
-						 $conn->addHasDocument($last, 1, $max);
-		
-    						}
-				 }
+								 $conn->addFile($arquivos['name'][$i] , $destino . '/' . $file . $extensao_file , $verifExt, $meta_entity);
+		 		 				 $last = $conn->searchMaxDocumentId();
+								 $max = $conn->searchMaxId();
+								 $conn->addHasDocument($last, 1, $max);
+						}
+    								}
+						 }
   
 	
 		}
