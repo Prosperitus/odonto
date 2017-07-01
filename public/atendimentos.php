@@ -102,6 +102,25 @@ if($hospital->image == '' || $hospital->image == null){
 					<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
 					<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
 					<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
+					<p><label class='lblHospitalConteudo'>Arquivos do Hospital:  </label></p>
+				
+ <!-- ARQUIVOS POR HOSPITAL -->				
+	<?php 
+	
+	$dbhospital = new HospitalDb();
+	$idHospital = $hospital->id;
+	$idDocuments = array();
+	$idDocuments= $dbhospital->searchIdDocumentsByIdHospital($idHospital);
+	$num = count($idDocuments);
+
+	for ( $i =0 ; $i < $num; $i++){
+	
+	 ?>
+		<p><label class="lblHospitalConteudo"><a href='<?=$idDocuments[$i]->URI?>'> <?=$idDocuments[$i]->name?> </a></label></p>
+													
+	<?php } ?>
+	<!-- ARQUIVOS POR HOSPITAL -->
+				
 				</div>
 			</div>
 		</div>
