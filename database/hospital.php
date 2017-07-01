@@ -323,20 +323,23 @@ class HospitalDb{
 	public function searchIdDocumentsByIdHospital($idHospital){
 
 
-    $sql = "SELECT documents FROM entity_has_document 
-    WHERE meta_entity = 1 AND entity = :idbyhospital ;";
+    		$sql = "SELECT e.documents, d.name, d.URI 
+		FROM entity_has_document e, documents d 
+		WHERE e.meta_entity = 1 AND 
+		e.entity = :idHospital AND 
+		d.id = e.documents";
 
 
     
-    $conn= new DbConnector();
-    $stmt = $conn->getConn()->prepare($sql);
-    $stmt->bindParam(':idbyhospital', $idHospital);
+   		 $conn= new DbConnector();
+   		 $stmt = $conn->getConn()->prepare($sql);
+   		 $stmt->bindParam(':idHospital', $idHospital);
    
-    $stmt->execute();
+   		 $stmt->execute();
     
-    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-    return $result;
-    }
+    		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+   		 return $result;
+   	 }
 	
 	
 	public function searchMaxDocumentId(){
