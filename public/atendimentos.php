@@ -92,18 +92,32 @@ if($hospital->image == '' || $hospital->image == null){
 	</div>
 
 		<?php }else{  ?>
-			
+		
 	<div class="col s6 m4" id="hospitalSelecionado">
 		<div>
 			<div>
 				<img src="<?=$hospital->image?>" id="imagemHospitalMenor">
-				<div style="" id="divHospitalConteudo3">
+				
+				<div style="" id="divHospitalConteudo3"> 
+				
 					<p class="pHospitalConteudo2"><?=$hospital->name?></p>
 					<p><label class="lblHospitalConteudo">Nome do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->nome_chefe_uti?></label></p>
 					<p><label class="lblHospitalConteudo">Telefone da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_uti?></label></p>
 					<p><label class="lblHospitalConteudo">Telefone do chefe da Uti:  </label><label class="lblHospitalConteudo2"><?=$hospital->telephone_chefe_uti?></label></p>
-					<p><label class='lblHospitalConteudo'>Arquivos do Hospital:  </label></p>
 				
+				
+				
+				<div id="arquivos" >
+<style>
+	.div-em-colunas {
+    -webkit-column-count:2; /* Chrome, Safari, Opera */
+    -moz-column-count:2;    /* Firefox */
+    column-count:2;         /* padrão */
+}
+</style>
+
+					<p><label class='lblHospitalConteudo'>Arquivos do Hospital:  </label></p>
+	<div class="div-em-colunas">			
  <!-- ARQUIVOS POR HOSPITAL -->				
 	<?php 
 	
@@ -112,16 +126,26 @@ if($hospital->image == '' || $hospital->image == null){
 	$idDocuments = array();
 	$idDocuments= $dbhospital->searchIdDocumentsByIdHospital($idHospital);
 	$num = count($idDocuments);
-
+	
+		
 	for ( $i =0 ; $i < $num; $i++){
 	
+	$arquivos = $idDocuments[$i]->name;
+	
+	if ( strlen($arquivos) > 25){
+		$arquivos = substr($arquivos, 0, 25). "...";
+	}
 	 ?>
-		<p><label class="lblHospitalConteudo"><a href='<?=$idDocuments[$i]->URI?>'> <?=$idDocuments[$i]->name?> </a></label></p>
+		<p><label class="lblHospitalConteudo"><a title="<?=$idDocuments[$i]->name?>"  alt="<?=$idDocuments[$i]->name?>" href='<?=$idDocuments[$i]->URI?>'><img src="../images/paperclip.png"/><?=$arquivos?></a></label></p>
 													
 	<?php } ?>
 	<!-- ARQUIVOS POR HOSPITAL -->
+			 </div>
+				</div>
 				
 				</div>
+				
+				
 			</div>
 		</div>
 	</div>	
@@ -224,7 +248,7 @@ if($hospital->image == '' || $hospital->image == null){
     </form>
     <!--FIM-DO-MODAL-->
 
-
+<div style="padding-top: 150px;">
 <div class="main margemCentro">
 
   <!--SEARCH BAR-->
@@ -269,7 +293,7 @@ if($hospital->image == '' || $hospital->image == null){
 </div>
 
 </div>
-
+</div>
 
 
 <?php require_once "rodape.php";
